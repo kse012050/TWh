@@ -2,6 +2,8 @@
 /* 컨텐츠 사이즈 */
 .contentSize{max-width: var(--contentSize); margin-inline: auto;}
 
+/* 로고 */
+.logo{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 
 /* 자세히 링크 */
 [class^='arrow']{font-size: 20px; line-height: 24px; font-weight: 700; display: flex;}
@@ -11,12 +13,44 @@
 [class^='arrow'][class$='black']{--bc: black;}
 
 
+/* 게시판 */
+ul.boardBox{gap: 40px 4%; display: flex; flex-wrap: wrap;}
+ul.boardBox li{width: 30.6666%;}
+ul.boardBox li a{font-weight: 700;}
+ul.boardBox li a img{width: 100%; aspect-ratio: 380 / 250; margin-bottom: 30px;}
+ul.boardBox li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px; display: block; color: #999;}
+ul.boardBox li a p{font-size: 26px; line-height: 38px;}
+
+
 /* 해더 */
 header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
 header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
-header div h1 a{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 header div nav ul{display: flex; justify-content: center; align-items: center;}
 header div nav ul li a{font-size: 18px; line-height: 100px; padding-inline: 40px; font-weight: 700;}
 header.white{background-color: transparent;}
 header.white div h1 a{--imgIdx: 1;}
 header.white div nav ul li a{color: white;}
+
+
+/* 푸터 */
+footer{background-color: #444; color: white;}
+footer > div{display: flex; justify-content: space-between;}
+footer > div:nth-child(1){margin-bottom: 50px; align-items: center; position: relative;}
+footer > div:nth-child(1)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - 17px); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
+footer > div:nth-child(1) ul{display: flex; gap: 50px;}
+footer > div:nth-child(1) ul li a{font-size: 18px; line-height: 100px; font-weight: 700;}
+footer > div:nth-child(1) select{width: 277px; height: 50px; padding-inline: 15px; color: white; background-color: #333; border: none;}
+footer > div:nth-child(2){font-size: 15px; margin-bottom: 40px;}
+footer > div:nth-child(2) address h2{margin-bottom: 30px; --imgIdx: 1;}
+footer > div:nth-child(2) address dl{ line-height: 30px; display: flex; align-items: center;}
+footer > div:nth-child(2) address dl dt{display: flex; align-items: center;}
+footer > div:nth-child(2) address dl dt::after{content: ':'; margin-inline: 0.4em;}
+footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px; text-align: right;}
+footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
+footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
+footer > div:nth-child(2) div ul:nth-child(1) li:first-child a{font-weight: 700;}
+footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex; justify-content: flex-end;}
+footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
+footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
+footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px; height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
+footer > p{font-size: 14px; line-height: 20px; padding-bottom: 60px; color: rgba(255, 255, 255, 0.5);}

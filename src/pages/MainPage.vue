@@ -61,7 +61,7 @@
         </div>
         <div class="boardArea contentSize" data-full>
             <h3>게시판</h3>
-            <ul>
+            <ul class="boardBox">
                 <li>
                     <a href="#">
                         <img src="../images/delete/board01.png" alt="">
