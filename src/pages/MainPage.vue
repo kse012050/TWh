@@ -6,6 +6,7 @@
                 테라와트아워
             </h2>
             <p>재생에너지 전력거래, 지속 가능한 내일을 만듭니다.</p>
+            <div class="bg"></div>
         </div>
         <ul data-full>
             <li>
@@ -94,7 +95,7 @@ export default {
         }
     },
     methods: {
-        fullPageSelector() {
+        fullPageStyle() {
             this.mainPage = document.querySelector('.mainPage');
             this.fullSelectors = document.querySelectorAll('[data-full]');
             // const element = this.$refs;
@@ -109,7 +110,8 @@ export default {
         }
     },
     mounted() {
-        this.fullPageSelector();
+        this.fullPageStyle();
+        window.addEventListener('resize',this.fullPageStyle)
     }
 }
 </script>

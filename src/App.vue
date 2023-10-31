@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="white">
     <h1><router-link to="/">한화 신한 테라와트아워 로고 이미지</router-link></h1>
     <nav>
       <ul>

@@ -2,3 +2,15 @@
 
 /* 메인 페이지 */
 .mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
+/* 메인 페이지 - 최상단 영역 */
+.mainPage .topArea{display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; color: white; font-weight: 700; text-align: center;}
+.mainPage .topArea h2{font-size: 50px; line-height: 58px; margin-bottom: 60px;}
+.mainPage .topArea h2 b{font-size: 120px; line-height: 140px; display: block;}
+.mainPage .topArea p{font-size: 30px; line-height: 36px;}
+.mainPage .topArea .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
+/* 메인 페이지 - 솔루션 영역 */
+.mainPage > ul{display: flex;}
+.mainPage > ul li{flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.mainPage > ul li strong{}
+.mainPage > ul li p{}
+.mainPage > ul li a{}
