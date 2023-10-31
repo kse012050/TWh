@@ -1,0 +1,4 @@
+
+
+/* 메인 페이지 */
+.mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}

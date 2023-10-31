@@ -1,0 +1,7 @@
+
+
+/* 해더 */
+header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;}
+header h1 a{--width: 283px; --imgIdx: 0; display: block; width: var(--width); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--width) * var(--imgIdx)) center / 100%; text-indent: -9999px;}
+header nav ul{display: flex; justify-content: center; align-items: center;}
+header nav ul li a{font-size: 18px; line-height: 100px; padding-inline: 40px; font-weight: 700;}
