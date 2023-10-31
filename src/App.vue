@@ -5,8 +5,8 @@
     <router-link to="/recruit">발전자원 모집</router-link>
     <router-link to="/board">게시판</router-link>
     <router-link to="/inquiry">사업 문의</router-link>
-    <router-view></router-view>
   </div>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -19,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>

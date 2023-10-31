@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import './css/import.css'
 import Main from './pages/MainPage'
 import Solution from './pages/SolutionPage'
 import Recruit from './pages/RecruitPage'
