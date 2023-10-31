@@ -1,10 +1,22 @@
 
+/* 컨텐츠 사이즈 */
+.contentSize{max-width: var(--contentSize); margin-inline: auto;}
+
+
+/* 자세히 링크 */
+[class^='arrow']{font-size: 20px; line-height: 24px; font-weight: 700; display: flex;}
+[class^='arrow'] span{--height: 2px; width: 50px; margin-top: 10px; margin-left: 18px; height: var(--height); background-color: var(--bc); position: relative;}
+[class^='arrow'] span::after{content: ''; position: absolute; right: 0; bottom: 0; width: 12.7px; height: var(--height); background-color: var(--bc); transform: rotate(45deg); transform-origin: right;}
+[class^='arrow'][class$='white']{--bc: white;}
+[class^='arrow'][class$='black']{--bc: black;}
+
 
 /* 해더 */
-header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;}
-header h1 a{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
-header nav ul{display: flex; justify-content: center; align-items: center;}
-header nav ul li a{font-size: 18px; line-height: 100px; padding-inline: 40px; font-weight: 700;}
+header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
+header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
+header div h1 a{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
+header div nav ul{display: flex; justify-content: center; align-items: center;}
+header div nav ul li a{font-size: 18px; line-height: 100px; padding-inline: 40px; font-weight: 700;}
 header.white{background-color: transparent;}
-header.white h1 a{--imgIdx: 1;}
-header.white nav ul li a{color: white;}
+header.white div h1 a{--imgIdx: 1;}
+header.white div nav ul li a{color: white;}
