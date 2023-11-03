@@ -3,20 +3,25 @@
 /* 메인 페이지 */
 .mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
 /* 메인 페이지 - 최상단 영역 */
-.mainPage .topArea{display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; color: white; font-weight: 700; text-align: center;}
-.mainPage .topArea h2{font-size: 50px; line-height: 58px; margin-bottom: 60px;}
-.mainPage .topArea h2 b{font-size: 120px; line-height: 140px; display: block;}
-.mainPage .topArea p{font-size: 30px; line-height: 36px;}
-.mainPage .topArea .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
+.mainPage .topArea{display: flex; justify-content: center; align-items: center; position: relative; font-weight: 700; text-align: center;}
+.mainPage .topArea > div{--typingHeight: 36px; display: flex; flex-direction: column; align-items: center;}
+.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: 60px;}
+.mainPage .topArea > div h2 b{font-size: 120px; line-height: 140px; display: block;}
+.mainPage .topArea > div p{font-size: 30px; line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
+.mainPage .topArea > .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
+
 /* 메인 페이지 - 솔루션 영역 */
-.mainPage .solutionArea{background: url(../images/main-listBG.png) no-repeat center / cover;}
-.mainPage .solutionArea ul{max-width: 1920px; margin-inline: auto; height: 100%; display: flex; color: white; text-align: center;}
-.mainPage .solutionArea ul li{flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; /* background-position: center; background-size: cover; */ position: relative;}
-/* .mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);} */
-/* .mainPage .solutionArea ul li:nth-child(2){background-image: url(../images/main-listBG02.png);} */
-.mainPage .solutionArea ul li strong{font-size: 60px; line-height: 76px; font-weight: 700; margin-bottom: 40px;}
-.mainPage .solutionArea ul li p{font-size: 30px; line-height: 40px;}
-.mainPage .solutionArea ul li a{margin-top: 100px;}
+/* .mainPage .solutionArea{background: url(../images/main-listBG.png) no-repeat center / cover;} */
+.mainPage .solutionArea ul{margin-inline: auto; height: 100%; display: flex; color: white; text-align: center;}
+.mainPage .solutionArea ul li{flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-position: center; background-size: cover; position: relative;}
+.mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);}
+.mainPage .solutionArea ul li:nth-child(2){background-image: url(../images/main-listBG02.png);}
+.mainPage .solutionArea ul li div{max-width: calc(1920px / 2); width: 100%;}
+.mainPage .solutionArea ul li:nth-child(1) div{margin-left: auto;}
+.mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
+.mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; font-weight: 700; margin-bottom: 40px;}
+.mainPage .solutionArea ul li div p{font-size: 30px; line-height: 40px;}
+.mainPage .solutionArea ul li div a{margin-top: 100px; justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .terraArea{padding-bottom: 12.037vh; display: flex; align-items: flex-end; box-sizing: border-box; background: url(../images/main-companyBG.png) no-repeat center / cover;}
 .mainPage .terraArea > div{max-width: 1620px; margin-inline: auto; display: flex; justify-content: flex-end; align-items: flex-start;}
