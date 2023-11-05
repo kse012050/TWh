@@ -3,7 +3,7 @@
 .contentSize{max-width: var(--contentSize); margin-inline: auto;}
 
 /* 서브 페이지 위아래 간격 */
-.boardPage, .boardDetail{padding-block: 240px 200px;}
+.boardPage, .boardDetail, .inquiryPage{padding-block: 240px 200px;}
 
 
 /* 로고 */
@@ -17,7 +17,7 @@
 [class^='arrow'][class$='black']{--bc: black;}
 
 /* 버튼 */
-[class|="btn"]{width: 260px; height: 70px; font-size: 24px; font-weight: 700; display: flex; justify-content: center; align-items: center; margin-inline: auto;}
+[class|="btn"]{width: 260px; height: 70px; font-size: 24px; font-weight: 700; display: flex; justify-content: center; align-items: center; margin-inline: auto; border: none;}
 [class|="btn"][class$="black"]{color: white; background-color: #222;}
 [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 

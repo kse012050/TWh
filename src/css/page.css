@@ -72,3 +72,24 @@ header.white + .mainPage .fullPager{--color: white;}
 .boardDetail div{padding-block: 60px; border-width: 1px 0; border-style: solid; border-color: #222;}
 .boardDetail > a{margin-top: 80px;}
 
+
+/* 사업 문의 */
+input:is([type="checkbox"], [type="radio"]){display: none;}
+.inquiryPage h2{font-size: 60px; line-height: 72px; margin-bottom: 80px; font-weight: 700;}
+.inquiryPage fieldset{}
+.inquiryPage fieldset ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.inquiryPage fieldset ul li{font-size: 22px;}
+.inquiryPage fieldset ul li:not(:has(textarea, input:is([type="checkbox"], [type="radio"]))){width: 46.7741%;}
+.inquiryPage fieldset ul li:has(textarea, input[type="checkbox"]){width: 100%;}
+/* .inquiryPage fieldset ul li label{display: block;} */
+.inquiryPage fieldset ul li label:first-child{display: block; line-height: 34px; margin-bottom: 20px; font-weight: 700;}
+.inquiryPage fieldset ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; border: none; background-color: #F8F8F8; box-sizing: border-box;}
+.inquiryPage fieldset ul li :is(input, textarea)::placeholder{color: #BBB;}
+.inquiryPage fieldset ul li input{height: 70px;}
+.inquiryPage fieldset ul li textarea{height: 360px;}
+.inquiryPage fieldset ul li input[type="checkbox"] + label{font-size: 20px; line-height: 26px; font-weight: 400; display: flex; align-items: center; cursor: pointer;}
+.inquiryPage fieldset ul li input[type="checkbox"] + label b{font-weight: 700; text-decoration: underline;}
+.inquiryPage fieldset ul li input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px; content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
+.inquiryPage fieldset ul li input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
+.inquiryPage fieldset ul li input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
+.inquiryPage fieldset input[type="submit"]{margin-top: 80px;}
