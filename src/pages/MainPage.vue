@@ -40,20 +40,45 @@
                 </li>
             </ul>
         </div>
-        <div class="terraArea" data-full>
+        <div class="terra01Area" data-full>
             <div>
-                <p>
-                    <strong>테라와트아워는</strong>
-                    전문성과 안정성을 갖춘<br>
-                    <b>재생에너지 전력거래 전문 기업</b>입니다.
-                </p>
-                <div>
-                    <strong>1GW+</strong>
-                    <p>재생에너지 구축, 운영 사업 역량</p>
+                <div class="contentSize">
+                    <p>
+                        <strong>한화 신한 테라와트아워는</strong>
+                        전문성과 안정성을 갖춘<br>
+                        재생에너지 전력거래 전문 기업입니다.
+                    </p>
+                    <div>
+                        <strong>1GW+</strong>
+                        <p>재생에너지 구축,<br> 운영 사업 역량</p>
+                    </div>
+                    <div>
+                        <strong>1500<small>억 규모</small></strong>
+                        <p>재생에너지 사업을 위한<br> 펀드 설정</p>
+                    </div>
                 </div>
-                <div>
-                    <strong><b>1500</b>억 규모</strong>
-                    <p>RE100 전용 펀드 설정</p>
+            </div>
+        </div>
+        <div class="terra02Area" data-full>
+            <div>
+                <div class="contentSize">
+                    <p>
+                        <strong>한화 신한 테라와트아워는</strong>
+                        RE100 기업 수요와 KPX 전력시장을 아우르는<br>
+                        재생에너지 전력거래 전문 기업입니다.
+                    </p>
+                    <div>
+                        <p>
+                            재생에너지전기공급<br>
+                            (PPA)
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            통합발전소<br>
+                            (VPP)
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,32 +90,36 @@
             </p>
             <a href="#" class="arrow-white">기업 소개보기 <span></span></a>
         </div>
-        <div class="boardArea contentSize" data-full>
-            <h3>게시판</h3>
-            <ul class="boardBox">
-                <li>
-                    <a href="#">
-                        <img src="../images/delete/board01.png" alt="">
-                        <small>보도자료</small>
-                        <p>재생에너지 전력거래 전문 합작법인‘한화 신한 테라와트아워’</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="../images/delete/board02.png" alt="">
-                        <small>인터뷰</small>
-                        <p>‘한화 신한 테라와트아워’ 고성훈 대표 고성훈 대표</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="../images/delete/board03.png" alt="">
-                        <small>보도자료</small>
-                        <p>한화컨버전스-신한자산 운용, 전문 합작법인 설립 협약</p>
-                    </a>
-                </li>
-            </ul>
-            <a href="#" class="arrow-black">게시판 보기<span></span></a>
+        <div class="boardArea" data-full>
+            <div>
+                <div class="contentSize">
+                    <h3>게시판</h3>
+                    <ul class="boardBox">
+                        <li>
+                            <a href="#">
+                                <img src="../images/delete/board01.png" alt="">
+                                <small>보도자료</small>
+                                <p>재생에너지 전력거래 전문 합작법인‘한화 신한 테라와트아워’</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../images/delete/board02.png" alt="">
+                                <small>인터뷰</small>
+                                <p>‘한화 신한 테라와트아워’ 고성훈 대표 고성훈 대표</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../images/delete/board03.png" alt="">
+                                <small>보도자료</small>
+                                <p>한화컨버전스-신한자산 운용, 전문 합작법인 설립 협약</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="arrow-black">게시판 보기<span></span></a>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -139,7 +168,8 @@ export default {
             },1000); */
         },
         fullEvent(){
-            const fullSelectors = document.querySelectorAll('[data-full]');
+            const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
+            // const fullSelectors = document.querySelectorAll('[data-full]');
             let isFull = false;
             console.log(fullSelectors);
             fullSelectors.forEach((element, idx)=>{
@@ -150,11 +180,27 @@ export default {
                         // currentIdx++;
                         fullSelectors[idx + 1].classList.add('active')
                         isFull = true;
+                        if(fullSelectors[idx + 1].localName === 'footer'){
+                            const footerEle = document.querySelector('footer');
+                            console.log(footerEle.innerHeight);
+                            document.querySelectorAll('[data-full].active').forEach((element)=>{
+                                element.style.top = -footerEle.offsetHeight + 'px'
+                            })
+                            // document.querySelectorAll('[data-full].active').style.top = -300 + 'px'
+                        }
                     }else if(e.wheelDelta > 0 && fullSelectors[currentIdx - 1]){
                         // currentIdx--;
                         fullSelectors[currentIdx].classList.remove('active')
                         isFull = true;
+                        if(fullSelectors[currentIdx].localName === 'footer'){
+                            document.querySelectorAll('[data-full].active').forEach((element)=>{
+                                element.removeAttribute('style')
+                            })
+                            // document.querySelectorAll('[data-full].active').style.top = -300 + 'px'
+                        }
                     }
+                    console.log(idx);
+                    console.log(fullSelectors.length);
                     // console.log(fullSelectors[currentIdx]);
                     if(isFull){
                         // console.log(currentIdx);
@@ -184,8 +230,13 @@ export default {
 <style>
     body{overflow: hidden;}
     [data-full]{position: fixed; left: 0; top: 0; width: 100%; z-index: -1; transition: 0s 1s z-index;}
-    [data-full].active{z-index: 1; transition: 0s;}
+    [data-full]:not(.topArea):not(.active){pointer-events: none;}
+    [data-full].active{z-index: 3; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0s, 0s;}
     .mainPage .topArea{z-index: 1;}
+    footer{position: fixed; left: 0; bottom: 0; width: 100%;}
+    .mainPage:has( .boardArea.active) + footer{z-index: 2;}
+    .mainPage:has( .boardArea.active) + footer.active::before{content: ''; position: absolute; left: 0; bottom: 100%; width: 100%; height: calc(100vh - 100%);}
+    .mainPage:has( + footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
 
     /* header{opacity: 0; pointer-events: none;}
     .mainPage .topArea{--color: #222; color: var(--color); position: relative; z-index: 1; background-color: white;}
@@ -217,6 +268,17 @@ export default {
     .mainPage .solutionArea ul li div{opacity: 0; transform: translateY(100px);}
     .mainPage .solutionArea.active ul li{transform: translateY(0); transition: 0.5s transform;}
     .mainPage .solutionArea.active ul li div{opacity: 1; transform: translateY(0); transition-property: opacity, transform; transition-duration: 0.5s; transition-delay: 0.3s; }
-    .mainPage .terraArea{transform: translateX(100%); background-color: rgba(0, 15, 53, 0.9); transition: 0.5s transform;}
-    .mainPage .terraArea.active{transform: translateX(0); }
+    .mainPage [class^="terra"][class*="Area"] > div > div > *{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.5s;}
+    .mainPage [class^="terra"][class*="Area"].active > div > div > *{transform: translateY(0%); opacity: 1; transition-delay: 0.5s;}
+    .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div > *{transform: translateY(-100%); opacity: 0; transition-delay: 0s;}
+    .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
+    .mainPage .terra01Area > div > div > *{transition-delay: 0.5s;}
+    .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center left 0% / cover;}
+    .mainPage .companyArea p{transform: translateY(calc(100vh - 100%)); transition: 0.5s transform;}
+    .mainPage .companyArea a{opacity: 0; transition: 0s 0s opacity;}
+    .mainPage .companyArea.active p{transform: translateY(0%);}
+    .mainPage .companyArea.active a{opacity: 1; transition: 0.5s 0.3s opacity;}
+    .mainPage .boardArea div{transform: translateY(100%); transition: 0.5s transform;}
+    .mainPage .boardArea.active div{transform: translateY(0);}
+    .mainPage:has(+ footer.active) [data-full].active{transition-duration: 0.5s;}
 </style>
