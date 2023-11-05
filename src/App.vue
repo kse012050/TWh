@@ -1,11 +1,11 @@
 <template>
-  <header class="white">
+  <header>
     <div>
       <h1><router-link to="/" class="logo">한화 신한 테라와트아워 로고 이미지</router-link></h1>
       <nav>
         <ul>
           <li><router-link to="/company">기업 소개</router-link></li>
-          <li><router-link to="/solution">RE100 이행 솔루션</router-link></li>
+          <li><router-link to="/solution">전력거래 솔루션</router-link></li>
           <li><router-link to="/recruit">발전자원 모집</router-link></li>
           <li><router-link to="/board">게시판</router-link></li>
           <li><router-link to="/inquiry">사업 문의</router-link></li>
@@ -72,6 +72,22 @@
 export default {
   name: 'App',
   components: {
+  },
+  methods: {
+    test(){
+    }
+  },
+  created() {
+    this.test();
+  },
+  updated(){
+    console.log('?');
+  },
+  watch: {
+    '$route' () {
+      const header = document.querySelector('header');
+      this.$route === '/' ? header.classList.add('white') : header.classList.remove('white')
+    }
   }
 }
 </script>

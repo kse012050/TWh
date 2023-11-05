@@ -137,6 +137,7 @@ export default {
     },
     methods: {
         fullPageStyle() {
+            document.querySelector('header').classList.add('white');
             this.mainPage = document.querySelector('.mainPage');
             const fullPager = document.querySelector('.fullPager');
             const fullSelectors = document.querySelectorAll('[data-full]');
@@ -234,7 +235,7 @@ export default {
 }
 </script>
 <style>
-    body{overflow: hidden;}
+    body:has(.mainPage){overflow: hidden;}
     [data-full]{position: fixed; left: 0; top: 0; width: 100%; z-index: -1; transition: 0s 1s z-index;}
     [data-full]:not(.topArea):not(.active){pointer-events: none;}
     [data-full].active{z-index: 3; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0s, 0s;}
@@ -242,12 +243,14 @@ export default {
 
     header + .mainPage .fullPager{--color: #999;}
 
-    footer{position: fixed; left: 0; bottom: 0; width: 100%;}
+    .mainPage + footer{position: fixed; left: 0; bottom: 0; width: 100%;}
     .mainPage:has( .boardArea.active) + footer{z-index: 2;}
     .mainPage:has( .boardArea.active) + footer.active::before{content: ''; position: absolute; left: 0; bottom: 100%; width: 100%; height: calc(100vh - 100%);}
     .mainPage:has( + footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
 
-    header{opacity: 0; pointer-events: none;}
+    header:has(+ .mainPage){opacity: 0; pointer-events: none;}
+
+
     .mainPage .topArea{--color: #222; color: var(--color); position: relative; z-index: 1; background-color: white;}
     .mainPage .topArea::after{content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); background: red;}
     .mainPage .topArea > div{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
