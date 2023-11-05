@@ -2,6 +2,10 @@
 /* 컨텐츠 사이즈 */
 .contentSize{max-width: var(--contentSize); margin-inline: auto;}
 
+/* 서브 페이지 위아래 간격 */
+.boardPage, .boardDetail{padding-block: 240px 200px;}
+
+
 /* 로고 */
 .logo{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 
@@ -11,6 +15,11 @@
 [class^='arrow'] span::after{content: ''; position: absolute; right: 0; bottom: 0; width: 12.7px; height: var(--height); background-color: var(--bc); transform: rotate(45deg); transform-origin: right;}
 [class^='arrow'][class$='white']{--bc: white;}
 [class^='arrow'][class$='black']{--bc: black;}
+
+/* 버튼 */
+[class|="btn"]{width: 260px; height: 70px; font-size: 24px; font-weight: 700; display: flex; justify-content: center; align-items: center; margin-inline: auto;}
+[class|="btn"][class$="black"]{color: white; background-color: #222;}
+[class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 
 
 /* 게시판 */
