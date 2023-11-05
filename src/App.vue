@@ -74,19 +74,20 @@ export default {
   components: {
   },
   methods: {
-    test(){
+    headerStyle(){
+      const header = document.querySelector('header');
+      this.$route.path === '/' ? header.classList.add('white') : header.classList.remove('white')
     }
   },
-  created() {
-    this.test();
+  mounted() {
+    this.headerStyle();
   },
   updated(){
     console.log('?');
   },
   watch: {
     '$route' () {
-      const header = document.querySelector('header');
-      this.$route === '/' ? header.classList.add('white') : header.classList.remove('white')
+      this.headerStyle();
     }
   }
 }

@@ -137,12 +137,13 @@ export default {
     },
     methods: {
         fullPageStyle() {
-            document.querySelector('header').classList.add('white');
             this.mainPage = document.querySelector('.mainPage');
             const fullPager = document.querySelector('.fullPager');
             const fullSelectors = document.querySelectorAll('[data-full]');
             let vh = window.innerHeight * 0.01;
             this.mainPage.style.setProperty('--vh', `${vh}px`);
+            // fullSelectors.innerHTML = ''
+            fullPager.replaceChildren();
             fullSelectors.forEach((_, idx)=>{
                 const fullPageList = document.createElement('li');
                 fullPageList.innerText = `${idx} Page`;
@@ -241,7 +242,10 @@ export default {
     [data-full].active{z-index: 3; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0s, 0s;}
     .mainPage .topArea{z-index: 1;}
 
-    header + .mainPage .fullPager{--color: #999;}
+    header + .mainPage .fullPager{--color: #999; opacity: 0;}
+    header + .mainPage .fullPager li{pointer-events: none;}
+    header + .mainPage .fullPager:has( + .topArea.intro){opacity: 1;}
+    header + .mainPage .fullPager:has( + .topArea.intro) li{pointer-events: all;}
 
     .mainPage + footer{position: fixed; left: 0; bottom: 0; width: 100%;}
     .mainPage:has( .boardArea.active) + footer{z-index: 2;}
