@@ -2,6 +2,11 @@
 
 /* 메인 페이지 */
 .mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
+header.white + .mainPage .fullPager{--color: white;}
+.mainPage .fullPager{position: fixed; left: 50%; top: 0%; width: 100%; transform: translateX(-50%); max-width: 1920px; height: 100%; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; pointer-events: none;}
+.mainPage .fullPager li{width: 9px; aspect-ratio: 1; background-color: var(--color); border-radius: 100%; opacity: 0.5; text-indent: -9999px; font-size: 5px;}
+.mainPage .fullPager li.active{background-color: transparent; border: 3px solid var(--color); transform: translateX(3px); opacity: 1;}
+.mainPage .fullPager li:not(:last-child){margin-bottom: 30px;}
 /* 메인 페이지 - 최상단 영역 */
 .mainPage .topArea{display: flex; justify-content: center; align-items: center; position: relative; font-weight: 700; text-align: center;}
 .mainPage .topArea > div{--typingHeight: 36px; display: flex; flex-direction: column; align-items: center;}
@@ -40,8 +45,8 @@
 .mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 50px; line-height: 60px; margin-bottom: 2.7778vh;}
 .mainPage [class^="terra"][class*="Area"] > div > div div strong small{font-size: 30px;}
 .mainPage [class^="terra"][class*="Area"] > div > div div p{font-size: 24px; line-height: 38px;}
-.mainPage .terra01Area > div > div div::before{--height: 70px; aspect-ratio: 280 / 70; background-image: url(../images/logo-mainCompany01.png);}
-.mainPage .terra02Area > div > div div::before{--height: 72px; aspect-ratio: 181 / 72; background-image: url(../images/logo-mainCompany02.png);}
+.mainPage .terra01Area > div > div div::before{--height: 70px; aspect-ratio: 280 / 70; background-image: url(../images/main-terraLogo01.png);}
+.mainPage .terra02Area > div > div div::before{--height: 72px; aspect-ratio: 181 / 72; background-image: url(../images/main-terraLogo02.png);}
 /* 메인 페이지 - 기업 소개 영역 */
 .mainPage .companyArea{display: flex; flex-direction: column; justify-content: center; align-items: center; /* background: url(../images/main-companyBG.png) no-repeat center / cover; */ color: white;}
 .mainPage .companyArea p{font-size: 50px; line-height: 70px; max-width: 780px; text-align: center; margin-inline: auto;}
