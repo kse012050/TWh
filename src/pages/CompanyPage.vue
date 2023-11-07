@@ -17,7 +17,7 @@
                     지속가능한 내일을 만들어갑니다.
                 </p>
             </div>
-            <div data-textAniParents="1" data-aniDelay="4">
+            <div data-textAniParents="2" data-aniDelay="4">
                 <b>비전</b>
                 <strong>
                     Leading change
@@ -26,8 +26,8 @@
                 <p>분산에너지 중심의 에너지 패러다임 전환을 선도하겠습니다.</p>
             </div>
         </div>
-        <div class="test">
-
+        <div class="peopleArea">
+            <strong></strong>
         </div>
     </section>
 </template>
@@ -43,9 +43,6 @@ export default {
     methods : {
         init(){
             this.topElement = document.querySelector(this.topClassName);
-            /* document.querySelectorAll('[data-textAni]').forEach(function(element) {
-                element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
-            }) */
         },
         firstStyle(){
             const titleElement = document.querySelector(`${this.topClassName} h2`);
@@ -71,14 +68,10 @@ export default {
                         topContents[idx].classList.remove('active');
                     }
                 })
-                // console.log((this.topElement.offsetHeight - this.topElement.offsetTop));
                 if(scrollTop > topElementTop && scrollTop < topElementHeight + topElementTop){
                     topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 100) + 'px');
                 }
-                // console.log((this.topElement.offsetHeight - this.topElement.offsetTop) / (window.scrollY));
             })
-            console.log(this.topElement.offsetTop);
-            console.log(this.topElement.offsetHeight - this.topElement.offsetTop);
         }
     },
     mounted() {
@@ -90,18 +83,20 @@ export default {
 </script>
 <style scoped>
     .companyPage{--aniDutaion: .6s;}
-    /* .companyPage .topArea{height: 160vh;} */
     .companyPage .topArea h2{transform: translateY(-100%); transition: all var(--aniDutaion) ease-in-out;}
     .companyPage .topArea h2.active{transform: translateY(0%);}
-    .companyPage .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.03s; transition-timing-function: ease-in-out, linear;}
+    .companyPage .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.02s; transition-timing-function: ease-in-out, linear;}
     .companyPage .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
     .companyPage .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
     .companyPage .topArea h2.active:has(+ .active){transform: translateY(-100%);}
     .companyPage .topArea > div{transition: all .6s ease-in-out;}
-    .companyPage .topArea > div:nth-of-type(1).active{transform: translateY(0);}
+    .companyPage .topArea > div:nth-of-type(-n + 2){transform: translateY(100%);}
+    .companyPage .topArea > div:nth-of-type(-n + 2).active{transform: translateY(0);}
+    .companyPage .topArea > div:nth-of-type(2){z-index: 1;}
+    .companyPage .topArea > div:nth-of-type(3){transform: translateX(100%);}
     .companyPage .topArea > div:nth-of-type(2).active{transform: translateY(0);}
+    .companyPage .topArea > div:nth-of-type(3).active{transform: translateX(0);}
     .companyPage .topArea > div:nth-of-type(1).active:has( + .active){transform: translateY(-100%);}
-    .companyPage .topArea > div:nth-of-type(2).active:has( + .active){transform: translateY(-100%);}
-    .companyPage .topArea > div:nth-of-type(3).active{transform: translateY(0);}
-    .companyPage .topArea > div + .active{transform: translateY(-100%);}
+    .companyPage .topArea > div:nth-of-type(2).active:has( + .active){/* z-index: 0; */ opacity: 0; transition-delay: var(--aniDelay);}
+    /* .companyPage .topArea > div + .active{transform: translateY(-100%);} */
 </style>
