@@ -77,10 +77,38 @@ export default {
     headerStyle(){
       const header = document.querySelector('header');
       this.$route.path === '/' ? header.classList.add('white') : header.classList.remove('white')
+    },
+    fullStyle(){
+      document.getElementById('app').style.setProperty('--fullHeight', `${window.innerHeight}px`)
+    },
+    styleIdx(){
+      setTimeout(()=>{
+        document.querySelectorAll('[data-aniDelay]').forEach((element)=>{
+          element.style.setProperty('--aniDelay', `0.${element.getAttribute('data-aniDelay')}s`)
+        })
+        document.querySelectorAll('[data-textAniParents]').forEach((parents)=>{
+          parents.style.setProperty('--test', '44');
+          // console.log(parents.style);
+          parents.childNodes.forEach((element, idx)=>{
+            element.setAttribute('data-textAni', idx + (Number(parents.getAttribute('data-textAniParents')) || 0))
+          })
+        })
+        document.querySelectorAll('[data-textAni]').forEach((element)=>{
+          element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
+          window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
+          const text = element.innerHTML;
+          element.innerHTML = ''
+          const spanElement = document.createElement('span');
+          spanElement.innerHTML = text;
+          element.appendChild(spanElement);
+        })
+      },0)
     }
   },
   mounted() {
+    this.fullStyle();
     this.headerStyle();
+    this.styleIdx();
   },
   updated(){
     console.log('?');

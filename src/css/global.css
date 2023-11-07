@@ -1,6 +1,7 @@
 
 /* 컨텐츠 사이즈 */
 .contentSize{max-width: var(--contentSize); margin-inline: auto;}
+.contentSize-padding{padding-inline: calc((100vw - 1240px) / 2); box-sizing: border-box;}
 
 /* 서브 페이지 위아래 간격 */
 .boardPage, .boardDetail, .inquiryPage{padding-block: 240px 200px;}
@@ -31,11 +32,18 @@ ul.boardBox li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px; 
 ul.boardBox li a p{font-size: 26px; line-height: 38px;}
 
 
+/* 텍스트 애니메이션 */
+
+[data-textAni]{display: block; overflow: hidden;}
+[data-textAni] span{display: block; transform: translateY(100%); transition: transform var(--aniDutaion) ease-in-out;}
+.active [data-textAni] span{transform: translateY(0%); transition-delay: calc(var(--aniDelay) * var(--textIdx));}
+
+
 /* 해더 */
 header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
 header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
 header div nav ul{display: flex; justify-content: center; align-items: center;}
-header div nav ul li a{font-size: 18px; line-height: 100px; padding-inline: 40px; font-weight: 700;}
+header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
 header.white{background-color: transparent;}
 header.white div h1 a{--imgIdx: 1;}
 header.white div nav ul li a{color: white;}
