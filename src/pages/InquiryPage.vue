@@ -2,35 +2,43 @@
     <section class="inquiryPage contentSize">
         <h2>사업 문의</h2>
         <form>
-            <fieldset>
+            <fieldset class="content-inquiry">
                 <ul>
                     <li>
-                        <label for="">업체명*</label>
-                        <input type="text" placeholder="업체명을 작성하세요. (2자 - 20자)">
+                        <label for="company">업체명</label>
+                        <div>
+                            <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                        </div>
                     </li>
                     <li>
-                        <label for="">담당자(성함)*</label>
-                        <input type="text" placeholder="담당자 성함을 작성하세요. (2자 - 20자)">
+                        <label for="name">담당자(성함)</label>
+                        <div>
+                            <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" required>
+                        </div>
                     </li>
                     <li>
-                        <label for="">연락처*</label>
-                        <input type="text" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)">
+                        <label for="phonenum">연락처</label>
+                        <div>
+                            <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" required>
+                        </div>
                     </li>
                     <li>
-                        <label for="">이메일*</label>
-                        <input type="text" placeholder="이메일을 형식에 맞게 작성하세요.">
+                        <label for="email">이메일</label>
+                        <div>
+                            <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
+                        </div>
                     </li>
                     <li>
-                        <label for="">상세 내용</label>
-                        <textarea placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="" id="" checked>
-                        <label for=""><b>개인정보이용방침</b>에 동의합니다.</label>
-                        <input type="checkbox" name="" id="">
-                        <label for="">마케팅 정보 수신에 동의합니다.</label>
+                        <label for="content">상세 내용</label>
+                        <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
                     </li>
                 </ul>
+                <div>
+                    <input type="checkbox" name="privacyagree" id="privacyagree" required checked>
+                    <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
+                    <input type="checkbox" name="maketagree" id="maketagree" required>
+                    <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
+                </div>
                 <input type="submit" value="문의하기" class="btn-black">
             </fieldset>
         </form>

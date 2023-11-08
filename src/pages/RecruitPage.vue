@@ -210,9 +210,90 @@
 
         <div class="contentSize-padding">
             <p>
-                RE100 장기고정계약 & 발전소 매입
+                RE100 장기고정계약 & 발전소 매입<br>
                 <b>테라와트아워에 문의하세요!</b>
             </p>
+            <form>
+                <fieldset class="content-inquiry">
+                    <ul>
+                        <li>
+                            <label for="company">업체명</label>
+                            <div>
+                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="name">담당자(성함)</label>
+                            <div>
+                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="phonenum">연락처</label>
+                            <div>
+                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="email">이메일</label>
+                            <div>
+                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">문의내용</label>
+                            <div>
+                                <input type="radio" id="inquerydetail-contract" name="inquerydetail" required checked>
+                                <label for="inquerydetail-contract">장기 고정 계약</label>
+                                <input type="radio" id="inquerydetail-forSale" name="inquerydetail" required>
+                                <label for="inquerydetail-forSale">발전소 매각</label>
+                                <input type="radio" id="inquerydetail-etc" name="inquerydetail" required>
+                                <label for="inquerydetail-etc">기타</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="">발전소 현황</label>
+                            <div>
+                                <input type="radio" id="plantstatus-purchase" name="plantstatus" required checked>
+                                <label for="plantstatus-purchase">토지 매입</label>
+                                <input type="radio" id="plantstatus-beforeCompletion" name="plantstatus" required>
+                                <label for="plantstatus-beforeCompletion">준공전 발전소</label>
+                                <input type="radio" id="plantstatus-inOperation" name="plantstatus" required>
+                                <label for="plantstatus-inOperation">운영중 발전소</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="saleprice">매각 희망가</label>
+                            <div data-unit="억원">
+                                <input type="text" id="saleprice" name="saleprice" placeholder="발전소 매각 희망가를 입력하세요.">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="plantcapacity">용량</label>
+                            <div data-unit="kW">
+                                <input type="text" id="plantcapacity" name="plantcapacity" placeholder="발전소 용량을 입력하세요">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="recweight">REC 가중치</label>
+                            <div data-unit="kW">
+                                <input type="text" id="recweight" name="recweight" placeholder="REC 가중치를 입력하세요.">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="content">상세 내용</label>
+                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
+                        </li>
+                    </ul>
+                    <div>
+                        <input type="checkbox" name="privacyagree" id="privacyagree" required checked>
+                        <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
+                        <input type="checkbox" name="maketagree" id="maketagree" required>
+                        <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
+                    </div>
+                    <input type="submit" value="문의하기" class="btn-black">
+                </fieldset>
+            </form>
         </div>
     </section>
 </template>

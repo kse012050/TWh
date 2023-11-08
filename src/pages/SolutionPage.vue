@@ -182,6 +182,74 @@
                 </li>
             </ul>
         </div>
+
+        <div class="contentSize-padding">
+            <p>
+                RE100 이행,<br>
+                <b>지금 바로 문의하세요!</b>
+            </p>
+            <form>
+                <fieldset class="content-inquiry">
+                    <ul>
+                        <li>
+                            <label for="company">업체명</label>
+                            <div>
+                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="name">담당자(성함)</label>
+                            <div>
+                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="phonenum">연락처</label>
+                            <div>
+                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" required>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="email">이메일</label>
+                            <div>
+                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
+                            </div>
+                        </li>
+                        <li class="full">
+                            <label for="annualusage">연간 전력사용량</label>
+                            <div data-unit="GWh">
+                                <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요.">
+                            </div>
+                            <small>다수의 사업장이 있을 경우 각 사업장 별 연간 전력 사용량을 내용에 적어주세요.</small>
+                        </li>
+                        <li class="full">
+                            <label for="" data-comment="*중복선택 가능">이행 방안</label>
+                            <div>
+                                <input type="checkbox" id="implementplan-PPA" name="implementplan" checked>
+                                <label for="implementplan-PPA">PPA</label>
+                                <input type="checkbox" id="implementplan-REC" name="implementplan">
+                                <label for="implementplan-REC">REC구매</label>
+                                <input type="checkbox" id="implementplan-sunlight" name="implementplan">
+                                <label for="implementplan-sunlight">자가소비형 태양광 구축</label>
+                                <input type="checkbox" id="implementplan-inquiry" name="implementplan">
+                                <label for="implementplan-inquiry">종합솔루션 문의</label>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="content">상세 내용</label>
+                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
+                        </li>
+                    </ul>
+                    <div>
+                        <input type="checkbox" name="privacyagree" id="privacyagree" required checked>
+                        <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
+                        <input type="checkbox" name="maketagree" id="maketagree" required>
+                        <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
+                    </div>
+                    <input type="submit" value="문의하기" class="btn-black">
+                </fieldset>
+            </form>
+        </div>
     </section>
 </template>
 <script>
