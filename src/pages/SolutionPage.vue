@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="processArea contentSize-padding">
+        <div class="content-process contentSize-padding">
             <p>
                 재생에너지 전력거래 전문 기업 테라와트아워가<br>
                 <b>최적의 RE100 이행 솔루션</b>을 제안합니다.
@@ -91,7 +91,7 @@
             </ul>
         </div>
 
-        <div class="PPAArea contentSize-padding">
+        <div class="content-img contentSize-padding">
             <strong>직접 PPA</strong>
             <p>
                 재생에너지전기공급사업자를 통해<br>
@@ -105,7 +105,7 @@
             <img src="../images/solution-PPAImg01.png" alt="직접 PPA 이미지">
         </div>
         <hr class="case01">
-        <div class="PPAArea contentSize-padding">
+        <div class="content-img contentSize-padding">
             <strong>제3자 PPA</strong>
             <p>
                 발전사업자와 한국전력, 한국전력과 전기사용자가<br>
@@ -119,7 +119,7 @@
             <img src="../images/solution-PPAImg02.png" alt="제3자 PPA 이미지">
         </div>
         <hr class="case01">
-        <div class="PPAArea contentSize-padding">
+        <div class="content-img contentSize-padding">
             <strong>V.PPA</strong>
             <p>
                 전력 거래 당사자간 합의된 고정가격(SMP+REC)과<br>

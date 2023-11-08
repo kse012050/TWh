@@ -91,7 +91,6 @@
             </ol>
         </div>
         <div class="bottomArea contentSize-padding">
-            <img src="../images/logo-white.png" alt="">
             <div>
                 <a href="" class="btn-download"><b>CI</b>(AI)</a>
                 <a href="" class="btn-download"><b>PR</b>(PDF)</a>

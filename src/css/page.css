@@ -94,7 +94,8 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .companyPage .historyArea ol li:not(:last-child){padding-bottom: 60px; position: relative;}
 .companyPage .historyArea ol li:not(:last-child)::after{content: ''; width: 1px; height: 100%; position: absolute; left: 0; top: calc(var(--lineHeight) / 2); background-color: var(--virtualColor); transform: translateX(-50%);}
 .companyPage .historyArea ol li small{font-size: 24px; line-height: 29px; margin-right: 40px; color: #999;}
-.companyPage .bottomArea{padding-block: 160px; background: url('../images/company-bottomBG.png') no-repeat center / cover; text-align: center;}
+.companyPage .bottomArea{padding-block: 160px; background: url('../images/company-bottomBG.png') no-repeat center / cover;}
+.companyPage .bottomArea::before{content: ''; display: block; max-width: 660px; margin:0 auto 60px; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}
 .companyPage .bottomArea img{max-width: 660px; margin-bottom: 60px; width: 100%;}
 .companyPage .bottomArea div{display: flex; justify-content: center; align-items: center; gap: 30px;}
 .companyPage .bottomArea div a{}
@@ -104,10 +105,11 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 :is(.solutionPage, .recruitPage) .topArea div > strong{font-size: 60px; line-height: 76px; font-weight: 700; text-align: center;}
 :is(.solutionPage, .recruitPage) .topArea div > p{font-size: 50px; line-height: 70px;}
 :is(.solutionPage, .recruitPage) .topArea div > p b{font-weight: 700;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child):not([class]){font-size: 50px; line-height: 70px; text-align: center;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:first-child{font-weight: 400;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:first-child b,
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child:not([class])){font-size: 50px; line-height: 70px; display: block; text-align: center;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 400;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2) b,
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 700;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(2){font-size: 40px; line-height: 54px;}
 
 
 /* 전력거래 솔루션 페이지 */
@@ -121,19 +123,11 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 50px;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{font-size: 30px; line-height: 42px; font-weight: 400;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-block: auto 3.7037vh;}
-.solutionPage .processArea{padding-block: var(--padding02); background-color: var(--color-BG02);; text-align: center;}
-.solutionPage .processArea > p{margin-bottom: 100px;}
-.solutionPage .processArea b{margin-bottom: 60px;}
-.solutionPage .processArea ul{--width: 248px;  display: flex; justify-content: center; position: relative;}
-.solutionPage .processArea ul::before{content: ''; position: absolute; right: 50%; top: calc(var(--width) / 2); width: calc(100% + (100vw - var(--contentSize-padding))); height: 1px; transform: translateX(50%); background-color: #222; }
-.solutionPage .processArea ul li strong{width: var(--width); font-size: 26px; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; border-radius: 100%; position: relative; z-index: 1;}
-.solutionPage .processArea ul li p{font-size: 22px; line-height: 30px; margin-top: 30px; font-weight: 400;}
-.solutionPage .PPAArea{padding-block: var(--padding03) var(--padding02); text-align: center;}
-.solutionPage .PPAArea strong{margin-bottom: 30px; display: block;}
-.solutionPage .PPAArea p{font-size: 40px; line-height: 54px; margin-bottom: 40px; font-weight: 400;}
-.solutionPage .PPAArea div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
-.solutionPage .PPAArea div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
-.solutionPage .PPAArea img{width: 100%;}
+.solutionPage .content-process ul li p{font-size: 22px; line-height: 30px; margin-top: 30px; font-weight: 400;}
+.solutionPage .content-img{padding-block: var(--padding03) var(--padding02); text-align: center;}
+.solutionPage .content-img p{margin-bottom: 40px;}
+.solutionPage .content-img div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
+.solutionPage .content-img div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
 .solutionPage .contractArea{padding-block: var(--padding02); background-color: var(--color-BG02);}
 .solutionPage .contractArea > p{margin-bottom: 40px; text-align: left;}
 .solutionPage .contractArea ul{gap: 50px; display: flex; align-items: flex-start;}
@@ -153,12 +147,63 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 발전자원 모집 페이지 */
-.recruitPage .productArea{padding-block: var(--padding02);}
-.recruitPage .productArea > strong{margin-bottom: 80px; display: block; text-align: left;}
-.recruitPage .productArea ul{}
-.recruitPage .productArea ul li{}
-.recruitPage .productArea ul li strong{}
-.recruitPage .productArea ul li p{}
+.recruitPage .productArea{padding-block: var(--padding02); background-color: var(--color-BG02);}
+.recruitPage .productArea > strong{margin-bottom: 80px; text-align: left;}
+.recruitPage .productArea ul{gap: 6.4516%; display: flex; color: white; font-weight: 700; text-align: center;}
+.recruitPage .productArea ul li{flex: 1; aspect-ratio: 580 / 680; background: url(../images/recruit-productBG.png) no-repeat top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center / 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.recruitPage .productArea ul li:nth-child(2){transform: translateY(-17.5%);}
+.recruitPage .productArea ul li strong{font-size: 40px; line-height: 48px; margin-bottom: 30px;}
+.recruitPage .productArea ul li p{font-size: 24px; line-height: 34px;}
+.recruitPage .content-img p{margin-bottom: 80px;}
+.recruitPage .content-img dl{font-size: 18px; line-height: 30px; margin-top: 50px; display: flex; justify-content: center; align-items: center;}
+.recruitPage .content-img dl dt{font-weight: 700;}
+.recruitPage .content-img dl dd{color: #999; font-weight: 400; text-align: left; display: flex;}
+.recruitPage .content-img dl dd::before{content: ''; width: 1px; background-color: var(--color-line); margin-inline: 40px;}
+.recruitPage [class*="condition"][class*="Area"]{padding-block: var(--padding03); background-color: var(--color-BG02); text-align: center;}
+.recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 40px;}
+.recruitPage [class*="condition"][class*="Area"] p:nth-child(2){margin-bottom: 80px;}
+.recruitPage [class*="condition"][class*="Area"] ul{gap: 30px; display: flex;}
+.recruitPage [class*="condition"][class*="Area"] ul li{--spacing: 30px; height: 370px; padding: var(--spacing); flex: 1; text-align: left; background-color: white; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.07); box-sizing: border-box; position: relative;}
+.recruitPage [class*="condition"][class*="Area"] ul li > *{display: block;}
+.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 22px; line-height: 30px; margin-bottom: 30px; color: #666; font-weight: 400;}
+.recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 26px; line-height: 36px; margin-bottom: 12px; font-weight: 700;}
+.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 20px; line-height: 26px; color: #999;}
+.recruitPage [class*="condition"][class*="Area"] ul li::after{width: 170px; aspect-ratio: 170 / 130; content: ''; position: absolute; right: 0; bottom: var(--spacing); background-repeat: no-repeat; background-position: top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center; background-size: 100%;}
+.recruitPage .condition01Area ul li::after{background: url(../images/recruit-icon01.png);}
+.recruitPage .condition02Area ul li::after{background: url(../images/recruit-icon02.png);}
+.recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 30px; line-height: 42px; margin-top: 80px; font-weight: 400;}
+.recruitPage [class*="condition"][class*="Area"] p:last-child b{font-weight: 700;}
+.recruitPage .purchaseArea{padding-block: var(--padding02) var(--padding01); background-color: var(--color-BG01); color: white; display: flex; justify-content: space-between;}
+.recruitPage .purchaseArea div{text-align: left;}
+.recruitPage .purchaseArea div strong{margin-bottom: 30px; display: block;}
+.recruitPage .purchaseArea div p{font-size: 40px; line-height: 54px; font-weight: 400;}
+.recruitPage .purchaseArea div p b{font-weight: 700;}
+.recruitPage .purchaseArea ul{margin-top: 40px;}
+.recruitPage .purchaseArea ul li{width: 460px; font-size: 30px; line-height: 42px; font-weight: 400; aspect-ratio: 460 / 240; display: flex; justify-content: center; align-items: center; border: 2px solid white; position: relative;}
+.recruitPage .purchaseArea ul li::before,
+.recruitPage .purchaseArea ul li::after{content: ''; position: absolute; width: 64px; aspect-ratio: 64 / 63.5; background-color: var(--color-BG01);}
+.recruitPage .purchaseArea ul li::before{left: 0; top: 0; transform: translate(-50%, -50%);}
+.recruitPage .purchaseArea ul li::after{right: 0; bottom: 0; transform: translate(50%, 50%);}
+.recruitPage .purchaseArea ul li:nth-child(1){margin-left: 160px;}
+.recruitPage .purchaseArea ul li:nth-child(2){margin-top: 60px;}
+.recruitPage .purchaseArea ul li b{font-weight: 700;}
+.recruitPage .simplifyArea{padding-block: var(--padding02);}
+.recruitPage .simplifyArea::after{content: ''; width: 660px; aspect-ratio: 660 / 110; margin-top: 200px; display: block; margin-inline: auto; background: url(../images/logo2.png) no-repeat top center / 100%;}
+.recruitPage .simplifyArea > p{margin-bottom: 100px;}
+.recruitPage .simplifyArea ul{display: flex; justify-content: space-between; position: relative;}
+.recruitPage .simplifyArea ul::after{content: ''; width: 500px; aspect-ratio: 500 / 340; position: absolute; left: 50%; bottom: -180px; transform: translateX(-50%); background: url(../images/recruit-arrow.png) no-repeat center / cover;}
+.recruitPage .simplifyArea ul li{width: 520px; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 3px solid var(--color); border-radius: 100%;}
+.recruitPage .simplifyArea ul li:nth-child(1){--color: var(--color-point01);}
+.recruitPage .simplifyArea ul li:nth-child(2){--color: var(--color-point02);}
+.recruitPage .simplifyArea ul li svg{height: 50px; margin-bottom: 35px;}
+.recruitPage .simplifyArea ul li{}
+.recruitPage .simplifyArea ul li:not(:first-child)::before{content: ''; width: 30px; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url(../images/icon-plus.png) no-repeat center / cover;}
+.recruitPage .simplifyArea ul li b{font-size: 30px; line-height: 38px; margin-bottom: 25px; font-weight: 700;}
+.recruitPage .simplifyArea ul li p{font-size: 26px; line-height: 36px; font-weight: 400;}
+.recruitPage .content-process ul li strong:has(span){flex-direction: column;}
+.recruitPage .content-process ul li strong span{width: 60px; height: 1px; background-color: #222; margin-block: 25px;}
+
+
 
 
 /* 게시판 */
