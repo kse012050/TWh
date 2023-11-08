@@ -100,10 +100,17 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .companyPage .bottomArea div a{}
 
 
+/* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
+:is(.solutionPage, .recruitPage) .topArea div > strong{font-size: 60px; line-height: 76px; font-weight: 700; text-align: center;}
+:is(.solutionPage, .recruitPage) .topArea div > p{font-size: 50px; line-height: 70px;}
+:is(.solutionPage, .recruitPage) .topArea div > p b{font-weight: 700;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child):not([class]){font-size: 50px; line-height: 70px; text-align: center;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:first-child{font-weight: 400;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:first-child b,
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 700;}
+
+
 /* 전력거래 솔루션 페이지 */
-.solutionPage .topArea div > strong{font-size: 60px; line-height: 76px; font-weight: 700; text-align: center;}
-.solutionPage .topArea div > p{font-size: 50px; line-height: 70px;}
-.solutionPage .topArea div > p b{font-weight: 700;}
 .solutionPage .topArea div:nth-of-type(3){}
 .solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px;}
 .solutionPage .topArea div:nth-of-type(3) ul li{width: 540px; height: 50vw; max-height: 540px; padding: 80px 60px; background-color: white; box-sizing: border-box; display: flex; flex-direction: column; position: relative;}
@@ -114,10 +121,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 50px;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{font-size: 30px; line-height: 42px; font-weight: 400;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-block: auto 3.7037vh;}
-.solutionPage > div:not(.topArea) > :where(:first-child){font-size: 50px; line-height: 70px; text-align: center;}
-.solutionPage > div:not(.topArea) > p:first-child{font-weight: 400;}
-.solutionPage > div:not(.topArea) > p:first-child b,
-.solutionPage > div:not(.topArea) > strong{font-weight: 700;}
 .solutionPage .processArea{padding-block: var(--padding02); background-color: var(--color-BG02);; text-align: center;}
 .solutionPage .processArea > p{margin-bottom: 100px;}
 .solutionPage .processArea b{margin-bottom: 60px;}
@@ -148,6 +151,14 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .expertArea ul li:nth-child(1){left: 0;}
 .solutionPage .expertArea ul li:nth-child(3){right: 0;}
 
+
+/* 발전자원 모집 페이지 */
+.recruitPage .productArea{padding-block: var(--padding02);}
+.recruitPage .productArea > strong{margin-bottom: 80px; display: block; text-align: left;}
+.recruitPage .productArea ul{}
+.recruitPage .productArea ul li{}
+.recruitPage .productArea ul li strong{}
+.recruitPage .productArea ul li p{}
 
 
 /* 게시판 */

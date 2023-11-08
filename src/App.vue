@@ -102,7 +102,6 @@ export default {
           // element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
           window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
           let text = element.innerHTML.replaceAll('<span>','').replaceAll('</span>','').split('<br>');
-          console.log(text);
           element.innerHTML = ''
           text.forEach((value, idx)=>{
             const spanElement = document.createElement('span');
