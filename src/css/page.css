@@ -252,5 +252,5 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px; content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
 .content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
-.content-inquiry ul li textarea{height: 360px;}
+.content-inquiry ul li textarea{height: 360px; line-height: 34px;}
 .content-inquiry input[type="submit"]{margin-top: 80px;}

@@ -215,6 +215,10 @@
                                 <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
                             </div>
                         </li>
+                        <li>
+                            <label for="implementgoal">RE100 이행목표</label>
+                            <textarea id="implementgoal" name="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외)&#10;Ex. 전력사용량 대비 *% 재생에너지 조달, 20**년까지 RE** 달성 등" required></textarea>
+                        </li>
                         <li class="full">
                             <label for="annualusage">연간 전력사용량</label>
                             <div data-unit="GWh">

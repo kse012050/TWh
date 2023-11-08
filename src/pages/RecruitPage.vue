@@ -262,7 +262,7 @@
                                 <label for="plantstatus-inOperation">운영중 발전소</label>
                             </div>
                         </li>
-                        <li>
+                        <li class="full">
                             <label for="saleprice">매각 희망가</label>
                             <div data-unit="억원">
                                 <input type="text" id="saleprice" name="saleprice" placeholder="발전소 매각 희망가를 입력하세요.">
