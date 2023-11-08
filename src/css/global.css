@@ -1,7 +1,7 @@
 
 /* 컨텐츠 사이즈 */
 .contentSize{max-width: var(--contentSize); margin-inline: auto;}
-.contentSize-padding{padding-inline: calc((100vw - 1240px) / 2); box-sizing: border-box;}
+.contentSize-padding{padding-inline: calc((100vw - var(--contentSize-padding)) / 2); box-sizing: border-box;}
 
 /* 서브 페이지 위아래 간격 */
 .boardPage, .boardDetail, .inquiryPage{padding-block: 240px 200px;}
@@ -37,10 +37,37 @@ ul.boardBox li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 텍스트 애니메이션 */
+[data-textAni] > span{display: block; overflow: hidden;}
+[data-textAni] > span span{display: block; transform: translateY(100%); transition: transform var(--aniDutaion) ease-in-out;}
+.active [data-textAni] > span span{transform: translateY(0%); transition-delay: calc(var(--aniDelay) * var(--textIdx));}
 
-[data-textAni]{display: block; overflow: hidden;}
-[data-textAni] span{display: block; transform: translateY(100%); transition: transform var(--aniDutaion) ease-in-out;}
-.active [data-textAni] span{transform: translateY(0%); transition-delay: calc(var(--aniDelay) * var(--textIdx));}
+
+/* 서브 페이지 탑 애니 기본 형태 */
+[data-subTopAni]{padding-top: var(--headerHeight);}
+[data-subTopAni] .topArea{height: calc(var(--fullHeight) * var(--totalContent)); background-color: #000F35; position: relative; /* z-index: -1; */}
+[data-subTopAni] .topArea::before{content: ''; position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(100% + var(--headerHeight)); transform: translate3d(0, var(--bgY),0); background-repeat: no-repeat; background-position: top center; background-size: cover;}
+.companyPage .topArea::before{background-image: url('../images/company-topBG.png');}
+.solutionPage .topArea::before{background-image: url('../images/solution-topBG.png');}
+[data-subTopAni] .topArea h2{padding-block: 140px 24px; font-size: 60px; line-height: 72px; font-weight: 700; background-color: white; position: fixed; left: 0; top: var(--headerHeight); width: 100%;}
+[data-subTopAni] .topArea > div{position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; flex-direction: column; justify-content: center; align-items: center;}
+[data-subTopAni] .topArea > div[data-textAniParents]{color: white; text-align: center;}
+[data-subTopAni] .topArea ~ *{background-color: white; position: relative; z-index: 2;}
+/* 서브 페이지 탑 애니메이션 */
+[data-subTopAni]{--aniDutaion: .6s;}
+[data-subTopAni] .topArea h2{transform: translateY(-100%); transition: all var(--aniDutaion) ease-in-out;}
+[data-subTopAni] .topArea h2.active{transform: translateY(0%);}
+[data-subTopAni] .topArea h2.active:has(+ .active){transform: translateY(-100%);}
+[data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.02s; transition-timing-function: ease-in-out, linear;}
+[data-subTopAni] .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
+[data-subTopAni] .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
+[data-subTopAni] .topArea > div{transition: all .6s ease-in-out;}
+[data-subTopAni] .topArea > div[data-aniType="basic"]{transform: translateY(100%);}
+[data-subTopAni] .topArea > div[data-aniType="basic"].active{transform: translateY(0);}
+[data-subTopAni] .topArea > div[data-aniType="basic"].active:has( + .active){transform: translateY(-100%);}
+[data-subTopAni] + footer{position: relative; z-index: 1;}
+
+/* 검은 배경 케이스 */
+b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 700; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
 
 
 /* 해더 */

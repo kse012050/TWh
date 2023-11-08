@@ -1,4 +1,15 @@
 :root{
     --contentSize: 1240px;
+    --contentSize-padding: calc(var(--contentSize) + var(--scrollWidth));
     --headerHeight: 100px;
+    --padding01: 200px;
+    --padding02: 160px;
+    --padding03: 120px;
+    --color-BG01: #162446;
+    --color-BG02: #F8F8F8;
+    --color-line: #DEDEDE;
+    --color-point01: #F37321;
+    --color-point02: #0046FF;
 }
+
+html{--scrollWidth: 17px;}

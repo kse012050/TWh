@@ -1,15 +1,15 @@
 <template>
-    <section class="companyPage">
+    <section class="companyPage" data-subTopAni>
         <div class="topArea">
             <h2 class="contentSize-padding"><span data-textAni='1'>기업 소개</span></h2>
-            <div data-textAniParents="1" data-aniDelay="4">
+            <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <strong>한화 신한 테라와트아워는</strong>
                 <p>
-                    재생에너지 사업 전문성과 기업 안정성을 갖춘
+                    재생에너지 사업 전문성과 기업 안정성을 갖춘<br>
                     재생에너지 전력거래 전문 기업입니다.
                 </p>
             </div>
-            <div data-textAniParents="1" data-aniDelay="4">
+            <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <b>사명</b>
                 <strong>Powering a Sustainable Future</strong>
                 <p>
@@ -77,12 +77,12 @@
             자리매김 하겠습니다.
         </p>
         <div class="VPPArea contentSize-padding">
-            <b>통합발전소(VPP)</b>
+            <b class="case01">통합발전소(VPP)</b>
             <div>
                 <img src="../images/company-VVPImg.png" alt="통합발전소 VPP 이미지">
             </div>
         </div>
-        <hr>
+        <hr class="case01">
         <div class="historyArea contentSize-padding">
             <strong>연혁</strong>
             <ol title="2023">
@@ -104,24 +104,28 @@ export default {
     name: 'CompanyPage',
     data() {
         return {
-            topClassName: '.companyPage .topArea',
-            topElement: undefined
+            topClassName: '[data-subTopAni] .topArea',
+            topElement: undefined,
+            topContents: undefined,
+            titleElement: undefined,
         }
     },
     methods : {
         init(){
             this.topElement = document.querySelector(this.topClassName);
-        },
-        firstStyle(){
-            const titleElement = document.querySelector(`${this.topClassName} h2`);
-            titleElement.classList.remove('active');
+            this.titleElement = document.querySelector(`${this.topClassName} h2`);
+            this.topContents = document.querySelectorAll(`${this.topClassName} > div`);
+            this.titleElement.classList.remove('active');
             setTimeout(() => {
-                titleElement.classList.add('active');
+                this.titleElement.classList.add('active');
             }, 300);
+            this.topContents.forEach((element)=>{
+                element.classList.remove('active');
+            })
         },
         scrollEvent() {
             const topElement = this.topElement;
-            const topContents = document.querySelectorAll(`${this.topClassName} > div`);
+            const topContents = this.topContents;
             const headerElement = document.querySelector('header');
             topElement.style.setProperty('--totalContent', topContents.length);
             window.addEventListener('scroll', ()=>{
@@ -144,27 +148,13 @@ export default {
     },
     mounted() {
         this.init();
-        this.firstStyle();
         this.scrollEvent();
     }
 }
 </script>
-<style scoped>
-    .companyPage{--aniDutaion: .6s;}
-    .companyPage .topArea h2{transform: translateY(-100%); transition: all var(--aniDutaion) ease-in-out;}
-    .companyPage .topArea h2.active{transform: translateY(0%);}
-    .companyPage .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.02s; transition-timing-function: ease-in-out, linear;}
-    .companyPage .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
-    .companyPage .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
-    .companyPage .topArea h2.active:has(+ .active){transform: translateY(-100%);}
-    .companyPage .topArea > div{transition: all .6s ease-in-out;}
-    .companyPage .topArea > div:nth-of-type(-n + 2){transform: translateY(100%);}
-    .companyPage .topArea > div:nth-of-type(-n + 2).active{transform: translateY(0);}
+<style>
     .companyPage .topArea > div:nth-of-type(2){z-index: 1;}
+    .companyPage .topArea > div:nth-of-type(2)[data-aniType="basic"].active:has( + .active){transform: translateY(0); opacity: 0; transition-delay: var(--aniDelay); pointer-events: none;}
     .companyPage .topArea > div:nth-of-type(3){transform: translateX(100%);}
-    .companyPage .topArea > div:nth-of-type(2).active{transform: translateY(0);}
     .companyPage .topArea > div:nth-of-type(3).active{transform: translateX(0);}
-    .companyPage .topArea > div:nth-of-type(1).active:has( + .active){transform: translateY(-100%);}
-    .companyPage .topArea > div:nth-of-type(2).active:has( + .active){/* z-index: 0; */ opacity: 0; transition-delay: var(--aniDelay);}
-    /* .companyPage .topArea > div + .active{transform: translateY(-100%);} */
 </style>

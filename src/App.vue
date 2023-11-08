@@ -68,7 +68,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {
@@ -87,20 +86,31 @@ export default {
           element.style.setProperty('--aniDelay', `0.${element.getAttribute('data-aniDelay')}s`)
         })
         document.querySelectorAll('[data-textAniParents]').forEach((parents)=>{
-          parents.style.setProperty('--test', '44');
-          // console.log(parents.style);
           parents.childNodes.forEach((element, idx)=>{
             element.setAttribute('data-textAni', idx + (Number(parents.getAttribute('data-textAniParents')) || 0))
           })
         })
+        
+        document.querySelectorAll('[data-styleIdx]').forEach((parents)=>{
+          parents.style.setProperty('--styleTotal', parents.childNodes.length);
+          parents.childNodes.forEach((element, idx)=>{
+            element.style.setProperty('--styleIdx', Number(parents.getAttribute('data-styleIdx') || 0) + idx);
+            window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
+          })
+        })
         document.querySelectorAll('[data-textAni]').forEach((element)=>{
-          element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
+          // element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
           window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
-          const text = element.innerHTML;
+          let text = element.innerHTML.replaceAll('<span>','').replaceAll('</span>','').split('<br>');
+          console.log(text);
           element.innerHTML = ''
-          const spanElement = document.createElement('span');
-          spanElement.innerHTML = text;
-          element.appendChild(spanElement);
+          text.forEach((value, idx)=>{
+            const spanElement = document.createElement('span');
+            spanElement.style.setProperty('--textIdx', Number(element.getAttribute('data-textAni') || 0) + idx);
+            spanElement.innerHTML = `<span>${value}</span>`;
+            console.log(spanElement);
+            element.appendChild(spanElement);
+          })
         })
       },0)
     }
@@ -108,7 +118,6 @@ export default {
   mounted() {
     this.fullStyle();
     this.headerStyle();
-    this.styleIdx();
   },
   updated(){
     console.log('?');
@@ -116,6 +125,7 @@ export default {
   watch: {
     '$route' () {
       this.headerStyle();
+      this.styleIdx();
     }
   }
 }

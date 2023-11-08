@@ -59,11 +59,6 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 기업 소개 페이지 */
-.companyPage{padding-top: var(--headerHeight);}
-.companyPage .topArea{height: calc(var(--fullHeight) * var(--totalContent)); background-color: #000F35; position: relative; z-index: -1;}
-.companyPage .topArea::before{content: ''; position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(100% + var(--headerHeight)); transform: translate3d(0, var(--bgY),0); background: url('../images/company-topBG.png') no-repeat top center / cover;}
-.companyPage .topArea h2{padding-block: 140px 24px; font-size: 60px; line-height: 72px; font-weight: 700; background-color: white; position: fixed; left: 0; top: var(--headerHeight); width: 100%;}
-.companyPage .topArea > div{position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;}
 .companyPage .topArea > div:nth-of-type(3){background: url('../images/company-topBG3.png') no-repeat center / cover;}
 .companyPage .topArea > div strong{display: block;}
 .companyPage .topArea > div:not(:has(b)) strong{font-size: 50px; line-height: 70px; margin-bottom: 30px; font-weight: 700;}
@@ -72,7 +67,6 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .topArea > div:has(b) b{font-size: 30px; line-height: 36px; margin-bottom: 40px; display: block;}
 .companyPage .topArea > div:has(b) strong{font-size: 70px; line-height: 72px; margin-bottom: 60px;}
 .companyPage .topArea > div:has(b) p{font-size: 26px; line-height: 38px;}
-.companyPage .topArea ~ *{background-color: white;}
 .companyPage .peopleArea{padding-block: 160px;}
 .companyPage .peopleArea strong{font-size: 50px; line-height: 70px; margin-bottom: 100px; font-weight: 700; text-align: center; display: block;}
 .companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 100px 160px;}
@@ -87,10 +81,10 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .phraseArea{padding-block: 350px; font-size: 50px; line-height: 70px; font-weight: 400; color: white; text-align: center; background: url('../images//company-phraseBG.png') no-repeat center / cover;}
 .companyPage .phraseArea b{font-weight: 700;}
 .companyPage .VPPArea{padding-block: 120px 160px; text-align: center;}
-.companyPage .VPPArea b{padding: 10px 30px; font-size: 24px; line-height: 34px; margin-bottom: 80px; font-weight: 700; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
+.companyPage .VPPArea b{margin-bottom: 80px;}
 .companyPage .VPPArea div{}
 .companyPage .VPPArea div img{width: 100%;}
-.companyPage hr{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
+hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .companyPage .historyArea{padding-block: 120px 200px;}
 .companyPage .historyArea strong{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 700; text-align: center; display: block;}
 .companyPage .historyArea ol{padding-top: 12px; display: flex; flex-wrap: wrap; justify-content: flex-end; position: relative;}
@@ -104,6 +98,55 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .bottomArea img{max-width: 660px; margin-bottom: 60px; width: 100%;}
 .companyPage .bottomArea div{display: flex; justify-content: center; align-items: center; gap: 30px;}
 .companyPage .bottomArea div a{}
+
+
+/* 전력거래 솔루션 페이지 */
+.solutionPage .topArea div > strong{font-size: 60px; line-height: 76px; font-weight: 700; text-align: center;}
+.solutionPage .topArea div > p{font-size: 50px; line-height: 70px;}
+.solutionPage .topArea div > p b{font-weight: 700;}
+.solutionPage .topArea div:nth-of-type(3){}
+.solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px;}
+.solutionPage .topArea div:nth-of-type(3) ul li{width: 540px; height: 50vw; max-height: 540px; padding: 80px 60px; background-color: white; box-sizing: border-box; display: flex; flex-direction: column; position: relative;}
+.solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 260px; width: var(--width); aspect-ratio: 1; content: ''; background: url(../images/solution-topLogo.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; position: absolute; right: 0; top: 0;}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){transform: translateY(-5.5556vh); --color: #0046FF; --imgIdx: 0;}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){transform: translateY(5.5556vh); --color: #F37321; --imgIdx: 1;}
+.solutionPage .topArea div:nth-of-type(3) ul li mark{color: var(--color); font-weight: 700;}
+.solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 50px;}
+.solutionPage .topArea div:nth-of-type(3) ul li p{font-size: 30px; line-height: 42px; font-weight: 400;}
+.solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-block: auto 3.7037vh;}
+.solutionPage > div:not(.topArea) > :where(:first-child){font-size: 50px; line-height: 70px; text-align: center;}
+.solutionPage > div:not(.topArea) > p:first-child{font-weight: 400;}
+.solutionPage > div:not(.topArea) > p:first-child b,
+.solutionPage > div:not(.topArea) > strong{font-weight: 700;}
+.solutionPage .processArea{padding-block: var(--padding02); background-color: var(--color-BG02);; text-align: center;}
+.solutionPage .processArea > p{margin-bottom: 100px;}
+.solutionPage .processArea b{margin-bottom: 60px;}
+.solutionPage .processArea ul{--width: 248px;  display: flex; justify-content: center; position: relative;}
+.solutionPage .processArea ul::before{content: ''; position: absolute; right: 50%; top: calc(var(--width) / 2); width: calc(100% + (100vw - var(--contentSize-padding))); height: 1px; transform: translateX(50%); background-color: #222; }
+.solutionPage .processArea ul li strong{width: var(--width); font-size: 26px; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; border-radius: 100%; position: relative; z-index: 1;}
+.solutionPage .processArea ul li p{font-size: 22px; line-height: 30px; margin-top: 30px; font-weight: 400;}
+.solutionPage .PPAArea{padding-block: var(--padding03) var(--padding02); text-align: center;}
+.solutionPage .PPAArea strong{margin-bottom: 30px; display: block;}
+.solutionPage .PPAArea p{font-size: 40px; line-height: 54px; margin-bottom: 40px; font-weight: 400;}
+.solutionPage .PPAArea div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
+.solutionPage .PPAArea div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
+.solutionPage .PPAArea img{width: 100%;}
+.solutionPage .contractArea{padding-block: var(--padding02); background-color: var(--color-BG02);}
+.solutionPage .contractArea > p{margin-bottom: 40px; text-align: left;}
+.solutionPage .contractArea ul{gap: 50px; display: flex; align-items: flex-start;}
+.solutionPage .contractArea ul li{flex: 1; box-shadow: 10px 20px 40px 0px rgba(0, 0, 0, 0.07);}
+.solutionPage .contractArea ul li:nth-child(1){margin-top: 80px;}
+.solutionPage .contractArea ul li:nth-child(2){margin-top: 160px;}
+.solutionPage .contractArea ul li::before{content: ''; display: block; width: 100%; aspect-ratio: 380 / 460; background: url(../images/solution-PPAImg.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%;}
+.solutionPage .contractArea ul li p{font-size: 30px; line-height: 42px; padding: 40px; background-color: white;}
+.solutionPage .contractArea ul li p b{display: block; font-weight: 700;}
+.solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
+.solutionPage .expertArea p{margin-bottom: 100px;}
+.solutionPage .expertArea ul{display: flex; justify-content: center; position: relative;}
+.solutionPage .expertArea ul li{width: 440px; font-size: 26px; line-height: 38px; font-weight: 700; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px solid white; border-radius: 100%;}
+.solutionPage .expertArea ul li:nth-child(2n + 1){position: absolute; top: 0;}
+.solutionPage .expertArea ul li:nth-child(1){left: 0;}
+.solutionPage .expertArea ul li:nth-child(3){right: 0;}
 
 
 
