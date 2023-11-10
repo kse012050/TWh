@@ -1,11 +1,11 @@
 <template>
     <section class="solutionPage" data-subTopAni>
         <div class="topArea">
-            <h2 class="contentSize-padding"><span data-textAni='1'>전력거래 솔루션</span></h2>
+            <h2 class="contentSize-padding"><span data-textAni='1'>재생에너지 전력거래 솔루션</span></h2>
             <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <strong>
-                    기업을 위한 재생에너지<br>
-                    전력거래 솔루션
+                    기업을 위한<br>
+                    재생에너지 전력거래 솔루션
                 </strong>
             </div>
             <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
@@ -45,8 +45,8 @@
 
         <div class="content-process contentSize-padding">
             <p>
-                재생에너지 전력거래 전문 기업 테라와트아워가<br>
-                <b>최적의 RE100 이행 솔루션</b>을 제안합니다.
+                재생에너지 전력거래 전문 기업 <b class="font-hanwha">테라와트아워</b>가<br>
+                최적의 솔루션을 제안합니다.
             </p>
             <b class="case01">전력거래 솔루션 프로세스</b>
             <ul>
@@ -65,7 +65,7 @@
                 </li>
                 <li>
                     <strong>
-                        RE100<br>
+                        재생에너지<br>
                         포트폴리오 제안
                     </strong>
                     <p>
@@ -103,10 +103,17 @@
                 <b>#낮 시간대 전력 소비가 많은 기업</b>
             </div>
             <img src="../images/solution-PPAImg01.png" alt="직접 PPA 이미지">
+            <dl>
+                <dt>*직접PPA</dt>
+                <dd>
+                    재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
+                    재생에너지 전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
+                </dd>
+            </dl>
         </div>
-        <hr class="case01">
+        <!-- <hr class="case01"> -->
         <div class="content-img contentSize-padding">
-            <strong>제3자 PPA</strong>
+            <strong>제3자 간 PPA</strong>
             <p>
                 발전사업자와 한국전력, 한국전력과 전기사용자가<br>
                 각각 계약을 체결하는 방식
@@ -118,7 +125,7 @@
             </div>
             <img src="../images/solution-PPAImg02.png" alt="제3자 PPA 이미지">
         </div>
-        <hr class="case01">
+        <!-- <hr class="case01"> -->
         <div class="content-img contentSize-padding">
             <strong>V.PPA</strong>
             <p>
@@ -132,11 +139,10 @@
             <img src="../images/solution-PPAImg03.png" alt="PPA 이미지">
         </diV>
 
-        <div class="contractArea contentSize-padding">
+        <!-- <div class="contractArea contentSize-padding">
             <p>
                 <b>20년 장기계약 PPA,</b><br>
-                안정적인 자원 조달이 가능한<br>
-                테라와트아워와 함께하세요.
+                안정적인 자원 조달이 가능한 테라와트아워와 함께하세요.
             </p>
             <ul data-styleIdx>
                 <li>
@@ -158,12 +164,12 @@
                     </p>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <div class="expertArea contentSize-padding">
             <p>
-                글로벌 태양광 시장을 선도하는<br>
-                <b>한화그룹 재생에너지 전문가</b>가 함께합니다.
+                <b>20년 장기계약 PPA,</b><br>
+                안정적인 자원 조달이 가능한 <b class="font-hanwha">테라와트아워</b>와 함께하세요.
             </p>
             <ul>
                 <li>
@@ -217,7 +223,9 @@
                         </li>
                         <li>
                             <label for="implementgoal">RE100 이행목표</label>
-                            <textarea id="implementgoal" name="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외)&#10;Ex. 전력사용량 대비 *% 재생에너지 조달, 20**년까지 RE** 달성 등" required></textarea>
+                            <div>
+                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외) ">
+                            </div>
                         </li>
                         <li class="full">
                             <label for="annualusage">연간 전력사용량</label>
@@ -230,11 +238,11 @@
                             <label for="" data-comment="*중복선택 가능">이행 방안</label>
                             <div>
                                 <input type="checkbox" id="implementplan-PPA" name="implementplan" checked>
-                                <label for="implementplan-PPA">PPA</label>
+                                <label for="implementplan-PPA">직접 PPA</label>
                                 <input type="checkbox" id="implementplan-REC" name="implementplan">
-                                <label for="implementplan-REC">REC구매</label>
+                                <label for="implementplan-REC">제3자 간 PPA</label>
                                 <input type="checkbox" id="implementplan-sunlight" name="implementplan">
-                                <label for="implementplan-sunlight">자가소비형 태양광 구축</label>
+                                <label for="implementplan-sunlight">V.PPA</label>
                                 <input type="checkbox" id="implementplan-inquiry" name="implementplan">
                                 <label for="implementplan-inquiry">종합솔루션 문의</label>
                             </div>

@@ -24,7 +24,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .solutionArea ul li div{max-width: calc(1920px / 2); width: 100%;}
 .mainPage .solutionArea ul li:nth-child(1) div{margin-left: auto;}
 .mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
-.mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; font-weight: 700; margin-bottom: 40px;}
+.mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; margin-bottom: 40px; font-weight: 700; display: block;}
 .mainPage .solutionArea ul li div p{font-size: 30px; line-height: 40px;}
 .mainPage .solutionArea ul li div a{margin-top: 100px; justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
@@ -54,19 +54,14 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .companyArea a{margin-top: 60px;}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div{height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: white;}
-.mainPage .boardArea > div > div h3{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 700;}
+.mainPage .boardArea > div > div h3{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 400;}
+.mainPage .boardArea > div > div h3 b{font-weight: 700;}
 .mainPage .boardArea > div > div > a{margin-top: 80px;}
 
 
 /* 기업 소개 페이지 */
-.companyPage .topArea > div:nth-of-type(3){background: url('../images/company-topBG3.png') no-repeat center / cover;}
-.companyPage .topArea > div strong{display: block;}
-.companyPage .topArea > div:not(:has(b)) strong{font-size: 50px; line-height: 70px; margin-bottom: 30px; font-weight: 700;}
-.companyPage .topArea > div:not(:has(b)) p{font-size: 40px; line-height: 54px; }
-.companyPage .topArea > div:has(b){font-weight: 700;}
-.companyPage .topArea > div:has(b) b{font-size: 30px; line-height: 36px; margin-bottom: 40px; display: block;}
-.companyPage .topArea > div:has(b) strong{font-size: 70px; line-height: 72px; margin-bottom: 60px;}
-.companyPage .topArea > div:has(b) p{font-size: 26px; line-height: 38px;}
+.companyPage .topArea > div strong{font-size: 50px; line-height: 70px; margin-bottom: 30px; font-weight: 700; display: block;}
+.companyPage .topArea > div p{font-size: 40px; line-height: 54px; }
 .companyPage .peopleArea{padding-block: 160px;}
 .companyPage .peopleArea strong{font-size: 50px; line-height: 70px; margin-bottom: 100px; font-weight: 700; text-align: center; display: block;}
 .companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 100px 160px;}
@@ -78,12 +73,16 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .peopleArea ul li span + *{display: block; clear: both;}
 .companyPage .peopleArea ul li small{font-size: 20px; line-height: 20px; margin-bottom: 30px; font-weight: 700; color: #999;}
 .companyPage .peopleArea ul li p{font-size: 20px; line-height: 32px; font-weight: 400;}
-.companyPage .phraseArea{padding-block: 350px; font-size: 50px; line-height: 70px; font-weight: 400; color: white; text-align: center; background: url('../images//company-phraseBG.png') no-repeat center / cover;}
-.companyPage .phraseArea b{font-weight: 700;}
-.companyPage .VPPArea{padding-block: 120px 160px; text-align: center;}
-.companyPage .VPPArea b{margin-bottom: 80px;}
-.companyPage .VPPArea div{}
-.companyPage .VPPArea div img{width: 100%;}
+.companyPage .VPPArea{padding-block: var(--padding02); text-align: center;}
+.companyPage .VPPArea p{font-size: 50px; line-height: 70px; margin-bottom: 100px; font-weight: 400;}
+.companyPage .VPPArea p b{font-weight: 700;}
+.companyPage .VPPArea img{width: 100%;}
+.companyPage :is(.missionArea, .visionArea){display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(var(--fullHeight) - var(--headerHeight)); font-weight: 700; color: white; text-align: center;}
+.companyPage :is(.missionArea, .visionArea) b{font-size: 30px; line-height: 36px; margin-bottom: 40px; display: block;}
+.companyPage :is(.missionArea, .visionArea) strong{font-size: 70px; line-height: 72px; margin-bottom: 60px;}
+.companyPage :is(.missionArea, .visionArea) p{font-size: 26px; line-height: 38px;}
+.companyPage .missionArea{background: url('../images/main-companyBG.png') no-repeat center / cover;}
+.companyPage .visionArea{background: url('../images/company-topBG3.png') no-repeat center / cover;}
 hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .companyPage .historyArea{padding-block: 120px 200px;}
 .companyPage .historyArea strong{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 700; text-align: center; display: block;}
@@ -130,6 +129,9 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .content-img p{margin-bottom: 40px;}
 .solutionPage .content-img div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
 .solutionPage .content-img div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
+.solutionPage .content-img dl{margin-top: 60px;}
+/* 
+이미지도 삭제해야 한다
 .solutionPage .contractArea{padding-block: var(--padding02); background-color: var(--color-BG02);}
 .solutionPage .contractArea > p{margin-bottom: 40px; text-align: left;}
 .solutionPage .contractArea ul{gap: 50px; display: flex; align-items: flex-start;}
@@ -138,7 +140,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .contractArea ul li:nth-child(2){margin-top: 160px;}
 .solutionPage .contractArea ul li::before{content: ''; display: block; width: 100%; aspect-ratio: 380 / 460; background: url(../images/solution-PPAImg.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%;}
 .solutionPage .contractArea ul li p{font-size: 30px; line-height: 42px; padding: 40px; background-color: white;}
-.solutionPage .contractArea ul li p b{display: block; font-weight: 700;}
+.solutionPage .contractArea ul li p b{display: block; font-weight: 700;} */
 .solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
 .solutionPage .expertArea p{margin-bottom: 100px;}
 .solutionPage .expertArea ul{display: flex; justify-content: center; position: relative;}
@@ -157,13 +159,10 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .recruitPage .productArea ul li strong{font-size: 40px; line-height: 48px; margin-bottom: 30px;}
 .recruitPage .productArea ul li p{font-size: 24px; line-height: 34px;}
 .recruitPage .content-img p{margin-bottom: 80px;}
-.recruitPage .content-img dl{font-size: 18px; line-height: 30px; margin-top: 50px; display: flex; justify-content: center; align-items: center;}
-.recruitPage .content-img dl dt{font-weight: 700;}
-.recruitPage .content-img dl dd{color: #999; font-weight: 400; text-align: left; display: flex;}
-.recruitPage .content-img dl dd::before{content: ''; width: 1px; background-color: var(--color-line); margin-inline: 40px;}
-.recruitPage [class*="condition"][class*="Area"]{padding-block: var(--padding03); background-color: var(--color-BG02); text-align: center;}
-.recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 40px;}
-.recruitPage [class*="condition"][class*="Area"] p:nth-child(2){margin-bottom: 80px;}
+.recruitPage .content-img dl{margin-top: 50px;}
+.recruitPage [class*="condition"][class*="Area"]{padding-block: var(--padding03); text-align: center;}
+/* .recruitPage [class*="condition"][class*="Area"] p:nth-child(2){margin-bottom: 80px;} */
+.recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 60px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 30px; display: flex;}
 .recruitPage [class*="condition"][class*="Area"] ul li{--spacing: 30px; height: 370px; padding: var(--spacing); flex: 1; text-align: left; background-color: white; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.07); box-sizing: border-box; position: relative;}
 .recruitPage [class*="condition"][class*="Area"] ul li > *{display: block;}
@@ -175,7 +174,10 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .recruitPage .condition02Area ul li::after{background: url(../images/recruit-icon02.png);}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 30px; line-height: 42px; margin-top: 80px; font-weight: 400;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child b{font-weight: 700;}
-.recruitPage .purchaseArea{padding-block: var(--padding02) var(--padding01); background-color: var(--color-BG01); color: white; display: flex; justify-content: space-between;}
+.recruitPage .condition02Area{background-color: var(--color-BG02);}
+.recruitPage .condition02Area strong{margin-bottom: 30px;}
+.recruitPage .condition02Area p:nth-child(2){margin-bottom: 80px;}
+/* .recruitPage .purchaseArea{padding-block: var(--padding02) var(--padding01); background-color: var(--color-BG01); color: white; display: flex; justify-content: space-between;}
 .recruitPage .purchaseArea div{text-align: left;}
 .recruitPage .purchaseArea div strong{margin-bottom: 30px; display: block;}
 .recruitPage .purchaseArea div p{font-size: 40px; line-height: 54px; font-weight: 400;}
@@ -188,21 +190,22 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .recruitPage .purchaseArea ul li::after{right: 0; bottom: 0; transform: translate(50%, 50%);}
 .recruitPage .purchaseArea ul li:nth-child(1){margin-left: 160px;}
 .recruitPage .purchaseArea ul li:nth-child(2){margin-top: 60px;}
-.recruitPage .purchaseArea ul li b{font-weight: 700;}
+.recruitPage .purchaseArea ul li b{font-weight: 700;} */
 .recruitPage .simplifyArea{padding-block: var(--padding02);}
-.recruitPage .simplifyArea::after{content: ''; width: 660px; aspect-ratio: 660 / 110; margin-top: 200px; display: block; margin-inline: auto; background: url(../images/logo2.png) no-repeat top center / 100%;}
+/* 이미지도 삭제 */
+/* .recruitPage .simplifyArea::after{content: ''; width: 660px; aspect-ratio: 660 / 110; margin-top: 200px; display: block; margin-inline: auto; background: url(../images/logo2.png) no-repeat top center / 100%;} */
 .recruitPage .simplifyArea > p{margin-bottom: 100px;}
 .recruitPage .simplifyArea ul{display: flex; justify-content: space-between; position: relative;}
-.recruitPage .simplifyArea ul::after{content: ''; width: 500px; aspect-ratio: 500 / 340; position: absolute; left: 50%; bottom: -180px; transform: translateX(-50%); background: url(../images/recruit-arrow.png) no-repeat center / cover;}
+/* .recruitPage .simplifyArea ul::after{content: ''; width: 500px; aspect-ratio: 500 / 340; position: absolute; left: 50%; bottom: -180px; transform: translateX(-50%); background: url(../images/recruit-arrow.png) no-repeat center / cover;} */
 .recruitPage .simplifyArea ul li{width: 520px; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 3px solid var(--color); border-radius: 100%;}
 .recruitPage .simplifyArea ul li:nth-child(1){--color: var(--color-point01);}
 .recruitPage .simplifyArea ul li:nth-child(2){--color: var(--color-point02);}
-.recruitPage .simplifyArea ul li svg{height: 50px; margin-bottom: 35px;}
-.recruitPage .simplifyArea ul li{}
+/* .recruitPage .simplifyArea ul li svg{height: 50px; margin-bottom: 35px;} */
 .recruitPage .simplifyArea ul li:not(:first-child)::before{content: ''; width: 30px; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url(../images/icon-plus.png) no-repeat center / cover;}
-.recruitPage .simplifyArea ul li b{font-size: 30px; line-height: 38px; margin-bottom: 25px; font-weight: 700;}
+.recruitPage .simplifyArea ul li b{font-size: 30px; line-height: 38px; margin-bottom: 20px; font-weight: 700;}
+.recruitPage .simplifyArea ul li b::after{content: ''; width: 315px; margin-top: 20px; aspect-ratio: 315 / 90; display: block; background: url(../images/logo3.png) no-repeat top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center / 100%;}
 .recruitPage .simplifyArea ul li p{font-size: 26px; line-height: 36px; font-weight: 400;}
-.recruitPage .content-process ul li strong:has(span){flex-direction: column;}
+.recruitPage .content-process ul li strong:has(span){line-height: 36px; flex-direction: column;}
 .recruitPage .content-process ul li strong span{width: 60px; height: 1px; background-color: #222; margin-block: 25px;}
 
 
@@ -230,7 +233,7 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .content-inquiry ul li{font-size: 22px;}
 .content-inquiry ul li.full{width: 100%;}
 .content-inquiry ul li:not(:is(:has(textarea), .full)){width: 46.7741%;}
-.content-inquiry ul li:has(textarea, input[type="checkbox"]){width: 100%;}
+.content-inquiry ul li:has(textarea, input[type="checkbox"], .full){width: 100%;}
 .content-inquiry ul li label:first-child{line-height: 34px; margin-bottom: 20px; font-weight: 700; display: flex; align-items: center;}
 .content-inquiry ul li:has(:required) > label:first-child::after{transform: translateY(3px); content: '*'; color: var(--color-point01);}
 .content-inquiry ul li label[data-comment]{position: relative;}
@@ -241,7 +244,7 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .content-inquiry ul li div[data-unit]{position: relative;}
 .content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-size: 22px; right: 20px; font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
 .content-inquiry ul li div[data-unit] input{padding-right: 75px;}
-.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"])){max-width: 580px;}
+.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 580px;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 20px; display: flex;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 22px; line-height: 34px; padding: 13px 30px; font-weight: 700; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
@@ -252,5 +255,5 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px; content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
 .content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
-.content-inquiry ul li textarea{height: 360px; line-height: 34px;}
+.content-inquiry ul li textarea{height: 140px; line-height: 34px;}
 .content-inquiry input[type="submit"]{margin-top: 80px;}

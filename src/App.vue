@@ -107,7 +107,6 @@ export default {
             const spanElement = document.createElement('span');
             spanElement.style.setProperty('--textIdx', Number(element.getAttribute('data-textAni') || 0) + idx);
             spanElement.innerHTML = `<span>${value}</span>`;
-            console.log(spanElement);
             element.appendChild(spanElement);
           })
         })
@@ -117,9 +116,6 @@ export default {
   mounted() {
     this.fullStyle();
     this.headerStyle();
-  },
-  updated(){
-    console.log('?');
   },
   watch: {
     '$route' () {

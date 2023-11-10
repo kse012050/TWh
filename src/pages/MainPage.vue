@@ -4,9 +4,9 @@
         </ol>
         <div class="topArea" data-full>
             <div>
-                <h2>
+                <h2 class="font-hanwha">
                     <b>TWh</b>
-                    테라와트아워
+                    한화 신한 테라와트아워
                 </h2>
                 <p class="cursor">재생에너지 전력거래, 지속 가능한 내일을 만듭니다.</p>
             </div>
@@ -46,7 +46,7 @@
             <div>
                 <div class="contentSize">
                     <p>
-                        <strong>한화 신한 테라와트아워는</strong>
+                        <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
                         전문성과 안정성을 갖춘<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
@@ -65,7 +65,7 @@
             <div>
                 <div class="contentSize">
                     <p>
-                        <strong>한화 신한 테라와트아워는</strong>
+                        <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
                         RE100 기업 수요와 KPX 전력시장을 아우르는<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
@@ -95,7 +95,7 @@
         <div class="boardArea" data-full>
             <div>
                 <div class="contentSize">
-                    <h3>게시판</h3>
+                    <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을 확인해보세요.</h3>
                     <ul class="boardBox">
                         <li>
                             <a href="#">
@@ -254,9 +254,9 @@ export default {
 
     header:has(+ .mainPage){opacity: 0; pointer-events: none;}
 
-
+    /* .mainPage{color: white;} */
     .mainPage .topArea{--color: #222; color: var(--color); position: relative; z-index: 1; background-color: white;}
-    .mainPage .topArea::after{content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); background: red;}
+    /* .mainPage .topArea::after{content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); background: red;} */
     .mainPage .topArea > div{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
     .mainPage .topArea > div h2{opacity: 0;}
     .mainPage .topArea > div p.cursor::after{content: ''; position: absolute; right: -0.2em; top: 0; width: 2px; height: 100%; background-color: var(--color);

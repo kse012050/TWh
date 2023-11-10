@@ -13,3 +13,11 @@
 }
 
 html{--scrollWidth: 17px;}
+
+
+@font-face {
+    font-family: 'hanwha';
+    src: url('../font/HanwhaB.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
