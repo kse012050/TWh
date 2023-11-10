@@ -149,7 +149,7 @@ export default {
 }
 </script>
 <style>
-    [data-subTopAni] .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.2;}
+    .companyPage .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.2;}
     /* .companyPage .topArea > div:nth-of-type(2){z-index: 1;}
     .companyPage .topArea > div:nth-of-type(2)[data-aniType="basic"].active:has( + .active){transform: translateY(0); opacity: 0; transition-delay: var(--aniDelay); pointer-events: none;}
     .companyPage .topArea > div:nth-of-type(3){transform: translateX(100%);}
