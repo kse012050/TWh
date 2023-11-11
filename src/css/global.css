@@ -94,35 +94,35 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .content-process ul li strong{width: var(--width); font-size: 26px; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
 
 
-/* 해더 */
-header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
-header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
-header div nav ul{display: flex; justify-content: center; align-items: center;}
-header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
-header.white{background-color: transparent;}
-header.white div h1 a{--imgIdx: 1;}
-header.white div nav ul li a{color: white;}
+/* 유저 해더 */
+.userPage header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
+.userPage header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
+.userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
+.userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
+.userPage header.white{background-color: transparent;}
+.userPage header.white div h1 a{--imgIdx: 1;}
+.userPage header.white div nav ul li a{color: white;}
 
 
-/* 푸터 */
-footer{background-color: #444; color: white;}
-footer > div{display: flex; justify-content: space-between;}
-footer > div:nth-child(1){margin-bottom: 50px; align-items: center; position: relative;}
-footer > div:nth-child(1)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - 17px); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
-footer > div:nth-child(1) ul{display: flex; gap: 50px;}
-footer > div:nth-child(1) ul li a{font-size: 18px; line-height: 100px; font-weight: 700;}
-footer > div:nth-child(1) select{width: 277px; height: 50px; padding-inline: 15px; color: white; background-color: #333; border: none;}
-footer > div:nth-child(2){font-size: 15px; margin-bottom: 40px;}
-footer > div:nth-child(2) address h2{margin-bottom: 30px; --imgIdx: 1;}
-footer > div:nth-child(2) address dl{ line-height: 30px; display: flex; align-items: center;}
-footer > div:nth-child(2) address dl dt{display: flex; align-items: center;}
-footer > div:nth-child(2) address dl dt::after{content: ':'; margin-inline: 0.4em;}
-footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px; text-align: right;}
-footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
-footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
-footer > div:nth-child(2) div ul:nth-child(1) li:first-child a{font-weight: 700;}
-footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex; justify-content: flex-end;}
-footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
-footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
-footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px; height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
-footer > p{font-size: 14px; line-height: 20px; padding-bottom: 60px; color: rgba(255, 255, 255, 0.5);}
+/* 유저 푸터 */
+.userPage footer{background-color: #444; color: white;}
+.userPage footer > div{display: flex; justify-content: space-between;}
+.userPage footer > div:nth-child(1){margin-bottom: 50px; align-items: center; position: relative;}
+.userPage footer > div:nth-child(1)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - 17px); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
+.userPage footer > div:nth-child(1) ul{display: flex; gap: 50px;}
+.userPage footer > div:nth-child(1) ul li a{font-size: 18px; line-height: 100px; font-weight: 700;}
+.userPage footer > div:nth-child(1) select{width: 277px; height: 50px; padding-inline: 15px; color: white; background-color: #333; border: none;}
+.userPage footer > div:nth-child(2){font-size: 15px; margin-bottom: 40px;}
+.userPage footer > div:nth-child(2) address h2{margin-bottom: 30px; --imgIdx: 1;}
+.userPage footer > div:nth-child(2) address dl{ line-height: 30px; display: flex; align-items: center;}
+.userPage footer > div:nth-child(2) address dl dt{display: flex; align-items: center;}
+.userPage footer > div:nth-child(2) address dl dt::after{content: ':'; margin-inline: 0.4em;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px; text-align: right;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li:first-child a{font-weight: 700;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex; justify-content: flex-end;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px; height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
+.userPage footer > p{font-size: 14px; line-height: 20px; padding-bottom: 60px; color: rgba(255, 255, 255, 0.5);}

@@ -257,3 +257,18 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
 .content-inquiry ul li textarea{height: 140px; line-height: 34px;}
 .content-inquiry input[type="submit"]{margin-top: 80px;}
+
+
+
+/* 어드민 */
+.adminPage{height: var(--fullHeight); background-color: var(--color-BG02); display: flex; justify-content: center; align-items: center;}
+.adminPage section{width: 540px; padding: 60px 90px 120px; background-color: white; box-sizing: border-box;}
+.adminPage section h1{max-width: 260px; margin-inline: auto; margin-bottom: 60px;}
+.adminPage section h1 img{width: 100%;}
+.adminPage section fieldset{font-weight: 700;}
+.adminPage section fieldset input{border: none;}
+.adminPage section fieldset ul{margin-bottom: 40px;}
+.adminPage section fieldset ul li:not(:last-child){margin-bottom: 30px;}
+.adminPage section fieldset ul li label{font-size: 15px; line-height: 20px; margin-bottom: 12px; display: block;}
+.adminPage section fieldset ul li input{height: 60px; width: 100%; background-color: var(--color-BG02);}
+.adminPage section fieldset > input[type="submit"]{font-size: 20px; height: 70px; width: 100%; color: white; background-color: #222;}
