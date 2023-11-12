@@ -179,18 +179,28 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 
 
 /* 관리자 버튼 */
-[class*="Page"]:has(.btnArea){position: relative;}
-div.btnArea{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
-div.btnArea input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 400; display: flex; align-items: center; margin-right: 30px;}
-div.btnArea input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
+[class*="Page"]:has(.content-btn){position: relative;}
+div.content-btn{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
+div.content-btn input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 400; display: flex; align-items: center; margin-right: 30px;}
+div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
 [class|="btn"]{width: 88px; font-size: 16px; font-weight: 700; aspect-ratio: 88 / 50;}
 [class|="btn"][class$="black"]{background-color: #222; color: white;}
 [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 
 
+/* 관리자 - 텝 */
+.admin-tab{display: flex; align-items: center; gap: 41px;}
+.admin-tab button{font-size: 15px; line-height: 30px; padding-block: 30px; color: #BBB; font-weight: 700;}
+.admin-tab button:not(:last-of-type){position: relative;}
+.admin-tab button:not(:last-of-type)::after{content: ''; width: 1px; height: 18px; background-color: var(--color-line); position: absolute; right: -20px; top: 50%; transform: translateY(-50%);}
+.admin-tab button:is(.active, :hover){color: #222;}
+
+
 /* 관리자 게시판 */
 .admin-board-list, .admin-board-list li:not(:last-child){border-bottom: 1px solid var(--color-line);}
-.admin-board-title, .admin-board-list li a{font-size: 15px; line-height: 24px; padding-block: 17px; padding-inline: 20px; display: flex; align-items: center; box-sizing: border-box; text-align: center;}
+.admin-board-title, .admin-board-list li a{font-size: 15px; line-height: 22px; padding-inline: 20px; gap: 30px; display: flex; align-items: center; box-sizing: border-box; text-align: center;}
+.admin-board-title{padding-block: 18px;}
+.admin-board-list li a{padding-block: 20px;}
 .admin-board-title{font-weight: 700; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
 .admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 400; text-align: center; display: block; content: attr(data-noneListText);}
 

@@ -1,6 +1,51 @@
 <template>
-    <section class="contentSize">
-        게시판 리스트
+    <section class="boardListPage contentSize">
+        <h2>게시판 관리</h2>
+
+        <div class="admin-tab">
+            <button class="active">전체(99)</button>
+            <button>보도자료(33)</button>
+            <button>블로그(66)</button>
+        </div>
+        <div class="admin-board-title">
+            <b>No.</b>
+            <b>카테고리</b>
+            <b>제목</b>
+            <b>내용</b>
+            <b>작성일시</b>
+            <b>노출여부</b>
+        </div>
+        <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
+            <li>
+                <a href="boardInput/0">
+                    <span>999</span>
+                    <span>보도자료</span>
+                    <p>재생에너지 전력거래 전문 합작법인‘한화 신 한 테라와트아워’출범</p>
+                    <p>[헤럴드경제=김은희 기자] 한화와 신한이 세운 재생에너지 전력거래 전문 합작법인 ‘한화 신한 테라와트아워’...</p>
+                    <time>
+                        2023.12.01<br>
+                        12:34:56
+                    </time>
+                    <span>노출</span>
+                </a>
+            </li>
+        </ul>
+        <div class="content-btn">
+            <button class="btn-black">작성</button>
+        </div>
+        <div class="admin-board-pager" data-styleIdx="a">
+            <a href="">첫 페이지</a>
+            <a href="">이전 페이지</a>
+            <ol>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+            </ol>
+            <a href="">다음 페이지</a>
+            <a href="">마지막 페이지</a>
+        </div>
     </section>
 </template>
 <script>

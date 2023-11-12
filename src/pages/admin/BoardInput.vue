@@ -43,7 +43,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="btnArea">
+                <div class="content-btn">
                     <input type="checkbox" name="" id="">
                     <label for="">노출여부</label>
                     <button class="btn-border">삭제</button>

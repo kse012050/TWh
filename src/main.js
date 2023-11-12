@@ -75,7 +75,7 @@ const routes = [
                 component: BoardList
             },
             {
-                path: 'boardInput',
+                path: 'boardInput/:id',
                 component: BoardInput
             },
             {

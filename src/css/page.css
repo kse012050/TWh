@@ -230,7 +230,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .inquiryPage h2{font-size: 60px; line-height: 72px; margin-bottom: 80px; font-weight: 700;}
 
 
-/* 관리자 로그인 페이지 */
+/* 관리자 - 로그인 페이지 */
 .adminPage{height: var(--fullHeight); background-color: var(--color-BG02); display: flex; justify-content: center; align-items: center;}
 .adminPage section{width: 540px; padding: 60px 90px 120px; background-color: white; box-sizing: border-box;}
 .adminPage section h1{max-width: 260px; margin-inline: auto; margin-bottom: 60px;}
@@ -244,9 +244,13 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .adminPage section fieldset > input[type="submit"]{font-size: 20px; height: 70px; width: 100%; color: white; background-color: #222;}
 
 
-/* 관리자 공지사항 관리 페이지 */
-.noticesListPage :is(.admin-board-title, .admin-board-list li a){}
+/* 관리자 - 공지사항 관리 페이지 */
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(3)){width: 150px;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > div{align-self: stretch; max-height: 48px;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > div img{height: 100%; object-fit: cover;}
+
+
+/* 관리자 - 게시판 관리 페이지 */
+.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(n + 3):nth-child(-n + 4)){width: 100px;}
+.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(n + 3):nth-child(-n + 4){flex: 1;}
