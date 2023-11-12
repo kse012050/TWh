@@ -15,7 +15,7 @@
             <b>작성일시</b>
             <b>노출여부</b>
         </div>
-        <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
+        <ul class="admin-board-list" data-noneListText="작성된 게시판이 없습니다.">
             <li>
                 <a href="boardInput/0">
                     <span>999</span>

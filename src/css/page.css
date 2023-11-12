@@ -254,3 +254,16 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 /* 관리자 - 게시판 관리 페이지 */
 .boardListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(n + 3):nth-child(-n + 4)){width: 100px;}
 .boardListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(n + 3):nth-child(-n + 4){flex: 1;}
+
+
+/* 관리자 - 사업 문의 관리 페이지 */
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a){gap: 20px;}
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a) > *:is(:nth-child(1), :nth-child(n + 7)){width: 80px;}
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a) > *:is(:nth-child(2), :nth-child(6)){width: 100px;}
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a) > *:is(:nth-child(3), :nth-child(4)){width: 120px;}
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(5){width: 180px; word-wrap: break-word;}
+.inquiryListPage :is(.admin-board-title, .admin-board-list li a) > button{text-decoration: underline; text-underline-offset: 3px;}
+.inquiryListPage .admin-board-list li a > *:last-child{font-weight: 700;}
+.inquiryListPage .admin-board-list li a > *:last-child.unread{color: var(--color-point01);}
+.inquiryListPage .admin-board-list li a > *:last-child.reply{}
+.inquiryListPage .admin-board-list li a > *:last-child.noReply{color: #BBB;}
