@@ -6,7 +6,6 @@
 .adminsPage .contentSize{width: var(--contentSize);}
 
 
-
 /* 서브 페이지 위아래 간격 */
 .boardPage, .boardDetail, .inquiryPage{padding-block: 240px 200px;}
 
@@ -18,6 +17,7 @@
 /* 로고 */
 .logo{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 47; background: url(../images/logo2.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 
+
 /* 자세히 링크 */
 [class^='arrow']{font-size: 20px; line-height: 24px; font-weight: 700; display: flex;}
 [class^='arrow'] span{--height: 2px; width: 50px; margin-top: 10px; margin-left: 18px; height: var(--height); background-color: var(--bc); position: relative;}
@@ -25,14 +25,15 @@
 [class^='arrow'][class$='white']{--bc: white;}
 [class^='arrow'][class$='black']{--bc: black;}
 
+
 /* 버튼 */
-[class|="btn"]{width: 260px; height: 70px; display: flex; align-items: center;}
-[class|='btn']:is([class$='black'], [class$='border']){font-size: 24px; font-weight: 700; margin-inline: auto; justify-content: center;}
-[class|="btn"][class$="black"]{color: white; background-color: #222; border: none;}
-[class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
-[class|="btn"][class$="download"]{font-size: 20px; padding-inline: 30px; --color: white; color: var(--color); font-weight: 400; border: 1px solid var(--color); box-sizing: border-box;}
-[class|="btn"][class$="download"]::after{content: ''; width: 34px; aspect-ratio: 1; background: url('../images/icon-download.png') no-repeat center / cover; margin-left: auto;}
-[class|="btn"][class$="download"] b{font-weight: 700;}
+.userPage [class|="btn"]{width: 260px; height: 70px; display: flex; align-items: center;}
+.userPage [class|='btn']:is([class$='black'], [class$='border']){font-size: 24px; font-weight: 700; margin-inline: auto; justify-content: center;}
+.userPage [class|="btn"][class$="black"]{color: white; background-color: #222; border: none;}
+.userPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
+.userPage [class|="btn"][class$="download"]{font-size: 20px; padding-inline: 30px; --color: white; color: var(--color); font-weight: 400; border: 1px solid var(--color); box-sizing: border-box;}
+.userPage [class|="btn"][class$="download"]::after{content: ''; width: 34px; aspect-ratio: 1; background: url('../images/icon-download.png') no-repeat center / cover; margin-left: auto;}
+.userPage [class|="btn"][class$="download"] b{font-weight: 700;}
 
 
 /* 게시판 */
@@ -75,6 +76,7 @@ ul.user-board li a p{font-size: 26px; line-height: 38px;}
 [data-subTopAni] .topArea > div[data-aniType="basic"].active:has( + .active){transform: translateY(-100%);}
 [data-subTopAni] + footer{position: relative; z-index: 1;}
 
+
 /* 검은 배경 케이스 */
 b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 700; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
 
@@ -98,6 +100,12 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .content-process ul li strong{width: var(--width); font-size: 26px; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
 
 
+/* 폼 공통 */
+input:not([type="file"]), textarea, select{border: none; background-color: #F8F8F8;}
+input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
+:is(input, textarea, select)::placeholder{color: #BBB;}
+
+
 /* 유저 페이지 문의 form */
 .content-inquiry ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
 .content-inquiry ul li{font-size: 22px;}
@@ -108,8 +116,8 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .content-inquiry ul li:has(:required) > label:first-child::after{transform: translateY(3px); content: '*'; color: var(--color-point01);}
 .content-inquiry ul li label[data-comment]{position: relative;}
 .content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-size: 18px; margin-left: 20px; font-weight: 400; color: var(--color-point01);}
-.content-inquiry ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; border: none; background-color: #F8F8F8; box-sizing: border-box;}
-.content-inquiry ul li :is(input, textarea)::placeholder{color: #BBB;}
+.content-inquiry ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; box-sizing: border-box;}
+/* .content-inquiry ul li :is(input, textarea)::placeholder{color: #BBB;} */
 .content-inquiry ul li div input{height: 70px;}
 .content-inquiry ul li div[data-unit]{position: relative;}
 .content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-size: 22px; right: 20px; font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
@@ -166,6 +174,18 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 /* 관리자 공통 */
 .adminsPage [class*="Page"]{padding-block: var(--padding04) var(--padding03);}
 .adminsPage [class*="Page"] h2{font-size: 36px; line-height: 50px; margin-bottom: 30px; font-weight: 700;}
+.adminsPage [class*="Page"] h2 a{display: flex; align-items: center;}
+.adminsPage [class*="Page"] h2 a::before{content: ''; width: 38px; margin-right: 15px; aspect-ratio: 1; background: url(../images/icon-back.png) no-repeat center / cover;}
+
+
+/* 관리자 버튼 */
+[class*="Page"]:has(.btnArea){position: relative;}
+div.btnArea{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
+div.btnArea input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 400; display: flex; align-items: center; margin-right: 30px;}
+div.btnArea input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
+[class|="btn"]{width: 88px; font-size: 16px; font-weight: 700; aspect-ratio: 88 / 50;}
+[class|="btn"][class$="black"]{background-color: #222; color: white;}
+[class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 
 
 /* 관리자 게시판 */
@@ -185,8 +205,31 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .admin-board-pager ol li.active a{text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 2px;}
 
 
+/* 관리자 인풋 */
+.admin-input{padding-block: 30px; border-width: 1px 0; border-style: solid; border-color: #222 transparent var(--color-line);}
+.admin-input ul{}
+.admin-input ul li{font-size: 15px; font-weight: 400; display: flex;}
+.admin-input ul li:not(:last-child){margin-bottom: 20px;}
+.admin-input ul li label{line-height: 20px; padding-block: 15px; width: 120px; color: #222;}
+.admin-input ul li > div{flex: 1;}
+.admin-input ul li > div > *:first-child{padding: 15px; width: 100%; box-sizing: border-box;}
+.admin-input ul li > div > *:first-child:not(textarea){height: 50px;}
+.admin-input ul li > div > select{max-width: 400px; background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
+.admin-input ul li > div > textarea{line-height: 22px; height: 360px;}
+.admin-input ul li > div button.delete{width: 22px; aspect-ratio: 1; background: url(../images/icon-delete.png) no-repeat center / cover; text-indent: -9999px;}
+.admin-input ul li > div:has(input[type="file"]){display: flex; gap: 20px;}
+.admin-input ul li > div:has(input[type="file"]) > *{width: 180px; height: 120px;}
+.admin-input ul li > div:has(input[type="file"]) label{border: 2px dashed #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
+.admin-input ul li > div:has(input[type="file"]) div{position: relative;}
+.admin-input ul li > div:has(input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover;}
+.admin-input ul li > div:has(input[type="file"]) div button.delete{position: absolute; right: 0; top: 0; transform: translate(50%, -50%);}
+.admin-input ul li > div:has(input[type="url"]){position: relative;}
+.admin-input ul li > div:has(input[type="url"]) input[type="url"]{padding-right: 52px;}
+.admin-input ul li > div:has(input[type="url"]) button{position: absolute; right: 15px; top: 50%; transform: translateY(-50%);}
+
+
 /* 관리자 해더 */
-.adminsPage header{position: sticky; left: 0; top: 0; width: 100%; border-bottom: 1px solid var(--color-line);}
+.adminsPage header{position: sticky; left: 0; top: 0; width: 100%; background-color: white; border-bottom: 1px solid var(--color-line); z-index: 100;}
 .adminsPage header div{max-width: 1920px; margin-inline: auto; display: flex; justify-content: center; align-items: center; position: relative;}
 .adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo2.png) no-repeat top center / cover; text-indent: -9999px;}
 .adminsPage header div ul{gap: 80px; display: flex; align-items: center;}

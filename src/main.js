@@ -63,11 +63,11 @@ const routes = [
                 component: NoticesList
             },
             {
-                path: 'noticesDetail',
+                path: 'noticesDetail/:id',
                 component: NoticesDetail
             },
             {
-                path: 'noticesInput',
+                path: 'noticesInput/:id',
                 component: NoticesInput
             },
             {

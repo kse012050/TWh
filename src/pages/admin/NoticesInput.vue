@@ -1,6 +1,6 @@
-<template lang="">
+<template>
     <div>
-        공지사항 입력폼
+        
     </div>
 </template>
 <script>

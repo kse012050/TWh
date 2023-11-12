@@ -1,5 +1,5 @@
 <template>
-    <section class="boardListPage contentSize">
+    <section class="noticesListPage contentSize">
         <h2>공지사항 관리</h2>
         <div class="admin-board-title">
             <b>No.</b>
@@ -10,9 +10,9 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
             <li>
-                <a href="">
+                <a href="noticesInput/0">
                     <span>999</span>
-                    <div>미리보기</div>
+                    <div><img src="../../images/delete/test.png" alt="임시 이미지"></div>
                     <p>사이트 런칭 공지</p>
                     <time>
                         2023.12.01<br>

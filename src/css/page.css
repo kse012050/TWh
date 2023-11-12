@@ -227,7 +227,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 사업 문의 */
-input:is([type="checkbox"], [type="radio"]){display: none;}
 .inquiryPage h2{font-size: 60px; line-height: 72px; margin-bottom: 80px; font-weight: 700;}
 
 
@@ -246,6 +245,8 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 
 
 /* 관리자 공지사항 관리 페이지 */
-.boardListPage :is(.admin-board-title, .admin-board-list li a){}
-.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(3)){width: 150px;}
-.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a){}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(3)){width: 150px;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > div{align-self: stretch; max-height: 48px;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > div img{height: 100%; object-fit: cover;}
