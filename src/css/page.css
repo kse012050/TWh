@@ -272,3 +272,40 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 /* 관리자 - 사업 문의 인풋 페이지 */
 .inquiryInputPage .admin-input ul li > label{width: 200px;}
 
+
+/* 관리자 - 사업 문의 상세 페이지 */
+.inquiryDetailPage > div{--spacing: 40px; font-size: 15px; line-height: 20px; display: flex; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
+.inquiryDetailPage > div > *{flex: 1;}
+.inquiryDetailPage > div > *:nth-child(1){padding-right: var(--spacing);}
+.inquiryDetailPage > div > *:nth-child(2){padding-left: var(--spacing); border-left: 1px solid var(--color-line);}
+.inquiryDetailPage > div ul.infoArea{}
+.inquiryDetailPage > div ul.infoArea li{display: flex;}
+.inquiryDetailPage > div ul.infoArea li:not(:last-child){border-bottom: 1px solid var(--color-line);}
+.inquiryDetailPage > div ul.infoArea li > *{padding-block: 32px;}
+.inquiryDetailPage > div ul.infoArea li b{width: 160px; font-weight: 700; position: relative;}
+.inquiryDetailPage > div ul.infoArea li b::before{content: ''; position: absolute; left: 0; bottom: -1px; width: 100%; height: 1px; background-color: #222;}
+.inquiryDetailPage > div ul.infoArea li b.required{display: flex; align-items: center;}
+.inquiryDetailPage > div ul.infoArea li b.required::after{transform: translateY(2px); content: '*'; color: var(--color-point01);}
+.inquiryDetailPage > div ul.infoArea li div{padding-inline: 40px;}
+.inquiryDetailPage > div ul.infoArea li div p{font-weight: 400;}
+.inquiryDetailPage > div ul.infoArea li div dl{display: flex; align-items: center;}
+.inquiryDetailPage > div ul.infoArea li div dl:not(:last-of-type){margin-bottom: 10px;}
+.inquiryDetailPage > div ul.infoArea li div dl dt{min-width: 108px; margin-right: 10px; font-weight: 400; color: #999;}
+.inquiryDetailPage > div ul.infoArea li div dl dd{font-weight: 700;}
+.inquiryDetailPage > div .answerArea{padding-block: 45px;}
+.inquiryDetailPage > div .answerArea fieldset{margin-bottom: 20px;}
+.inquiryDetailPage > div .answerArea fieldset ul{margin-bottom: 10px;}
+.inquiryDetailPage > div .answerArea fieldset ul li:not(:last-child){margin-bottom: 30px;}
+.inquiryDetailPage > div .answerArea fieldset ul li label{margin-bottom: 12px; display: block; font-weight: 700;}
+.inquiryDetailPage > div .answerArea fieldset ul li div :is(input, select){width: 200px;}
+.inquiryDetailPage > div .answerArea fieldset ul li div textarea{width: 100%; height: 150px;}
+.inquiryDetailPage > div .answerArea fieldset ul li div *:not(:last-child){margin-bottom: 10px;}
+.inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; display: block; margin-left: auto;}
+.inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}
+.inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px solid var(--color-line);}
+.inquiryDetailPage > div .answerArea > ul li :is(b, time){font-size: 13px;}
+.inquiryDetailPage > div .answerArea > ul li b{width: 100px; flex-shrink: 0; font-weight: 700;}
+.inquiryDetailPage > div .answerArea > ul li div{font-weight: 400;}
+.inquiryDetailPage > div .answerArea > ul li div p{margin-bottom: 7px;}
+.inquiryDetailPage > div .answerArea > ul li div time{line-height: 18px; color: #999;}
+
