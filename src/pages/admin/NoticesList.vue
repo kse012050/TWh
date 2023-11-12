@@ -22,11 +22,11 @@
                 </a>
             </li>
         </ul>
-        <div class="admin-board-pager" data-styleIdx>
+        <div class="admin-board-pager" data-styleIdx="a">
             <a href="">첫 페이지</a>
             <a href="">이전 페이지</a>
             <ol>
-                <li><a href="">1</a></li>
+                <li class="active"><a href="">1</a></li>
                 <li><a href="">2</a></li>
                 <li><a href="">3</a></li>
                 <li><a href="">4</a></li>

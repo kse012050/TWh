@@ -175,11 +175,22 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 400; text-align: center; display: block; content: attr(data-noneListText);}
 
 
+/* 관리자 게시판 페이저 */
+.admin-board-pager{--gap: 10px; margin-top: 60px; display: flex; justify-content: center; gap: var(--gap);}
+.admin-board-pager a{width: 28px; aspect-ratio: 1;}
+.admin-board-pager > a{background: url(../images/icon-pager.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%; text-indent: -9999px;}
+.admin-board-pager ol{display: flex; gap: var(--gap);}
+.admin-board-pager ol li a{font-size: 15px; font-weight: 700; color: #BBB; display: flex; justify-content: center; align-items: center;}
+.admin-board-pager ol li:is(.active, :hover) a{color: #222;}
+.admin-board-pager ol li.active a{text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 2px;}
+
+
 /* 관리자 해더 */
 .adminsPage header{position: sticky; left: 0; top: 0; width: 100%; border-bottom: 1px solid var(--color-line);}
 .adminsPage header div{max-width: 1920px; margin-inline: auto; display: flex; justify-content: center; align-items: center; position: relative;}
 .adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo2.png) no-repeat top center / cover; text-indent: -9999px;}
 .adminsPage header div ul{gap: 80px; display: flex; align-items: center;}
 .adminsPage header div ul li a{font-size: 16px; line-height: 70px; font-weight: 700; color: #BBB;}
-.adminsPage header div ul li a.router-link-active{color: #222; position: relative;}
+.adminsPage header div ul li a.router-link-active{position: relative;}
+.adminsPage header div ul li a:is(.router-link-active, :hover){color: #222;}
 .adminsPage header div ul li a.router-link-active::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background-color: #222;}
