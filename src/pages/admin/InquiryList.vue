@@ -25,7 +25,7 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
             <li>
-                <a href="boardInput/0">
+                <a href="inquiryInput/0">
                     <span>999</span>
                     <span>홍길동</span>
                     <span>한화컨버전스</span>
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="boardInput/0">
+                <a href="inquiryInput/0">
                     <span>999</span>
                     <span>홍길동</span>
                     <span>한화컨버전스</span>
@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li>
-                <a href="boardInput/0">
+                <a href="inquiryInput/0">
                     <span>999</span>
                     <span>홍길동</span>
                     <span>한화컨버전스</span>

@@ -83,11 +83,11 @@ const routes = [
                 component: InquiryList
             },
             {
-                path: 'inquiryDetail',
+                path: 'inquiryDetail/:id',
                 component: InquiryDetail
             },
             {
-                path: 'inquiryInput',
+                path: 'inquiryInput/:id',
                 component: InquiryInput
             }
         ]

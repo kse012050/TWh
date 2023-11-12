@@ -220,14 +220,16 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 
 /* 관리자 인풋 */
 .admin-input{padding-block: 30px; border-width: 1px 0; border-style: solid; border-color: #222 transparent var(--color-line);}
-.admin-input ul{}
 .admin-input ul li{font-size: 15px; font-weight: 400; display: flex;}
 .admin-input ul li:not(:last-child){margin-bottom: 20px;}
-.admin-input ul li label{line-height: 20px; padding-block: 15px; width: 120px; color: #222;}
+.admin-input ul li > label{line-height: 20px; padding-block: 15px; width: 120px; font-weight: 700; color: #222;}
+.admin-input ul li:has(:required) > label:first-child{display: flex; align-items: center;}
+.admin-input ul li:has(:required) > label:first-child::after{transform: translateY(2px); content: '*'; color: var(--color-point01);}
 .admin-input ul li > div{flex: 1;}
+.admin-input ul li > div.limited{max-width: 400px;}
 .admin-input ul li > div > *:first-child{padding: 15px; width: 100%; box-sizing: border-box;}
 .admin-input ul li > div > *:first-child:not(textarea){height: 50px;}
-.admin-input ul li > div > select{max-width: 400px; background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
+.admin-input ul li > div > select{background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
 .admin-input ul li > div > textarea{line-height: 22px; height: 360px;}
 .admin-input ul li > div button.delete{width: 22px; aspect-ratio: 1; background: url(../images/icon-delete.png) no-repeat center / cover; text-indent: -9999px;}
 .admin-input ul li > div:has(input[type="file"]){display: flex; gap: 20px;}
@@ -239,6 +241,9 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .admin-input ul li > div:has(input[type="url"]){position: relative;}
 .admin-input ul li > div:has(input[type="url"]) input[type="url"]{padding-right: 52px;}
 .admin-input ul li > div:has(input[type="url"]) button{position: absolute; right: 15px; top: 50%; transform: translateY(-50%);}
+.admin-input ul li div:has([type="checkbox"], [type="radio"]){gap: 10px; display: flex; align-items: center;}
+.admin-input ul li div:has([type="checkbox"], [type="radio"]) label{line-height: 20px; padding: 10px 20px; font-weight: 700; background-color: #F1F1F1; border-radius: 25px; cursor: pointer;}
+.admin-input ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
 
 
 /* 관리자 해더 */

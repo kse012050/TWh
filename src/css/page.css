@@ -267,3 +267,8 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .inquiryListPage .admin-board-list li a > *:last-child.unread{color: var(--color-point01);}
 .inquiryListPage .admin-board-list li a > *:last-child.reply{}
 .inquiryListPage .admin-board-list li a > *:last-child.noReply{color: #BBB;}
+
+
+/* 관리자 - 사업 문의 인풋 페이지 */
+.inquiryInputPage .admin-input ul li > label{width: 200px;}
+

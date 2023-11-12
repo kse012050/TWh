@@ -6,7 +6,7 @@
                 <ul>
                     <li>
                         <label for="">카테고리</label>
-                        <div>
+                        <div class="limited">
                             <select name="" id="">
                                 <option value="">선택</option>
                             </select>
