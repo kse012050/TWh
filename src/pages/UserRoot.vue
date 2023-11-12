@@ -76,7 +76,7 @@ export default {
       const header = document.querySelector('header');
       this.$route.path === '/' ? header.classList.add('white') : header.classList.remove('white')
     },
-    styleIdx(){
+    aniIdx(){
       setTimeout(()=>{
         document.querySelectorAll('[data-aniDelay]').forEach((element)=>{
           element.style.setProperty('--aniDelay', `0.${element.getAttribute('data-aniDelay')}s`)
@@ -87,10 +87,10 @@ export default {
           })
         })
         
-        document.querySelectorAll('[data-styleIdx]').forEach((parents)=>{
-          parents.style.setProperty('--styleTotal', parents.childNodes.length);
+        document.querySelectorAll('[data-aniIdx]').forEach((parents)=>{
+          parents.style.setProperty('--aniTotal', parents.childNodes.length);
           parents.childNodes.forEach((element, idx)=>{
-            element.style.setProperty('--styleIdx', Number(parents.getAttribute('data-styleIdx') || 0) + idx);
+            element.style.setProperty('--aniIdx', Number(parents.getAttribute('data-aniIdx') || 0) + idx);
             window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
           })
         })
@@ -111,11 +111,12 @@ export default {
   },
   mounted() {
     this.headerStyle();
+    this.aniIdx();
   },
   watch: {
     '$route' () {
       this.headerStyle();
-      this.styleIdx();
+      this.aniIdx();
     }
   }
 }

@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div data-aniType="basic" data-aniDelay="2">
-                <ul data-styleIdx="1">
+                <ul data-aniIdx="1">
                     <li>
                         <mark>안정성</mark>
                         <p>
@@ -144,7 +144,7 @@
                 <b>20년 장기계약 PPA,</b><br>
                 안정적인 자원 조달이 가능한 테라와트아워와 함께하세요.
             </p>
-            <ul data-styleIdx>
+            <ul data-aniIdx>
                 <li>
                     <p>
                         재생에너지
@@ -320,5 +320,5 @@ export default {
 <style>
     /* .solutionPage .topArea > div[data-aniType="basic"].active:has( + .active){transform: translateY(-100%);} */
     .solutionPage .topArea div:nth-of-type(3) ul li{opacity: 0; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
-    .solutionPage .topArea div:nth-of-type(3).active ul li{opacity: 1; transition-delay: calc(var(--styleIdx) * var(--aniDelay));}
+    .solutionPage .topArea div:nth-of-type(3).active ul li{opacity: 1; transition-delay: calc(var(--aniIdx) * var(--aniDelay));}
 </style>

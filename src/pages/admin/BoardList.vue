@@ -1,7 +1,7 @@
-<template lang="">
-    <div>
+<template>
+    <section class="contentSize">
         게시판 리스트
-    </div>
+    </section>
 </template>
 <script>
 export default {

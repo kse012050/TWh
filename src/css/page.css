@@ -138,7 +138,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .contractArea ul li{flex: 1; box-shadow: 10px 20px 40px 0px rgba(0, 0, 0, 0.07);}
 .solutionPage .contractArea ul li:nth-child(1){margin-top: 80px;}
 .solutionPage .contractArea ul li:nth-child(2){margin-top: 160px;}
-.solutionPage .contractArea ul li::before{content: ''; display: block; width: 100%; aspect-ratio: 380 / 460; background: url(../images/solution-PPAImg.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%;}
+.solutionPage .contractArea ul li::before{content: ''; display: block; width: 100%; aspect-ratio: 380 / 460; background: url(../images/solution-PPAImg.png) no-repeat top calc((100% / (var(--aniTotal) - 1) * var(--aniIdx))) center / 100%;}
 .solutionPage .contractArea ul li p{font-size: 30px; line-height: 42px; padding: 40px; background-color: white;}
 .solutionPage .contractArea ul li p b{display: block; font-weight: 700;} */
 .solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
@@ -229,38 +229,9 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 /* 사업 문의 */
 input:is([type="checkbox"], [type="radio"]){display: none;}
 .inquiryPage h2{font-size: 60px; line-height: 72px; margin-bottom: 80px; font-weight: 700;}
-.content-inquiry ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-.content-inquiry ul li{font-size: 22px;}
-.content-inquiry ul li.full{width: 100%;}
-.content-inquiry ul li:not(:is(:has(textarea), .full)){width: 46.7741%;}
-.content-inquiry ul li:has(textarea, input[type="checkbox"], .full){width: 100%;}
-.content-inquiry ul li label:first-child{line-height: 34px; margin-bottom: 20px; font-weight: 700; display: flex; align-items: center;}
-.content-inquiry ul li:has(:required) > label:first-child::after{transform: translateY(3px); content: '*'; color: var(--color-point01);}
-.content-inquiry ul li label[data-comment]{position: relative;}
-.content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-size: 18px; margin-left: 20px; font-weight: 400; color: var(--color-point01);}
-.content-inquiry ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; border: none; background-color: #F8F8F8; box-sizing: border-box;}
-.content-inquiry ul li :is(input, textarea)::placeholder{color: #BBB;}
-.content-inquiry ul li div input{height: 70px;}
-.content-inquiry ul li div[data-unit]{position: relative;}
-.content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-size: 22px; right: 20px; font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
-.content-inquiry ul li div[data-unit] input{padding-right: 75px;}
-.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 580px;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 20px; display: flex;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 22px; line-height: 34px; padding: 13px 30px; font-weight: 700; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
-.content-inquiry ul li small{font-size: 18px; line-height: 26px; margin-top: 15px; font-weight: 400; color: #999; display: block;}
-.content-inquiry > div{margin-top: 60px;}
-.content-inquiry > div input[type="checkbox"] + label{font-size: 20px; line-height: 26px; font-weight: 400; display: flex; align-items: center; cursor: pointer;}
-.content-inquiry > div input[type="checkbox"] + label b{font-weight: 700; text-decoration: underline;}
-.content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px; content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
-.content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
-.content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
-.content-inquiry ul li textarea{height: 140px; line-height: 34px;}
-.content-inquiry input[type="submit"]{margin-top: 80px;}
 
 
-
-/* 어드민 */
+/* 관리자 로그인 페이지 */
 .adminPage{height: var(--fullHeight); background-color: var(--color-BG02); display: flex; justify-content: center; align-items: center;}
 .adminPage section{width: 540px; padding: 60px 90px 120px; background-color: white; box-sizing: border-box;}
 .adminPage section h1{max-width: 260px; margin-inline: auto; margin-bottom: 60px;}
@@ -272,3 +243,9 @@ input:is([type="checkbox"], [type="radio"]){display: none;}
 .adminPage section fieldset ul li label{font-size: 15px; line-height: 20px; margin-bottom: 12px; display: block;}
 .adminPage section fieldset ul li input{height: 60px; width: 100%; background-color: var(--color-BG02);}
 .adminPage section fieldset > input[type="submit"]{font-size: 20px; height: 70px; width: 100%; color: white; background-color: #222;}
+
+
+/* 관리자 공지사항 관리 페이지 */
+.boardListPage :is(.admin-board-title, .admin-board-list li a){}
+.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(3)){width: 150px;}
+.boardListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}

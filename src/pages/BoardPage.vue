@@ -5,7 +5,7 @@
             <button class="active">뉴스</button>
             <button>블로그</button>
         </div>
-        <ul class="boardBox">
+        <ul class="user-board">
             <li>
                 <a href="boardDetail/0">
                     <img src="../images/delete/board01.png" alt="">

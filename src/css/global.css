@@ -1,7 +1,11 @@
 
 /* 컨텐츠 사이즈 */
-.contentSize{max-width: var(--contentSize); margin-inline: auto;}
+.contentSize{margin-inline: auto;}
 .contentSize-padding{padding-inline: calc((100vw - var(--contentSize-padding)) / 2); box-sizing: border-box;}
+.userPage .contentSize{max-width: var(--contentSize);}
+.adminsPage .contentSize{width: var(--contentSize);}
+
+
 
 /* 서브 페이지 위아래 간격 */
 .boardPage, .boardDetail, .inquiryPage{padding-block: 240px 200px;}
@@ -32,12 +36,12 @@
 
 
 /* 게시판 */
-ul.boardBox{gap: 40px 4%; display: flex; flex-wrap: wrap;}
-ul.boardBox li{width: 30.6666%;}
-ul.boardBox li a{font-weight: 700;}
-ul.boardBox li a img{width: 100%; aspect-ratio: 380 / 250; margin-bottom: 30px;}
-ul.boardBox li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px; display: block; color: #999;}
-ul.boardBox li a p{font-size: 26px; line-height: 38px;}
+ul.user-board{gap: 40px 4%; display: flex; flex-wrap: wrap;}
+ul.user-board li{width: 30.6666%;}
+ul.user-board li a{font-weight: 700;}
+ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250; margin-bottom: 30px;}
+ul.user-board li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px; display: block; color: #999;}
+ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 텍스트 애니메이션 */
@@ -94,6 +98,37 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .content-process ul li strong{width: var(--width); font-size: 26px; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
 
 
+/* 유저 페이지 문의 form */
+.content-inquiry ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.content-inquiry ul li{font-size: 22px;}
+.content-inquiry ul li.full{width: 100%;}
+.content-inquiry ul li:not(:is(:has(textarea), .full)){width: 46.7741%;}
+.content-inquiry ul li:has(textarea, input[type="checkbox"], .full){width: 100%;}
+.content-inquiry ul li label:first-child{line-height: 34px; margin-bottom: 20px; font-weight: 700; display: flex; align-items: center;}
+.content-inquiry ul li:has(:required) > label:first-child::after{transform: translateY(3px); content: '*'; color: var(--color-point01);}
+.content-inquiry ul li label[data-comment]{position: relative;}
+.content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-size: 18px; margin-left: 20px; font-weight: 400; color: var(--color-point01);}
+.content-inquiry ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; border: none; background-color: #F8F8F8; box-sizing: border-box;}
+.content-inquiry ul li :is(input, textarea)::placeholder{color: #BBB;}
+.content-inquiry ul li div input{height: 70px;}
+.content-inquiry ul li div[data-unit]{position: relative;}
+.content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-size: 22px; right: 20px; font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
+.content-inquiry ul li div[data-unit] input{padding-right: 75px;}
+.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 580px;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 20px; display: flex;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 22px; line-height: 34px; padding: 13px 30px; font-weight: 700; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
+.content-inquiry ul li small{font-size: 18px; line-height: 26px; margin-top: 15px; font-weight: 400; color: #999; display: block;}
+.content-inquiry > div{margin-top: 60px;}
+.content-inquiry > div input[type="checkbox"] + label{font-size: 20px; line-height: 26px; font-weight: 400; display: flex; align-items: center; cursor: pointer;}
+.content-inquiry > div input[type="checkbox"] + label b{font-weight: 700; text-decoration: underline;}
+.content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px; content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
+.content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
+.content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
+.content-inquiry ul li textarea{height: 140px; line-height: 34px;}
+.content-inquiry input[type="submit"]{margin-top: 80px;}
+
+
 /* 유저 해더 */
 .userPage header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
 .userPage header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
@@ -126,3 +161,25 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px; font-weight: 70
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px; height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
 .userPage footer > p{font-size: 14px; line-height: 20px; padding-bottom: 60px; color: rgba(255, 255, 255, 0.5);}
+
+
+/* 관리자 공통 */
+.adminsPage [class*="Page"]{padding-block: var(--padding04) var(--padding03);}
+.adminsPage [class*="Page"] h2{font-size: 36px; line-height: 50px; margin-bottom: 30px; font-weight: 700;}
+
+
+/* 관리자 게시판 */
+.admin-board-list, .admin-board-list li:not(:last-child){border-bottom: 1px solid var(--color-line);}
+.admin-board-title, .admin-board-list li a{font-size: 15px; line-height: 24px; padding-block: 17px; padding-inline: 20px; display: flex; align-items: center; box-sizing: border-box; text-align: center;}
+.admin-board-title{font-weight: 700; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
+.admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 400; text-align: center; display: block; content: attr(data-noneListText);}
+
+
+/* 관리자 해더 */
+.adminsPage header{position: sticky; left: 0; top: 0; width: 100%; border-bottom: 1px solid var(--color-line);}
+.adminsPage header div{max-width: 1920px; margin-inline: auto; display: flex; justify-content: center; align-items: center; position: relative;}
+.adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo2.png) no-repeat top center / cover; text-indent: -9999px;}
+.adminsPage header div ul{gap: 80px; display: flex; align-items: center;}
+.adminsPage header div ul li a{font-size: 16px; line-height: 70px; font-weight: 700; color: #BBB;}
+.adminsPage header div ul li a.router-link-active{color: #222; position: relative;}
+.adminsPage header div ul li a.router-link-active::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background-color: #222;}

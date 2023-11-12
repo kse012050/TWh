@@ -96,7 +96,7 @@
             <div>
                 <div class="contentSize">
                     <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을 확인해보세요.</h3>
-                    <ul class="boardBox">
+                    <ul class="user-board">
                         <li>
                             <a href="#">
                                 <img src="../images/delete/board01.png" alt="">

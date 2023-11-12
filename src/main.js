@@ -15,6 +15,11 @@ import AdminRoot from './pages/admin/AdminRoot'
 import NoticesList from './pages/admin/NoticesList'
 import NoticesDetail from './pages/admin/NoticesDetail'
 import NoticesInput from './pages/admin/NoticesInput'
+import BoardList from './pages/admin/BoardList'
+import BoardInput from './pages/admin/BoardInput'
+import InquiryList from './pages/admin/InquiryList'
+import InquiryDetail from './pages/admin/InquiryDetail'
+import InquiryInput from './pages/admin/InquiryInput'
 
 const routes = [
     {path: '/', component: UserRoot,
@@ -64,6 +69,26 @@ const routes = [
             {
                 path: 'noticesInput',
                 component: NoticesInput
+            },
+            {
+                path: 'boardList',
+                component: BoardList
+            },
+            {
+                path: 'boardInput',
+                component: BoardInput
+            },
+            {
+                path: 'inquiryList',
+                component: InquiryList
+            },
+            {
+                path: 'inquiryDetail',
+                component: InquiryDetail
+            },
+            {
+                path: 'inquiryInput',
+                component: InquiryInput
             }
         ]
     }
