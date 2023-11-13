@@ -50,8 +50,10 @@
 .userPage header{padding-inline: 40px 60px;}
 .userPage header div{width: 100%; max-width: 1920px; margin-inline: auto;}
 .userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
+/* .userPage header div nav ul li:first-child{display: none;} */
 .userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
 .userPage header div button{display: none;}
+.userPage header.white div nav ul li a{color: white;}
 
 
 /* 유저 푸터 */

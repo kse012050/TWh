@@ -49,10 +49,15 @@
 /* 유저 해더 */
 .userPage header{padding-inline: var(--spacing);}
 .userPage header div{height: var(--headerHeight);}
+.userPage header div button{--width: 36px; width: var(--width); aspect-ratio: 1; text-indent: -9999px;}
+.userPage header div nav{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);}
 .userPage header div nav{display: none;}
-/* .userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
-.userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;} */
-.userPage header div button{--width: 36px; width: var(--width); aspect-ratio: 1; background: url(../images/icon-menu.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
+.userPage header div nav.active{display: flex;}
+.userPage header div nav ul{width: 240px; height: 100%; padding: 80px 30px; background-color: white; margin-left: auto;}
+.userPage header div nav ul li:not(:last-child){margin-bottom: 30px;}
+.userPage header div nav ul li a{font-size: 20px; line-height: 24px; font-weight: 700;}
+.userPage header div nav button{position: absolute; right: 10px; top: 10px; background: url(../images/icon-close.png) no-repeat center / cover;}
+.userPage header div > button{background: url(../images/icon-menu.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%;}
 
 
 /* 유저 푸터 */

@@ -1,20 +1,6 @@
 <template>
   <div class="userPage">
-    <header>
-      <div>
-        <h1><router-link to="/" class="logo">한화 신한 테라와트아워 로고 이미지</router-link></h1>
-        <nav>
-          <ul>
-            <li><router-link to="/company">기업 소개</router-link></li>
-            <li><router-link to="/solution">전력거래 솔루션</router-link></li>
-            <li><router-link to="/recruit">발전자원 모집</router-link></li>
-            <li><router-link to="/board">게시판</router-link></li>
-            <li><router-link to="/inquiry">사업 문의</router-link></li>
-          </ul>
-        </nav>
-        <button>메뉴 열기 / 닫기</button>
-      </div>
-    </header>
+    <user-header />
     <router-view></router-view>
     <footer>
       <div class="contentSize">
@@ -70,13 +56,12 @@
   </div>
 </template>
 <script>
+import UserHeader from "@/components/UserHeader.vue";
+
 export default {
-    name: 'UserRoot',
-    methods: {
-    headerStyle(){
-      const header = document.querySelector('header');
-      this.$route.path === '/' ? header.classList.add('white') : header.classList.remove('white')
-    },
+  name: 'UserRoot',
+  components: { UserHeader },
+  methods: {
     aniIdx(){
       setTimeout(()=>{
         document.querySelectorAll('[data-aniDelay]').forEach((element)=>{
@@ -111,12 +96,10 @@ export default {
     }
   },
   mounted() {
-    this.headerStyle();
     this.aniIdx();
   },
   watch: {
     '$route' () {
-      this.headerStyle();
       this.aniIdx();
     }
   }
