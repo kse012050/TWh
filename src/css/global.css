@@ -1,8 +1,8 @@
 
 /* 컨텐츠 사이즈 */
 .contentSize{margin-inline: auto;}
-.contentSize-padding{padding-inline: calc((100vw - var(--contentSize-padding)) / 2); box-sizing: border-box;}
-.userPage .contentSize{max-width: var(--contentSize);}
+.contentSize-padding{padding-inline: max(calc((100vw - var(--contentSize-padding)) / 2), var(--spacing)); box-sizing: border-box;}
+.userPage .contentSize{max-width: var(--contentSize); width: calc(100% - calc(var(--spacing) * 2));}
 .adminsPage .contentSize{width: var(--contentSize);}
 
 
@@ -15,7 +15,7 @@
 
 
 /* 로고 */
-.logo{--height: 48px; --imgIdx: 0; display: block; height: var(--height); aspect-ratio: 283 / 47; background: url(../images/logo2.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
+.logo{/* --imgIdx: 0; */ display: block; height: var(--height); aspect-ratio: 283 / 47; background: url(../images/logo2.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 
 
 /* 자세히 링크 */
@@ -118,7 +118,6 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .content-inquiry ul li label[data-comment]{position: relative;}
 .content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-size: 18px; margin-left: 20px; font-weight: 400; color: var(--color-point01);}
 .content-inquiry ul li :is(input, textarea){width: 100%; padding: 20px; color: #222; box-sizing: border-box;}
-/* .content-inquiry ul li :is(input, textarea)::placeholder{color: #BBB;} */
 .content-inquiry ul li div input{height: 70px;}
 .content-inquiry ul li div[data-unit]{position: relative;}
 .content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-size: 22px; right: 20px; font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
@@ -139,12 +138,9 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 
 
 /* 유저 해더 */
-.userPage header{padding-inline: 40px 60px; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
-.userPage header div{width: 100%; max-width: 1920px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center;}
-.userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
-.userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
-.userPage header.white{background-color: transparent;}
-.userPage header.white div h1 a{--imgIdx: 1;}
+.userPage header{--imgIdx: 0; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
+.userPage header div{display: flex; justify-content: space-between; align-items: center;}
+.userPage header.white{--imgIdx: 1; background-color: transparent;}
 .userPage header.white div nav ul li a{color: white;}
 
 

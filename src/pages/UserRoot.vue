@@ -12,6 +12,7 @@
             <li><router-link to="/inquiry">사업 문의</router-link></li>
           </ul>
         </nav>
+        <button>메뉴 열기 / 닫기</button>
       </div>
     </header>
     <router-view></router-view>

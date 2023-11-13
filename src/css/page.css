@@ -3,20 +3,25 @@
 /* 메인 페이지 */
 .mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
 header.white + .mainPage .fullPager{--color: white;}
-.mainPage .fullPager{position: fixed; left: 50%; top: 0%; width: 100%; transform: translateX(-50%); max-width: 1920px; height: 100%; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; pointer-events: none;}
+.mainPage .fullPager{position: fixed; left: 50%; top: 0%; width: 100%; transform: translateX(-50%); max-width: 1920px; width: calc(100% - calc(var(--spacing) * 2)); height: 100%; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; pointer-events: none;}
 .mainPage .fullPager li{width: 9px; aspect-ratio: 1; background-color: var(--color); border-radius: 100%; opacity: 0.5; text-indent: -9999px; font-size: 5px;}
 .mainPage .fullPager li.active{background-color: transparent; border: 3px solid var(--color); transform: translateX(3px); opacity: 1;}
 .mainPage .fullPager li:not(:last-child){margin-bottom: 30px;}
 /* 메인 페이지 - 최상단 영역 */
 .mainPage .topArea{display: flex; justify-content: center; align-items: center; position: relative; font-weight: 700; text-align: center;}
 .mainPage .topArea > div{--typingHeight: 36px; display: flex; flex-direction: column; align-items: center;}
-.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: 60px;}
+.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: 5.5556vh;}
 .mainPage .topArea > div h2 b{font-size: 120px; line-height: 140px; display: block;}
 .mainPage .topArea > div p{font-size: 30px; line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
 .mainPage .topArea > .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
-
+.mainPage .topArea > .scroll{width: 14px; line-height: 17px; letter-spacing: 4.2px; font-weight: 700; position: absolute; left: 50%; bottom: 11.1111vh; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;}
+.mainPage .topArea > .scroll span{width: 1px; height: 9.2592vh; margin-top: 1.8518vh; background-color: rgba(255, 255, 255, 0.3);}
+.mainPage .topArea > .scroll span::before{content: ''; display: block; width: 100%; height: 0%; background-color: white; animation: scrollAni 3s linear infinite;}
+@keyframes scrollAni {
+    0%{height: 0%;}
+    100%{height: 100%;}
+}
 /* 메인 페이지 - 솔루션 영역 */
-/* .mainPage .solutionArea{background: url(../images/main-listBG.png) no-repeat center / cover;} */
 .mainPage .solutionArea ul{margin-inline: auto; height: 100%; display: flex; color: white; text-align: center;}
 .mainPage .solutionArea ul li{flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-position: center; background-size: cover; position: relative;}
 .mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);}
@@ -97,7 +102,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .companyPage .bottomArea::before{content: ''; display: block; max-width: 660px; margin:0 auto 60px; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}
 .companyPage .bottomArea img{max-width: 660px; margin-bottom: 60px; width: 100%;}
 .companyPage .bottomArea div{display: flex; justify-content: center; align-items: center; gap: 30px;}
-.companyPage .bottomArea div a{}
 
 
 /* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
@@ -114,7 +118,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 전력거래 솔루션 페이지 */
-.solutionPage .topArea div:nth-of-type(3){}
 .solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px;}
 .solutionPage .topArea div:nth-of-type(3) ul li{width: 540px; height: 50vw; max-height: 540px; padding: 80px 60px; background-color: white; box-sizing: border-box; display: flex; flex-direction: column; position: relative;}
 .solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 260px; width: var(--width); aspect-ratio: 1; content: ''; background: url(../images/solution-topLogo.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; position: absolute; right: 0; top: 0;}
@@ -130,17 +133,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .content-img div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
 .solutionPage .content-img div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
 .solutionPage .content-img dl{margin-top: 60px;}
-/* 
-이미지도 삭제해야 한다
-.solutionPage .contractArea{padding-block: var(--padding02); background-color: var(--color-BG02);}
-.solutionPage .contractArea > p{margin-bottom: 40px; text-align: left;}
-.solutionPage .contractArea ul{gap: 50px; display: flex; align-items: flex-start;}
-.solutionPage .contractArea ul li{flex: 1; box-shadow: 10px 20px 40px 0px rgba(0, 0, 0, 0.07);}
-.solutionPage .contractArea ul li:nth-child(1){margin-top: 80px;}
-.solutionPage .contractArea ul li:nth-child(2){margin-top: 160px;}
-.solutionPage .contractArea ul li::before{content: ''; display: block; width: 100%; aspect-ratio: 380 / 460; background: url(../images/solution-PPAImg.png) no-repeat top calc((100% / (var(--aniTotal) - 1) * var(--aniIdx))) center / 100%;}
-.solutionPage .contractArea ul li p{font-size: 30px; line-height: 42px; padding: 40px; background-color: white;}
-.solutionPage .contractArea ul li p b{display: block; font-weight: 700;} */
 .solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
 .solutionPage .expertArea p{margin-bottom: 100px;}
 .solutionPage .expertArea ul{display: flex; justify-content: center; position: relative;}
@@ -161,7 +153,6 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .recruitPage .content-img p{margin-bottom: 80px;}
 .recruitPage .content-img dl{margin-top: 50px;}
 .recruitPage [class*="condition"][class*="Area"]{padding-block: var(--padding03); text-align: center;}
-/* .recruitPage [class*="condition"][class*="Area"] p:nth-child(2){margin-bottom: 80px;} */
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 60px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 30px; display: flex;}
 .recruitPage [class*="condition"][class*="Area"] ul li{--spacing: 30px; height: 370px; padding: var(--spacing); flex: 1; text-align: left; background-color: white; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.07); box-sizing: border-box; position: relative;}
@@ -177,30 +168,13 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .recruitPage .condition02Area{background-color: var(--color-BG02);}
 .recruitPage .condition02Area strong{margin-bottom: 30px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 80px;}
-/* .recruitPage .purchaseArea{padding-block: var(--padding02) var(--padding01); background-color: var(--color-BG01); color: white; display: flex; justify-content: space-between;}
-.recruitPage .purchaseArea div{text-align: left;}
-.recruitPage .purchaseArea div strong{margin-bottom: 30px; display: block;}
-.recruitPage .purchaseArea div p{font-size: 40px; line-height: 54px; font-weight: 400;}
-.recruitPage .purchaseArea div p b{font-weight: 700;}
-.recruitPage .purchaseArea ul{margin-top: 40px;}
-.recruitPage .purchaseArea ul li{width: 460px; font-size: 30px; line-height: 42px; font-weight: 400; aspect-ratio: 460 / 240; display: flex; justify-content: center; align-items: center; border: 2px solid white; position: relative;}
-.recruitPage .purchaseArea ul li::before,
-.recruitPage .purchaseArea ul li::after{content: ''; position: absolute; width: 64px; aspect-ratio: 64 / 63.5; background-color: var(--color-BG01);}
-.recruitPage .purchaseArea ul li::before{left: 0; top: 0; transform: translate(-50%, -50%);}
-.recruitPage .purchaseArea ul li::after{right: 0; bottom: 0; transform: translate(50%, 50%);}
-.recruitPage .purchaseArea ul li:nth-child(1){margin-left: 160px;}
-.recruitPage .purchaseArea ul li:nth-child(2){margin-top: 60px;}
-.recruitPage .purchaseArea ul li b{font-weight: 700;} */
 .recruitPage .simplifyArea{padding-block: var(--padding02);}
 /* 이미지도 삭제 */
-/* .recruitPage .simplifyArea::after{content: ''; width: 660px; aspect-ratio: 660 / 110; margin-top: 200px; display: block; margin-inline: auto; background: url(../images/logo2.png) no-repeat top center / 100%;} */
 .recruitPage .simplifyArea > p{margin-bottom: 100px;}
 .recruitPage .simplifyArea ul{display: flex; justify-content: space-between; position: relative;}
-/* .recruitPage .simplifyArea ul::after{content: ''; width: 500px; aspect-ratio: 500 / 340; position: absolute; left: 50%; bottom: -180px; transform: translateX(-50%); background: url(../images/recruit-arrow.png) no-repeat center / cover;} */
 .recruitPage .simplifyArea ul li{width: 520px; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 3px solid var(--color); border-radius: 100%;}
 .recruitPage .simplifyArea ul li:nth-child(1){--color: var(--color-point01);}
 .recruitPage .simplifyArea ul li:nth-child(2){--color: var(--color-point02);}
-/* .recruitPage .simplifyArea ul li svg{height: 50px; margin-bottom: 35px;} */
 .recruitPage .simplifyArea ul li:not(:first-child)::before{content: ''; width: 30px; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url(../images/icon-plus.png) no-repeat center / cover;}
 .recruitPage .simplifyArea ul li b{font-size: 30px; line-height: 38px; margin-bottom: 20px; font-weight: 700;}
 .recruitPage .simplifyArea ul li b::after{content: ''; width: 315px; margin-top: 20px; aspect-ratio: 315 / 90; display: block; background: url(../images/logo3.png) no-repeat top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center / 100%;}

@@ -1,0 +1,79 @@
+
+/* 컨텐츠 사이즈 */
+
+
+/* 서브 페이지 위아래 간격 */
+
+
+/* 한화폰트 적용 */
+
+
+/* 로고 */
+.logo{--height: 48px;}
+
+
+/* 자세히 링크 */
+
+
+
+/* 버튼 */
+
+
+
+/* 게시판 */
+
+
+/* 텍스트 애니메이션 */
+
+
+/* 서브 페이지 탑 애니 기본 형태 */
+/* 서브 페이지 탑 애니메이션 */
+
+
+
+/* 검은 배경 케이스 */
+
+
+/* 컨텐츠 - 이미지 */
+
+
+/* 컨텐츠 - 프로세스 */
+
+
+/* 폼 공통 */
+
+
+/* 유저 페이지 문의 form */
+
+
+/* 유저 해더 */
+.userPage header{padding-inline: 40px 60px;}
+.userPage header div{width: 100%; max-width: 1920px; margin-inline: auto;}
+.userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
+.userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
+.userPage header div button{display: none;}
+
+
+/* 유저 푸터 */
+
+
+/* 관리자 공통 */
+
+
+/* 관리자 버튼 */
+
+
+/* 관리자 - 텝 */
+
+
+/* 관리자 게시판 */
+
+
+/* 관리자 게시판 페이저 */
+
+
+/* 관리자 인풋 */
+
+
+
+/* 관리자 해더 */
