@@ -144,7 +144,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
 .solutionPage .expertArea p{margin-bottom: 100px;}
 .solutionPage .expertArea ul{display: flex; justify-content: center; position: relative;}
-.solutionPage .expertArea ul li{width: 440px; font-size: 26px; line-height: 38px; font-weight: 700; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px solid white; border-radius: 100%;}
+.solutionPage .expertArea ul li{width: 440px; font-size: 26px; line-height: 38px; font-weight: 700; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px dashed white; border-radius: 100%;}
 .solutionPage .expertArea ul li:nth-child(2n + 1){position: absolute; top: 0;}
 .solutionPage .expertArea ul li:nth-child(1){left: 0;}
 .solutionPage .expertArea ul li:nth-child(3){right: 0;}

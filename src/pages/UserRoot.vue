@@ -19,7 +19,7 @@
       <div class="contentSize">
           <ul>
               <li><router-link to="">기업 소개</router-link></li>
-              <li><router-link to="">RE100 이행 솔루션</router-link></li>
+              <li><router-link to="">전력거래 솔루션</router-link></li>
               <li><router-link to="">발전자원 모집</router-link></li>
               <li><router-link to="">게시판</router-link></li>
               <li><router-link to="">사업 문의</router-link></li>

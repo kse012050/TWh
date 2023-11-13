@@ -18,11 +18,11 @@
                     <div>
                         <strong>
                             기업을 위한<br>
-                            RE100 솔루션
+                            재생에너지 전력거래 솔루션
                         </strong>
                         <p>
                             복잡한 RE100 이행,<br>
-                            테라와트아워로 쉬워집니다.
+                            <span class="font-hanwha">테라와트아워</span>로 쉬워집니다.
                         </p>
                         <a href="#" class="arrow-white">자세히 보기<span></span></a>
                     </div>
