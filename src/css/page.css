@@ -82,41 +82,31 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
-:is(.solutionPage, .recruitPage) .topArea div > strong{font-size: 60px; line-height: 76px; font-weight: 700; text-align: center;}
-:is(.solutionPage, .recruitPage) .topArea div > p{font-size: 50px; line-height: 70px;}
+:is(.solutionPage, .recruitPage) .topArea div > strong{font-weight: 700; text-align: center;}
 :is(.solutionPage, .recruitPage) .topArea div > p b{font-weight: 700;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child:not([class])){font-size: 50px; line-height: 70px; display: block; text-align: center;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child:not([class])){display: block; text-align: center;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 400;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2) b,
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 700;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(2){font-size: 40px; line-height: 54px;}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry){padding-block: var(--padding02) var(--padding01);}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{margin-bottom: 100px; text-align: left;}
 
 
 /* 전력거래 솔루션 페이지 */
-.solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px;}
-.solutionPage .topArea div:nth-of-type(3) ul li{width: 540px; height: 50vw; max-height: 540px; padding: 80px 60px; background-color: white; box-sizing: border-box; display: flex; flex-direction: column; position: relative;}
-.solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 260px; width: var(--width); aspect-ratio: 1; content: ''; background: url(../images/solution-topLogo.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; position: absolute; right: 0; top: 0;}
-.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){transform: translateY(-5.5556vh); --color: #0046FF; --imgIdx: 0;}
-.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){transform: translateY(5.5556vh); --color: #F37321; --imgIdx: 1;}
+.solutionPage .topArea div:nth-of-type(3) ul li{background-color: white; box-sizing: border-box; display: flex; flex-direction: column; position: relative;}
+.solutionPage .topArea div:nth-of-type(3) ul li::before{width: var(--width); aspect-ratio: 1; content: ''; background: url(../images/solution-topLogo.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; position: absolute; right: 0; top: 0;}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){--color: #0046FF; --imgIdx: 0;}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){--color: #F37321; --imgIdx: 1;}
 .solutionPage .topArea div:nth-of-type(3) ul li mark{color: var(--color); font-weight: 700;}
-.solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 50px;}
-.solutionPage .topArea div:nth-of-type(3) ul li p{font-size: 30px; line-height: 42px; font-weight: 400;}
-.solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-block: auto 3.7037vh;}
-.solutionPage .content-process ul li p{font-size: 22px; line-height: 30px; margin-top: 30px; font-weight: 400;}
+.solutionPage .topArea div:nth-of-type(3) ul li p{font-weight: 400;}
+.solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-top: auto;}
+.solutionPage .content-process ul li p{font-weight: 400;}
 .solutionPage .content-img{padding-block: var(--padding03) var(--padding02); text-align: center;}
-.solutionPage .content-img p{margin-bottom: 40px;}
-.solutionPage .content-img div{max-width: 555px; gap: 15px; margin-bottom: 80px; display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
-.solutionPage .content-img div b{font-size: 22px; line-height: 30px; padding: 10px 15px; font-weight: 700; background-color: #EFEFEF;}
-.solutionPage .content-img dl{margin-top: 60px;}
+.solutionPage .content-img div:not([class]){display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
+.solutionPage .content-img div:not([class]) b{font-weight: 700; background-color: #EFEFEF;}
 .solutionPage .expertArea{padding-block: var(--padding03) var(--padding02); color: white; background-color: var(--color-BG01);}
-.solutionPage .expertArea p{margin-bottom: 100px;}
-.solutionPage .expertArea ul{display: flex; justify-content: center; position: relative;}
-.solutionPage .expertArea ul li{width: 440px; font-size: 26px; line-height: 38px; font-weight: 700; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px dashed white; border-radius: 100%;}
-.solutionPage .expertArea ul li:nth-child(2n + 1){position: absolute; top: 0;}
-.solutionPage .expertArea ul li:nth-child(1){left: 0;}
-.solutionPage .expertArea ul li:nth-child(3){right: 0;}
+.solutionPage .expertArea ul{position: relative;}
+.solutionPage .expertArea ul li{font-weight: 700; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px dashed white; border-radius: 100%;}
 
 
 /* 발전자원 모집 페이지 */

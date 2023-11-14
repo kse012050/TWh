@@ -45,12 +45,23 @@ ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 검은 배경 케이스 */
+b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
 
 
 /* 컨텐츠 - 이미지 */
+.content-img strong{margin-bottom: 30px;}
+.content-img dl{font-size: 18px; line-height: 30px; display: flex; justify-content: center; align-items: center;}
+.content-img dl dd{text-align: left; display: flex;}
+.content-img dl dd::before{content: ''; width: 1px; background-color: var(--color-line); margin-inline: 40px;}
 
 
 /* 컨텐츠 - 프로세스 */
+.content-process > p{margin-bottom: 100px;}
+.content-process b{margin-bottom: 60px;}
+.content-process ul{--width: 248px; display: flex; justify-content: center;}
+.content-process ul::before{right: 50%; top: calc(var(--width) / 2); width: calc(100% + (100vw - var(--contentSize-padding))); height: 1px; transform: translateX(50%);}
+.content-process ul li{flex: 1;}
+
 
 
 /* 폼 공통 */

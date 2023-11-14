@@ -11,8 +11,8 @@
             <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <p>
                     <b>RE100 파트너사,</b><br>
-                    장기적인 계약 이행을 위한 <b>‘기업 안정성’</b>과<br>
-                    재생에너지 분야 <b>‘전문성’</b>이 중요합니다.
+                    장기적인 계약 이행을 위한<br class="mobile"> <b>‘기업 안정성’</b>과<br>
+                    재생에너지 분야<br class="mobile"> <b>‘전문성’</b>이 중요합니다.
                 </p>
             </div>
             <div data-aniType="basic" data-aniDelay="2">
@@ -91,7 +91,7 @@
             </ul>
         </div>
 
-        <div class="content-img contentSize-padding">
+        <div class="PPA01Area content-img contentSize-padding">
             <strong>직접 PPA</strong>
             <p>
                 재생에너지전기공급사업자를 통해<br>
@@ -102,7 +102,7 @@
                 <b>#전력 다소비 기업</b>
                 <b>#낮 시간대 전력 소비가 많은 기업</b>
             </div>
-            <img src="../images/solution-PPAImg01.png" alt="직접 PPA 이미지">
+            <div class="box-img">직접 PPA 이미지</div>
             <dl>
                 <dt>*직접PPA</dt>
                 <dd>
@@ -111,8 +111,8 @@
                 </dd>
             </dl>
         </div>
-        <!-- <hr class="case01"> -->
-        <div class="content-img contentSize-padding">
+        
+        <div class="PPA02Area content-img contentSize-padding">
             <strong>제3자 간 PPA</strong>
             <p>
                 발전사업자와 한국전력, 한국전력과 전기사용자가<br>
@@ -123,10 +123,10 @@
                 <b>#전력소비량이 상대적으로 적은 기업</b>
                 <b>#24시간 조업 기업</b>
             </div>
-            <img src="../images/solution-PPAImg02.png" alt="제3자 PPA 이미지">
+            <div class="box-img">제3자 PPA 이미지</div>
         </div>
-        <!-- <hr class="case01"> -->
-        <div class="content-img contentSize-padding">
+        
+        <div class="PPA03Area content-img contentSize-padding">
             <strong>V.PPA</strong>
             <p>
                 전력 거래 당사자간 합의된 고정가격(SMP+REC)과<br>
@@ -136,7 +136,7 @@
                 <b>#RE100 단기 이행이 필요한 기업</b>
                 <b>#안정적인 REC 조달을 희망하는 기업</b>
             </div>
-            <img src="../images/solution-PPAImg03.png" alt="PPA 이미지">
+            <div class="box-img">PPA 이미지</div>
         </diV>
 
         <!-- <div class="contractArea contentSize-padding">
@@ -169,7 +169,7 @@
         <div class="expertArea contentSize-padding">
             <p>
                 <b>20년 장기계약 PPA,</b><br>
-                안정적인 자원 조달이 가능한 <b class="font-hanwha">테라와트아워</b>와 함께하세요.
+                안정적인 자원 조달이 가능한<br class="mobile"> <b class="font-hanwha">테라와트아워</b>와 함께하세요.
             </p>
             <ul>
                 <li>

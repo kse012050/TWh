@@ -41,16 +41,27 @@ ul.user-board li a p{font-size: 16px; line-height: 20px;}
 
 
 /* 검은 배경 케이스 */
+b.case01{padding: 8px 20px; font-size: 15px; line-height: 18px;}
 
 
 /* 이미지 박스 */
-.box-img{max-width: 300px; margin-inline: auto;}
+.box-img{max-width: var(--mobileCotentSize); margin-inline: auto;}
 
 
 /* 컨텐츠 - 이미지 */
+.content-img strong{margin-bottom: 30px;}
+.content-img dl{font-size: 13px; max-width: var(--mobileCotentSize); text-align: left; margin-inline: auto;}
+.content-img dl dt{line-height: 20px; margin-bottom: 7px;}
+.content-img dl dd{line-height: 18px;}
 
 
 /* 컨텐츠 - 프로세스 */
+.content-process > p{margin-bottom: 50px;}
+.content-process b{margin-bottom: 40px;}
+.content-process ul{--width: 180px;}
+.content-process ul::before{left: calc(var(--width) / 2); top: 0; width: 1px; height: 100%;}
+.content-process ul li:not(:last-child){margin-bottom: 20px;}
+.content-process ul li strong{font-size: 16px; line-height: 22px;}
 
 
 /* 폼 공통 */
