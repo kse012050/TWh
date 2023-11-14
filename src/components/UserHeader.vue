@@ -37,6 +37,7 @@ export default {
     watch: {
         '$route' () {
             this.headerStyle();
+            this.isMenu = false;
         }
     }
 }

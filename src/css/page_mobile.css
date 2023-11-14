@@ -31,7 +31,7 @@
 .mainPage .companyArea a{margin-top: min(9.375vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div > div h3{font-size: 26px; line-height: 34px; margin-bottom: 40px;}
-.mainPage .boardArea .user-board{display: flex; gap: 20px; overflow: auto;}
+.mainPage .boardArea .user-board{display: flex; gap: 20px; overflow: auto; width: calc(100% + (var(--spacing) * 2)); transform: translateX(var(--spacing) * -1);}
 .mainPage .boardArea .user-board li{min-width: 280px; flex: 1;}
 .mainPage .boardArea > div > div > a{margin-top: 40px;}
 
