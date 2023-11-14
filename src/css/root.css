@@ -42,6 +42,6 @@ html{--scrollWidth: 17px;}
         --padding01: 80px;
         --padding02: 80px;
         --padding03: 60px;
-        --mobileCotentSize: 360px;
+        --mobileContentSize: 320px;
     }
 }

@@ -87,7 +87,7 @@ b.case01{font-weight: 700; color: white; background-color: #222; border-radius: 
 
 
 /* 컨텐츠 - 이미지 */
-.content-img{padding-block: var(--padding03) var(--padding02); text-align: center;}
+.content-img{text-align: center;}
 .content-img p b{font-weight: 700;}
 .content-img dl dt{font-weight: 700;}
 .content-img dl dd{color: #999; font-weight: 400;}

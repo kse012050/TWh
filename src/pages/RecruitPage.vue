@@ -42,7 +42,7 @@
                 <b>RE100 이행을 원하는 기업</b>과 장기고정계약으로<br>
                 안정적인 수익을 창출하세요.
             </p>
-            <img src="../images/recruit-RE100.png" alt="RE100 장기고정계약 이미지">
+            <div class="box-img">RE100 장기고정계약 이미지</div>
             <dl>
                 <dt>*직접PPA</dt>
                 <dd>
@@ -117,7 +117,7 @@
         <div class="condition02Area contentSize-padding">
             <strong>발전소 매입</strong>
             <p>
-                <b>업계 최고가 수준</b>으로 발전 자원을 매입합니다.
+                <b>업계 최고가 수준</b>으로<br class="mobile"> 발전 자원을 매입합니다.
             </p>
             <b class="case01">발전소 매입 주요 조건</b>
             <ul data-styleIdx>
@@ -150,7 +150,7 @@
                 </li>
             </ul>
             <p>
-                사업 부지부터 운영 중인 발전소까지 <b>다양한 형태의 자산 매입</b><br>
+                사업 부지부터 운영 중인 발전소까지<br class="mobile"> <b>다양한 형태의 자산</b><br>
                 신속한 사업 검토와 <b>자금 투입</b><br>
                 유연한 대금 <b>지급 조건 협의</b>
             </p>

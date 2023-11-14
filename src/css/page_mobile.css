@@ -96,10 +96,36 @@
 
 
 /* 발전자원 모집 페이지 */
-
-/* 이미지도 삭제 */
-
-
+.recruitPage .productArea > strong{margin-bottom: 40px;}
+.recruitPage .productArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
+.recruitPage .productArea ul li{aspect-ratio: 320 / 200; background-image: url(../images/recruit-productBG-M.png);}
+.recruitPage .productArea ul li:not(:last-child){margin-bottom: 20px;}
+.recruitPage .productArea ul li strong{font-size: 22px; line-height: 26px; margin-bottom: 15px;}
+.recruitPage .productArea ul li p{font-size: 15px; line-height: 20px;}
+.recruitPage .content-img p{margin-bottom: 50px;}
+.recruitPage .content-img dl{margin-top: 10px;}
+.recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
+.recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 30px;}
+.recruitPage [class*="condition"][class*="Area"] ul{gap: 20px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
+.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 20px; height: 250px;}
+.recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 150px;}
+.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 14px; line-height: 18px; margin-bottom: 10px;}
+.recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 15px; line-height: 20px; margin-bottom: 10px;}
+.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 13px; line-height: 18px;}
+.recruitPage [class*="condition"][class*="Area"] ul li::after{width: 117px;}
+.recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 16px; line-height: 24px; margin-top: 40px;}
+.recruitPage .condition02Area strong{margin-bottom: 20px;}
+.recruitPage .condition02Area p:nth-child(2){margin-bottom: 50px;}
+.recruitPage .simplifyArea > p{margin-bottom: 60px;}
+.recruitPage .simplifyArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
+.recruitPage .simplifyArea ul::before{width: 22px;}
+.recruitPage .simplifyArea ul li:not(:last-child){margin-bottom: 72px;}
+.recruitPage .simplifyArea ul li b{font-size: 20px; line-height: 24px; margin-bottom: 12px;}
+.recruitPage .simplifyArea ul li b::after{width: 210px; margin-top: 12px;}
+.recruitPage .simplifyArea ul li p{font-size: 15px; line-height: 22px;}
+.recruitPage .content-process ul{max-width: 160px; margin-inline: auto;}
+.recruitPage .content-process ul li strong:has(span){line-height: 22px;}
+.recruitPage .content-process ul li strong span{margin-block: 15px;}
 
 
 /* 게시판 */
