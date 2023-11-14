@@ -1,9 +1,6 @@
 :root{
     --contentSize: 1240px;
     --contentSize-padding: calc(var(--contentSize) + var(--scrollWidth));
-    --padding01: 200px;
-    --padding02: 160px;
-    --padding03: 120px;
     --padding04: 100px;
     --color-BG01: #162446;
     --color-BG02: #F8F8F8;
@@ -33,11 +30,17 @@ html{--scrollWidth: 17px;}
 @media screen and (width > 1240px) {
     :root{
         --headerHeight: 100px;
+        --padding01: 200px;
+        --padding02: 160px;
+        --padding03: 120px;
     }
 }
 
 @media screen and (width <= 1240px) {
     :root{
         --headerHeight: 58px;
+        --padding01: 80px;
+        --padding02: 80px;
+        --padding03: 60px;
     }
 }

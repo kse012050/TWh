@@ -49,42 +49,35 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 기업 소개 페이지 */
-.companyPage .topArea > div strong{font-size: 50px; line-height: 70px; margin-bottom: 30px; font-weight: 700; display: block;}
-.companyPage .topArea > div p{font-size: 40px; line-height: 54px; }
-.companyPage .peopleArea{padding-block: 160px;}
-.companyPage .peopleArea strong{font-size: 50px; line-height: 70px; margin-bottom: 100px; font-weight: 700; text-align: center; display: block;}
-.companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 100px 160px;}
-.companyPage .peopleArea ul li{max-width: 360px;}
-.companyPage .peopleArea ul li img{margin-bottom: 50px ; width: 100%;}
-.companyPage .peopleArea ul li :is(b, span){font-size: 30px; line-height: 34px; margin-bottom: 15px; float: left;}
-.companyPage .peopleArea ul li b{font-weight: 700;}
-.companyPage .peopleArea ul li span{font-weight: 400; margin-left: 20px;}
-.companyPage .peopleArea ul li span + *{display: block; clear: both;}
-.companyPage .peopleArea ul li small{font-size: 20px; line-height: 20px; margin-bottom: 30px; font-weight: 700; color: #999;}
-.companyPage .peopleArea ul li p{font-size: 20px; line-height: 32px; font-weight: 400;}
+.companyPage .topArea > div strong{font-weight: 700; display: block;}
 .companyPage .VPPArea{padding-block: var(--padding02); text-align: center;}
-.companyPage .VPPArea p{font-size: 50px; line-height: 70px; margin-bottom: 100px; font-weight: 400;}
+.companyPage .VPPArea p{font-weight: 400;}
 .companyPage .VPPArea p b{font-weight: 700;}
-.companyPage .VPPArea img{width: 100%;}
 .companyPage :is(.missionArea, .visionArea){display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(var(--fullHeight) - var(--headerHeight)); font-weight: 700; color: white; text-align: center;}
-.companyPage :is(.missionArea, .visionArea) b{font-size: 30px; line-height: 36px; margin-bottom: 40px; display: block;}
-.companyPage :is(.missionArea, .visionArea) strong{font-size: 70px; line-height: 72px; margin-bottom: 60px;}
-.companyPage :is(.missionArea, .visionArea) p{font-size: 26px; line-height: 38px;}
+.companyPage :is(.missionArea, .visionArea) b{display: block;}
 .companyPage .missionArea{background: url('../images/main-companyBG.png') no-repeat center / cover;}
 .companyPage .visionArea{background: url('../images/company-topBG3.png') no-repeat center / cover;}
-hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
-.companyPage .historyArea{padding-block: 120px 200px;}
-.companyPage .historyArea strong{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 700; text-align: center; display: block;}
-.companyPage .historyArea ol{padding-top: 12px; display: flex; flex-wrap: wrap; justify-content: flex-end; position: relative;}
-.companyPage .historyArea ol::before{font-size: 60px; line-height: 72px; content: attr(title); font-weight: 700; margin-right: auto; position: absolute; left: 0; top: 0;}
-.companyPage .historyArea ol li{width: 980px; font-size: 26px; --lineHeight: 31px; line-height: var(--lineHeight); --virtualColor: #DEDEDE; font-weight: 700; display: flex; align-items: center;}
+.companyPage .peopleArea{padding-block: var(--padding02);}
+.companyPage .peopleArea strong{font-weight: 700; text-align: center; display: block;}
+.companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center;}
+.companyPage .peopleArea ul li{max-width: 360px; width: 100%;}
+.companyPage .peopleArea ul li img{width: 100%;}
+.companyPage .peopleArea ul li :is(b, span){float: left;}
+.companyPage .peopleArea ul li b{font-weight: 700;}
+.companyPage .peopleArea ul li span{margin-left: 20px;}
+.companyPage .peopleArea ul li span + *{display: block; clear: both;}
+.companyPage .peopleArea ul li small{font-weight: 700; color: #999;}
+.companyPage .peopleArea ul li p{font-weight: 400;}
+.companyPage .historyArea{padding-block: var(--padding03) var(--padding01);}
+.companyPage .historyArea strong{font-weight: 700; text-align: center; display: block;}
+.companyPage .historyArea ol::before{content: attr(title); font-weight: 700;}
+.companyPage .historyArea ol li{line-height: var(--lineHeight); --virtualColor: #DEDEDE; font-weight: 700; display: flex; align-items: center;}
 .companyPage .historyArea ol li::before{content: ''; width: 6px; margin-right: 10px; aspect-ratio: 1; background-color: var(--virtualColor); border-radius: 100%; transform: translateX(-50%);}
-.companyPage .historyArea ol li:not(:last-child){padding-bottom: 60px; position: relative;}
+.companyPage .historyArea ol li:not(:last-child){position: relative;}
 .companyPage .historyArea ol li:not(:last-child)::after{content: ''; width: 1px; height: 100%; position: absolute; left: 0; top: calc(var(--lineHeight) / 2); background-color: var(--virtualColor); transform: translateX(-50%);}
-.companyPage .historyArea ol li small{font-size: 24px; line-height: 29px; margin-right: 40px; color: #999;}
-.companyPage .bottomArea{padding-block: 160px; background: url('../images/company-bottomBG.png') no-repeat center / cover;}
-.companyPage .bottomArea::before{content: ''; display: block; max-width: 660px; margin:0 auto 60px; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}
-.companyPage .bottomArea img{max-width: 660px; margin-bottom: 60px; width: 100%;}
+.companyPage .historyArea ol li small{color: #999;}
+.companyPage .bottomArea{padding-block: var(--padding02); background: url('../images/company-bottomBG.png') no-repeat center / cover;}
+.companyPage .bottomArea::before{content: ''; display: block; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}
 .companyPage .bottomArea div{display: flex; justify-content: center; align-items: center; gap: 30px;}
 
 

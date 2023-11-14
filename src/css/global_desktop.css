@@ -21,6 +21,10 @@ br.mobile{display: none;}
 
 
 /* 버튼 */
+.userPage [class|="btn"]{width: 260px; height: 70px;}
+.userPage [class|='btn']:is([class$='black'], [class$='border']){font-size: 24px;}
+.userPage [class|="btn"][class$="download"]{font-size: 20px; padding-inline: 30px;}
+.userPage [class|="btn"][class$="download"]::after{width: 34px;}
 
 
 /* 게시판 */
@@ -35,6 +39,7 @@ ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */
+[data-subTopAni] .topArea h2{padding-block: 140px 24px; font-size: 60px; line-height: 72px;}
 /* 서브 페이지 탑 애니메이션 */
 
 

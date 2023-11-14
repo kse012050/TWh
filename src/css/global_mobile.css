@@ -19,6 +19,10 @@
 
 
 /* 버튼 */
+.userPage [class|="btn"]{width: 100%; max-width: 360px; height: 50px;}
+.userPage [class|='btn']:is([class$='black'], [class$='border'], [class$="download"]){font-size: 16px;}
+.userPage [class|="btn"][class$="download"]{padding-inline: 20px;}
+.userPage [class|="btn"][class$="download"]::after{width: 28px;}
 
 
 /* 게시판 */
@@ -31,11 +35,16 @@ ul.user-board li a p{font-size: 16px; line-height: 20px;}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */
+[data-subTopAni] .topArea h2{padding-block: 60px 34px; font-size: 30px; line-height: 36px;}
 /* 서브 페이지 탑 애니메이션 */
 
 
 
 /* 검은 배경 케이스 */
+
+
+/* 이미지 박스 */
+.box-img{max-width: 300px; margin-inline: auto;}
 
 
 /* 컨텐츠 - 이미지 */

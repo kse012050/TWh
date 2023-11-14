@@ -12,18 +12,18 @@
         </div>
         <div class="VPPArea contentSize-padding">
             <p>
-                에너지를 생산하는 발전사업자와<br>
+                에너지를 생산하는<br class="mobile"> 발전사업자와<br>
                 소비하는 기업을 연결하는<br>
-                <b>국내 최대의 전력거래 플랫폼</b>으로<br>
+                <b>국내 최대의 전력거래<br class="mobile"> 플랫폼</b>으로<br>
                 자리매김 하겠습니다.
             </p>
-            <img src="../images/company-VVPImg.png" alt="통합발전소 VPP 이미지">
+            <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
         <div class="missionArea contentSize-padding">
             <b>사명</b>
-            <strong>Powering a Sustainable Future</strong>
+            <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             <p>
-                안정적이고 전문적인 재생에너지 전력거래로
+                안정적이고 전문적인 재생에너지 전력거래로<br>
                 지속가능한 내일을 만들어갑니다.
             </p>
         </div>
@@ -31,9 +31,9 @@
             <b>비전</b>
             <strong>
                 Leading change<br>
-                in the energy market
+                in the energy<br class="mobile"> market
             </strong>
-            <p>분산에너지 중심의 에너지 패러다임 전환을 선도하겠습니다.</p>
+            <p>분산에너지 중심의<br class="mobile"> 에너지 패러다임 전환을 선도하겠습니다.</p>
         </div>
         <div class="peopleArea contentSize-padding">
             <strong>

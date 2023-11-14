@@ -37,7 +37,27 @@
 
 
 /* 기업 소개 페이지 */
-
+.companyPage .topArea > div strong{font-size: 26px; line-height: 34px; margin-bottom: 20px;}
+.companyPage .topArea > div p{font-size: 20px; line-height: 26px;}
+.companyPage .VPPArea p{font-size: 26px; line-height: 34px; margin-bottom: 60px;}
+.companyPage .VPPArea .box-img{aspect-ratio: 360 / 755; background-image: url(../images/company-VVPImg-M.png);}
+.companyPage :is(.missionArea, .visionArea) b{font-size: 18px; line-height: 21px; margin-bottom: 20px;}
+.companyPage :is(.missionArea, .visionArea) strong{font-size: 34px; line-height: 40px; margin-bottom: 30px;}
+.companyPage :is(.missionArea, .visionArea) p{font-size: 16px; line-height: 22px;}
+.companyPage .peopleArea strong{font-size: 26px; line-height: 34px; margin-bottom: 60px;}
+.companyPage .peopleArea ul{gap: 60px 20px;}
+.companyPage .peopleArea ul li img{margin-bottom: 25px;}
+.companyPage .peopleArea ul li :is(b, span){line-height: 24px; margin-bottom: 7px;}
+.companyPage .peopleArea ul li b{font-size: 20px;}
+.companyPage .peopleArea ul li span{font-size: 18px; margin-left: 15px;}
+.companyPage .peopleArea ul li small{font-size: 15px; line-height: 18px; margin-bottom: 15px;}
+.companyPage .peopleArea ul li p{font-size: 15px; line-height: 24px;}
+.companyPage .historyArea strong{font-size: 26px; line-height: 34px; margin-bottom: 40px;}
+.companyPage .historyArea ol::before{font-size: 30px; line-height: 36px; margin-bottom: 30px; display: block;}
+.companyPage .historyArea ol li{font-size: 16px; --lineHeight: 22px;}
+.companyPage .historyArea ol li:not(:last-child){padding-bottom: 30px;}
+.companyPage .historyArea ol li small{font-size: 14px; line-height: 18px; margin-right: 20px;}
+.companyPage .bottomArea::before{content: ''; display: block; max-width: 300px; margin: 0 auto 30px;}
 
 
 /* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
