@@ -3,65 +3,49 @@
 /* 메인 페이지 */
 .mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
 header.white + .mainPage .fullPager{--color: white;}
-.mainPage .fullPager{position: fixed; left: 50%; top: 0%; width: 100%; transform: translateX(-50%); max-width: 1920px; width: calc(100% - calc(var(--spacing) * 2)); height: 100%; z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; pointer-events: none;}
-.mainPage .fullPager li{width: 9px; aspect-ratio: 1; background-color: var(--color); border-radius: 100%; opacity: 0.5; text-indent: -9999px; font-size: 5px;}
-.mainPage .fullPager li.active{background-color: transparent; border: 3px solid var(--color); transform: translateX(3px); opacity: 1;}
-.mainPage .fullPager li:not(:last-child){margin-bottom: 30px;}
+/* 메인 페이지 - 페이저 */
 /* 메인 페이지 - 최상단 영역 */
 .mainPage .topArea{display: flex; justify-content: center; align-items: center; position: relative; font-weight: 700; text-align: center;}
-.mainPage .topArea > div{--typingHeight: 36px; display: flex; flex-direction: column; align-items: center;}
-.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: 5.5556vh;}
-.mainPage .topArea > div h2 b{font-size: 120px; line-height: 140px; display: block;}
-.mainPage .topArea > div p{font-size: 30px; line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
+.mainPage .topArea > div{display: flex; flex-direction: column; align-items: center;}
+.mainPage .topArea > div h2 b{display: block;}
+.mainPage .topArea > div p{line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
 .mainPage .topArea > .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
-.mainPage .topArea > .scroll{width: 14px; line-height: 17px; letter-spacing: 4.2px; font-weight: 700; position: absolute; left: 50%; bottom: 11.1111vh; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;}
-.mainPage .topArea > .scroll span{width: 1px; height: 9.2592vh; margin-top: 1.8518vh; background-color: rgba(255, 255, 255, 0.3);}
+.mainPage .topArea > .scroll{font-weight: 700; position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;}
+.mainPage .topArea > .scroll span{width: 1px; background-color: rgba(255, 255, 255, 0.3);}
 .mainPage .topArea > .scroll span::before{content: ''; display: block; width: 100%; height: 0%; background-color: white; animation: scrollAni 3s linear infinite;}
 @keyframes scrollAni {
     0%{height: 0%;}
     100%{height: 100%;}
 }
 /* 메인 페이지 - 솔루션 영역 */
-.mainPage .solutionArea ul{margin-inline: auto; height: 100%; display: flex; color: white; text-align: center;}
-.mainPage .solutionArea ul li{flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-position: center; background-size: cover; position: relative;}
+.mainPage .solutionArea ul{height: 100%; color: white; text-align: center;}
+.mainPage .solutionArea ul li{display: flex; flex-direction: column; justify-content: center; align-items: center; background-position: center; background-size: cover; position: relative;}
 .mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);}
 .mainPage .solutionArea ul li:nth-child(2){background-image: url(../images/main-listBG02.png);}
-.mainPage .solutionArea ul li div{max-width: calc(1920px / 2); width: 100%;}
-.mainPage .solutionArea ul li:nth-child(1) div{margin-left: auto;}
-.mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
-.mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; margin-bottom: 40px; font-weight: 700; display: block;}
-.mainPage .solutionArea ul li div p{font-size: 30px; line-height: 40px;}
-.mainPage .solutionArea ul li div a{margin-top: 100px; justify-content: center;}
+.mainPage .solutionArea ul li div strong{font-weight: 700; display: block;}
+.mainPage .solutionArea ul li div a{justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;}
 .mainPage [class^="terra"][class*="Area"] > div{height: 100%; display: flex; align-items: center;}
-.mainPage [class^="terra"][class*="Area"] > div > div{display: flex; justify-content: flex-end; /* align-items: center; */ flex-wrap: wrap;}
-.mainPage [class^="terra"][class*="Area"] > div > div > p{width: 100%; font-size: 30px; line-height: 40px; margin-right: 145px; padding-top: min(9.2592vh, 100px); color: white;}
-.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 60px; line-height: 76px; margin-bottom: 30px; font-weight: 700; display: block;}
+.mainPage [class^="terra"][class*="Area"] > div > div{display: flex; flex-wrap: wrap;}
+.mainPage [class^="terra"][class*="Area"] > div > div > p{width: 100%; color: white;}
+.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-weight: 700; display: block;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p b{font-weight: 700;}
-.mainPage [class^="terra"][class*="Area"] > div > div div{width: 380px; height: min(42.5925vh, 460px); padding: min(3.7037vh, 40px) 50px min(5.5555vh, 60px); /* aspect-ratio: 460 / 500; */ display: flex; flex-direction: column; align-items: flex-start; background-color: white; font-weight: 700; box-sizing: border-box;}
-.mainPage [class^="terra"][class*="Area"] > div > div div:not(:last-of-type){margin-right: 60px;}
-.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: min(9.2592vh, 100px);}
-.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(2){translate: 0 calc(min(1.8518vh, 20px) * -1);}
+.mainPage [class^="terra"][class*="Area"] > div > div div{display: flex; flex-direction: column; align-items: flex-start; background-color: white; font-weight: 700; box-sizing: border-box;}
 .mainPage [class^="terra"][class*="Area"] > div > div div::before{content: ''; height: var(--height); background-position: top calc(var(--height) * var(--logoIdx) * -1) left; background-size: 100%;}
 .mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1)::before{--logoIdx: 0;}
 .mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(2)::before{--logoIdx: 1;}
 .mainPage [class^="terra"][class*="Area"] > div > div div :first-child{margin-top: auto;}
-.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 50px; line-height: 60px; margin-bottom: 2.7778vh;}
-.mainPage [class^="terra"][class*="Area"] > div > div div strong small{font-size: 30px;}
-.mainPage [class^="terra"][class*="Area"] > div > div div p{font-size: 24px; line-height: 38px;}
-.mainPage .terra01Area > div > div div::before{--height: 70px; aspect-ratio: 280 / 70; background-image: url(../images/main-terraLogo01.png);}
-.mainPage .terra02Area > div > div div::before{--height: 72px; aspect-ratio: 181 / 72; background-image: url(../images/main-terraLogo02.png);}
+.mainPage .terra01Area > div > div div::before{aspect-ratio: 280 / 70; background-image: url(../images/main-terraLogo01.png);}
+.mainPage .terra02Area > div > div div::before{aspect-ratio: 181 / 72; background-image: url(../images/main-terraLogo02.png);}
 /* 메인 페이지 - 기업 소개 영역 */
 .mainPage .companyArea{display: flex; flex-direction: column; justify-content: center; align-items: center; /* background: url(../images/main-companyBG.png) no-repeat center / cover; */ color: white;}
-.mainPage .companyArea p{font-size: 50px; line-height: 70px; max-width: 780px; text-align: center; margin-inline: auto;}
+.mainPage .companyArea p{text-align: center; margin-inline: auto;}
 .mainPage .companyArea p b{font-weight: 700;}
-.mainPage .companyArea a{margin-top: 60px;}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div{height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: white;}
-.mainPage .boardArea > div > div h3{font-size: 50px; line-height: 60px; margin-bottom: 80px; font-weight: 400;}
+.mainPage .boardArea > div > div h3{font-weight: 400;}
 .mainPage .boardArea > div > div h3 b{font-weight: 700;}
-.mainPage .boardArea > div > div > a{margin-top: 80px;}
 
 
 /* 기업 소개 페이지 */

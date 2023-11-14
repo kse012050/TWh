@@ -1,3 +1,5 @@
+br.mobile{display: none;}
+
 
 /* 컨텐츠 사이즈 */
 
@@ -13,14 +15,20 @@
 
 
 /* 자세히 링크 */
-
+[class^='arrow']{font-size: 20px; line-height: 24px;}
+[class^='arrow'] span{--height: 2px; width: 50px; margin-top: 10px; margin-left: 18px;}
+[class^='arrow'] span::after{width: 12.7px;}
 
 
 /* 버튼 */
 
 
-
 /* 게시판 */
+ul.user-board{gap: 40px 4%; display: flex; flex-wrap: wrap;}
+ul.user-board li{width: 30.6666%;}
+ul.user-board li a img{margin-bottom: 30px;}
+ul.user-board li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px;}
+ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 텍스트 애니메이션 */
@@ -50,13 +58,29 @@
 .userPage header{padding-inline: 40px 60px;}
 .userPage header div{width: 100%; max-width: 1920px; margin-inline: auto;}
 .userPage header div nav ul{display: flex; justify-content: center; align-items: center;}
-/* .userPage header div nav ul li:first-child{display: none;} */
+.userPage header div nav ul li:first-child{display: none;}
 .userPage header div nav ul li a{font-size: 18px; line-height: var(--headerHeight); padding-inline: 40px; font-weight: 700;}
 .userPage header div button{display: none;}
 .userPage header.white div nav ul li a{color: white;}
 
 
 /* 유저 푸터 */
+.userPage footer > div{font-size: 18px; display: flex; justify-content: space-between;}
+.userPage footer > div:nth-child(1){margin-bottom: 50px; align-items: center;}
+.userPage footer > div:nth-child(1) > ul{gap: 50px;}
+.userPage footer > div:nth-child(1) > ul li a{line-height: 100px;}
+.userPage footer > div:nth-child(1) > div button{line-height: 30px;}
+.userPage footer > div:nth-child(1) > div div{right: 0; bottom: calc(100% + 5px); padding: 30px;}
+.userPage footer > div:nth-child(1) > div div ul{font-size: 15px; width: 120px;}
+.userPage footer > div:nth-child(2){font-size: 15px; flex-wrap: wrap;}
+.userPage footer > div:nth-child(2) address h2{margin-bottom: 30px;}
+.userPage footer > div:nth-child(2) address dl{line-height: 30px;}
+.userPage footer > div:nth-child(2) > p{font-size: 14px; line-height: 20px; margin-block: 60px 40px; order: 1; width: 100%;}
+.userPage footer > div:nth-child(2){justify-content: flex-end;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px; text-align: right;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px;}
 
 
 /* 관리자 공통 */

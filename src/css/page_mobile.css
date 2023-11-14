@@ -1,0 +1,86 @@
+
+
+/* 메인 페이지 */
+/* 메인 페이지 - 페이저 */
+.mainPage .fullPager{display: none;}
+/* 메인 페이지 - 최상단 영역 */
+.mainPage .topArea > div{--typingHeight: 24px;}
+.mainPage .topArea > div h2{font-size: 26px; line-height: 30px; margin-bottom: min(6.25vh, 40px);}
+.mainPage .topArea > div h2 b{font-size: 60px; line-height: 70px;}
+.mainPage .topArea > div p{font-size: 18px;}
+.mainPage .topArea > .scroll{font-size: 9px; line-height: 11px; letter-spacing: 2.7px; bottom: 0;}
+.mainPage .topArea > .scroll span{height: min(15.625vh, 100px); margin-top: min(1.09375vh, 7px);}
+/* 메인 페이지 - 솔루션 영역 */
+.mainPage .solutionArea ul li{height: 50%;}
+.mainPage .solutionArea ul li div strong{font-size: 26px; line-height: 34px; margin-bottom: 40px;}
+.mainPage .solutionArea ul li div p{display: none;}
+.mainPage .solutionArea ul li div a{margin-top: min(4.6875vh, 30px);}
+/* 메인 페이지 - 솔루션 영역 */
+.mainPage [class^="terra"][class*="Area"] > div > div{row-gap: 80px; justify-content: center;}
+.mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 18px; line-height: 24px;}
+.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 26px; line-height: 34px; margin-bottom: min(3.125vh, 20px);}
+.mainPage [class^="terra"][class*="Area"] > div > div div{width: calc((100% - 20px) / 2); max-width: 300px; height: min(28.125vh, 180px); padding: min(2.34375vh, 15px) 15px min(3.125vh, 20px);}
+.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: min(6.25vh, 40px); margin-right: 20px;}
+.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 25px; line-height: 30px; margin-bottom: min(1.5625vh, 10px);}
+.mainPage [class^="terra"][class*="Area"] > div > div div strong small{font-size: 15px;}
+.mainPage [class^="terra"][class*="Area"] > div > div div p{font-size: 12px; line-height: 18px;}
+.mainPage .terra01Area > div > div div::before{--height: 30px;}
+.mainPage .terra02Area > div > div div::before{--height: 38px;}
+/* 메인 페이지 - 기업 소개 영역 */
+.mainPage .companyArea p{font-size: 26px; line-height: 34px; max-width: 240px;}
+.mainPage .companyArea a{margin-top: min(9.375vh, 60px);}
+/* 메인 페이지 - 게시판 영역 */
+.mainPage .boardArea > div > div h3{font-size: 26px; line-height: 34px; margin-bottom: 40px;}
+.mainPage .boardArea .user-board{display: flex; gap: 20px; overflow: auto;}
+.mainPage .boardArea .user-board li{min-width: 280px; flex: 1;}
+.mainPage .boardArea > div > div > a{margin-top: 40px;}
+
+
+/* 기업 소개 페이지 */
+
+
+
+/* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
+
+
+
+/* 전력거래 솔루션 페이지 */
+
+
+
+/* 발전자원 모집 페이지 */
+
+/* 이미지도 삭제 */
+
+
+
+
+/* 게시판 */
+
+
+/* 게시판 - 상세 */
+
+
+
+/* 사업 문의 */
+
+
+/* 관리자 - 로그인 페이지 */
+
+
+/* 관리자 - 공지사항 관리 페이지 */
+
+
+/* 관리자 - 게시판 관리 페이지 */
+
+
+/* 관리자 - 사업 문의 관리 페이지 */
+
+
+
+/* 관리자 - 사업 문의 인풋 페이지 */
+
+
+/* 관리자 - 사업 문의 상세 페이지 */
+
+

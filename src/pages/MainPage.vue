@@ -8,7 +8,7 @@
                     <b>TWh</b>
                     한화 신한 테라와트아워
                 </h2>
-                <p class="cursor">재생에너지 전력거래, 지속 가능한 내일을 만듭니다.</p>
+                <p class="cursor">재생에너지 전력거래,<br class="mobile"> 지속 가능한 내일을 만듭니다.</p>
             </div>
             <div class="bg"></div>
             <div class="scroll">SCROLL<span></span></div>
@@ -19,7 +19,7 @@
                     <div>
                         <strong>
                             기업을 위한<br>
-                            재생에너지 전력거래 솔루션
+                            재생에너지<br class="mobile"> 전력거래 솔루션
                         </strong>
                         <p>
                             복잡한 RE100 이행,<br>
@@ -52,7 +52,7 @@
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
                     <div>
-                        <strong>1GW+</strong>
+                        <strong>1GW<small>+</small></strong>
                         <p>재생에너지 구축,<br> 운영 사업 역량</p>
                     </div>
                     <div>
@@ -86,9 +86,9 @@
             </div>
         </div>
         <div class="companyArea" data-full>
-            <p>
-                재생에너지의 생산과 소비를 연결하는
-                <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 
+            <p class="contentSize">
+                재생에너지의<br class="mobile"> 생산과 소비를 연결하는
+                <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br class="mobile">
                 성장하겠습니다.
             </p>
             <a href="#" class="arrow-white">기업 소개보기 <span></span></a>
@@ -254,7 +254,7 @@ export default {
     .mainPage:has( + footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
 
 
-    .mainPage{color: white;}
+    .mainPage .topArea{color: white;}
     /* 인트로 */
    /*  header:has(+ .mainPage){opacity: 0; pointer-events: none;}
     .mainPage .topArea{--color: #222; color: var(--color); position: relative; z-index: 1; background-color: white;}
