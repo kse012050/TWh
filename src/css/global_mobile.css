@@ -3,6 +3,7 @@
 
 
 /* 서브 페이지 위아래 간격 */
+.boardPage, .boardDetail, .inquiryPage{padding-top: 118px;}
 
 
 /* 한화폰트 적용 */

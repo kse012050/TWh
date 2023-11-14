@@ -70,6 +70,7 @@
                 </a>
             </li>
         </ul>
+        <button class="btn-border">더보기</button>
     </section>
 </template>
 <script>

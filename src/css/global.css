@@ -9,7 +9,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 서브 페이지 위아래 간격 */
-.boardPage, .boardDetail, .inquiryPage{padding-block: 240px var(--padding01);}
+.boardPage, .boardDetail, .inquiryPage{padding-bottom: var(--padding01);}
 
 
 /* 한화폰트 적용 */

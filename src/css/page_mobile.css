@@ -129,10 +129,20 @@
 
 
 /* 게시판 */
+.boardPage h2{font-size: 30px; line-height: 36px; margin-bottom: 30px;}
+.boardPage div{gap: 10px; margin-bottom: 60px;}
+.boardPage div button{font-size: 15px; line-height: 46px; padding-inline: 20px;}
+.boardPage .user-board li:not(:last-child){margin-bottom: 40px;}
+.boardPage .user-board li a{display: block;}
+.boardPage > button{margin-top: 40px;}
 
 
 /* 게시판 - 상세 */
-
+.boardDetail :is(small, time){font-size: 13px;}
+.boardDetail small{margin-bottom: 15px;}
+.boardDetail h2{font-size: 26px; line-height: 32px; margin-bottom: 30px;}
+.boardDetail time{margin-bottom: 20px;}
+.boardDetail div{padding-block: 40px;}
 
 
 /* 사업 문의 */

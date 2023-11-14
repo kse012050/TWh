@@ -5,6 +5,7 @@ br.mobile{display: none;}
 
 
 /* 서브 페이지 위아래 간격 */
+.boardPage, .boardDetail, .inquiryPage{padding-top: 240px;}
 
 
 /* 한화폰트 적용 */
