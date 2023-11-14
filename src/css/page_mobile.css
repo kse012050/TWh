@@ -65,6 +65,7 @@
 :is(.solutionPage, .recruitPage) .topArea div > p{font-size: 26px; line-height: 34px;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child:not([class])){font-size: 26px; line-height: 34px;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(2){font-size: 20px; line-height: 26px;}
+:is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{margin-bottom: 60px;}
 
 
 /* 전력거래 솔루션 페이지 */
@@ -146,6 +147,7 @@
 
 
 /* 사업 문의 */
+.inquiryPage h2{font-size: 30px; line-height: 36px; margin-bottom: 60px;}
 
 
 /* 관리자 - 로그인 페이지 */

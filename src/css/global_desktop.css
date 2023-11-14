@@ -69,6 +69,27 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
 
 
 /* 유저 페이지 문의 form */
+.content-inquiry ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.content-inquiry ul li{font-size: 22px;}
+.content-inquiry ul li.full{width: 100%;}
+.content-inquiry ul li:not(:is(:has(textarea), .full)){width: 46.7741%;}
+.content-inquiry ul li:has(textarea, input[type="checkbox"], .full){width: 100%;}
+.content-inquiry ul li label:first-child{line-height: 34px; margin-bottom: 20px;}
+.content-inquiry ul li label[data-comment]::after{font-size: 18px; margin-left: 20px;}
+.content-inquiry ul li :is(input, textarea){padding: 20px;}
+.content-inquiry ul li div input{height: 70px;}
+.content-inquiry ul li div[data-unit]::after{font-size: 22px; right: 20px;}
+.content-inquiry ul li div[data-unit] input{padding-right: 75px;}
+.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 580px;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 20px;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 22px; line-height: 34px; padding: 13px 30px;}
+.content-inquiry ul li small{font-size: 18px; line-height: 26px; margin-top: 15px;}
+.content-inquiry ul li textarea{height: 140px; line-height: 34px;}
+.content-inquiry > div{margin-top: 60px;}
+.content-inquiry > div input[type="checkbox"] + label{font-size: 20px; line-height: 26px;}
+.content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px;}
+.content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
+.content-inquiry input[type="submit"]{margin-top: 80px;}
 
 
 /* 유저 해더 */
