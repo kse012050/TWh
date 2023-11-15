@@ -159,7 +159,7 @@
         <div class="simplifyArea contentSize-padding">
             <p>
                 <b>장기계약도, 발전소 매입도</b><br>
-                간소화된 계약 절차로 <b class="font-hanwha">테라와트아워</b>는 가능합니다.
+                간소화된 계약 절차로 <br class="mobile"><b class="font-hanwha">테라와트아워</b>는 가능합니다.
             </p>
             <ul data-styleIdx>
                 <li>
