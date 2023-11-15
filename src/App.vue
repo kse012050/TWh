@@ -28,6 +28,7 @@ export default {
   },
   mounted() {
     this.fullStyle();
+    window.addEventListener('resize',this.fullStyle)
   },
   watch: {
     '$route' () {

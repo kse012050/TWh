@@ -16,7 +16,7 @@
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .solutionArea ul{display: flex;}
 .mainPage .solutionArea ul li{flex: 1; height: 100%;}
-.mainPage .solutionArea ul li div{max-width: calc(1920px / 2); width: 100%;}
+.mainPage .solutionArea ul li div{max-width: calc(1920px / 2); width: 100%; padding-inline: var(--spacing); box-sizing: border-box;}
 .mainPage .solutionArea ul li:nth-child(1) div{margin-left: auto;}
 .mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
 .mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; margin-bottom: 40px;}

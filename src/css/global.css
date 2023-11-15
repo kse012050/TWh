@@ -21,7 +21,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 자세히 링크 */
-[class^='arrow']{font-weight: 700; display: flex;}
+[class^='arrow']{font-weight: 600; display: flex;}
 [class^='arrow'] span{height: var(--height); background-color: var(--bc); position: relative;}
 [class^='arrow'] span::after{content: ''; position: absolute; right: 0; bottom: 0; height: var(--height); background-color: var(--bc); transform: rotate(45deg); transform-origin: right;}
 [class^='arrow'][class$='white']{--bc: white;}
@@ -30,16 +30,16 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 /* 버튼 */
 .userPage [class|="btn"]{display: flex; align-items: center;}
-.userPage [class|='btn']:is([class$='black'], [class$='border']){font-weight: 700; margin-inline: auto; justify-content: center;}
+.userPage [class|='btn']:is([class$='black'], [class$='border']){font-weight: 600; margin-inline: auto; justify-content: center;}
 .userPage [class|="btn"][class$="black"]{color: white; background-color: #222; border: none;}
 .userPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
-.userPage [class|="btn"][class$="download"]{--color: white; color: var(--color); font-weight: 400; border: 1px solid var(--color); box-sizing: border-box;}
+.userPage [class|="btn"][class$="download"]{--color: white; color: var(--color); font-weight: 300; border: 1px solid var(--color); box-sizing: border-box;}
 .userPage [class|="btn"][class$="download"]::after{content: ''; aspect-ratio: 1; background: url('../images/icon-download.png') no-repeat center / cover; margin-left: auto;}
-.userPage [class|="btn"][class$="download"] b{font-weight: 700;}
+.userPage [class|="btn"][class$="download"] b{font-weight: 600;}
 
 
 /* 게시판 */
-ul.user-board li a{font-weight: 700;}
+ul.user-board li a{font-weight: 600;}
 ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250;}
 ul.user-board li a small{display: block; color: #999;}
 ul.user-board li a p{color: #222;}
@@ -58,7 +58,7 @@ ul.user-board li a p{color: #222;}
 .companyPage .topArea::before{background-image: url('../images/company-topBG.png');}
 .solutionPage .topArea::before{background-image: url('../images/solution-topBG.png');}
 .recruitPage .topArea::before{background-image: url('../images/recruit-topBG.png');}
-[data-subTopAni] .topArea h2{font-weight: 700; background-color: white; position: fixed; left: 0; top: var(--headerHeight); width: 100%;}
+[data-subTopAni] .topArea h2{font-weight: 600; background-color: white; position: fixed; left: 0; top: var(--headerHeight); width: 100%;}
 [data-subTopAni] .topArea > div{position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); padding-inline: var(--spacing); display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box;}
 [data-subTopAni] .topArea > div[data-textAniParents]{color: white; text-align: center;}
 [data-subTopAni] :where(.topArea ~ *){background-color: white; position: relative; z-index: 2;}
@@ -79,7 +79,7 @@ ul.user-board li a p{color: #222;}
 
 
 /* 검은 배경 케이스 */
-b.case01{font-weight: 700; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
+b.case01{font-weight: 600; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
 
 
 /* 이미지 박스 */
@@ -88,15 +88,15 @@ b.case01{font-weight: 700; color: white; background-color: #222; border-radius: 
 
 /* 컨텐츠 - 이미지 */
 .content-img{text-align: center;}
-.content-img p b{font-weight: 700;}
-.content-img dl dt{font-weight: 700;}
-.content-img dl dd{color: #999; font-weight: 400;}
+.content-img p b{font-weight: 600;}
+.content-img dl dt{font-weight: 600;}
+.content-img dl dd{color: #999; font-weight: 300;}
 
 /* 컨텐츠 - 프로세스 */
 .content-process{padding-block: var(--padding02); background-color: var(--color-BG02);; text-align: center;}
 .content-process ul{position: relative;}
 .content-process ul::before{content: ''; position: absolute; background-color: #222; }
-.content-process ul li strong{font-size: 26px; line-height: 38px; max-width: var(--width); display: block; font-weight: 700; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
+.content-process ul li strong{max-width: var(--width); display: block; font-weight: 600; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
 
 
 /* 폼 공통 */
@@ -107,19 +107,19 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 
 
 /* 유저 페이지 문의 form */
-.content-inquiry ul li label:first-child{font-weight: 700; display: flex; align-items: center;}
+.content-inquiry ul li label:first-child{font-weight: 600; display: flex; align-items: center;}
 .content-inquiry ul li:has(:required) > label:first-child::after{transform: translateY(3px); content: '*'; color: var(--color-point01);}
 .content-inquiry ul li label[data-comment]{position: relative;}
-.content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-weight: 400; color: var(--color-point01);}
+.content-inquiry ul li label[data-comment]::after{content: attr(data-comment); font-weight: 300; color: var(--color-point01);}
 .content-inquiry ul li :is(input, textarea){width: 100%; color: #222; box-sizing: border-box;}
 .content-inquiry ul li div[data-unit]{position: relative;}
-.content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-weight: 400; position: absolute; top: 50%; transform: translateY(-50%);}
+.content-inquiry ul li div[data-unit]::after{content: attr(data-unit); font-weight: 300; position: absolute; top: 50%; transform: translateY(-50%);}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]){display: flex;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-weight: 700; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-weight: 600; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
-.content-inquiry ul li small{font-weight: 400; color: #999; display: block;}
-.content-inquiry > div input[type="checkbox"] + label{font-weight: 400; display: flex; align-items: center; cursor: pointer;}
-.content-inquiry > div input[type="checkbox"] + label b{font-weight: 700; text-decoration: underline;}
+.content-inquiry ul li small{font-weight: 300; color: #999; display: block;}
+.content-inquiry > div input[type="checkbox"] + label{font-weight: 300; display: flex; align-items: center; cursor: pointer;}
+.content-inquiry > div input[type="checkbox"] + label b{font-weight: 600; text-decoration: underline;}
 .content-inquiry > div input[type="checkbox"] + label::before{content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
 .content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
@@ -129,6 +129,17 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .userPage header{--imgIdx: 0; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
 .userPage header div{display: flex; justify-content: space-between; align-items: center;}
 .userPage header.white{--imgIdx: 1; background-color: transparent;}
+.userPage header div nav ul li a{font-weight: 600;}
+@media screen and (width <= 1240px) {
+    .userPage header{padding-inline: var(--spacing);}
+    .userPage header div{height: var(--headerHeight);}
+    .userPage header div button{width: var(--width); aspect-ratio: 1; text-indent: -9999px;}
+    .userPage header div nav{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);}
+    .userPage header div nav{display: none;}
+    .userPage header div nav.active{display: flex;}
+    .userPage header div nav ul{height: 100%; background-color: white; margin-left: auto;}
+    .userPage header div nav button{position: absolute; background: url(../images/icon-close.png) no-repeat center / cover;}
+}
 
 
 /* 유저 푸터 */
@@ -136,20 +147,20 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .userPage footer > div:nth-child(1){position: relative;}
 .userPage footer > div:nth-child(1)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - var(--scrollWidth)); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
 .userPage footer > div:nth-child(1) > ul{display: flex;}
-.userPage footer > div:nth-child(1) > ul li a{font-weight: 700;}
+.userPage footer > div:nth-child(1) > ul li a{font-weight: 600;}
 .userPage footer > div:nth-child(1) > div{position: relative;}
-.userPage footer > div:nth-child(1) > div button{font-weight: 700; color: white;}
+.userPage footer > div:nth-child(1) > div button{font-weight: 600; color: white;}
 .userPage footer > div:nth-child(1) > div div{position: absolute; display: flex; gap: 20px; background-color: #222; border: 1px solid black;}
 .userPage footer > div:nth-child(1) > div div{display: none;}
 .userPage footer > div:nth-child(1) > div div.active{display: flex;}
-.userPage footer > div:nth-child(1) > div div ul::before{content: attr(title); --height: 20px; margin-bottom: 15px; display: block; line-height: var(--height); min-height: var(--height); font-weight: 700;}
-.userPage footer > div:nth-child(1) > div div ul li a{line-height: 22px; font-weight: 400; color: #999;}
+.userPage footer > div:nth-child(1) > div div ul::before{content: attr(title); --height: 20px; margin-bottom: 15px; display: block; line-height: var(--height); min-height: var(--height); font-weight: 600;}
+.userPage footer > div:nth-child(1) > div div ul li a{line-height: 22px; font-weight: 300; color: #999;}
 .userPage footer > div:nth-child(2) address h2{--imgIdx: 1;}
 .userPage footer > div:nth-child(2) address dl{display: flex; align-items: center;}
 .userPage footer > div:nth-child(2) address dl dt{display: flex; align-items: center;}
 .userPage footer > div:nth-child(2) address dl dt::after{content: ':'; margin-inline: 0.4em;}
 .userPage footer > div:nth-child(2) > p{color: rgba(255, 255, 255, 0.5);}
-.userPage footer > div:nth-child(2) div ul:nth-child(1) li:first-child a{font-weight: 700;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li:first-child a{font-weight: 600;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
@@ -158,32 +169,32 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 
 /* 관리자 공통 */
 .adminsPage [class*="Page"]{padding-block: var(--padding04) var(--padding03);}
-.adminsPage [class*="Page"] h2{font-size: 36px; line-height: 50px; margin-bottom: 30px; font-weight: 700;}
+.adminsPage [class*="Page"] h2{font-size: 36px; line-height: 50px; margin-bottom: 30px; font-weight: 600;}
 .adminsPage [class*="Page"] h2 a{display: flex; align-items: center;}
 .adminsPage [class*="Page"] h2 a::before{content: ''; width: 38px; margin-right: 15px; aspect-ratio: 1; background: url(../images/icon-back.png) no-repeat center / cover;}
 .adminsPage :is(input:not([type="submit"]), select){height: 50px; }
-.adminsPage :is(input:not([type="submit"]), select, textarea){font-size: 15px; line-height: 22px; padding: 15px; font-weight: 400; box-sizing: border-box;}
+.adminsPage :is(input:not([type="submit"]), select, textarea){font-size: 15px; line-height: 22px; padding: 15px; font-weight: 300; box-sizing: border-box;}
 .adminsPage select{background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
 
 
 /* 관리자 버튼 */
 [class*="Page"]:has(.content-btn){position: relative;}
 div.content-btn{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
-div.content-btn input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 400; display: flex; align-items: center; margin-right: 30px;}
+div.content-btn input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 300; display: flex; align-items: center; margin-right: 30px;}
 div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
-.amdinsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 700; aspect-ratio: 88 / 50;}
+.amdinsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 600; aspect-ratio: 88 / 50;}
 .amdinsPage [class|="btn"][class$="black"]{background-color: #222; color: white;}
 .amdinsPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 
 
 /* 관리자 - 텝 */
 .admin-tab{display: flex; align-items: center; gap: 41px; margin-block: 30px; position: relative;}
-.admin-tab > button{font-size: 15px; line-height: 30px; color: #BBB; font-weight: 700;}
+.admin-tab > button{font-size: 15px; line-height: 30px; color: #BBB; font-weight: 600;}
 .admin-tab > button:not(:last-of-type){position: relative;}
 .admin-tab > button:not(:last-of-type)::after{content: ''; width: 1px; height: 18px; background-color: var(--color-line); position: absolute; right: -20px; top: 50%; transform: translateY(-50%);}
 .admin-tab > button:is(.active, :hover){color: #222;}
 .admin-tab .search{position: absolute; right: 0; bottom: 0; max-width: 400px;}
-.admin-tab .search input{font-size: 15px; height: 50px; width: 400px; font-weight: 400; padding: 15px 50px 15px 15px; box-sizing: border-box;}
+.admin-tab .search input{font-size: 15px; height: 50px; width: 400px; font-weight: 300; padding: 15px 50px 15px 15px; box-sizing: border-box;}
 .admin-tab .search button{position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 32px; aspect-ratio: 1; background: url(../images/icon-search.png) no-repeat center / cover; text-indent: -9999px;}
 
 
@@ -192,8 +203,8 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .admin-board-title, .admin-board-list li a{font-size: 15px; line-height: 22px; padding-inline: 20px; gap: 30px; display: flex; align-items: center; box-sizing: border-box; text-align: center;}
 .admin-board-title{padding-block: 18px;}
 .admin-board-list li a{padding-block: 20px;}
-.admin-board-title{font-weight: 700; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
-.admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 400; text-align: center; display: block; content: attr(data-noneListText);}
+.admin-board-title{font-weight: 600; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
+.admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 300; text-align: center; display: block; content: attr(data-noneListText);}
 
 
 /* 관리자 게시판 페이저 */
@@ -201,16 +212,16 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .admin-board-pager a{width: 28px; aspect-ratio: 1;}
 .admin-board-pager > a{background: url(../images/icon-pager.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%; text-indent: -9999px;}
 .admin-board-pager ol{display: flex; gap: var(--gap);}
-.admin-board-pager ol li a{font-size: 15px; font-weight: 700; color: #BBB; display: flex; justify-content: center; align-items: center;}
+.admin-board-pager ol li a{font-size: 15px; font-weight: 600; color: #BBB; display: flex; justify-content: center; align-items: center;}
 .admin-board-pager ol li:is(.active, :hover) a{color: #222;}
 .admin-board-pager ol li.active a{text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 2px;}
 
 
 /* 관리자 인풋 */
 .admin-input{padding-block: 30px; border-width: 1px 0; border-style: solid; border-color: #222 transparent var(--color-line);}
-.admin-input ul li{font-size: 15px; font-weight: 400; display: flex;}
+.admin-input ul li{font-size: 15px; font-weight: 300; display: flex;}
 .admin-input ul li:not(:last-child){margin-bottom: 20px;}
-.admin-input ul li > label{line-height: 20px; padding-block: 15px; width: 120px; font-weight: 700;}
+.admin-input ul li > label{line-height: 20px; padding-block: 15px; width: 120px; font-weight: 600;}
 .admin-input ul li:has(:required) > label:first-child{display: flex; align-items: center;}
 .admin-input ul li:has(:required) > label:first-child::after{transform: translateY(2px); content: '*'; color: var(--color-point01);}
 .admin-input ul li > div{flex: 1;}
@@ -228,7 +239,7 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .admin-input ul li > div:has(input[type="url"]) input[type="url"]{padding-right: 52px;}
 .admin-input ul li > div:has(input[type="url"]) button{position: absolute; right: 15px; top: 50%; transform: translateY(-50%);}
 .admin-input ul li div:has([type="checkbox"], [type="radio"]){gap: 10px; display: flex; align-items: center;}
-.admin-input ul li div:has([type="checkbox"], [type="radio"]) label{line-height: 20px; padding: 10px 20px; font-weight: 700; background-color: #F1F1F1; border-radius: 25px; cursor: pointer;}
+.admin-input ul li div:has([type="checkbox"], [type="radio"]) label{line-height: 20px; padding: 10px 20px; font-weight: 600; background-color: #F1F1F1; border-radius: 25px; cursor: pointer;}
 .admin-input ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
 
 
@@ -237,7 +248,7 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .adminsPage header div{max-width: 1920px; margin-inline: auto; display: flex; justify-content: center; align-items: center; position: relative;}
 .adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo2.png) no-repeat top center / cover; text-indent: -9999px;}
 .adminsPage header div ul{gap: 80px; display: flex; align-items: center;}
-.adminsPage header div ul li a{font-size: 16px; line-height: 70px; font-weight: 700; color: #BBB;}
+.adminsPage header div ul li a{font-size: 16px; line-height: 70px; font-weight: 600; color: #BBB;}
 .adminsPage header div ul li a.router-link-active{position: relative;}
 .adminsPage header div ul li a:is(.router-link-active, :hover){color: #222;}
 .adminsPage header div ul li a.router-link-active::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background-color: #222;}

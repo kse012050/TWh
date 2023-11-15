@@ -131,20 +131,15 @@
 export default {
     name: 'MainPage',
     data() {
-        return {
-            mainPage: undefined,
-            // fullSelectors: undefined,
+        return{
+            isFull: false
         }
     },
     methods: {
-        fullPageStyle() {
-            this.mainPage = document.querySelector('.mainPage');
+        fullPager() {
             const fullPager = document.querySelector('.fullPager');
             const fullSelectors = document.querySelectorAll('[data-full]');
-            let vh = window.innerHeight * 0.01;
-            this.mainPage.style.setProperty('--vh', `${vh}px`);
-            // fullSelectors.innerHTML = ''
-            fullPager.replaceChildren();
+            fullPager.replaceChildren(); // 자식 요소 초기화
             fullSelectors.forEach((_, idx)=>{
                 const fullPageList = document.createElement('li');
                 fullPageList.innerText = `${idx} Page`;
@@ -175,64 +170,74 @@ export default {
             //     }, 100);
             // },1000);
         },
-        fullEvent(){
+        fullMoveEvent(fullSelectors, fullPager, delta, currentIdx){
+            if(delta < 0 && fullSelectors[currentIdx + 1]){
+                currentIdx++;
+                if(fullSelectors[currentIdx].localName === 'footer'){
+                    const footerEle = document.querySelector('footer');
+                    document.querySelectorAll('[data-full].active').forEach((element)=>{
+                        element.style.top = -footerEle.offsetHeight + 'px'
+                    })
+                }
+                fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.remove('white');
+                fullSelectors[currentIdx].classList.add('active')
+                this.isFull = true;
+            }else if(delta > 0 && fullSelectors[currentIdx - 1]){
+                fullSelectors[currentIdx].classList.remove('active')
+                this.isFull = true;
+                if(fullSelectors[currentIdx].localName === 'footer'){
+                    document.querySelectorAll('[data-full].active').forEach((element)=>{
+                        element.removeAttribute('style')
+                    })
+                }else{
+                    fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.add('white');
+                    currentIdx--;
+                }
+            }
+            if(this.isFull){
+                fullSelectors[currentIdx].localName !== 'footer' && fullPager.forEach((element, idx)=>{
+                    element.classList.remove('active');
+                    idx === currentIdx && element.classList.add('active');
+                })
+                setTimeout(()=>{
+                    this.isFull = false;
+                },1000)
+            }
+        },
+        
+        fullEvent(fullMoveEvent){
             const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
             const fullPager = document.querySelectorAll('.fullPager li');
             // const fullSelectors = document.querySelectorAll('[data-full]');
-            let isFull = false;
             fullSelectors.forEach((element, idx)=>{
+                const currentIdx = idx;
                 element.addEventListener('mousewheel', function(e){
-                    if(isFull){return}
-                    let currentIdx = idx;
-                    if(e.wheelDelta < 0 && fullSelectors[currentIdx + 1]){
-                        currentIdx++;
-                        if(fullSelectors[currentIdx].localName === 'footer'){
-                            const footerEle = document.querySelector('footer');
-                            document.querySelectorAll('[data-full].active').forEach((element)=>{
-                                element.style.top = -footerEle.offsetHeight + 'px'
-                            })
-                        }
-                        fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.remove('white');
-                        fullSelectors[currentIdx].classList.add('active')
-                        isFull = true;
-                    }else if(e.wheelDelta > 0 && fullSelectors[currentIdx - 1]){
-                        fullSelectors[currentIdx].classList.remove('active')
-                        isFull = true;
-                        if(fullSelectors[currentIdx].localName === 'footer'){
-                            document.querySelectorAll('[data-full].active').forEach((element)=>{
-                                element.removeAttribute('style')
-                            })
-                        }else{
-                            fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.add('white');
-                            currentIdx--;
-                        }
-                    }
-                    if(isFull){
-                        // console.log(currentIdx);
-                        // fullSelectors[currentIdx].classList.contains('active') ? 
-                        //     fullSelectors[currentIdx + 1].classList.remove('active') :
-                        //     fullSelectors[currentIdx].classList.add('active');
-                        fullSelectors[currentIdx].localName !== 'footer' && fullPager.forEach((element, idx)=>{
-                            element.classList.remove('active');
-                            idx === currentIdx && element.classList.add('active');
-                        })
-                        setTimeout(()=>{
-                            isFull = false;
-                        },1000)
-                    }
-                    // console.log(this);
-                    // console.log(idx);
+                    if(this.isFull){return}
+                    let delta = e.wheelDelta;
+                    fullMoveEvent(fullSelectors, fullPager, delta, currentIdx)            
                 })
-
+                let touchStartX = undefined;
+                let touchStartY = undefined;
+                element.addEventListener('touchstart', function(e){
+                    touchStartX = e.touches[0].clientX
+                    touchStartY = e.touches[0].clientY
+                })
+                element.addEventListener('touchend', function(e){
+                    const delta = (touchStartY - e.changedTouches[0].clientY) * -1;
+                    const touchEndX = Math.abs(touchStartX - e.changedTouches[0].clientX);
+                    const touchEndY = Math.abs(delta);
+                    if(touchEndX < touchEndY){
+                        fullMoveEvent(fullSelectors, fullPager, delta, currentIdx)  
+                    }
+                })
             })
+
         },
         
     },
     mounted() {
-        this.fullPageStyle();
-        // this.typingEvent();
-        this.fullEvent();
-        window.addEventListener('resize',this.fullPageStyle)
+        this.fullPager();
+        this.fullEvent(this.fullMoveEvent);
     }
 }
 </script>
@@ -243,7 +248,7 @@ export default {
     [data-full].active{z-index: 3; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0s, 0s;}
     .mainPage .topArea{z-index: 1;}
 
-    header + .mainPage .fullPager{--color: #999; opacity: 0;}
+    header + .mainPage .fullPager{--color: #999; /* opacity: 0; */}
     header + .mainPage .fullPager li{pointer-events: none;}
     header + .mainPage .fullPager:has( + .topArea.intro){opacity: 1;}
     header + .mainPage .fullPager:has( + .topArea.intro) li{pointer-events: all;}

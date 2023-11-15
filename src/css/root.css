@@ -7,7 +7,6 @@
     --color-line: #DEDEDE;
     --color-point01: #F37321;
     --color-point02: #0046FF;
-    --spacing: 20px;
     --responsive: 1240px;
 }
 
@@ -27,21 +26,23 @@ html{--scrollWidth: 17px;}
     font-style: normal;
 }
 
-@media screen and (width > 1240px) {
+@media screen and (width > 1000px) {
     :root{
         --headerHeight: 100px;
         --padding01: 200px;
         --padding02: 160px;
         --padding03: 120px;
+        --spacing: 25px;
     }
 }
 
-@media screen and (width <= 1240px) {
+@media screen and (width <= 1000px) {
     :root{
         --headerHeight: 58px;
         --padding01: 80px;
         --padding02: 80px;
         --padding03: 60px;
+        --spacing: 20px;
         --mobileContentSize: 320px;
     }
 }
