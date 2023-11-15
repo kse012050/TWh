@@ -27,6 +27,7 @@
 
 
 /* 게시판 */
+ul.user-board{display: flex;}
 ul.user-board li a img{margin-bottom: 20px;}
 ul.user-board li a small{font-size: 13px; line-height: 1.384; margin-bottom: 10px;}
 ul.user-board li a p{font-size: 16px; line-height: 1.25;}
@@ -50,7 +51,7 @@ b.case01{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
 
 
 /* 컨텐츠 - 이미지 */
-.content-img strong{margin-bottom: 30px;}
+.content-img strong{margin-bottom: 20px;}
 .content-img dl{font-size: 13px; max-width: var(--mobileContentSize); text-align: left; margin-inline: auto;}
 .content-img dl dt{line-height: 1.538; margin-bottom: 7px;}
 .content-img dl dd{line-height: 1.384;}

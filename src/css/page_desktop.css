@@ -8,7 +8,7 @@
 .mainPage .fullPager li:not(:last-child){margin-bottom: 30px;}
 /* 메인 페이지 - 최상단 영역 */
 .mainPage .topArea > div{--typingHeight: 36px;}
-.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: 5.5556vh;}
+.mainPage .topArea > div h2{font-size: 50px; line-height: 58px; margin-bottom: min(5.5556vh, 60px);}
 .mainPage .topArea > div h2 b{font-size: 120px; line-height: 140px;}
 .mainPage .topArea > div p{font-size: 30px;}
 .mainPage .topArea > .scroll{font-size: 14px; line-height: 17px; letter-spacing: 4.2px; bottom: min(11.1111vh, 120px);}
@@ -21,7 +21,7 @@
 .mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
 .mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; margin-bottom: 40px;}
 .mainPage .solutionArea ul li div p{font-size: 30px; line-height: 40px;}
-.mainPage .solutionArea ul li div a{margin-top: 100px;}
+.mainPage .solutionArea ul li div a{margin-top: min(9.2592vh, 100px);}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage [class^="terra"][class*="Area"] > div > div{justify-content: flex-end;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 30px; line-height: 40px; margin-right: 145px; padding-top: min(9.2592vh, 100px);}
@@ -59,7 +59,7 @@
 .companyPage .peopleArea ul li small{font-size: 20px; line-height: 20px; margin-bottom: 30px;}
 .companyPage .peopleArea ul li p{font-size: 20px; line-height: 32px;}
 .companyPage .historyArea strong{font-size: 50px; line-height: 60px; margin-bottom: 80px;}
-.companyPage .historyArea ol{display: flex; flex-wrap: wrap; justify-content: flex-end; position: relative;}
+.companyPage .historyArea ol{padding-left: 160px; display: flex; flex-wrap: wrap; justify-content: flex-end; position: relative;}
 .companyPage .historyArea ol::before{font-size: 60px; line-height: 72px; position: absolute; left: 0; top: 0;}
 .companyPage .historyArea ol li{width: 980px; font-size: 26px; --lineHeight: 31px;}
 .companyPage .historyArea ol li:first-child{padding-top: 12px;}
@@ -77,8 +77,8 @@
 
 
 /* 전력거래 솔루션 페이지 */
-.solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px;}
-.solutionPage .topArea div:nth-of-type(3) ul li{width: 540px; height: 540px; padding: 80px 60px;}
+.solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 80px; justify-content: space-between;}
+.solutionPage .topArea div:nth-of-type(3) ul li{flex: 1; max-width: 540px; height: min(50vh, 540px); padding: 80px 60px;}
 .solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 260px;}
 .solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){transform: translateY(-5.5556vh);}
 .solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){transform: translateY(5.5556vh);}
