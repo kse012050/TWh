@@ -1,7 +1,7 @@
 
 
 /* 메인 페이지 */
-.mainPage [data-full]{height: calc(var(--vh, 1vh) * 100);}
+.mainPage [data-full]{height: calc(var(--fullHeight));}
 header.white + .mainPage .fullPager{--color: white;}
 /* 메인 페이지 - 페이저 */
 /* 메인 페이지 - 최상단 영역 */

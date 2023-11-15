@@ -30,7 +30,7 @@
 .mainPage .companyArea a{margin-top: min(7.4653vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div > div h3{font-size: 38px; line-height: 1.307; margin-bottom: 60px;}
-.mainPage .boardArea .user-board{gap: 20px; overflow: auto; width: calc(100% + (var(--spacing) * 2)); transform: translateX(var(--spacing) * -1);}
+.mainPage .boardArea .user-board{gap: 20px; overflow: auto; width: calc(100% + (var(--spacing) * 2)); transform: translateX(calc(var(--spacing) * -1)); padding-inline: var(--spacing); box-sizing: border-box;}
 .mainPage .boardArea .user-board li{min-width: 330px; flex: 1;}
 .mainPage .boardArea > div > div > a{margin-top: 60px;}
 

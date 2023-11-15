@@ -47,7 +47,7 @@ b.case01{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
 
 
 /* 이미지 박스 */
-.box-img{width: calc(var(--mobileContentSize) + (var(--spacing) * 2)); margin-inline: auto; transform: translateX(calc(var(--spacing) * -1));}
+.box-img{width: 100%; max-width: calc(var(--mobileContentSize) + (var(--spacing) * 2)); margin-inline: auto;}
 
 
 /* 컨텐츠 - 이미지 */

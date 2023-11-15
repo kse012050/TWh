@@ -129,7 +129,7 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .userPage header{--imgIdx: 0; background-color: white; position: fixed; left: 0; top: 0; width: 100%; box-sizing: border-box; z-index: 100;}
 .userPage header div{display: flex; justify-content: space-between; align-items: center;}
 .userPage header.white{--imgIdx: 1; background-color: transparent;}
-.userPage header div nav ul li a{font-weight: 600;}
+.userPage header div nav ul li a{display: block; font-weight: 600;}
 @media screen and (width <= 1240px) {
     .userPage header{padding-inline: var(--spacing);}
     .userPage header div{height: var(--headerHeight);}

@@ -14,7 +14,7 @@
                             <input type="text" id="" name="">
                         </li>
                     </ul>
-                    <input type="submit" value="로그인">
+                    <input type="submit" value="로그인" @click="onSubmit">
                 </fieldset>
             </form>
         </section>
@@ -22,7 +22,13 @@
 </template>
 <script>
 export default {
-    
+    name: 'SignIn',
+    methods: {
+        onSubmit(e){
+            e.preventDefault();
+            this.$router.push({path: '/admins/noticesList'})
+        }
+    }
 }
 </script>
 <style>
