@@ -1,6 +1,7 @@
 
 
 /* 메인 페이지 */
+.userPage:has(.mainPage){--scrollWidth: 0px;}
 .mainPage [data-full]{height: calc(var(--fullHeight));}
 header.white + .mainPage .fullPager{--color: white;}
 /* 메인 페이지 - 페이저 */
@@ -23,6 +24,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);}
 .mainPage .solutionArea ul li:nth-child(2){background-image: url(../images/main-listBG02.png);}
 .mainPage .solutionArea ul li div strong{font-weight: 600; display: block;}
+.mainPage .solutionArea ul li div p .font-hanwha{font-weight: 600;}
 .mainPage .solutionArea ul li div a{justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;}
@@ -71,11 +73,11 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .historyArea{padding-block: var(--padding03) var(--padding01);}
 .companyPage .historyArea strong{font-weight: 600; text-align: center; display: block;}
 .companyPage .historyArea ol::before{content: attr(title); font-weight: 600;}
-.companyPage .historyArea ol li{line-height: var(--lineHeight); --virtualColor: #DEDEDE; font-weight: 600; display: flex; align-items: center;}
-.companyPage .historyArea ol li::before{content: ''; width: 6px; margin-right: 10px; aspect-ratio: 1; background-color: var(--virtualColor); border-radius: 100%; transform: translateX(-50%);}
+.companyPage .historyArea ol li{line-height: var(--lineHeight); --virtualColor: #DEDEDE; font-weight: 600; display: flex; align-items: flex-start;}
+.companyPage .historyArea ol li::before{content: ''; width: 6px; margin-right: 10px; aspect-ratio: 1; background-color: var(--virtualColor); border-radius: 100%; transform: translate(-50%, calc(var(--lineHeight) / 2 - 3px));}
 .companyPage .historyArea ol li:not(:last-child){position: relative;}
 .companyPage .historyArea ol li:not(:last-child)::after{content: ''; width: 1px; height: 100%; position: absolute; left: 0; top: calc(var(--lineHeight) / 2); background-color: var(--virtualColor); transform: translateX(-50%);}
-.companyPage .historyArea ol li small{color: #999;}
+.companyPage .historyArea ol li small{line-height: var(--lineHeight); color: #999;}
 .companyPage .bottomArea{padding-block: var(--padding02); background: url('../images/company-bottomBG.png') no-repeat center / cover;}
 .companyPage .bottomArea::before{content: ''; display: block; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}
 .companyPage .bottomArea div{display: flex; justify-content: center; align-items: center; gap: 30px;}
@@ -97,9 +99,10 @@ header.white + .mainPage .fullPager{--color: white;}
 .solutionPage .topArea div:nth-of-type(3) ul li::before{width: var(--width); aspect-ratio: 1; content: ''; background: url(../images/solution-topLogo.png) no-repeat top calc(var(--width) * var(--imgIdx) * -1) center / 100%; position: absolute; right: 0; top: 0;}
 .solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){--color: #0046FF; --imgIdx: 0;}
 .solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){--color: #F37321; --imgIdx: 1;}
-.solutionPage .topArea div:nth-of-type(3) ul li mark{color: var(--color); font-weight: 600;}
-.solutionPage .topArea div:nth-of-type(3) ul li p{font-weight: 300;}
+.solutionPage .topArea div:nth-of-type(3) ul li mark{color: var(--color); font-weight: 600;;}
+.solutionPage .topArea div:nth-of-type(3) ul li p{font-size: var(--fontSize); font-weight: 300;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-top: auto;}
+.solutionPage .topArea div:nth-of-type(3) ul li p svg{height: calc(var(--fontSize) + 3px); transform: translateY(4px);}
 .solutionPage .content-process ul li p{font-weight: 300;}
 .solutionPage .content-img{padding-block: var(--padding02);}
 .solutionPage .content-img div:not([class]){display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
@@ -159,11 +162,12 @@ header.white + .mainPage .fullPager{--color: white;}
 
 /* 사업 문의 */
 .inquiryPage h2{font-weight: 600;}
+.inquiryPage .content-inquiry ul li textarea{height: 360px;}
 
 
 /* 관리자 - 로그인 페이지 */
 .adminPage{height: var(--fullHeight); background-color: var(--color-BG02); display: flex; justify-content: center; align-items: center;}
-.adminPage section{width: 540px; padding: 60px 90px 120px; background-color: white; box-sizing: border-box;}
+.adminPage section{width: 540px; padding: 60px 90px 120px; background-color: white; box-shadow: 0px 0px 70px 0px rgba(0, 0, 0, 0.10); box-sizing: border-box;}
 .adminPage section h1{max-width: 260px; margin-inline: auto; margin-bottom: 60px;}
 .adminPage section h1 img{width: 100%;}
 .adminPage section fieldset{font-weight: 600;}
@@ -178,7 +182,7 @@ header.white + .mainPage .fullPager{--color: white;}
 /* 관리자 - 공지사항 관리 페이지 */
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:not(:nth-child(3)){width: 150px;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}
-.noticesListPage :is(.admin-board-title, .admin-board-list li a) > div{align-self: stretch; max-height: 48px;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > div{height: 100%; max-height: 48px;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > div img{height: 100%; object-fit: cover;}
 
 
@@ -233,7 +237,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div .answerArea fieldset ul li div *:not(:last-child){margin-bottom: 10px;}
 .inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; display: block; margin-left: auto;}
 .inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}
-.inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px solid var(--color-line);}
+.inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px dashed var(--color-line);}
 .inquiryDetailPage > div .answerArea > ul li :is(b, time){font-size: 13px;}
 .inquiryDetailPage > div .answerArea > ul li b{width: 100px; flex-shrink: 0; font-weight: 600;}
 .inquiryDetailPage > div .answerArea > ul li div{font-weight: 300;}

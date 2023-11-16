@@ -1,5 +1,6 @@
-hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
+input, textarea, select{outline: none;}
 
+hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 /* 컨텐츠 사이즈 */
 .contentSize{margin-inline: auto;}
@@ -143,14 +144,14 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 
 
 /* 유저 푸터 */
-.userPage footer{background-color: #444; color: white;}
+.userPage footer{background-color: #444; color: white; position: relative;}
 .userPage footer > div:nth-child(1){position: relative;}
 .userPage footer > div:nth-child(1)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - var(--scrollWidth)); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
 .userPage footer > div:nth-child(1) > ul{display: flex;}
 .userPage footer > div:nth-child(1) > ul li a{font-weight: 600;}
 .userPage footer > div:nth-child(1) > div{position: relative;}
 .userPage footer > div:nth-child(1) > div button{font-weight: 600; color: white;}
-.userPage footer > div:nth-child(1) > div div{position: absolute; display: flex; gap: 20px; background-color: #222; border: 1px solid black;}
+.userPage footer > div:nth-child(1) > div div{position: absolute; display: flex; background-color: #222; border: 1px solid black;}
 .userPage footer > div:nth-child(1) > div div{display: none;}
 .userPage footer > div:nth-child(1) > div div.active{display: flex;}
 .userPage footer > div:nth-child(1) > div div ul::before{content: attr(title); --height: 20px; margin-bottom: 15px; display: block; line-height: var(--height); min-height: var(--height); font-weight: 600;}
@@ -165,11 +166,14 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
+.userPage footer > .goToTop{position: absolute; aspect-ratio: 1; background: url(../images/icon-goToTop.png) no-repeat center / cover; text-indent: -9999px;}
 
 
 /* 관리자 공통 */
 .adminsPage [class*="Page"]{padding-block: var(--padding04) var(--padding03);}
-.adminsPage [class*="Page"] h2{font-size: 36px; line-height: 50px; margin-bottom: 30px; font-weight: 600;}
+.adminsPage [class*="Page"] h2{line-height: 50px; margin-bottom: 30px; font-weight: 600;}
+.adminsPage [class*="Page"] h2:not(:has(a)){font-size: 36px;}
+.adminsPage [class*="Page"] h2:has(a){font-size: 30px;}
 .adminsPage [class*="Page"] h2 a{display: flex; align-items: center;}
 .adminsPage [class*="Page"] h2 a::before{content: ''; width: 38px; margin-right: 15px; aspect-ratio: 1; background: url(../images/icon-back.png) no-repeat center / cover;}
 .adminsPage :is(input:not([type="submit"]), select){height: 50px; }
@@ -188,7 +192,7 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 
 
 /* 관리자 - 텝 */
-.admin-tab{display: flex; align-items: center; gap: 41px; margin-block: 30px; position: relative;}
+.admin-tab{display: flex; align-items: center; gap: 41px; margin-bottom: 30px; padding-top: 30px; position: relative;}
 .admin-tab > button{font-size: 15px; line-height: 30px; color: #BBB; font-weight: 600;}
 .admin-tab > button:not(:last-of-type){position: relative;}
 .admin-tab > button:not(:last-of-type)::after{content: ''; width: 1px; height: 18px; background-color: var(--color-line); position: absolute; right: -20px; top: 50%; transform: translateY(-50%);}
@@ -201,8 +205,8 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 /* 관리자 게시판 */
 .admin-board-list, .admin-board-list li:not(:last-child){border-bottom: 1px solid var(--color-line);}
 .admin-board-title, .admin-board-list li a{font-size: 15px; line-height: 22px; padding-inline: 20px; gap: 30px; display: flex; align-items: center; box-sizing: border-box; text-align: center;}
-.admin-board-title{padding-block: 18px;}
-.admin-board-list li a{padding-block: 20px;}
+.admin-board-title{height: 60px;}
+.admin-board-list li a{height: 84px;}
 .admin-board-title{font-weight: 600; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
 .admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 300; text-align: center; display: block; content: attr(data-noneListText);}
 
@@ -231,7 +235,7 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 .admin-input ul li > div button.delete{width: 22px; aspect-ratio: 1; background: url(../images/icon-delete.png) no-repeat center / cover; text-indent: -9999px;}
 .admin-input ul li > div:has(input[type="file"]){display: flex; gap: 20px;}
 .admin-input ul li > div:has(input[type="file"]) > *{width: 180px; height: 120px;}
-.admin-input ul li > div:has(input[type="file"]) label{border: 2px dashed #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
+.admin-input ul li > div:has(input[type="file"]) label{border: 2px dotted #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
 .admin-input ul li > div:has(input[type="file"]) div{position: relative;}
 .admin-input ul li > div:has(input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover;}
 .admin-input ul li > div:has(input[type="file"]) div button.delete{position: absolute; right: 0; top: 0; transform: translate(50%, -50%);}

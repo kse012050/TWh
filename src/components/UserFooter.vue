@@ -79,6 +79,7 @@
                 </ul>
             </div>
         </div>
+        <button class="goToTop" @click="goToTop">최상위로 이동</button>
     </footer>
 </template>
 <script>
@@ -87,6 +88,21 @@ export default {
     data(){
         return {
             isFamilySite: false
+        }
+    },
+    methods: {
+        goToTop(){
+            if(document.querySelector('.mainPage')){
+                document.querySelector('header').classList.add('white');
+                document.querySelectorAll('.active').forEach((element)=>{
+                    element.classList.remove('active');
+                })
+                document.querySelectorAll('.mainPage > [style]').forEach((element)=>{
+                    element.removeAttribute('style');
+                })
+            }else{
+                window.scrollTo({top: 0,behavior: "smooth"});
+            }
         }
     },
     watch: {

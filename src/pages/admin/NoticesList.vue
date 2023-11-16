@@ -22,6 +22,9 @@
                 </a>
             </li>
         </ul>
+        <div class="content-btn">
+            <button class="btn-black">작성</button>
+        </div>
         <div class="admin-board-pager" data-styleIdx="a">
             <a href="">첫 페이지</a>
             <a href="">이전 페이지</a>

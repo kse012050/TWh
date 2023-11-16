@@ -29,10 +29,10 @@
 .mainPage .companyArea p{font-size: 26px; line-height: 1.307; max-width: 240px;}
 .mainPage .companyArea a{margin-top: min(9.375vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
-.mainPage .boardArea > div > div h3{font-size: 26px; line-height: 1.307; margin-bottom: 40px;}
+.mainPage .boardArea > div > div h3{font-size: 26px; line-height: 1.307; margin-bottom: min(6.25vh, 40px);}
 .mainPage .boardArea .user-board{gap: 20px; overflow: auto; width: calc(100% + (var(--spacing) * 2)); transform: translateX(calc(var(--spacing) * -1)); padding-inline: var(--spacing); box-sizing: border-box;}
 .mainPage .boardArea .user-board li{min-width: 280px; flex: 1;}
-.mainPage .boardArea > div > div > a{margin-top: 40px;}
+.mainPage .boardArea > div > div > a{margin-top: min(6.25vh, 40px);}
 
 
 /* 기업 소개 페이지 */
@@ -55,7 +55,7 @@
 .companyPage .historyArea ol::before{font-size: 30px; line-height: 1.2; margin-bottom: 30px; display: block;}
 .companyPage .historyArea ol li{font-size: 16px; --lineHeight: 22px;}
 .companyPage .historyArea ol li:not(:last-child){padding-bottom: 30px;}
-.companyPage .historyArea ol li small{font-size: 14px; line-height: 1.285; margin-right: 20px;}
+.companyPage .historyArea ol li small{font-size: 14px; margin-right: 20px;}
 .companyPage .bottomArea::before{content: ''; display: block; max-width: 300px; margin: 0 auto 30px;}
 
 
@@ -68,11 +68,11 @@
 
 
 /* 전력거래 솔루션 페이지 */
-.solutionPage .topArea div:nth-of-type(3) ul li{width: 100%; max-width: 320px; height: min(42.1875vh, 270px); padding: 40px;}
+.solutionPage .topArea div:nth-of-type(3) ul li{width: 100%; max-width: 320px; height: min(42.1875vh, 270px); padding: 30px 40px;}
 .solutionPage .topArea div:nth-of-type(3) ul li:not(:last-child){margin-bottom: 20px;}
 .solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 130px;}
 .solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 26px; line-height: 1.307;}
-.solutionPage .topArea div:nth-of-type(3) ul li p{font-size: 18px; line-height: 1.333;}
+.solutionPage .topArea div:nth-of-type(3) ul li p{--fontSize: 18px; line-height: 1.333;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-bottom: 20px;}
 .solutionPage .content-process ul{max-width: 320px; margin-inline: auto;}
 .solutionPage .content-process ul li{display: flex;  align-items: center;}
@@ -107,7 +107,7 @@
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 30px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 20px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
-.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 20px; height: 250px;}
+.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 18px; height: 250px;}
 .recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 150px;}
 .recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 14px; line-height: 1.2857; margin-bottom: 10px;}
 .recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 15px; line-height: 1.333; margin-bottom: 10px;}
@@ -132,8 +132,8 @@
 .boardPage h2{font-size: 30px; line-height: 1.2; margin-bottom: 30px;}
 .boardPage div{gap: 10px; margin-bottom: 60px;}
 .boardPage div button{font-size: 15px; line-height: 3.0667; padding-inline: 20px;}
-.boardPage .user-board{flex-wrap: wrap; justify-content: center; gap: 40px 20px; }
-.boardPage .user-board li{width: 100%; max-width: 320px;}
+.boardPage .user-board{flex-wrap: wrap; justify-content: center; gap: 40px 20px;}
+.boardPage .user-board li{flex-basis: calc((100% - 20px) / 2); flex-grow: 1; min-width: 260px;}
 .boardPage .user-board li a{display: block;}
 .boardPage > button{margin-top: 40px;}
 

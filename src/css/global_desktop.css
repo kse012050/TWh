@@ -29,7 +29,7 @@ br.mobile{display: none;}
 
 
 /* 게시판 */
-ul.user-board{gap: 40px 4%; display: flex; flex-wrap: wrap;}
+ul.user-board{gap: 80px 4%; display: flex; flex-wrap: wrap;}
 ul.user-board li{width: 30.6666%;}
 ul.user-board li a img{margin-bottom: 30px;}
 ul.user-board li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px;}
@@ -119,7 +119,7 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
 .userPage footer > div:nth-child(1) > ul{gap: 50px;}
 .userPage footer > div:nth-child(1) > ul li a{line-height: 100px;}
 .userPage footer > div:nth-child(1) > div button{line-height: 30px;}
-.userPage footer > div:nth-child(1) > div div{right: 0; bottom: calc(100% + 5px); padding: 30px;}
+.userPage footer > div:nth-child(1) > div div{gap: 20px; right: 0; bottom: calc(100% + 5px); padding: 30px;}
 .userPage footer > div:nth-child(1) > div div ul{font-size: 15px; width: 120px;}
 .userPage footer > div:nth-child(2){font-size: 15px; flex-wrap: wrap;}
 .userPage footer > div:nth-child(2) address h2{margin-bottom: 30px;}
@@ -129,6 +129,7 @@ b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px;}
+.userPage footer > .goToTop{right: 40px; bottom: 40px; width: 70px;}
 
 
 /* 관리자 공통 */

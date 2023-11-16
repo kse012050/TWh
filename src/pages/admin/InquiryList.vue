@@ -7,7 +7,7 @@
             <button>RE100(33)</button>
             <button>발전소 매입(66)</button>
             <div class="search">
-                <input type="search">
+                <input type="search" placeholder="검색어를 입력하세요.">
                 <button>검색</button>
             </div>
         </div>

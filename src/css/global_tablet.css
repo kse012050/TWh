@@ -105,8 +105,10 @@ b.case01{padding: 9px 25px; font-size: 19.5px; line-height: 1.2;}
 .userPage footer > div:nth-child(1) > ul::after{content: ''; position: absolute; left: 50%; bottom: 0; width: calc(100vw - var(--scrollWidth)); height: 1px; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.2);}
 .userPage footer > div:nth-child(1) > ul li a{line-height: 1.23;}
 .userPage footer > div:nth-child(1) > div button{line-height: 3.846; width: 100%;}
-.userPage footer > div:nth-child(1) > div div{padding: 25px 35px; width: calc(100% - 60px); max-width: 450px; left: 50%; bottom: calc(100% - 8px); transform: translateX(-50%); flex-wrap: wrap;}
+.userPage footer > div:nth-child(1) > div div{padding: 25px 35px; width: calc(100% - 60px); max-width: 330px; left: 50%; top: calc(100% - 8px); transform: translateX(-50%); flex-wrap: wrap; box-sizing: border-box; z-index: 1;}
 .userPage footer > div:nth-child(1) > div div ul{font-size: 14px; width: 115px;}
+.userPage footer > div:nth-child(1) > div div ul:nth-child(-n + 2){padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
+.userPage footer > div:nth-child(1) > div div ul:nth-child(2n + 1){padding-right: 25px;}
 .userPage footer > div:nth-child(2){font-size: 13.5px; line-height: 1.5; padding-block: 40px;}
 .userPage footer > div:nth-child(2) address{margin-bottom: 30px;}
 .userPage footer > div:nth-child(2) address h2{margin-bottom: 30px;}
@@ -114,6 +116,7 @@ b.case01{padding: 9px 25px; font-size: 19.5px; line-height: 1.2;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 53px;}
+.userPage footer > .goToTop{right: 30px; bottom: 30px; width: 61px;}
 
 
 /* 관리자 공통 */

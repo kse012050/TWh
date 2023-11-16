@@ -19,7 +19,7 @@
                     <div>
                         <strong>
                             기업을 위한<br>
-                            재생에너지<br class="mobile"> 전력거래 솔루션
+                            재생에너지<br> 전력거래 솔루션
                         </strong>
                         <p>
                             복잡한 RE100 이행,<br>
@@ -170,51 +170,15 @@ export default {
             //     }, 100);
             // },1000);
         },
-        fullMoveEvent(fullSelectors, fullPager, delta, currentIdx){
-            if(delta < 0 && fullSelectors[currentIdx + 1]){
-                currentIdx++;
-                if(fullSelectors[currentIdx].localName === 'footer'){
-                    const footerEle = document.querySelector('footer');
-                    document.querySelectorAll('[data-full].active').forEach((element)=>{
-                        element.style.top = -footerEle.offsetHeight + 'px'
-                    })
-                }
-                fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.remove('white');
-                fullSelectors[currentIdx].classList.add('active')
-                this.isFull = true;
-            }else if(delta > 0 && fullSelectors[currentIdx - 1]){
-                fullSelectors[currentIdx].classList.remove('active')
-                this.isFull = true;
-                if(fullSelectors[currentIdx].localName === 'footer'){
-                    document.querySelectorAll('[data-full].active').forEach((element)=>{
-                        element.removeAttribute('style')
-                    })
-                }else{
-                    fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.add('white');
-                    currentIdx--;
-                }
-            }
-            if(this.isFull){
-                fullSelectors[currentIdx].localName !== 'footer' && fullPager.forEach((element, idx)=>{
-                    element.classList.remove('active');
-                    idx === currentIdx && element.classList.add('active');
-                })
-                setTimeout(()=>{
-                    this.isFull = false;
-                },1000)
-            }
-        },
-        
         fullEvent(fullMoveEvent){
             const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
-            const fullPager = document.querySelectorAll('.fullPager li');
             // const fullSelectors = document.querySelectorAll('[data-full]');
             fullSelectors.forEach((element, idx)=>{
                 const currentIdx = idx;
                 element.addEventListener('mousewheel', function(e){
                     if(this.isFull){return}
                     let delta = e.wheelDelta;
-                    fullMoveEvent(fullSelectors, fullPager, delta, currentIdx)            
+                    fullMoveEvent(fullSelectors, delta, currentIdx)            
                 })
                 let touchStartX = undefined;
                 let touchStartY = undefined;
@@ -227,13 +191,49 @@ export default {
                     const touchEndX = Math.abs(touchStartX - e.changedTouches[0].clientX);
                     const touchEndY = Math.abs(delta);
                     if(touchEndX < touchEndY){
-                        fullMoveEvent(fullSelectors, fullPager, delta, currentIdx)  
+                        fullMoveEvent(fullSelectors, delta, currentIdx)  
                     }
                 })
             })
-
         },
-        
+        fullMoveEvent(fullSelectors, delta, currentIdx){
+            const fullPager = document.querySelector('.fullPager');
+            const fullPagerList = document.querySelectorAll('.fullPager li');
+            if(delta < 0 && fullSelectors[currentIdx + 1]){
+                currentIdx++;
+                if(fullSelectors[currentIdx].localName === 'footer'){
+                    const footerEle = document.querySelector('footer');
+                    document.querySelectorAll('[data-full].active').forEach((element)=>{
+                        element.style.top = -footerEle.offsetHeight + 'px'
+                    })
+                    fullPager.style.top = -footerEle.offsetHeight + 'px'
+                }
+                fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.remove('white');
+                fullSelectors[currentIdx].classList.add('active')
+                this.isFull = true;
+            }else if(delta > 0 && fullSelectors[currentIdx - 1]){
+                fullSelectors[currentIdx].classList.remove('active')
+                this.isFull = true;
+                if(fullSelectors[currentIdx].localName === 'footer'){
+                    document.querySelectorAll('[data-full].active').forEach((element)=>{
+                        element.removeAttribute('style')
+                    })
+                    fullPager.removeAttribute('style')
+                }else{
+                    fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.add('white');
+                    currentIdx--;
+                }
+            }
+            if(this.isFull){
+                fullSelectors[currentIdx].localName !== 'footer' && fullPagerList.forEach((element, idx)=>{
+                    element.classList.remove('active');
+                    idx === currentIdx && element.classList.add('active');
+                })
+                setTimeout(()=>{
+                    this.isFull = false;
+                },1000)
+            }
+        },
     },
     mounted() {
         this.fullPager();
@@ -248,7 +248,7 @@ export default {
     [data-full].active{z-index: 3; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0s, 0s;}
     .mainPage .topArea{z-index: 1;}
 
-    header + .mainPage .fullPager{--color: #999; /* opacity: 0; */}
+    header + .mainPage .fullPager{--color: #999; /* opacity: 0; */ transition: .5s;}
     header + .mainPage .fullPager li{pointer-events: none;}
     header + .mainPage .fullPager:has( + .topArea.intro){opacity: 1;}
     header + .mainPage .fullPager:has( + .topArea.intro) li{pointer-events: all;}

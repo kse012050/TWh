@@ -11,7 +11,7 @@
             <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <p>
                     <b>업계 최고수준 조건</b>으로<br>
-                     발전사업자의 수익 최적화를 돕습니다.
+                     발전사업자의<br class="mobile"> 수익 최적화를 돕습니다.
                 </p>
             </div>
         </div>
@@ -127,7 +127,7 @@
                 </li>
                 <li>
                     <span>발전소 유형</span>
-                    <b>상형</b>
+                    <b>육상형</b>
                 </li>
                 <li>
                     <span>부지 유형</span>

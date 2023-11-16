@@ -28,6 +28,11 @@ export default {
   },
   mounted() {
     this.fullStyle();
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      document.querySelector('html').style.setProperty('--scrollWidth', `0px`)
+    } else {
+      document.querySelector('html').style.setProperty('--scrollWidth', `${17}px`)
+    }
     window.addEventListener('resize',this.fullStyle)
   },
   watch: {
