@@ -10,7 +10,7 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
             <li>
-                <a href="noticesInput/0">
+                <router-link to="notices/input/0">
                     <span>999</span>
                     <div><img src="../../images/delete/test.png" alt="임시 이미지"></div>
                     <p>사이트 런칭 공지</p>
@@ -19,7 +19,7 @@
                         12:34:56
                     </time>
                     <span>노출</span>
-                </a>
+                </router-link>
             </li>
         </ul>
         <div class="content-btn">

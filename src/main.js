@@ -12,11 +12,14 @@ import BoardDetail from './pages/BoardDetail'
 import Inquiry from './pages/InquiryPage'
 import SignIn from './pages/admin/SignIn'
 import AdminRoot from './pages/admin/AdminRoot'
+import AdminNotices from './pages/admin/AdminNotices'
 import NoticesList from './pages/admin/NoticesList'
 import NoticesDetail from './pages/admin/NoticesDetail'
 import NoticesInput from './pages/admin/NoticesInput'
+import AdminBoard from './pages/admin/AdminBoard'
 import BoardList from './pages/admin/BoardList'
 import BoardInput from './pages/admin/BoardInput'
+import AdminInquiry from './pages/admin/AdminInquiry'
 import InquiryList from './pages/admin/InquiryList'
 import InquiryDetail from './pages/admin/InquiryDetail'
 import InquiryInput from './pages/admin/InquiryInput'
@@ -56,40 +59,58 @@ const routes = [
     },
     {path: '/admin', component: SignIn},
     {
-        path: '/admins/', component: AdminRoot,
+        path: '/admins', component: AdminRoot,
         children: [
             {
-                path: 'noticesList',
-                component: NoticesList
+                path: 'notices',
+                component: AdminNotices,
+                children: [
+                    {
+                        path: '',
+                        component: NoticesList
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: NoticesDetail
+                    },
+                    {
+                        path: 'input/:id',
+                        component: NoticesInput
+                    },
+                ]
             },
             {
-                path: 'noticesDetail/:id',
-                component: NoticesDetail
+                path: 'board',
+                component: AdminBoard,
+                children: [
+                    {
+                        path: '',
+                        component: BoardList
+                    },
+                    {
+                        path: 'input/:id',
+                        component: BoardInput
+                    },
+                ]
             },
             {
-                path: 'noticesInput/:id',
-                component: NoticesInput
+                path: 'inquiry',
+                component: AdminInquiry,
+                children: [
+                    {
+                        path: '',
+                        component: InquiryList
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: InquiryDetail
+                    },
+                    {
+                        path: 'input/:id',
+                        component: InquiryInput
+                    }
+                ]
             },
-            {
-                path: 'boardList',
-                component: BoardList
-            },
-            {
-                path: 'boardInput/:id',
-                component: BoardInput
-            },
-            {
-                path: 'inquiryList',
-                component: InquiryList
-            },
-            {
-                path: 'inquiryDetail/:id',
-                component: InquiryDetail
-            },
-            {
-                path: 'inquiryInput/:id',
-                component: InquiryInput
-            }
         ]
     }
     // { path: '/', component: Main},

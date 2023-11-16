@@ -21,7 +21,7 @@
     </div>
 </template>
 <script>
-import * as api from '../../api/api'
+// import * as api from '../../api/api'
 
 export default {
     name: 'SignIn',
@@ -33,8 +33,10 @@ export default {
     methods: {
         onSubmit(e){
             e.preventDefault();
-            console.log(this.inputs);
-            api.check('user/signIn', this.inputs)
+            // console.log(this.inputs);
+            // api.check('user/signIn', this.inputs)
+            
+            this.$router.push({path: '/admins/notices'})
         },
         onChange(e){
             this.inputs[e.target.name] = e.target.value;

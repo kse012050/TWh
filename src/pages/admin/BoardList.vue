@@ -17,7 +17,7 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 게시판이 없습니다.">
             <li>
-                <a href="boardInput/0">
+                <a href="board/input/0">
                     <span>999</span>
                     <span>보도자료</span>
                     <p>재생에너지 전력거래 전문 합작법인‘한화 신 한 테라와트아워’출범</p>
