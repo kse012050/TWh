@@ -182,9 +182,9 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 div.content-btn{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
 div.content-btn input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 300; display: flex; align-items: center; margin-right: 30px;}
 div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
-.amdinsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 600; aspect-ratio: 88 / 50;}
-.amdinsPage [class|="btn"][class$="black"]{background-color: #222; color: white;}
-.amdinsPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
+.adminsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 600; aspect-ratio: 88 / 50;}
+.adminsPage [class|="btn"][class$="black"]{background-color: #222; color: white;}
+.adminsPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
 
 
 /* 관리자 - 텝 */
@@ -210,7 +210,7 @@ div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px;
 /* 관리자 게시판 페이저 */
 .admin-board-pager{--gap: 10px; margin-top: 60px; display: flex; justify-content: center; gap: var(--gap);}
 .admin-board-pager a{width: 28px; aspect-ratio: 1;}
-.admin-board-pager > a{background: url(../images/icon-pager.png) no-repeat top calc((100% / (var(--styleTotal) - 1) * var(--styleIdx))) center / 100%; text-indent: -9999px;}
+.admin-board-pager > a{background: url(../images/icon-pager.png) no-repeat top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center / 100%; text-indent: -9999px;}
 .admin-board-pager ol{display: flex; gap: var(--gap);}
 .admin-board-pager ol li a{font-size: 15px; font-weight: 600; color: #BBB; display: flex; justify-content: center; align-items: center;}
 .admin-board-pager ol li:is(.active, :hover) a{color: #222;}

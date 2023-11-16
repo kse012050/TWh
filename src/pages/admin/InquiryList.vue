@@ -34,7 +34,7 @@
                     <span>발전소 매입</span>
                     <span>동의</span>
                     <span>미동의</span>
-                    <button>상세보기</button>
+                    <button @click="detailMove">상세보기</button>
                     <span class="unread">읽지 않음</span>
                 </a>
             </li>
@@ -84,7 +84,12 @@
 </template>
 <script>
 export default {
-    
+    methods: {
+        detailMove(e){
+            e.preventDefault();
+            this.$router.push({path: '/admins/inquiryDetail/0'})
+        }
+    }
 }
 </script>
 <style lang="">
