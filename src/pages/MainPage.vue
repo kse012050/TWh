@@ -67,7 +67,7 @@
                 <div class="contentSize">
                     <p>
                         <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
-                        RE100 기업 수요와 KPX 전력시장을 아우르는<br>
+                        RE100 기업 수요와<br class="mobile"> KPX 전력시장을 아우르는<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
                     <div>
@@ -91,12 +91,12 @@
                 <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br class="mobile">
                 성장하겠습니다.
             </p>
-            <a href="#" class="arrow-white">기업 소개보기 <span></span></a>
+            <a href="#" class="arrow-white">기업 소개 보기 <span></span></a>
         </div>
         <div class="boardArea" data-full>
             <div>
                 <div class="contentSize">
-                    <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을 확인해보세요.</h3>
+                    <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을<br class="mobile"> 확인해보세요.</h3>
                     <ul class="user-board">
                         <li>
                             <a href="#">
@@ -125,6 +125,7 @@
             </div>
         </div>
     </section>
+    <button class="goToTop" @click="goToTop">최상위로 이동</button>
 </template>
 
 <script>
@@ -224,6 +225,13 @@ export default {
                     currentIdx--;
                 }
             }
+
+            // 최상단 이동
+            const goToTopElement = document.querySelector('.goToTop');
+            currentIdx ? 
+                goToTopElement.classList.add('active') :
+                goToTopElement.classList.remove('active');
+
             if(this.isFull){
                 fullSelectors[currentIdx].localName !== 'footer' && fullPagerList.forEach((element, idx)=>{
                     element.classList.remove('active');
@@ -234,6 +242,15 @@ export default {
                 },1000)
             }
         },
+        goToTop(){
+            document.querySelector('header').classList.add('white');
+            document.querySelectorAll('.active').forEach((element)=>{
+                element.classList.remove('active');
+            })
+            document.querySelectorAll('.mainPage > [style]').forEach((element)=>{
+                element.removeAttribute('style');
+            })
+        }
     },
     mounted() {
         this.fullPager();
@@ -295,7 +312,7 @@ export default {
     .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div > *{transform: translateY(-100%); opacity: 0; transition-delay: 0s;}
     .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
     .mainPage .terra01Area > div > div > *{transition-delay: 0.5s;}
-    .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center left 0% / cover;}
+    .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center right / cover;}
     .mainPage .companyArea p{transform: translateY(calc(100vh - 100%)); transition: 0.5s transform;}
     .mainPage .companyArea a{opacity: 0; transition: 0s 0s opacity;}
     .mainPage .companyArea.active p{transform: translateY(0%);}

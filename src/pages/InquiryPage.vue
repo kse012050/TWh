@@ -30,7 +30,7 @@
                     </li>
                     <li>
                         <label for="content">상세 내용</label>
-                        <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
+                        <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)"></textarea>
                     </li>
                 </ul>
                 <div>

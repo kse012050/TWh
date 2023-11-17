@@ -166,7 +166,10 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
-.userPage footer > .goToTop{position: absolute; aspect-ratio: 1; background: url(../images/icon-goToTop.png) no-repeat center / cover; text-indent: -9999px;}
+.userPage .goToTop{position: fixed; aspect-ratio: 1; background: url(../images/icon-goToTop.png) no-repeat center / cover; text-indent: -9999px; opacity: 0; pointer-events: none; transition: opacity 0.5s;}
+.userPage .goToTop.active{opacity: 1; pointer-events: all;}
+.userPage .mainPage ~ footer .goToTop{display: none;}
+.userPage .mainPage + .goToTop{z-index: 10;}
 
 
 /* 관리자 공통 */

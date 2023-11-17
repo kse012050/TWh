@@ -5,8 +5,8 @@
             <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
                 <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
                 <p>
-                    재생에너지 사업 전문성과 기업 안정성을 갖춘<br>
-                    재생에너지 전력거래 전문 기업입니다.
+                    에너지를 생산하는 발전사업자와<br class="mobile"> 소비하는 기업을 연결하는<br>
+                    국내 최대의 전력거래 플랫폼으로<br class="mobile"> 자리매김 하겠습니다.
                 </p>
             </div>
         </div>

@@ -3,41 +3,45 @@ const apiURL = 'http://52.79.208.109:5000/';
 
 
 // 관리자 로그인
-function checkApi(type, data){
-    // var myHeaders = new Headers();
-    // myHeaders.append("Content-Type", "application/json");
-    // data = JSON.stringify(data);
-    // return fetch(`http://52.79.208.109:5000/user/signIn`, {
-    //     method: 'POST',
-    //     // headers: myHeaders,
-    //     // redirect: 'follow',
-    //     body: data
-    // })
-    // .then((res)=>res.json())
-    console.log(type);
-    console.log(data);
+function adminApi(type, method, data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({
+  /*   var raw = JSON.stringify({
         "userid": "test123",
         "password": "1234"
-    });
-
-    var requestOptions = {
+    }); */
+    data = JSON.stringify(data)
+  /*   var requestOptions = {
         method: 'POST',
         headers: myHeaders,
         body: raw,
         redirect: 'follow'
-    };
+    }; */
 
-    return fetch(`${apiURL}${type}`, requestOptions)
-    .then(response => response.json())
-        .then(result => console.log(result))
+    return fetch(`${apiURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: data,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
         .catch(error => console.log('error', error));
 }
 
+const adminMap = {
+    signIn(type, data){
+        const method = 'POST';
+        type = `user/${type}`
+        return adminApi(type, method, data)
+    }
+}
 
-export function check(type, data){
+
+/* export function user(type, data){
     return checkApi(type, data);
+}
+ */
+export function admin(type, data){
+    return adminMap[type](type, data);
 }

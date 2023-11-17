@@ -79,7 +79,7 @@
                 </ul>
             </div>
         </div>
-        <button class="goToTop" @click="goToTop">최상위로 이동</button>
+        <button v-if="!isGoToTop"  class="goToTop" @click="goToTopEvent">최상위로 이동</button>
     </footer>
 </template>
 <script>
@@ -87,27 +87,31 @@ export default {
     name: 'UserFooter',
     data(){
         return {
-            isFamilySite: false
+            isFamilySite: false,
+            isGoToTop: document.querySelector('.mainPage')
         }
     },
     methods: {
-        goToTop(){
-            if(document.querySelector('.mainPage')){
-                document.querySelector('header').classList.add('white');
-                document.querySelectorAll('.active').forEach((element)=>{
-                    element.classList.remove('active');
-                })
-                document.querySelectorAll('.mainPage > [style]').forEach((element)=>{
-                    element.removeAttribute('style');
-                })
-            }else{
-                window.scrollTo({top: 0,behavior: "smooth"});
-            }
+        goToTopActive(){
+            const goToTopElement = document.querySelector('.goToTop');
+            window.addEventListener('scroll',()=>{
+                window.scrollY < window.innerHeight ? 
+                    goToTopElement.classList.remove('active') :
+                    goToTopElement.classList.add('active');
+            })
+        },
+        goToTopEvent(){
+            window.scrollTo({top: 0,behavior: "smooth"});
         }
+    },
+    mounted() {
+        this.goToTopActive();
     },
     watch: {
         '$route' () {
             this.isFamilySite = false;
+            this.isGoToTop = document.querySelector('.mainPage');
+            console.log(this.isGoToTop);
         }
     }
     

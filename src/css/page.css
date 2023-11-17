@@ -57,8 +57,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .VPPArea p b{font-weight: 600;}
 .companyPage :is(.missionArea, .visionArea){display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(var(--fullHeight) - var(--headerHeight)); font-weight: 600; color: white; text-align: center;}
 .companyPage :is(.missionArea, .visionArea) b{display: block;}
-.companyPage .missionArea{background: url('../images/main-companyBG.png') no-repeat center / cover;}
-.companyPage .visionArea{background: url('../images/company-topBG3.png') no-repeat center / cover;}
+.companyPage .missionArea{background: url('../images/company-missionBG.png') no-repeat center / cover;}
+.companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center / cover;}
 .companyPage .peopleArea{padding-block: var(--padding02);}
 .companyPage .peopleArea strong{font-weight: 600; text-align: center; display: block;}
 .companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center;}
@@ -162,7 +162,7 @@ header.white + .mainPage .fullPager{--color: white;}
 
 /* 사업 문의 */
 .inquiryPage h2{font-weight: 600;}
-.inquiryPage .content-inquiry ul li textarea{height: 360px;}
+/* .inquiryPage .content-inquiry ul li textarea{height: 360px;} */
 
 
 /* 관리자 - 로그인 페이지 */
@@ -235,7 +235,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div .answerArea fieldset ul li div :is(input, select){width: 200px;}
 .inquiryDetailPage > div .answerArea fieldset ul li div textarea{width: 100%; height: 150px;}
 .inquiryDetailPage > div .answerArea fieldset ul li div *:not(:last-child){margin-bottom: 10px;}
-.inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; display: block; margin-left: auto;}
+.inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; font-size: 13px; display: block; margin-left: auto;}
 .inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}
 .inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px dashed var(--color-line);}
 .inquiryDetailPage > div .answerArea > ul li :is(b, time){font-size: 13px;}

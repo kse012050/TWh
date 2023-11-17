@@ -15,7 +15,10 @@
 </template>
 <script>
 export default {
-    
+    name: 'AdminRoot',
+    mounted() {
+        !sessionStorage.getItem('token') && this.$router.push({path: '/admin'})
+    }
 }
 </script>
 <style>

@@ -21,28 +21,45 @@
     </div>
 </template>
 <script>
-// import * as api from '../../api/api'
+import * as api from '../../api/api'
 
 export default {
     name: 'SignIn',
     data(){
         return{
-            inputs: {}
+            inputs: {},
+            nextPagePath: '/admins/notices'
         }
     },
     methods: {
         onSubmit(e){
             e.preventDefault();
-            // console.log(this.inputs);
-            // api.check('user/signIn', this.inputs)
+            console.log(this.inputs);
+            let isValue = Object.entries(this.inputs).find((arr)=>{
+                return !arr[1]
+            })
+            if(isValue){
+                document.querySelector(`[name="${isValue[0]}"]`).focus();
+            }else{
+                api.admin('signIn', this.inputs)
+                    .then((result)=>{
+                        console.log(result);
+                        if(result.res_code){
+                            sessionStorage.setItem('token', result.accessToken)
+                            this.$router.push({path: this.nextPagePath})
+                        }
+                    })
+            }
+            // console.log(test[0]);
             
-            this.$router.push({path: '/admins/notices'})
+            // this.$router.push({path: '/admins/notices'})
         },
         onChange(e){
             this.inputs[e.target.name] = e.target.value;
         }
     },
     mounted() {
+        sessionStorage.getItem('token') && this.$router.push({path: this.nextPagePath})
         document.querySelectorAll('input').forEach((element)=>{
             element.required && (this.inputs[element.name] = undefined)
         })

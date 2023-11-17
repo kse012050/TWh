@@ -39,7 +39,7 @@
         <div class="content-img contentSize-padding">
             <strong>RE100 장기고정계약</strong>
             <p>
-                <b>RE100 이행을 원하는 기업</b>과 장기고정계약으로<br>
+                <b>RE100 이행을 원하는 기업</b>과<br class="mobile"> 장기고정계약으로<br>
                 안정적인 수익을 창출하세요.
             </p>
             <div class="box-img">RE100 장기고정계약 이미지</div>
@@ -158,7 +158,7 @@
 
         <div class="simplifyArea contentSize-padding">
             <p>
-                <b>장기계약도, 발전소 매입도</b><br>
+                장기계약도, 발전소 매입도<br>
                 간소화된 계약 절차로 <br class="mobile"><b class="font-hanwha">테라와트아워</b>는 가능합니다.
             </p>
             <ul data-styleIdx>
@@ -280,7 +280,7 @@
                         </li>
                         <li>
                             <label for="content">상세 내용</label>
-                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (500자 내)"></textarea>
+                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)"></textarea>
                         </li>
                     </ul>
                     <div>

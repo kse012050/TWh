@@ -116,7 +116,7 @@ b.case01{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 30px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 10px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 46px;}
-.userPage footer > .goToTop{right: 20px; bottom: 20px; width: 52px;}
+.userPage .goToTop{right: 20px; bottom: 20px; width: 52px;}
 
 
 /* 관리자 공통 */
