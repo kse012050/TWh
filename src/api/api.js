@@ -1,6 +1,23 @@
 // api url
 const apiURL = 'http://52.79.208.109:5000/';
 
+export function onChange(e, inputs){
+    console.log(e);
+    console.log(inputs);
+    // this.inputs[e.target.name] = e.target.value;
+    inputs[e.target.name] = e.target.value;
+}
+
+export function data(inputs){
+    let isValue = Object.entries(inputs).find((arr)=>{
+        return !arr[1]
+    })
+    if(isValue){
+        document.querySelector(`[name="${isValue[0]}"]`).focus();
+    }
+    return isValue;
+}
+
 
 // 관리자 로그인
 function adminApi(type, method, data){

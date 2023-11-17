@@ -270,10 +270,10 @@ export default {
     header + .mainPage .fullPager:has( + .topArea.intro){opacity: 1;}
     header + .mainPage .fullPager:has( + .topArea.intro) li{pointer-events: all;}
 
-    .mainPage + footer{position: fixed; left: 0; bottom: 0; width: 100%;}
-    .mainPage:has( .boardArea.active) + footer{z-index: 2;}
-    .mainPage:has( .boardArea.active) + footer.active::before{content: ''; position: absolute; left: 0; bottom: 100%; width: 100%; height: calc(100vh - 100%);}
-    .mainPage:has( + footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
+    .mainPage ~ footer{position: fixed; left: 0; bottom: 0; width: 100%;}
+    .mainPage:has( .boardArea.active) ~ footer{z-index: 2;}
+    .mainPage:has( .boardArea.active) ~ footer.active::before{content: ''; position: absolute; left: 0; bottom: 100%; width: 100%; height: calc(100vh - 100%);}
+    .mainPage:has( ~ footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
 
 
     .mainPage .topArea{color: white;}
@@ -319,5 +319,5 @@ export default {
     .mainPage .companyArea.active a{opacity: 1; transition: 0.5s 0.3s opacity;}
     .mainPage .boardArea div{transform: translateY(100%); transition: 0.5s transform;}
     .mainPage .boardArea.active div{transform: translateY(0);}
-    .mainPage:has(+ footer.active) [data-full].active{transition-duration: 0.5s;}
+    .mainPage:has(~ footer.active) [data-full].active{transition-duration: 0.5s;}
 </style>

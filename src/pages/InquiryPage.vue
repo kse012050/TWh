@@ -7,7 +7,7 @@
                     <li>
                         <label for="company">업체명</label>
                         <div>
-                            <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                            <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required @input="onChange">
                         </div>
                     </li>
                     <li>
@@ -39,14 +39,38 @@
                     <input type="checkbox" name="maketagree" id="maketagree" required>
                     <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
                 </div>
-                <input type="submit" value="문의하기" class="btn-black">
+                <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
             </fieldset>
         </form>
     </section>
 </template>
 <script>
+import * as api from '../api/api'
+
 export default {
-    
+    name: 'InquiryPage',
+    data() {
+        return{
+            inputs: {}
+        }
+    },
+    methods: {
+        onSubmit(e){
+            e.preventDefault();
+            // const inputs = this.inputs;
+            console.log(this.inputs);
+            // console.log(api.data(inputs));
+        },
+        onChange(e){
+            api.onChange(e, this.inputs);
+            // this.inputs[e.target.name] = e.target.value;
+        }
+    },
+    mounted() {
+        document.querySelectorAll('input').forEach((element)=>{
+            element.required && (this.inputs[element.name] = undefined)
+        })
+    }
 }
 </script>
 <style>
