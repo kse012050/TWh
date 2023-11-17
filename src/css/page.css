@@ -74,9 +74,9 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .historyArea strong{font-weight: 600; text-align: center; display: block;}
 .companyPage .historyArea ol::before{content: attr(title); font-weight: 600;}
 .companyPage .historyArea ol li{line-height: var(--lineHeight); --virtualColor: #DEDEDE; font-weight: 600; display: flex; align-items: flex-start;}
-.companyPage .historyArea ol li::before{content: ''; width: 6px; margin-right: 10px; aspect-ratio: 1; background-color: var(--virtualColor); border-radius: 100%; transform: translate(-50%, calc(var(--lineHeight) / 2 - 3px));}
+.companyPage .historyArea ol li::before{content: ''; width: 8px; margin-right: 10px; aspect-ratio: 1; background-color: var(--virtualColor); border-radius: 100%; transform: translate(-50%, calc(var(--lineHeight) / 2 - 3px));}
 .companyPage .historyArea ol li:not(:last-child){position: relative;}
-.companyPage .historyArea ol li:not(:last-child)::after{content: ''; width: 1px; height: 100%; position: absolute; left: 0; top: calc(var(--lineHeight) / 2); background-color: var(--virtualColor); transform: translateX(-50%);}
+.companyPage .historyArea ol li:not(:last-child)::after{content: ''; width: 2px; height: 100%; position: absolute; left: 0; top: calc(var(--lineHeight) / 2); background-color: var(--virtualColor); transform: translateX(-50%);}
 .companyPage .historyArea ol li small{line-height: var(--lineHeight); color: #999;}
 .companyPage .bottomArea{padding-block: var(--padding02); background: url('../images/company-bottomBG.png') no-repeat center / cover;}
 .companyPage .bottomArea::before{content: ''; display: block; aspect-ratio: 660 / 110; background: url(../images/logo2.png) no-repeat bottom center / cover;}

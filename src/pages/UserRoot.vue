@@ -47,14 +47,21 @@ export default {
           })
         })
       },0)
+    },
+    hanshwFontSize(){
+      document.querySelectorAll('.font-hanwha').forEach((element)=>{
+        element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px')
+      })
     }
   },
   mounted() {
     this.aniIdx();
+    this.hanshwFontSize();
   },
   watch: {
     '$route' () {
       this.aniIdx();
+      this.hanshwFontSize();
     }
   }
 }
