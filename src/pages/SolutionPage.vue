@@ -208,71 +208,73 @@
                         <li>
                             <label for="company">업체명</label>
                             <div>
-                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="name">담당자(성함)</label>
                             <div>
-                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" required>
+                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="phonenum">연락처</label>
                             <div>
-                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" required>
+                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" @input="onChange" data-formet="number" maxlength="11" required>
                             </div>
                         </li>
                         <li>
                             <label for="email">이메일</label>
                             <div>
-                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
+                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="implementgoal">RE100 이행목표</label>
                             <div>
-                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외) ">
+                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외)" @input="onChange">
                             </div>
                         </li>
                         <li class="full">
                             <label for="annualusage">연간 전력사용량</label>
                             <div data-unit="GWh">
-                                <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요.">
+                                <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요." @input="onChange" data-formet="number">
                             </div>
                             <small>다수의 사업장이 있을 경우 각 사업장 별 연간 전력 사용량을 내용에 적어주세요.</small>
                         </li>
                         <li class="full">
                             <label for="" data-comment="*중복선택 가능">이행 방안</label>
                             <div>
-                                <input type="checkbox" id="implementplan-PPA" name="implementplan" checked>
+                                <input type="checkbox" id="implementplan-PPA" name="implementplan" value="PPA" @input="onChange">
                                 <label for="implementplan-PPA">직접 PPA</label>
-                                <input type="checkbox" id="implementplan-REC" name="implementplan">
+                                <input type="checkbox" id="implementplan-REC" name="implementplan" value="REC구매" @input="onChange">
                                 <label for="implementplan-REC">제3자 간 PPA</label>
-                                <input type="checkbox" id="implementplan-sunlight" name="implementplan">
+                                <input type="checkbox" id="implementplan-sunlight" name="implementplan" value="자가소비형 태양광 구축" @input="onChange">
                                 <label for="implementplan-sunlight">V.PPA</label>
-                                <input type="checkbox" id="implementplan-inquiry" name="implementplan">
+                                <input type="checkbox" id="implementplan-inquiry" name="implementplan" value="종합솔류션 문의" @input="onChange">
                                 <label for="implementplan-inquiry">종합솔루션 문의</label>
                             </div>
                         </li>
                         <li>
                             <label for="content">상세 내용</label>
-                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)"></textarea>
+                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)" @input="onChange"></textarea>
                         </li>
                     </ul>
                     <div>
-                        <input type="checkbox" name="privacyagree" id="privacyagree" required checked>
+                        <input type="checkbox" name="privacyagree" id="privacyagree" @input="onChange" required>
                         <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
-                        <input type="checkbox" name="maketagree" id="maketagree" required>
+                        <input type="checkbox" name="maketagree" id="maketagree" @input="onChange" required>
                         <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
                     </div>
-                    <input type="submit" value="문의하기" class="btn-black">
+                    <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
                 </fieldset>
             </form>
         </div>
     </section>
 </template>
 <script>
+import * as api from '../api/api'
+
 export default {
     name: 'SolutionPage',
     data() {
@@ -281,6 +283,8 @@ export default {
             topElement: undefined,
             topContents: undefined,
             titleElement: undefined,
+            inputsRequired: {},
+            inputs: {}
         }
     },
     methods : {
@@ -317,11 +321,26 @@ export default {
                     topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 100) + 'px');
                 }
             })
+        },
+        onSubmit(e){
+            e.preventDefault();
+            if(!api.isRequired(this.inputsRequired)){
+                api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RE100'})
+                    .then((result)=>{
+                        alert(result.message)
+                    })
+            }
+        },
+        onChange(e){
+            api.onChange(e, this.inputsRequired, this.inputs)
         }
     },
     mounted() {
         this.init();
         this.scrollEvent();
+        document.querySelectorAll('input[required]').forEach((element)=>{
+            element.required && (this.inputsRequired[element.name] = '')
+        })
     }
 }
 </script>

@@ -38,10 +38,23 @@ export function onChange(e, inputsRequired, inputs){
     }
     
     let value;
-
-    validation(e.target.name, e.target.value) ?
-        value = e.target.getAttribute('type') === 'checkbox' ? e.target.checked : e.target.value : 
+    if(validation(e.target.name, e.target.value)){
+        if(e.target.getAttribute('type') === 'checkbox'){
+            if(e.target.value === 'on'){
+                value = e.target.checked;
+            }else{
+                value = []
+                document.querySelectorAll(`[name=${e.target.name}]:checked`).forEach((element)=>{
+                    element.checked && value.push(element.value)
+                })
+                value = value.join(',')
+            }
+        }else{
+            value = e.target.value;
+        }
+    }else{
         value = '';
+    }
 
     value ? e.target.classList.remove('error') : e.target.classList.add('error');
 
@@ -104,10 +117,6 @@ const adminMap = {
 const userMap = {
     inquiry(type, data){
         const method = 'POST';
-        console.log(data);
-        type.split('/')
-        console.log(type);
-        // type = `${type}`
         return userApi(type, method, data)
     }
 }
