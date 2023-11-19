@@ -1,20 +1,64 @@
 // api url
-const apiURL = 'http://52.79.208.109:5000/';
+const adminURL = 'http://52.79.208.109:5000/';
+const userURL = 'http://52.79.208.109:5000/';
 
-export function onChange(e, inputs){
-    console.log(e);
-    console.log(inputs);
-    // this.inputs[e.target.name] = e.target.value;
-    inputs[e.target.name] = e.target.value;
+const validationMap = {
+    number(value) {
+        const regex = /^[0-9]+$/;
+        return regex.test(value);
+    },
+    company(value){
+        const regex = /^.{2,20}$/;
+        return regex.test(value);
+    },
+    name(value){
+        const regex = /^.{2,20}$/;
+        return regex.test(value);
+    },
+    phonenum(value){
+        const regex = /^.{8,11}$/;
+        return regex.test(value);
+    },
+    email(value) {
+        const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        return regex.test(value);
+    },
 }
 
-export function data(inputs){
-    let isValue = Object.entries(inputs).find((arr)=>{
+export function validation(type, value){
+    return Object.keys(validationMap).includes(type) ? validationMap[type](value) : true
+}
+
+
+export function onChange(e, inputsRequired, inputs){
+    const isRequired = Object.keys(inputsRequired).includes(e.target.name);
+    if(!validation(e.target.dataset.formet, e.target.value)){
+        e.target.value = isRequired ? inputsRequired[e.target.name] : inputs[e.target.name]
+        return
+    }
+    
+    let value;
+
+    validation(e.target.name, e.target.value) ?
+        value = e.target.getAttribute('type') === 'checkbox' ? e.target.checked : e.target.value : 
+        value = '';
+
+    value ? e.target.classList.remove('error') : e.target.classList.add('error');
+
+    isRequired ?
+        inputsRequired[e.target.name] = value :
+        inputs[e.target.name]= value
+}
+
+export function isRequired(inputsRequired){
+    Object.entries(inputsRequired).forEach((arr)=>{
+        !arr[1] && document.querySelector(`[name="${arr[0]}"]`).classList.add('error');
+    })
+
+    let isValue = Object.entries(inputsRequired).find((arr)=>{
         return !arr[1]
     })
-    if(isValue){
-        document.querySelector(`[name="${isValue[0]}"]`).focus();
-    }
+    isValue && document.querySelector(`[name="${isValue[0]}"]`).focus();
     return isValue;
 }
 
@@ -23,20 +67,22 @@ export function data(inputs){
 function adminApi(type, method, data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
-  /*   var raw = JSON.stringify({
-        "userid": "test123",
-        "password": "1234"
-    }); */
     data = JSON.stringify(data)
-  /*   var requestOptions = {
-        method: 'POST',
+    return fetch(`${adminURL}${type}`, {
+        method: method,
         headers: myHeaders,
-        body: raw,
+        body: data,
         redirect: 'follow'
-    }; */
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
 
-    return fetch(`${apiURL}${type}`, {
+function userApi(type, method, data){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    data = JSON.stringify(data)
+    return fetch(`${userURL}${type}`, {
         method: method,
         headers: myHeaders,
         body: data,
@@ -55,10 +101,21 @@ const adminMap = {
 }
 
 
-/* export function user(type, data){
-    return checkApi(type, data);
+const userMap = {
+    inquiry(type, data){
+        const method = 'POST';
+        console.log(data);
+        type.split('/')
+        console.log(type);
+        // type = `${type}`
+        return userApi(type, method, data)
+    }
 }
- */
+
 export function admin(type, data){
     return adminMap[type](type, data);
+}
+
+export function user(type, data){
+    return userMap[type](type, data);
 }

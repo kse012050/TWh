@@ -119,11 +119,13 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-weight: 600; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
 .content-inquiry ul li small{font-weight: 300; color: #999; display: block;}
+.content-inquiry ul li div input.error{border: 2px solid var(--color-point01); box-sizing: border-box;}
 .content-inquiry > div input[type="checkbox"] + label{font-weight: 300; display: flex; align-items: center; cursor: pointer;}
 .content-inquiry > div input[type="checkbox"] + label b{font-weight: 600; text-decoration: underline;}
 .content-inquiry > div input[type="checkbox"] + label::before{content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
 .content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}
+.content-inquiry > div input[type="checkbox"].error + label::before{background-color: var(--color-point01);}
 
 
 /* 유저 해더 */
