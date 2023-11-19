@@ -108,6 +108,10 @@ function adminListApi(type, method){
         .catch(error => console.log('error', error));
 }
 
+function adminDetailApi(type, method){
+    console.log(type, method);
+}
+
 function adminUpdateApi(type, method){
     var myHeaders = new Headers();
     // console.log(sessionStorage.getItem('token'));
@@ -157,7 +161,7 @@ const adminMap = {
         console.log(type, data);
         const method = 'GET';
         type = `${data['type']}/${data['id']}`;
-        return adminListApi(type, method)
+        return adminDetailApi(type, method)
     },
     update(type, data){
         console.log(type, data);

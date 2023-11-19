@@ -105,6 +105,7 @@
 import * as api from '../../api/api'
 
 export default {
+    name: 'InquiryList',
     data() {
         return {
             tabName: 'All',

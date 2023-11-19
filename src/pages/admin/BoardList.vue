@@ -16,7 +16,20 @@
             <b>노출여부</b>
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 게시판이 없습니다.">
-            <li>
+            <li v-for="data in boardList" :key="data.id">
+                <a :href="`board/input/${data.id}`">
+                    <span>{{ data.id }}</span>
+                    <span>{{ data.type !== 'BLOG' ? '보도자료' : '블로그' }}</span>
+                    <p>{{ data.title }}</p>
+                    <p>{{ data.description }}</p>
+                    <time>
+                        2023.12.01<br>
+                        12:34:56
+                    </time>
+                    <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
+                </a>
+            </li>
+            <!-- <li>
                 <a href="board/input/0">
                     <span>999</span>
                     <span>보도자료</span>
@@ -28,7 +41,7 @@
                     </time>
                     <span>노출</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
         <div class="content-btn">
             <button class="btn-black">작성</button>
@@ -49,8 +62,30 @@
     </section>
 </template>
 <script>
+import * as api from '../../api/api'
+
 export default {
-    
+    name: 'BoardList',
+    data() {
+        return {
+            tabName: 'All',
+            boardList: [],
+            allList: [],
+        }
+    },
+    methods: {
+
+    },
+    mounted(){
+        api.admin('list',{type: 'boards', page: 1})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.boardList = [...result.list]
+                    console.log(result);
+                }
+            })
+
+    }
 }
 </script>
 <style lang="">
