@@ -77,7 +77,7 @@ export function isRequired(inputsRequired){
 
 
 // 관리자 로그인
-function adminApi(type, method, data){
+function signIn(type, method, data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     data = JSON.stringify(data)
@@ -89,6 +89,87 @@ function adminApi(type, method, data){
     })
         .then(response => response.json())
         .catch(error => console.log('error', error));
+}
+
+function adminListApi(type, method){
+    var myHeaders = new Headers();
+    // console.log(sessionStorage.getItem('token'));
+    // let test =  sessionStorage.getItem('token')
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
+    // myHeaders.append("Authorization", test);
+    
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+function adminUpdateApi(type, method){
+    var myHeaders = new Headers();
+    // console.log(sessionStorage.getItem('token'));
+    // let test =  sessionStorage.getItem('token')
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
+    // myHeaders.append("Authorization", test);
+    var formdata = new FormData();
+    formdata.append("name", "김필수");
+    formdata.append("company", "Naber");
+    formdata.append("phonenum", "01049395858");
+    formdata.append("email", "test@com.com");
+    formdata.append("consultpurpose", "GENERAL");
+    formdata.append("implementgoal", "이행 목");
+    formdata.append("implementplan", "ㅅㄷㄴ");
+    formdata.append("annualusage", "100");
+    formdata.append("inquerydetail", "LONGTERMCONTRACT");
+    formdata.append("plantstatus", "LANDPURCHASE");
+    formdata.append("plantcapacity", "30000");
+    formdata.append("recweight", "3000");
+    formdata.append("content", "컨텐츠 내용 사");
+    formdata.append("saleprice", "13004");
+    formdata.append("inquirystate", "3");
+    
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+const adminMap = {
+    signIn(type, data){
+        const method = 'POST';
+        type = `user/${type}`
+        return signIn(type, method, data)
+    },
+    list(type, data){
+        const method = 'GET';
+        type = `${data['type']}/list/${data['page']}`
+        return adminListApi(type, method)
+    },
+    detail(type, data){
+        console.log(type, data);
+        const method = 'GET';
+        type = `${data['type']}/${data['id']}`;
+        return adminListApi(type, method)
+    },
+    update(type, data){
+        console.log(type, data);
+        const method = 'PATCH';
+        type = `${data['type']}/update/${data['id']}`;
+        data = {...data['data']}
+        return adminUpdateApi(type, method)
+    }
+}
+
+export function admin(type, data){
+    return adminMap[type](type, data);
 }
 
 function userApi(type, method, data){
@@ -105,24 +186,11 @@ function userApi(type, method, data){
         .catch(error => console.log('error', error));
 }
 
-const adminMap = {
-    signIn(type, data){
-        const method = 'POST';
-        type = `user/${type}`
-        return adminApi(type, method, data)
-    }
-}
-
-
 const userMap = {
     inquiry(type, data){
         const method = 'POST';
         return userApi(type, method, data)
     }
-}
-
-export function admin(type, data){
-    return adminMap[type](type, data);
 }
 
 export function user(type, data){

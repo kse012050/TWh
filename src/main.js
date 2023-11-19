@@ -106,6 +106,10 @@ const routes = [
                         component: InquiryDetail
                     },
                     {
+                        path: 'input',
+                        component: InquiryInput
+                    },
+                    {
                         path: 'input/:id',
                         component: InquiryInput
                     }
