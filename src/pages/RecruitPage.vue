@@ -225,77 +225,79 @@
                         <li>
                             <label for="company">업체명</label>
                             <div>
-                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" required>
+                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="name">담당자(성함)</label>
                             <div>
-                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" required>
+                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="phonenum">연락처</label>
                             <div>
-                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" required>
+                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" @input="onChange" maxlength="11" data-formet="number" required>
                             </div>
                         </li>
                         <li>
                             <label for="email">이메일</label>
                             <div>
-                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." required>
+                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="">문의내용</label>
                             <div>
-                                <input type="radio" id="inquerydetail-contract" name="inquerydetail" required checked>
+                                <input type="radio" id="inquerydetail-contract" name="inquerydetail" value="LONGTERMCONTRACT" @input="onChange" required>
                                 <label for="inquerydetail-contract">장기고정계약</label>
-                                <input type="radio" id="inquerydetail-forSale" name="inquerydetail" required>
+                                <input type="radio" id="inquerydetail-forSale" name="inquerydetail" value="FORSALE" @input="onChange" required>
                                 <label for="inquerydetail-forSale">발전소 매각</label>
-                                <input type="radio" id="inquerydetail-etc" name="inquerydetail" required>
+                                <input type="radio" id="inquerydetail-etc" name="inquerydetail" value="ETC" @input="onChange" required>
                                 <label for="inquerydetail-etc">기타</label>
                             </div>
                         </li>
                         <li>
                             <label for="">발전소 현황</label>
                             <div>
-                                <input type="radio" id="plantstatus-beforeCompletion" name="plantstatus" required>
+                                <input type="radio" id="plantstatus-beforeCompletion" name="plantstatus" value="BEFORECOMPLETION" @input="onChange" required>
                                 <label for="plantstatus-beforeCompletion">준공전 발전소</label>
-                                <input type="radio" id="plantstatus-inOperation" name="plantstatus" required>
+                                <input type="radio" id="plantstatus-inOperation" name="plantstatus" value="INOPERATION" @input="onChange" required>
                                 <label for="plantstatus-inOperation">운영중 발전소</label>
                             </div>
                         </li>
                         <li>
                             <label for="plantcapacity">용량</label>
                             <div data-unit="kW">
-                                <input type="text" id="plantcapacity" name="plantcapacity" placeholder="발전소 용량을 입력하세요">
+                                <input type="text" id="plantcapacity" name="plantcapacity" placeholder="발전소 용량을 입력하세요" @input="onChange" data-formet="number">
                             </div>
                         </li>
                         <li>
                             <label for="recweight">REC 가중치</label>
                             <div data-unit="kW">
-                                <input type="text" id="recweight" name="recweight" placeholder="REC 가중치를 입력하세요.">
+                                <input type="text" id="recweight" name="recweight" placeholder="REC 가중치를 입력하세요." @input="onChange" data-formet="number">
                             </div>
                         </li>
                         <li>
                             <label for="content">상세 내용</label>
-                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)"></textarea>
+                            <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)" @input="onChange"></textarea>
                         </li>
                     </ul>
                     <div>
-                        <input type="checkbox" name="privacyagree" id="privacyagree" required checked>
+                        <input type="checkbox" name="privacyagree" id="privacyagree" required @input="onChange">
                         <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
-                        <input type="checkbox" name="maketagree" id="maketagree" required>
+                        <input type="checkbox" name="maketagree" id="maketagree" required @input="onChange">
                         <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
                     </div>
-                    <input type="submit" value="문의하기" class="btn-black">
+                    <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
                 </fieldset>
             </form>
         </div>
     </section>
 </template>
 <script>
+import * as api from '../api/api'
+
 export default {
     name: 'RecruitPage',
     data() {
@@ -304,6 +306,8 @@ export default {
             topElement: undefined,
             topContents: undefined,
             titleElement: undefined,
+            inputsRequired: {},
+            inputs: {}
         }
     },
     methods : {
@@ -340,11 +344,26 @@ export default {
                     topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 100) + 'px');
                 }
             })
+        },
+        onSubmit(e){
+            e.preventDefault();
+            if(!api.isRequired(this.inputsRequired)){
+                api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RECURUT'})
+                    .then((result)=>{
+                        alert(result.message)
+                    })
+            }
+        },
+        onChange(e){
+            api.onChange(e, this.inputsRequired, this.inputs)
         }
     },
     mounted() {
         this.init();
         this.scrollEvent();
+        document.querySelectorAll('input[required]').forEach((element)=>{
+            element.required && (this.inputsRequired[element.name] = '')
+        })
     }
 }
 </script>
