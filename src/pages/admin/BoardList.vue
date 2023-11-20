@@ -71,6 +71,10 @@ export default {
             tabName: 'All',
             boardList: [],
             allList: [],
+            newsList: [],
+            blogList: [],
+            page: Number(this.$route.query.page) || 1,
+            lastPage: undefined
         }
     },
     methods: {
@@ -80,8 +84,19 @@ export default {
         api.admin('list',{type: 'boards', page: 1})
             .then((result)=>{
                 if(result.statusCode === '200'){
-                    this.boardList = [...result.list]
-                    console.log(result);
+                    this.allList = [...result.list]
+                }
+            })
+        api.admin('list',{type: 'boards', page: 1, listType: 'NEWS'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.newsList = [...result.list]
+                }
+            })
+        api.admin('list',{type: 'boards', page: 1, listType: 'BLOG'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.blogList = [...result.list]
                 }
             })
 

@@ -101,7 +101,7 @@ function addToken(myHeaders){
 // 관리자 각 페이지별 리스트
 function adminListApi(type, method){
     var myHeaders = new Headers();
-    
+
     addToken(myHeaders)
     
     return fetch(`${adminURL}${type}`, {
@@ -160,6 +160,7 @@ const adminMap = {
     list(type, data){
         const method = 'GET';
         type = `${data['type']}/list/${data['page']}`
+        data['listType'] && (type = type + '?type=' + data['listType']);
         return adminListApi(type, method)
     },
     detail(type, data){

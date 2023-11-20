@@ -3,10 +3,10 @@
         <h2>사업 문의 관리</h2>
 
         <div class="admin-tab">
-            <button :class="tabName === 'All' ? 'active' :''" @click="tabClick('All')">전체({{this.allList.length}})</button>
-            <button :class="tabName === 'GENERAL' ? 'active' :''" @click="tabClick('GENERAL')">일반({{this.generalList.length}})</button>
-            <button :class="tabName === 'RE100' ? 'active' :''" @click="tabClick('RE100')">RE100({{this.re100List.length}})</button>
-            <button :class="tabName === 'RECURUT' ? 'active' :''" @click="tabClick('RECURUT')">발전소 매입({{this.recurutList.length}})</button>
+            <router-link to="/admins/inquiry/1" :class="{active: listType === ''}">전체({{this.listTotal.all}})</router-link>
+            <router-link to="/admins/inquiry/1?type=GENERAL" :class="{active: listType === 'GENERAL'}">일반({{this.listTotal.general}})</router-link>
+            <router-link to="/admins/inquiry/1?type=RE100" :class="{active: listType === 'RE100'}">RE100({{this.listTotal.re100}})</router-link>
+            <router-link to="/admins/inquiry/1?type=RECURUT" :class="{active: listType === 'RECURUT'}">발전소 매입({{this.listTotal.recurut}})</router-link>
             <div class="search">
                 <input type="search" placeholder="검색어를 입력하세요.">
                 <button>검색</button>
@@ -26,7 +26,8 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
             <li v-for="data in inquiryList" :key="data.id">
-                <a :href="`inquiry/input/${data.id}`">
+                <router-link :to="`input/${data.id}`">
+                <!-- <router-link :to="`input/`"> -->
                     <span>{{ data.id }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
@@ -39,9 +40,9 @@
                     }}</span>
                     <span>{{ data.privacyagree ? '동의' : '비동의' }}</span>
                     <span>{{ data.maketagree ? '동의' : '비동의' }}</span>
-                    <button @click="detailMove">상세보기</button>
+                    <button @click="(e)=>detailMove(e, data.id)">상세보기</button>
                     <span class="unread">읽지 않음</span>
-                </a>
+                </router-link>
             </li>
           <!--   <li>
                 <a href="inquiry/input/0">
@@ -86,61 +87,81 @@
                 </a>
             </li> -->
         </ul>
-        <div class="admin-board-pager" data-styleIdx="a">
-            <a href="">첫 페이지</a>
-            <a href="">이전 페이지</a>
-            <ol>
-                <li class="active"><a href="">1</a></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href="">5</a></li>
-            </ol>
-            <a href="">다음 페이지</a>
-            <a href="">마지막 페이지</a>
-        </div>
+        <list-pager :page="page" :lastPage="lastPage"/>
     </section>
 </template>
 <script>
+import ListPager from '@/components/admin/ListPager.vue';
 import * as api from '../../api/api'
 
 export default {
     name: 'InquiryList',
+    components: { ListPager },
     data() {
         return {
             tabName: 'All',
             inquiryList: [],
-            allList: [],
-            generalList: [],
-            re100List: [],
-            recurutList: [],
+            listTotal: {
+                all: undefined,
+                general: undefined,
+                re100: undefined,
+                recurut: undefined,
+            },
+            lastPage: undefined,
+            page: Number(this.$route.params.page) || 1,
+            listType: this.$route.query.type || ''
         }
     },
     methods: {
-        detailMove(e){
+        detailMove(e, id){
             e.preventDefault();
-            this.$router.push({path: '/admins/inquiry/detail/0'})
+            this.$router.push({path: `/admins/inquiry/detail/${id}`})
         },
-        tabClick(value){
-            this.tabName = value;
-            this.tabName === 'All' && (this.inquiryList = [...this.allList]);
-            this.tabName === 'GENERAL' && (this.inquiryList = [...this.generalList]);
-            this.tabName === 'RE100' && (this.inquiryList = [...this.re100List]);
-            this.tabName === 'RECURUT' && (this.inquiryList = [...this.recurutList]);
-            console.log(this.tabName);
+        list(){
+            this.listType = this.$route.query.type || ''
+            api.admin('list',{type: 'inquiry', page: this.page, listType: this.listType})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.inquiryList = [...result.list]
+                        this.lastPage = result.meta.last_page
+                    }
+                })
         }
     },
     mounted(){
         api.admin('list',{type: 'inquiry', page: 1})
             .then((result)=>{
                 if(result.statusCode === '200'){
-                    this.inquiryList = [...result.list];
-                    this.allList = [...result.list];
-                    this.generalList = result.list.filter((value)=>value.consultpurpose === 'GENERAL');
-                    this.re100List = result.list.filter((value)=>value.consultpurpose === 'RE100');
-                    this.recurutList = result.list.filter((value)=>value.consultpurpose === 'RECURUT');
+                    this.listTotal['all'] = result.meta.total
                 }
             })
+        api.admin('list',{type: 'inquiry', page: 1, listType: 'GENERAL'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.listTotal['general'] = result.meta.total
+                }
+            })
+        api.admin('list',{type: 'inquiry', page: 1, listType: 'RE100'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.listTotal['re100'] = result.meta.total
+                }
+            })
+        api.admin('list',{type: 'inquiry', page: 1, listType: 'RECURUT'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.listTotal['recurut'] = result.meta.total
+                }
+            })
+        this.list();
+    },
+    watch: {
+        '$route' (to, from) {
+            // console.log(from.path);
+            if(to.path === from.path){
+                this.list();
+            }
+        }
     }
 }
 </script>

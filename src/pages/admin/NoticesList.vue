@@ -38,7 +38,7 @@ export default {
     data(){
         return{
             noticeList: [],
-            page: Number(this.$route.query.page) || 1,
+            page: Number(this.$route.params.page) || 1,
             lastPage: undefined
         }
     },

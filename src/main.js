@@ -106,6 +106,10 @@ const routes = [
                         component: InquiryList
                     },
                     {
+                        path: ':page',
+                        component: InquiryList
+                    },
+                    {
                         path: 'detail/:id',
                         component: InquiryDetail
                     },
