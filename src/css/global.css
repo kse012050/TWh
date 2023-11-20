@@ -190,7 +190,8 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 [class*="Page"]:has(.content-btn){position: relative;}
 div.content-btn{position: absolute; right: 0; top: var(--padding04); display: flex; align-items: center; gap: 10px;}
 div.content-btn input[type="checkbox"] + label{font-size: 15px; line-height: 20px; font-weight: 300; display: flex; align-items: center; margin-right: 30px;}
-div.content-btn input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top center; background-size: cover; margin-right: 10px;}
+div.content-btn input[type="checkbox"] + label::before{--checkIdx:0; content: ''; --width: 22px; width: var(--width); aspect-ratio: 1; background-image: url(../images/icon-checkbox.png); background-repeat: no-repeat; background-position: top calc(var(--width) * var(--checkIdx) * -1) center; background-size: cover; margin-right: 10px;}
+div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .adminsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 600; aspect-ratio: 88 / 50;}
 .adminsPage [class|="btn"][class$="black"]{background-color: #222; color: white;}
 .adminsPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}

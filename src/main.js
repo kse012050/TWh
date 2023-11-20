@@ -88,6 +88,10 @@ const routes = [
                         component: BoardList
                     },
                     {
+                        path: 'input',
+                        component: BoardInput
+                    },
+                    {
                         path: 'input/:id',
                         component: BoardInput
                     },

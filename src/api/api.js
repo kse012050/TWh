@@ -109,33 +109,35 @@ function adminListApi(type, method){
 }
 
 function adminDetailApi(type, method){
-    console.log(type, method);
-}
-
-function adminUpdateApi(type, method){
     var myHeaders = new Headers();
-    // console.log(sessionStorage.getItem('token'));
     // let test =  sessionStorage.getItem('token')
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
     // myHeaders.append("Authorization", test);
-    var formdata = new FormData();
-    formdata.append("name", "김필수");
-    formdata.append("company", "Naber");
-    formdata.append("phonenum", "01049395858");
-    formdata.append("email", "test@com.com");
-    formdata.append("consultpurpose", "GENERAL");
-    formdata.append("implementgoal", "이행 목");
-    formdata.append("implementplan", "ㅅㄷㄴ");
-    formdata.append("annualusage", "100");
-    formdata.append("inquerydetail", "LONGTERMCONTRACT");
-    formdata.append("plantstatus", "LANDPURCHASE");
-    formdata.append("plantcapacity", "30000");
-    formdata.append("recweight", "3000");
-    formdata.append("content", "컨텐츠 내용 사");
-    formdata.append("saleprice", "13004");
-    formdata.append("inquirystate", "3");
     
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+function adminUpdateApi(type, method, data){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
+    var formdata = new FormData();
+    Object.entries(data).forEach(([key, value])=>{
+        formdata.append(key, value);
+        /* if(!Array.isArray(value)){
+        } else {
+            value.forEach((img)=>{
+                console.log(img);
+            })
+        } */
+    })
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,
@@ -158,17 +160,15 @@ const adminMap = {
         return adminListApi(type, method)
     },
     detail(type, data){
-        console.log(type, data);
         const method = 'GET';
         type = `${data['type']}/${data['id']}`;
         return adminDetailApi(type, method)
     },
     update(type, data){
-        console.log(type, data);
         const method = 'PATCH';
         type = `${data['type']}/update/${data['id']}`;
         data = {...data['data']}
-        return adminUpdateApi(type, method)
+        return adminUpdateApi(type, method, data)
     }
 }
 
