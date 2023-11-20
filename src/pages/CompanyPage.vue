@@ -6,17 +6,18 @@
                 <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
                 <p>
                     에너지를 생산하는 발전사업자와<br class="mobile"> 소비하는 기업을 연결하는<br>
-                    국내 최대의 전력거래 플랫폼으로<br class="mobile"> 자리매김 하겠습니다.
+                    <b>국내 최대의 전력거래 플랫폼</b>으로<br class="mobile"> 자리매김 하겠습니다.
                 </p>
             </div>
         </div>
         <div class="VPPArea contentSize-padding">
-            <p>
+            <!-- css도 제거해야 한다 -->
+            <!-- <p>
                 에너지를 생산하는<br class="mobile"> 발전사업자와<br>
                 소비하는 기업을 연결하는<br>
                 <b>국내 최대의 전력거래<br class="mobile"> 플랫폼</b>으로<br>
                 자리매김 하겠습니다.
-            </p>
+            </p> -->
             <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
         <div class="missionArea contentSize-padding">

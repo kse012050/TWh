@@ -111,11 +111,8 @@ function adminListApi(type, method){
 
 function adminDetailApi(type, method){
     var myHeaders = new Headers();
-    // let test =  sessionStorage.getItem('token')
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
-    // myHeaders.append("Authorization", test);
-    
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,

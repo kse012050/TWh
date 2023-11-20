@@ -111,7 +111,6 @@ export default {
         '$route' () {
             this.isFamilySite = false;
             this.isGoToTop = document.querySelector('.mainPage');
-            console.log(this.isGoToTop);
         }
     }
     

@@ -181,6 +181,7 @@ export default {
                     let delta = e.wheelDelta;
                     fullMoveEvent(fullSelectors, delta, currentIdx)            
                 })
+                //  element.addEventListener('mousewheel', this.test)
                 let touchStartX = undefined;
                 let touchStartY = undefined;
                 element.addEventListener('touchstart', function(e){
@@ -198,6 +199,8 @@ export default {
             })
         },
         fullMoveEvent(fullSelectors, delta, currentIdx){
+            // 임시방편..
+            if(!document.querySelector('.mainPage')){return}
             const fullPager = document.querySelector('.fullPager');
             const fullPagerList = document.querySelectorAll('.fullPager li');
             if(delta < 0 && fullSelectors[currentIdx + 1]){
@@ -255,7 +258,13 @@ export default {
     mounted() {
         this.fullPager();
         this.fullEvent(this.fullMoveEvent);
-    }
+    },
+    beforeUnmount() {
+        const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
+        fullSelectors.forEach((element)=>{
+            element.removeEventListener("mousewheel", this.fullMoveEvent);
+        })
+    },
 }
 </script>
 <style>

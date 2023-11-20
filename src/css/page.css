@@ -52,6 +52,7 @@ header.white + .mainPage .fullPager{--color: white;}
 
 /* 기업 소개 페이지 */
 .companyPage .topArea > div strong{font-weight: 600; display: block;}
+.companyPage .topArea > div p b{font-weight: 600;}
 .companyPage .VPPArea{padding-block: var(--padding02); text-align: center;}
 .companyPage .VPPArea p{font-weight: 300;}
 .companyPage .VPPArea p b{font-weight: 600;}
