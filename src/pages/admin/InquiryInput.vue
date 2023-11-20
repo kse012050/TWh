@@ -1,6 +1,10 @@
 <template>
     <section class="inquiryInputPage contentSize">
-        <h2><a href="">No.9999</a></h2>
+        <h2>
+            <router-link to="/admins/inquiry">
+                No.{{id}}
+            </router-link>
+        </h2>
         <form>
             <fieldset class="admin-input">
                 <ul>
@@ -88,6 +92,7 @@ export default {
     name: 'InquiryInput',
     data(){
         return{
+            id: this.$route.params.id,
             inquiryItem: {},
             implementplan: [],
             inputsRequired: {},
@@ -95,15 +100,28 @@ export default {
         }
     },
     methods: {
+        detailData(){
+            api.admin('detail', {type: 'inquiry', id: this.id})
+                .then((result)=>{
+                    // console.log(result);
+                    this.inquiryItem = {...result.inquiryItem}
+                    this.implementplan = [this.inquiryItem.implementplan.includes('PPA'), this.inquiryItem.implementplan.includes('REC구매'), this.inquiryItem.implementplan.includes('자가소비형 태양광 구축'), this.inquiryItem.implementplan.includes('종합솔류션 문의')]
+                    document.querySelectorAll('.admin-input ul li :is(input, textarea)').forEach((element)=>{
+                        element.required ? 
+                            (this.inputsRequired[element.name] = this.inquiryItem[element.name]) :
+                            (this.inputs[element.name] = this.inquiryItem[element.name])
+                    })
+                })
+           
+        },
         onSubmit(e){
             e.preventDefault();
-            console.log(this.inputs);
-            console.log(this.inputsRequired);
             if(!api.isRequired(this.inputsRequired)){
-                api.admin('update', {type: 'inquiry', id: this.$route.params.id, data: {...this.inputsRequired, ...this.inputs}})
+                api.admin('update', {type: 'inquiry/update', id: this.id, data: {...this.inputsRequired, ...this.inputs}})
                     .then((result)=>{
-                        console.log(result);
-                        // alert(result.message)
+                        if(result.statusCode === '200'){
+                            this.detailData();
+                        }
                     })
             }
         },
@@ -112,17 +130,7 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$route.params.id);
-        api.admin('detail', {type: 'inquiry', id: this.$route.params.id})
-            .then((result)=>{
-                this.inquiryItem = {...result.inquiryItem}
-                this.implementplan = [this.inquiryItem.implementplan.includes('PPA'), this.inquiryItem.implementplan.includes('REC구매'), this.inquiryItem.implementplan.includes('자가소비형 태양광 구축'), this.inquiryItem.implementplan.includes('종합솔류션 문의')]
-                document.querySelectorAll('input, textarea').forEach((element)=>{
-                    element.required ? 
-                        (this.inputsRequired[element.name] = this.inquiryItem[element.name]) :
-                        (this.inputs[element.name] = this.inquiryItem[element.name])
-                })
-            })
+       this.detailData();
     }
 }
 </script>
