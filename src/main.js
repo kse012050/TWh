@@ -21,7 +21,7 @@ import BoardList from './pages/admin/BoardList'
 import BoardInput from './pages/admin/BoardInput'
 import AdminInquiry from './pages/admin/AdminInquiry'
 import InquiryList from './pages/admin/InquiryList'
-import InquiryDetail from './pages/admin/InquiryDetail'
+// import InquiryDetail from './pages/admin/InquiryDetail'
 import InquiryInput from './pages/admin/InquiryInput'
 
 const routes = [
@@ -88,6 +88,10 @@ const routes = [
                         component: BoardList
                     },
                     {
+                        path: ':page',
+                        component: BoardList
+                    },
+                    {
                         path: 'input',
                         component: BoardInput
                     },
@@ -108,11 +112,11 @@ const routes = [
                     {
                         path: ':page',
                         component: InquiryList
-                    },
+                    },/* 
                     {
                         path: 'detail/:id',
                         component: InquiryDetail
-                    },
+                    }, */
                     {
                         path: 'input',
                         component: InquiryInput

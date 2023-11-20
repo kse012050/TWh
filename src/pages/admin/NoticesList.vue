@@ -10,20 +10,20 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
             <li v-for="data in noticeList" :key="data.id">
-                <a :href="`notices/input/${data.id}`">
+                <router-link :to="`/admins/notices/input/${data.id}`">
                     <span>{{ data.id }}</span>
                     <div><img :src="data.medias[0]?.imageurl" alt="미리 보기 이미지"></div>
                     <p>{{ data.description }}</p>
                     <time>
-                        {{ data.startdate[0] }}<br>
-                        {{ data.startdate[1] }}
+                        {{ data.regymdt[0] }}<br>
+                        {{ data.regymdt[1] }}
                     </time>
                     <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
-                </a>
+                </router-link>
             </li>
         </ul>
         <div class="content-btn">
-            <button class="btn-black">작성</button>
+            <router-link to="/admins/notices/input" class="btn-black">작성</router-link>
         </div>
         <list-pager :page="page" :lastPage="lastPage"/>
     </section>
@@ -46,14 +46,13 @@ export default {
 
     },
     mounted() {
-        console.log(Math.floor(3 / 5));
         api.admin('list',{type: 'notice', page: this.page})
             .then((result)=>{
                 this.noticeList = [...result.list]
                 this.noticeList.forEach((arr)=>{
-                    arr.startdate = arr.startdate.split('T');
-                    arr.startdate[0] = arr.startdate[0].replaceAll('-','.')
-                    arr.startdate[1] = arr.startdate[1].replace('.000Z','')
+                    arr.regymdt = arr.regymdt.split('T');
+                    arr.regymdt[0] = arr.regymdt[0].replaceAll('-','.')
+                    arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
                 })
                 this.lastPage = result.meta.last_page
             })

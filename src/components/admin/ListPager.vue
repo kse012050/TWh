@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-board-pager" data-styleIdx="a">
+    <div class="admin-board-pager" data-styleIdx="a" v-if="lastPage">
         <a href="?page=1">첫 페이지</a>
         <a :href="`?page=${page === 1 ? 1 : Number(page) - 1}`">이전 페이지</a>
         <ol>

@@ -26,8 +26,7 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
             <li v-for="data in inquiryList" :key="data.id">
-                <router-link :to="`input/${data.id}`">
-                <!-- <router-link :to="`input/`"> -->
+                <router-link :to="`/admins/inquiry/input/${data.id}`">
                     <span>{{ data.id }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
@@ -107,9 +106,9 @@ export default {
                 re100: undefined,
                 recurut: undefined,
             },
-            lastPage: undefined,
             page: Number(this.$route.params.page) || 1,
-            listType: this.$route.query.type || ''
+            listType: this.$route.query.type || '',
+            lastPage: undefined
         }
     },
     methods: {
@@ -156,9 +155,8 @@ export default {
         this.list();
     },
     watch: {
-        '$route' (to, from) {
-            // console.log(from.path);
-            if(to.path === from.path){
+        '$route' (to) {
+            if(to.path.includes('inquiry') && this.page){
                 this.list();
             }
         }
