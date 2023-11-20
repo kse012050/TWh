@@ -122,6 +122,7 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .content-inquiry ul li div input.error{border: 2px solid var(--color-point01); box-sizing: border-box;}
 .content-inquiry > div input[type="checkbox"] + label{font-weight: 300; display: flex; align-items: center; cursor: pointer;}
 .content-inquiry > div input[type="checkbox"] + label b{font-weight: 600; text-decoration: underline;}
+.content-inquiry > div input[type="checkbox"] + label strong{font-weight: 600; margin-right: 0.4em;}
 .content-inquiry > div input[type="checkbox"] + label::before{content: ''; --checkIdx: 0; width: var(--width); aspect-ratio: 1; background: url('../images/icon-checkbox.png') no-repeat top calc(var(--width) * var(--checkIdx) * -1) center / 100%;}
 .content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
 .content-inquiry > div input[type="checkbox"]:checked + label::before{--checkIdx: 1;}

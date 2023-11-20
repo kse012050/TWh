@@ -23,18 +23,19 @@
         <div class="missionArea contentSize-padding">
             <b>사명</b>
             <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
-            <p>
+            <!-- css 삭제? -->
+            <!-- <p>
                 안정적이고 전문적인 재생에너지 전력거래로<br>
                 지속가능한 내일을 만들어갑니다.
-            </p>
+            </p> -->
         </div>
         <div class="visionArea contentSize-padding">
             <b>비전</b>
             <strong>
-                Leading change<br>
-                in the energy<br class="mobile"> market
+                Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
             </strong>
-            <p>분산에너지 중심의<br class="mobile"> 에너지 패러다임 전환을 선도하겠습니다.</p>
+            <!-- css 삭제? -->
+            <!-- <p>분산에너지 중심의<br class="mobile"> 에너지 패러다임 전환을 선도하겠습니다.</p> -->
         </div>
         <div class="peopleArea contentSize-padding">
             <strong>

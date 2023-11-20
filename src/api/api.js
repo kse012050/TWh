@@ -35,8 +35,9 @@ export function onChange(e, inputsRequired, inputs){
     let { type, name, value } = e.target
 
     const isRequired = Object.keys(inputsRequired).includes(name);
-    if(!validation(e.target.dataset.formet, e.target.value)){
-        e.target.value = isRequired ? inputsRequired[e.target.name] : inputs[e.target.name]
+    if(!validation(e.target.dataset.formet, e.target.value) && e.target.value !== ''){
+        console.log(!validation(e.target.dataset.formet, e.target.value));
+        e.target.value = isRequired ? inputsRequired[e.target.name] : (inputs[e.target.name] || '')
         return
     }
     
@@ -59,7 +60,7 @@ export function onChange(e, inputsRequired, inputs){
         inputValue = '';
     }
 
-    inputValue ? e.target.classList.remove('error') : e.target.classList.add('error');
+    (!Object.keys(inputsRequired).includes(name) || inputValue) ? e.target.classList.remove('error') : e.target.classList.add('error');
 
     isRequired ?
         inputsRequired[name] = inputValue :

@@ -121,7 +121,7 @@
         </div>
         
         <div class="PPA02Area content-img contentSize-padding">
-            <strong>제3자 간 PPA</strong>
+            <strong>제3 자간 PPA</strong>
             <p>
                 발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
                 각각 계약을 체결하는 방식
@@ -137,7 +137,7 @@
         <div class="PPA03Area content-img contentSize-padding">
             <strong>V.PPA</strong>
             <p>
-                전력 거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
+                전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
                 도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
             </p>
             <div>
@@ -181,8 +181,10 @@
             </p>
             <ul>
                 <li>
-                    글로벌 태양광 시장을<br>
-                    선도하는 한화그룹 경쟁력
+                    <div>
+                        글로벌 태양광 시장을<br>
+                        선도하는 <span class="font-hanwha">한화그룹</span> 경쟁력
+                    </div>
                 </li>
                 <li>
                     사업개발, EPC, O&M<br>
@@ -190,9 +192,11 @@
                     밸류체인 보유
                 </li>
                 <li>
-                    글로벌 태양광 발전소<br>
-                    1GW 관리 · 운영 경험의<br>
-                    한화컨버전스
+                    <div>
+                        글로벌 태양광 발전소<br>
+                        1GW 관리 · 운영 경험의<br>
+                        <span class="font-hanwha">한화컨버전스</span>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -206,41 +210,34 @@
                 <fieldset class="content-inquiry">
                     <ul>
                         <li>
-                            <label for="company">업체명</label>
+                            <label for="company">기업명</label>
                             <div>
-                                <input type="text" id="company" name="company" placeholder="업체명을 작성하세요. (2자 - 20자)" @input="onChange" required>
+                                <input type="text" id="company" name="company" @input="onChange" required>
                             </div>
                         </li>
                         <li>
-                            <label for="name">담당자(성함)</label>
+                            <label for="name">담당자명</label>
                             <div>
-                                <input type="text" id="name" name="name" placeholder="담당자 성함을 작성하세요. (2자 - 20자)" @input="onChange" required>
+                                <input type="text" id="name" name="name" @input="onChange" required>
                             </div>
                         </li>
                         <li>
-                            <label for="phonenum">연락처</label>
+                            <label for="phonenum">전화번호</label>
                             <div>
-                                <input type="text" id="phonenum" name="phonenum" placeholder="휴대폰번호나 내선번호를 작성하세요. (8자 이상, ‘-‘ 제외)" @input="onChange" data-formet="number" maxlength="11" required>
+                                <input type="text" id="phonenum" name="phonenum" @input="onChange" data-formet="number" maxlength="11" required>
                             </div>
                         </li>
                         <li>
                             <label for="email">이메일</label>
                             <div>
-                                <input type="text" id="email" name="email" placeholder="이메일을 형식에 맞게 작성하세요." @input="onChange" required>
+                                <input type="text" id="email" name="email"  @input="onChange" required>
                             </div>
                         </li>
                         <li>
                             <label for="implementgoal">RE100 이행목표</label>
                             <div>
-                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="RE100 이행목표를 작성해주세요. (30자 내외)" @input="onChange">
+                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="예시 : 2050년까지 100% 재생에너지 전환" @input="onChange">
                             </div>
-                        </li>
-                        <li class="full">
-                            <label for="annualusage">연간 전력사용량</label>
-                            <div data-unit="GWh">
-                                <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요." @input="onChange" data-formet="number">
-                            </div>
-                            <small>다수의 사업장이 있을 경우 각 사업장 별 연간 전력 사용량을 내용에 적어주세요.</small>
                         </li>
                         <li class="full">
                             <label for="" data-comment="*중복선택 가능">이행 방안</label>
@@ -255,6 +252,13 @@
                                 <label for="implementplan-inquiry">종합솔루션 문의</label>
                             </div>
                         </li>
+                        <li class="full">
+                            <label for="annualusage">연간 전력사용량</label>
+                            <div data-unit="GWh">
+                                <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요." @input="onChange" data-formet="number">
+                            </div>
+                            <small>다수의 사업장이 있을 경우 각 사업장 별 연간 전력 사용량을 내용에 적어주세요.</small>
+                        </li>
                         <li>
                             <label for="content">상세 내용</label>
                             <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)" @input="onChange"></textarea>
@@ -262,9 +266,9 @@
                     </ul>
                     <div>
                         <input type="checkbox" name="privacyagree" id="privacyagree" @input="onChange" required>
-                        <label for="privacyagree"><b>개인정보이용방침</b>에 동의합니다.</label>
-                        <input type="checkbox" name="maketagree" id="maketagree" @input="onChange" required>
-                        <label for="maketagree">마케팅 정보 수신에 동의합니다.</label>
+                        <label for="privacyagree"><strong>(필수)</strong><b>개인정보이용방침</b>에 동의합니다.</label>
+                        <input type="checkbox" name="maketagree" id="maketagree" @input="onChange">
+                        <label for="maketagree"><strong>(선택)</strong>마케팅 정보 수신에 동의합니다.</label>
                     </div>
                     <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
                 </fieldset>
@@ -327,6 +331,7 @@ export default {
             if(!api.isRequired(this.inputsRequired)){
                 api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RE100'})
                     .then((result)=>{
+                        console.log(result);
                         alert(result.message)
                     })
             }
