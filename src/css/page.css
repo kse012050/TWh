@@ -211,7 +211,7 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 관리자 - 사업 문의 상세 페이지 */
-.inquiryDetailPage > div{--spacing: 40px; font-size: 15px; line-height: 20px; display: flex; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
+.inquiryDetailPage > div{--spacing: 40px; --lineHeight: 20px; font-size: 15px; line-height: var(--lineHeight); display: flex; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
 .inquiryDetailPage > div > *{flex: 1;}
 .inquiryDetailPage > div > *:nth-child(1){padding-right: var(--spacing);}
 .inquiryDetailPage > div > *:nth-child(2){padding-left: var(--spacing); border-left: 1px solid var(--color-line);}
@@ -229,7 +229,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div ul.infoArea li div dl:not(:last-of-type){margin-bottom: 10px;}
 .inquiryDetailPage > div ul.infoArea li div dl dt{min-width: 108px; margin-right: 10px; font-weight: 300; color: #999;}
 .inquiryDetailPage > div ul.infoArea li div dl dd{font-weight: 600;}
-.inquiryDetailPage > div .answerArea{padding-block: 45px;}
+.inquiryDetailPage > div .answerArea{padding-top: 45px;}
 .inquiryDetailPage > div .answerArea fieldset{margin-bottom: 20px;}
 .inquiryDetailPage > div .answerArea fieldset ul{margin-bottom: 10px;}
 .inquiryDetailPage > div .answerArea fieldset ul li:not(:last-child){margin-bottom: 30px;}
@@ -238,11 +238,12 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div .answerArea fieldset ul li div textarea{width: 100%; height: 150px;}
 .inquiryDetailPage > div .answerArea fieldset ul li div *:not(:last-child){margin-bottom: 10px;}
 .inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; font-size: 13px; display: block; margin-left: auto;}
+.inquiryDetailPage > div .answerArea > ul{max-height: 409px; overflow: auto;}
 .inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}
 .inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px dashed var(--color-line);}
 .inquiryDetailPage > div .answerArea > ul li :is(b, time){font-size: 13px;}
 .inquiryDetailPage > div .answerArea > ul li b{width: 100px; flex-shrink: 0; font-weight: 600;}
 .inquiryDetailPage > div .answerArea > ul li div{font-weight: 300;}
-.inquiryDetailPage > div .answerArea > ul li div p{margin-bottom: 7px;}
+.inquiryDetailPage > div .answerArea > ul li div p{margin-bottom: 7px; min-height: var(--lineHeight);}
 .inquiryDetailPage > div .answerArea > ul li div time{line-height: 18px; color: #999;}
 

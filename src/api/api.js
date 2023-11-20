@@ -180,6 +180,22 @@ function adminUpdateApi(type, method, data, imgType, imgDeletes){
         .catch(error => console.log('error', error));
 }
 
+function commentUpdateApi(type, method, data){
+    var myHeaders = new Headers();
+
+    addToken(myHeaders)
+
+    const formdata = dataToFormData(data);
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
 
 // 데이터 -> form data
 function dataToFormData(data){
@@ -227,6 +243,12 @@ const adminMap = {
         type = `${data['type']}/${data['id']}`;
         data = {...data['data']}
         return adminUpdateApi(type, method, data, imgType, imgDeletes)
+    },
+    comment(type, data){
+        const method = 'PATCH';
+        type = `inquiry/${data['id']}`
+        data = {...data['data']}
+        return commentUpdateApi(type, method, data)
     }
 }
 
