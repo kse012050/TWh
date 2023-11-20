@@ -95,6 +95,7 @@ function adminListApi(type, method){
     var myHeaders = new Headers();
     // console.log(sessionStorage.getItem('token'));
     // let test =  sessionStorage.getItem('token')
+    // console.log(test);
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
     // myHeaders.append("Authorization", test);
@@ -130,21 +131,22 @@ function adminUpdateApi(type, method, data){
     myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
     var formdata = new FormData();
     Object.entries(data).forEach(([key, value])=>{
-        formdata.append(key, value);
-        /* if(!Array.isArray(value)){
+        if(!Array.isArray(value)){
+            formdata.append(key, value);
         } else {
             value.forEach((img)=>{
-                console.log(img);
+                formdata.append(key, img);
             })
-        } */
+        }
     })
+
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,
         body: formdata,
         redirect: 'follow'
     })
-        .then(response => response.json())
+        .then(response => {console.log(response);})
         .catch(error => console.log('error', error));
 }
 
@@ -166,7 +168,7 @@ const adminMap = {
     },
     update(type, data){
         const method = 'PATCH';
-        type = `${data['type']}/update/${data['id']}`;
+        type = `${data['type']}/${data['id']}`;
         data = {...data['data']}
         return adminUpdateApi(type, method, data)
     }

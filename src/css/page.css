@@ -184,6 +184,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > *:nth-child(3){flex: 1;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > div{height: 100%; max-height: 48px;}
 .noticesListPage :is(.admin-board-title, .admin-board-list li a) > div img{height: 100%; object-fit: cover;}
+.noticesListPage :is(.admin-board-title, .admin-board-list li a) > div img:not([src]){display: none;}
 
 
 /* 관리자 - 게시판 관리 페이지 */

@@ -65,6 +65,7 @@ export default {
     name: 'BoardInput',
     data(){
         return{
+            id: this.$route.params.id,
             boardItem: {},
             imgFile: [],
             inputs: {}
@@ -75,11 +76,11 @@ export default {
             e.preventDefault();
             // console.log(this.boardItem);
             console.log(this.imgFile);
-            // api.admin('update', {type: 'boards', id: this.$route.params.id, data: {...this.boardItem}})
-            //         .then((result)=>{
-            //             console.log(result);
-            //             // alert(result.message)
-            //         })
+            api.admin('update', {type: 'boards', id: this.$route.params.id, data: {...this.boardItem}})
+                    .then((result)=>{
+                        console.log(result);
+                        // alert(result.message)
+                    })
         },
         imgChange(e){
             const {files} = e.target;
@@ -96,7 +97,7 @@ export default {
         }
     },
     mounted() {
-        api.admin('detail', {type: 'boards', id: this.$route.params.id})
+        this.id && api.admin('detail', {type: 'boards', id: this.$route.params.id})
             .then((result)=>{
                 // console.log(result);
                 this.boardItem = {...result.boardItem}

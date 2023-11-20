@@ -41,7 +41,13 @@
 </template>
 <script>
 export default {
-    
+    name: 'NoticesInput',
+    methods: {
+
+    },
+    mounted(){
+        
+    }
 }
 </script>
 <style lang="">

@@ -14,7 +14,7 @@ import SignIn from './pages/admin/SignIn'
 import AdminRoot from './pages/admin/AdminRoot'
 import AdminNotices from './pages/admin/AdminNotices'
 import NoticesList from './pages/admin/NoticesList'
-import NoticesDetail from './pages/admin/NoticesDetail'
+// import NoticesDetail from './pages/admin/NoticesDetail'
 import NoticesInput from './pages/admin/NoticesInput'
 import AdminBoard from './pages/admin/AdminBoard'
 import BoardList from './pages/admin/BoardList'
@@ -70,8 +70,8 @@ const routes = [
                         component: NoticesList
                     },
                     {
-                        path: 'detail/:id',
-                        component: NoticesDetail
+                        path: 'input',
+                        component: NoticesInput
                     },
                     {
                         path: 'input/:id',

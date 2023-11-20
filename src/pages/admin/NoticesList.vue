@@ -9,17 +9,17 @@
             <b>노출여부</b>
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
-            <li>
-                <router-link to="notices/input/0">
-                    <span>999</span>
-                    <div><img src="../../images/delete/test.png" alt="임시 이미지"></div>
-                    <p>사이트 런칭 공지</p>
+            <li v-for="data in noticeList" :key="data.id">
+                <a :href="`notices/input/${data.id}`">
+                    <span>{{ data.id }}</span>
+                    <div><img :src="data.medias[0]?.imageurl" alt="미리 보기 이미지"></div>
+                    <p>{{ data.description }}</p>
                     <time>
                         2023.12.01<br>
                         12:34:56
                     </time>
-                    <span>노출</span>
-                </router-link>
+                    <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
+                </a>
             </li>
         </ul>
         <div class="content-btn">
@@ -41,8 +41,25 @@
     </section>
 </template>
 <script>
+import * as api from '../../api/api'
+
 export default {
-    
+    name: 'NoticesList',
+    data(){
+        return{
+            noticeList: [],
+        }
+    },
+    methods: {
+
+    },
+    mounted() {
+        api.admin('list',{type: 'notice', page: 1})
+            .then((result)=>{
+                this.noticeList = {...result.list}
+            })
+
+    }
 }
 </script>
 <style lang="">

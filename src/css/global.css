@@ -195,6 +195,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .adminsPage [class|="btn"]{width: 88px; font-size: 16px; font-weight: 600; aspect-ratio: 88 / 50;}
 .adminsPage [class|="btn"][class$="black"]{background-color: #222; color: white;}
 .adminsPage [class|="btn"][class$="border"]{border: 1px solid #222; box-sizing: border-box;}
+.adminsPage a[class|="btn"]{display: flex; justify-content: center; align-items: center;}
 
 
 /* 관리자 - 텝 */
