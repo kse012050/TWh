@@ -91,14 +91,18 @@ function signIn(type, method, data){
         .catch(error => console.log('error', error));
 }
 
+// 토큰 검사
+function addToken(myHeaders){
+    let token =  sessionStorage.getItem('token')
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${token}`);
+}
+
+// 관리자 각 페이지별 리스트
 function adminListApi(type, method){
     var myHeaders = new Headers();
-    // console.log(sessionStorage.getItem('token'));
-    // let test =  sessionStorage.getItem('token')
-    // console.log(test);
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
-    // myHeaders.append("Authorization", test);
+    
+    addToken(myHeaders)
     
     return fetch(`${adminURL}${type}`, {
         method: method,

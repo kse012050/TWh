@@ -15,8 +15,8 @@
                     <div><img :src="data.medias[0]?.imageurl" alt="미리 보기 이미지"></div>
                     <p>{{ data.description }}</p>
                     <time>
-                        2023.12.01<br>
-                        12:34:56
+                        {{ data.startdate[0] }}<br>
+                        {{ data.startdate[1] }}
                     </time>
                     <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
                 </a>
@@ -25,38 +25,37 @@
         <div class="content-btn">
             <button class="btn-black">작성</button>
         </div>
-        <div class="admin-board-pager" data-styleIdx="a">
-            <a href="">첫 페이지</a>
-            <a href="">이전 페이지</a>
-            <ol>
-                <li class="active"><a href="">1</a></li>
-                <li><a href="">2</a></li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href="">5</a></li>
-            </ol>
-            <a href="">다음 페이지</a>
-            <a href="">마지막 페이지</a>
-        </div>
+        <list-pager :page="page" :lastPage="lastPage"/>
     </section>
 </template>
 <script>
+import ListPager from '@/components/admin/ListPager.vue';
 import * as api from '../../api/api'
 
 export default {
+    components: { ListPager },
     name: 'NoticesList',
     data(){
         return{
             noticeList: [],
+            page: Number(this.$route.query.page) || 1,
+            lastPage: undefined
         }
     },
     methods: {
 
     },
     mounted() {
-        api.admin('list',{type: 'notice', page: 1})
+        console.log(Math.floor(3 / 5));
+        api.admin('list',{type: 'notice', page: this.page})
             .then((result)=>{
-                this.noticeList = {...result.list}
+                this.noticeList = [...result.list]
+                this.noticeList.forEach((arr)=>{
+                    arr.startdate = arr.startdate.split('T');
+                    arr.startdate[0] = arr.startdate[0].replaceAll('-','.')
+                    arr.startdate[1] = arr.startdate[1].replace('.000Z','')
+                })
+                this.lastPage = result.meta.last_page
             })
 
     }
