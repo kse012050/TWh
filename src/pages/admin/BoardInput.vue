@@ -26,13 +26,13 @@
                         </div>   
                     </li>
                     <li>
-                        <label for="">이미지</label>
+                        <label for="test">이미지</label>
                         <div>
-                            <input type="file" name="" id="">
-                            <label for="">+ 이미지 등록</label>
-                            <div>
-                                <img src="../../images/delete/test.png" alt="임시 이미지">
-                                <button class="delete">이미지 삭제</button>
+                            <input type="file" name="test" id="test" @change="imgChange">
+                            <label for="test">+ 이미지 등록</label>
+                            <div v-for="(data, idx) in imgFile" :key="idx">
+                                <img :src="data" alt="임시 이미지">
+                                <button class="delete" @click="(e)=>imgDelete(e, idx)">이미지 삭제</button>
                             </div>
                             <div v-for="data in boardItem.medias" :key="data.id">
                                 <img :src="data.imageurl" alt="임시 이미지">
@@ -66,6 +66,7 @@ export default {
     data(){
         return{
             boardItem: {},
+            imgFile: [],
             inputs: {}
         }
     },
@@ -73,11 +74,22 @@ export default {
         onSubmit(e){
             e.preventDefault();
             // console.log(this.boardItem);
-            api.admin('update', {type: 'boards', id: this.$route.params.id, data: {...this.boardItem}})
-                    .then((result)=>{
-                        console.log(result);
-                        // alert(result.message)
-                    })
+            console.log(this.imgFile);
+            // api.admin('update', {type: 'boards', id: this.$route.params.id, data: {...this.boardItem}})
+            //         .then((result)=>{
+            //             console.log(result);
+            //             // alert(result.message)
+            //         })
+        },
+        imgChange(e){
+            const {files} = e.target;
+            const reader = new FileReader();
+            reader.onloadend = () => {this.imgFile.push(reader.result);}
+            reader.readAsDataURL(files[0]);
+        },
+        imgDelete(e, idx){
+            e.preventDefault();
+            this.imgFile.splice(idx, 1)
         },
         onChange(e){
             api.onChange(e, this.boardItem)
