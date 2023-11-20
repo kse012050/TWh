@@ -93,6 +93,7 @@ export default {
             if(this.id) {
                 api.admin('detail', {type: 'boards', id: this.$route.params.id})
                     .then((result)=>{
+                        console.log(result);
                         this.boardItem = {...result.boardItem}
                         this.imgData = [...this.boardItem.medias]
                         this.boardItem.medias = []

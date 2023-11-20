@@ -185,6 +185,7 @@ function adminUpdateApi(type, method, data, imgType, imgDeletes){
 function dataToFormData(data){
     const formdata = new FormData();
     Object.entries(data).forEach(([key, value])=>{
+        console.log(key, value);
         if(!Array.isArray(value)){
             formdata.append(key, value || ' ');
         } else {
