@@ -1,15 +1,24 @@
 <template>
     <section class="boardInputPage contentSize">
-        <h2><router-link to="/admins/board">No.{{id}}</router-link></h2>
+        <h2>
+            <router-link to="/admins/board">
+                <template v-if="id">
+                    No.{{id}}
+                </template>
+                <template v-else>
+                    게시판 작성
+                </template>
+            </router-link>
+        </h2>
         <form>
             <fieldset class="admin-input">
                 <ul>
                     <li>
                         <label for="">카테고리</label>
                         <div class="limited">
-                            <select name="type" id="type">
-                                <option value="" :selected="boardItem.type === 'NEWS'">보도자료</option>
-                                <option value="" :selected="boardItem.type === 'BLOG'">블로그</option>
+                            <select name="type" id="type" @input="onChange">
+                                <option value="NEWS" :selected="boardItem.type === 'NEWS'">보도자료</option>
+                                <option value="BLOG" :selected="boardItem.type === 'BLOG'">블로그</option>
                             </select>
                         </div>
                     </li>
@@ -51,8 +60,13 @@
                 <div class="content-btn">
                     <input type="checkbox" name="exposeyn" id="exposeyn" value="Y" :checked="boardItem.exposeyn === 'Y'" @input="onChange">
                     <label for="exposeyn">노출여부</label>
-                    <button class="btn-border">삭제</button>
-                    <input type="submit" value="수정" class="btn-black" @click="onSubmit">
+                    <template v-if="id">
+                        <button class="btn-border">삭제</button>
+                        <input type="submit" value="수정" class="btn-black" @click="onUpdate">
+                    </template>
+                    <template v-else>
+                        <input type="submit" value="작성" class="btn-black" @click="onSubmit">
+                    </template>
                 </div>
             </fieldset>
         </form>
@@ -76,17 +90,25 @@ export default {
     },
     methods: {
         detailData(){
-            this.id && api.admin('detail', {type: 'boards', id: this.$route.params.id})
-                .then((result)=>{
-                    this.boardItem = {...result.boardItem}
-                    this.imgData = [...this.boardItem.medias]
-                    this.boardItem.medias = []
-                    this.imgAdds = []
-                    this.imgDeletes = []
+            if(this.id) {
+                api.admin('detail', {type: 'boards', id: this.$route.params.id})
+                    .then((result)=>{
+                        this.boardItem = {...result.boardItem}
+                        this.imgData = [...this.boardItem.medias]
+                        this.boardItem.medias = []
+                        this.imgAdds = []
+                        this.imgDeletes = []
+                    })
+            } else {
+                document.querySelectorAll('.admin-input ul li :is(input:not([type="file"]):not([type="url"]), textarea)').forEach((element)=>{
+                    this.boardItem[element.name] = '';
                 })
+                this.boardItem.type = 'NEWS'
+                this.boardItem.medias = []
+            }
         },
         onChange(e){
-            api.onChange(e, this.boardItem)
+            api.onChange(e, {}, this.boardItem)
         },
         imgAdd(e){
             const { files } = e.target;
@@ -106,7 +128,7 @@ export default {
             this.imgDeletes.push(id);
             this.imgData.splice(idx, 1)
         },
-        onSubmit(e){
+        onUpdate(e){
             e.preventDefault();
             delete this.boardItem.regymdt;
             delete this.boardItem.useYn;
@@ -121,6 +143,15 @@ export default {
                     }
                 })
         },
+        onSubmit(e){
+            e.preventDefault();
+            api.admin('create', {type: 'boards', data: {...this.boardItem}})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.detailData();
+                    }
+                })
+        }
     },
     mounted() {
         this.detailData();

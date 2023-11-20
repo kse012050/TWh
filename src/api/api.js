@@ -102,6 +102,23 @@ function addToken(myHeaders){
     myHeaders.append("Authorization", `Bearer ${token}`);
 }
 
+// 관리자 각 페이지별 리스트 생성
+function adminListCreateApi(type, method, data){
+    var myHeaders = new Headers();
+
+    addToken(myHeaders)
+    
+    const formdata = dataToFormData(data);
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
 // 관리자 각 페이지별 리스트
 function adminListApi(type, method){
     var myHeaders = new Headers();
@@ -150,17 +167,9 @@ function adminUpdateApi(type, method, data, imgType, imgDeletes){
         })
 
     }
+    
+    const formdata = dataToFormData(data);
 
-    var formdata = new FormData();
-    Object.entries(data).forEach(([key, value])=>{
-        if(!Array.isArray(value)){
-            formdata.append(key, value);
-        } else {
-            value.forEach((img)=>{
-                formdata.append('files', img);
-            })
-        }
-    })
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,
@@ -172,11 +181,33 @@ function adminUpdateApi(type, method, data, imgType, imgDeletes){
 }
 
 
+// 데이터 -> form data
+function dataToFormData(data){
+    const formdata = new FormData();
+    Object.entries(data).forEach(([key, value])=>{
+        if(!Array.isArray(value)){
+            formdata.append(key, value || ' ');
+        } else {
+            value.forEach((img)=>{
+                formdata.append('files', img);
+            })
+        }
+    })
+    return formdata;
+}
+
+
 const adminMap = {
     signIn(type, data){
         const method = 'POST';
         type = `user/${type}`
         return signIn(type, method, data)
+    },
+    create(type, data){
+        const method = 'POST';
+        type = `${data['type']}`
+        data = {...data['data']}
+        return adminListCreateApi(type, method, data)
     },
     list(type, data){
         const method = 'GET';
