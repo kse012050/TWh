@@ -23,7 +23,7 @@
                     <li>
                         <label for="phonenum">연락처</label>
                         <div class="limited">
-                            <input type="text" name="phonenum" id="phonenum" :value="inquiryItem.phonenum" @input="onChange" required>
+                            <input type="text" name="phonenum" id="phonenum" :value="inquiryItem.phonenum" @input="onChange" data-formet="number" maxlength="11" required>
                         </div>
                     </li>
                     <li>
@@ -54,7 +54,7 @@
                     <li>
                         <label for="recweight">연간 전력사용량</label>
                         <div class="limited">
-                            <input type="text" name="recweight" id="recweight" :value="inquiryItem.recweight" @input="onChange">
+                            <input type="text" name="recweight" id="recweight" :value="inquiryItem.recweight" data-formet="number" @input="onChange">
                         </div>
                     </li>
                     <li>

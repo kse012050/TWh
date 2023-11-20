@@ -35,8 +35,8 @@ export function onChange(e, inputsRequired, inputs){
     let { type, name, value } = e.target
 
     const isRequired = Object.keys(inputsRequired).includes(name);
-    if(!validation(e.target.dataset.formet, value)){
-        value = isRequired ? inputsRequired[name] : inputs[name]
+    if(!validation(e.target.dataset.formet, e.target.value)){
+        e.target.value = isRequired ? inputsRequired[e.target.name] : inputs[e.target.name]
         return
     }
     
