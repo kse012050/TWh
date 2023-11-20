@@ -78,7 +78,6 @@ export default {
             if(this.id) {
                 api.admin('detail', {type: 'notice', id: this.$route.params.id})
                     .then((result)=>{
-                        console.log(result);
                         this.noticeItem = {...result.noticeItem}
                         this.imgData = [...this.noticeItem.medias]
                         this.noticeItem.medias = []
