@@ -26,7 +26,7 @@
                         {{ data.regymdt[0] }}<br>
                         {{ data.regymdt[1] }}
                     </time>
-                    <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
+                    <span>{{ data.exposeyn === "Y" ? '노출' : '비노출' }}</span>
                 </router-link>
             </li>
             <!-- <li>

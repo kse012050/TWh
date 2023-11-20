@@ -25,44 +25,48 @@ const validationMap = {
     },
 }
 
+// 
 export function validation(type, value){
     return Object.keys(validationMap).includes(type) ? validationMap[type](value) : true
 }
 
-
+// 입력 감지
 export function onChange(e, inputsRequired, inputs){
-    const isRequired = Object.keys(inputsRequired).includes(e.target.name);
-    if(!validation(e.target.dataset.formet, e.target.value)){
-        e.target.value = isRequired ? inputsRequired[e.target.name] : inputs[e.target.name]
+    let { type, name, value } = e.target
+
+    const isRequired = Object.keys(inputsRequired).includes(name);
+    if(!validation(e.target.dataset.formet, value)){
+        value = isRequired ? inputsRequired[name] : inputs[name]
         return
     }
     
-    let value;
-    if(validation(e.target.name, e.target.value)){
-        if(e.target.getAttribute('type') === 'checkbox'){
-            if(e.target.value === 'on'){
-                value = e.target.checked;
+    let inputValue;
+    if(validation(name, value)){
+        if(type === 'checkbox'){
+            if(value === 'on'){
+                inputValue = e.target.checked;
             }else{
-                value = []
-                document.querySelectorAll(`[name=${e.target.name}]:checked`).forEach((element)=>{
-                    element.checked && value.push(element.value)
+                inputValue = []
+                document.querySelectorAll(`[name=${name}]:checked`).forEach((element)=>{
+                    element.checked && inputValue.push(element.value)
                 })
-                value = value.join(',')
+                inputValue = inputValue.join(',')
             }
         }else{
-            value = e.target.value;
+            inputValue = value;
         }
     }else{
-        value = '';
+        inputValue = '';
     }
 
-    value ? e.target.classList.remove('error') : e.target.classList.add('error');
+    inputValue ? e.target.classList.remove('error') : e.target.classList.add('error');
 
     isRequired ?
-        inputsRequired[e.target.name] = value :
-        inputs[e.target.name]= value
+        inputsRequired[name] = inputValue :
+        inputs[name] = inputValue
 }
 
+// 필수 데이터 검사
 export function isRequired(inputsRequired){
     Object.entries(inputsRequired).forEach((arr)=>{
         !arr[1] && document.querySelector(`[name="${arr[0]}"]`).classList.add('error');
@@ -94,14 +98,14 @@ function signIn(type, method, data){
 // 토큰 검사
 function addToken(myHeaders){
     let token =  sessionStorage.getItem('token')
-    myHeaders.append("Content-Type", "application/json");
+    
     myHeaders.append("Authorization", `Bearer ${token}`);
 }
 
 // 관리자 각 페이지별 리스트
 function adminListApi(type, method){
     var myHeaders = new Headers();
-
+    myHeaders.append("Content-Type", "application/json");
     addToken(myHeaders)
     
     return fetch(`${adminURL}${type}`, {
@@ -113,6 +117,7 @@ function adminListApi(type, method){
         .catch(error => console.log('error', error));
 }
 
+// 관리자 각 페이지별 상세
 function adminDetailApi(type, method){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -126,30 +131,46 @@ function adminDetailApi(type, method){
         .catch(error => console.log('error', error));
 }
 
-function adminUpdateApi(type, method, data){
+// 관리자 각 페이지별 상세 수정
+function adminUpdateApi(type, method, data, imgType, imgDeletes){
     var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
+
+    addToken(myHeaders)
+
+    // 관리자 이미지 삭제
+    if(imgDeletes && imgDeletes.length){
+        imgDeletes.forEach((id)=>{
+            fetch(`${adminURL}${imgType}${id}`, {
+                method: 'DELETE',
+                headers: myHeaders,
+                redirect: 'follow'
+            })
+                .then(response => response.json())
+                .catch(error => console.log('error', error));
+        })
+
+    }
+
     var formdata = new FormData();
     Object.entries(data).forEach(([key, value])=>{
         if(!Array.isArray(value)){
             formdata.append(key, value);
         } else {
             value.forEach((img)=>{
-                formdata.append(key, img);
+                formdata.append('files', img);
             })
         }
     })
-
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,
         body: formdata,
         redirect: 'follow'
     })
-        .then(response => {console.log(response);})
+        .then(response => response.json())
         .catch(error => console.log('error', error));
 }
+
 
 const adminMap = {
     signIn(type, data){
@@ -170,9 +191,11 @@ const adminMap = {
     },
     update(type, data){
         const method = 'PATCH';
+        const imgDeletes = data['imgDeletes'] && [...data['imgDeletes']];
+        const imgType = `${data['type']}/image/`;
         type = `${data['type']}/${data['id']}`;
         data = {...data['data']}
-        return adminUpdateApi(type, method, data)
+        return adminUpdateApi(type, method, data, imgType, imgDeletes)
     }
 }
 
