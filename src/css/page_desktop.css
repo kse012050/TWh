@@ -121,6 +121,11 @@
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 30px; line-height: 42px; margin-top: 80px;}
 .recruitPage .condition02Area strong{margin-bottom: 30px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 80px;}
+.recruitPage .textArea{padding-block: 180px;}
+.recruitPage .textArea li{max-width: 1000px; margin-inline: auto; font-size: 40px; border-radius: 20px; height: 180px;}
+.recruitPage .textArea li:not(:last-child){margin-bottom: 40px;}
+.recruitPage .textArea li::before,
+.recruitPage .textArea li::after{--height: 24px; transform: translateY(-17px);}
 .recruitPage .simplifyArea > p{margin-bottom: 100px;}
 .recruitPage .simplifyArea ul{display: flex; justify-content: space-between;}
 .recruitPage .simplifyArea ul::before{width: 30px;}

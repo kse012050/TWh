@@ -102,6 +102,9 @@
 .recruitPage .productArea ul li:not(:last-child){margin-bottom: 20px;}
 .recruitPage .productArea ul li strong{font-size: 31px; line-height: 1.1818; margin-bottom: 22.5px;}
 .recruitPage .productArea ul li p{font-size: 19.5px; line-height: 1.333;}
+.recruitPage .content-process ul{max-width: 205px; margin-inline: auto;}
+.recruitPage .content-process ul li strong:has(span){line-height: 1.375;}
+.recruitPage .content-process ul li strong span{margin-block: 20px;}
 .recruitPage .content-img p{margin-bottom: 65px;}
 .recruitPage .content-img dl{margin-top: 30px;}
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
@@ -116,6 +119,11 @@
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 23px; line-height: 1.5; margin-top: 60px;}
 .recruitPage .condition02Area strong{margin-bottom: 25px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 65px;}
+.recruitPage .textArea{padding-block: 172.5px;}
+.recruitPage .textArea li{max-width: var(--mobileContentSize); margin-inline: auto; font-size: 30px; border-radius: 15px; height: 135px;}
+.recruitPage .textArea li:not(:last-child){margin-bottom: 30px;}
+.recruitPage .textArea li::before,
+.recruitPage .textArea li::after{--height: 18.5px; transform: translateY(-13.5px);}
 .recruitPage .simplifyArea > p{margin-bottom: 80px;}
 .recruitPage .simplifyArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
 .recruitPage .simplifyArea ul::before{width: 26px;}
@@ -123,10 +131,6 @@
 .recruitPage .simplifyArea ul li b{font-size: 25px; line-height: 1.2; margin-bottom: 16px;}
 .recruitPage .simplifyArea ul li b::after{width: 210px; margin-top: 12px;}
 .recruitPage .simplifyArea ul li p{font-size: 20.5px; line-height: 1.4667;}
-.recruitPage .content-process ul{max-width: 205px; margin-inline: auto;}
-.recruitPage .content-process ul li strong:has(span){line-height: 1.375;}
-.recruitPage .content-process ul li strong span{margin-block: 20px;}
-
 
 /* 게시판 */
 .boardPage h2{font-size: 45px; line-height: 1.2; margin-bottom: 45px;}

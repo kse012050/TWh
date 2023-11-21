@@ -102,6 +102,9 @@
 .recruitPage .productArea ul li:not(:last-child){margin-bottom: 20px;}
 .recruitPage .productArea ul li strong{font-size: 22px; line-height: 1.1818; margin-bottom: 15px;}
 .recruitPage .productArea ul li p{font-size: 15px; line-height: 1.333;}
+.recruitPage .content-process ul{max-width: 160px; margin-inline: auto;}
+.recruitPage .content-process ul li strong:has(span){line-height: 1.375;}
+.recruitPage .content-process ul li strong span{margin-block: 15px;}
 .recruitPage .content-img p{margin-bottom: 50px;}
 .recruitPage .content-img dl{margin-top: 10px;}
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
@@ -116,6 +119,11 @@
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 16px; line-height: 1.5; margin-top: 40px;}
 .recruitPage .condition02Area strong{margin-bottom: 20px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 50px;}
+.recruitPage .textArea{padding-block: 165px;}
+.recruitPage .textArea li{ font-size: 20px; border-radius: 10px; height: 90px;}
+.recruitPage .textArea li:not(:last-child){margin-bottom: 20px;}
+.recruitPage .textArea li::before,
+.recruitPage .textArea li::after{--height: 13px; transform: translateY(-10px);}
 .recruitPage .simplifyArea > p{margin-bottom: 60px;}
 .recruitPage .simplifyArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
 .recruitPage .simplifyArea ul::before{width: 22px;}
@@ -123,10 +131,6 @@
 .recruitPage .simplifyArea ul li b{font-size: 20px; line-height: 1.2; margin-bottom: 12px;}
 .recruitPage .simplifyArea ul li b::after{width: 210px; margin-top: 12px;}
 .recruitPage .simplifyArea ul li p{font-size: 15px; line-height: 1.4667;}
-.recruitPage .content-process ul{max-width: 160px; margin-inline: auto;}
-.recruitPage .content-process ul li strong:has(span){line-height: 1.375;}
-.recruitPage .content-process ul li strong span{margin-block: 15px;}
-
 
 /* 게시판 */
 .boardPage h2{font-size: 30px; line-height: 1.2; margin-bottom: 30px;}
