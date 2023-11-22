@@ -46,7 +46,7 @@
         <div class="content-btn">
             <router-link to="/admins/board/input" class="btn-black">작성</router-link>
         </div>
-        <list-pager :page="page" :lastPage="lastPage"/>
+        <list-pager :page="page" :lastPage="lastPage" :listType="listType" :pageName="pageName"/>
     </section>
 </template>
 <script>
@@ -65,14 +65,16 @@ export default {
                 news: undefined,
                 blog: undefined,
             },
-            page: Number(this.$route.query.page) || 1,
+            pageName: 'board',
+            page: Number(this.$route.params.page) || 1,
             listType: this.$route.query.type || '',
             lastPage: undefined
         }
     },
     methods: {
         list(){
-            this.listType = this.$route.query.type || ''
+            this.page= Number(this.$route.params.page) || 1;
+            this.listType = this.$route.query.type || '';
             api.admin('list',{type: 'boards', page: this.page, listType: this.listType})
                 .then((result)=>{
                     if(result.statusCode === '200'){

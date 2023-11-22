@@ -27,7 +27,7 @@
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
             <li v-for="(data, idx) in inquiryList" :key="data.id">
                 <router-link :to="`/admins/inquiry/input/${data.id}`">
-                    <span>{{ idx + 1 }}</span>
+                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
                     <span>{{ data.phonenum }}</span>
@@ -98,7 +98,7 @@
                 </a>
             </li> -->
         </ul>
-        <list-pager :page="page" :lastPage="lastPage"/>
+        <list-pager :page="page" :lastPage="lastPage" :listType="listType" :pageName="pageName"/>
     </section>
 </template>
 <script>
@@ -118,6 +118,7 @@ export default {
                 re100: undefined,
                 recurut: undefined,
             },
+            pageName: 'inquiry',
             page: Number(this.$route.params.page) || 1,
             listType: this.$route.query.type || '',
             lastPage: undefined
@@ -129,7 +130,8 @@ export default {
             this.$router.push({path: `/admins/inquiry/detail/${id}`})
         },
         list(){
-            this.listType = this.$route.query.type || ''
+            this.page= Number(this.$route.params.page) || 1;
+            this.listType = this.$route.query.type || '';
             api.admin('list',{type: 'inquiry', page: this.page, listType: this.listType})
                 .then((result)=>{
                     if(result.statusCode === '200'){

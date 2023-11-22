@@ -25,7 +25,7 @@
         <div class="content-btn">
             <router-link to="/admins/notices/input" class="btn-black">작성</router-link>
         </div>
-        <list-pager :page="page" :lastPage="lastPage"/>
+        <list-pager :page="page" :lastPage="lastPage" :listType="listType" :pageName="pageName"/>
     </section>
 </template>
 <script>
@@ -38,7 +38,9 @@ export default {
     data(){
         return{
             noticeList: [],
+            pageName: 'notices',
             page: Number(this.$route.params.page) || 1,
+            listType: this.$route.query.type || '',
             lastPage: undefined
         }
     },
@@ -46,6 +48,8 @@ export default {
 
     },
     mounted() {
+        this.page= Number(this.$route.params.page) || 1;
+        this.listType = this.$route.query.type || '';
         api.admin('list',{type: 'notice', page: this.page})
             .then((result)=>{
                 if(result.statusCode === '200'){

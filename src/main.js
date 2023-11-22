@@ -70,6 +70,10 @@ const routes = [
                         component: NoticesList
                     },
                     {
+                        path: ':page',
+                        component: NoticesList
+                    },
+                    {
                         path: 'input',
                         component: NoticesInput
                     },
