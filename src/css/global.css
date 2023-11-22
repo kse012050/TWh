@@ -145,9 +145,9 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .content-modal .alertArea{max-width: 600px;}
 .content-modal .alertArea strong{margin-bottom: 30px;}
 .content-modal .alertArea p{font-size: 22px; line-height: 34px; font-weight: 300;}
-.userPage .content-modal .btnArea{margin-top: 40px; gap: 10px; display: flex; justify-content: flex-end;}
-.userPage .content-modal .btnArea button{width: 95px; height: 60px; font-size: 20px;}
-.userPage .content-modal .btnArea button.black{background-color: #222; color: white;}
+.content-modal .btnArea{margin-top: 40px; gap: 10px; display: flex; justify-content: flex-end;}
+.content-modal .btnArea button{width: 95px; height: 60px; font-size: 20px;}
+.content-modal .btnArea button.black{background-color: #222; color: white;}
 
 
 /* 유저 해더 */

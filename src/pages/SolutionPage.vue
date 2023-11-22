@@ -341,7 +341,7 @@ export default {
                             this.modalText['title'] = '문의'
                             this.modalText['description'] = '요청이 완료되었습니다' 
                             this.isModal = true
-                            api.dataInit({...this.inputsRequired, ...this.inputs})
+                            api.dataInit(this.inputsRequired, this.inputs)
                         }
                     })
             }

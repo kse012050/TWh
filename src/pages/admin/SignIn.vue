@@ -17,51 +17,59 @@
                     <input type="submit" value="로그인" @click="onSubmit">
                 </fieldset>
             </form>
+            <modal-alert v-if="isModal" :isModal="isModal" @modalClose="modalClose" :modalText="modalText"/>
         </section>
     </div>
 </template>
 <script>
 import * as api from '../../api/api'
+import ModalAlert from '@/components/modal/ModalAlert.vue';
 
 export default {
     name: 'SignIn',
+    components: { 
+        ModalAlert
+    },
     data(){
         return{
-            inputs: {},
-            nextPagePath: '/admins/notices'
+            inputsRequired: {},
+            nextPagePath: '/admins/notices',
+            isModal: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods: {
         onSubmit(e){
             e.preventDefault();
-            console.log(this.inputs);
-            let isValue = Object.entries(this.inputs).find((arr)=>{
-                return !arr[1]
-            })
-            if(isValue){
-                document.querySelector(`[name="${isValue[0]}"]`).focus();
-            }else{
-                api.admin('signIn', this.inputs)
+            if(!api.isRequired(this.inputsRequired)){
+                api.admin('signIn', this.inputsRequired)
                     .then((result)=>{
-                        console.log(result);
                         if(result.res_code){
                             sessionStorage.setItem('token', result.accessToken)
                             this.$router.push({path: this.nextPagePath})
+                        }else{
+                            this.modalText['title'] = '알림'
+                            this.modalText['description'] = 'ID/PW를 확인하세요.<br>문제가 지속되는 경우 개발사에 문의하세요<br><br> 개발사: <a href="tel:+8201082103442">(주)1985 010.8210.3442 장혜령(PM)</a>' 
+                            this.isModal = true
+                            api.dataInit(this.inputsRequired)
                         }
                     })
             }
-            // console.log(test[0]);
-            
-            // this.$router.push({path: '/admins/notices'})
         },
         onChange(e){
-            this.inputs[e.target.name] = e.target.value;
+            api.onChange(e, this.inputsRequired)
+        },
+        modalClose(){
+            this.isModal = false;
         }
     },
     mounted() {
         sessionStorage.getItem('token') && this.$router.push({path: this.nextPagePath})
-        document.querySelectorAll('input').forEach((element)=>{
-            element.required && (this.inputs[element.name] = undefined)
+        document.querySelectorAll('input[required]').forEach((element)=>{
+            element.required && (this.inputsRequired[element.name] = '')
         })
     }
 }

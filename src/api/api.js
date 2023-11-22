@@ -26,13 +26,16 @@ const validationMap = {
 }
 
 // 데이터 초기화
-export function dataInit(/* inputsRequired, inputs */ test){
+export function dataInit(inputsRequired, inputs){
+    const test = Object.assign(inputsRequired, inputs)
     Object.entries(test).forEach(([key])=>{
         const element = document.querySelector(`[name=${key}]`);
         element.classList.remove('error');
         element.type === 'checkbox' ?
-            element.checked = false :
-            element.value = '';
+        element.checked = false :
+        element.value = '';
+        test[key] = '';
+        console.log(test[key]);
     })
     // Object.entries(inputsRequired).forEach(([key])=>{
     //     const element = document.querySelector(`[name=${key}]`);

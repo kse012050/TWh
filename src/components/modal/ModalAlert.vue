@@ -2,7 +2,7 @@
     <div class="content-modal" @click="$emit('modalClose')">
         <div class="alertArea" @click.stop>
             <strong>{{ modalText['title'] }}</strong>
-            <p>{{ modalText['description'] }}</p>
+            <p v-html="modalText['description']"></p>
             <div class="btnArea">
                 <button class="black" @click.prevent="$emit('modalClose')">확인</button>
             </div>
