@@ -14,7 +14,7 @@
                     </div>
                 </li>
                 <li>
-                    <b>회사</b>
+                    <b class="required">회사</b>
                     <div>
                         <p>{{ inquiryItem.company }}</p>
                     </div>
@@ -83,10 +83,15 @@
                         <ul>
                             <li>
                                 <label for="">회신 여부</label>
-                                <div>
-                                    <select name="" id="">
+                                <div class="inquirystateArea">
+                                    {{
+                                        inquiryItem.inquirystate === '1' ? '읽지 않음' :
+                                            (inquiryItem.inquirystate === '2' ? '회신 안함' :
+                                                '회신 완료')
+                                    }}
+                                    <!-- <select name="" id="">
                                         <option value="">회신완료</option>
-                                    </select>
+                                    </select> -->
                                 </div>
                             </li>
                             <li>
@@ -97,7 +102,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <input type="submit" value="저장" class="btn-black" @click="replysAdd">
+                        <input type="submit" value="저장" class="btn-black" @click.prevent="replysAdd">
                         <div class="content-btn">
                             <button class="btn-border">삭제</button>
                             <input type="submit" value="수정" class="btn-black" @click="onUpdate">
@@ -105,12 +110,6 @@
                     </fieldset>
                 </form>
                 <ul>
-                    <!-- <li v-for="(data, idx) in replysAdds" :key="idx">
-                        <b>{{ data.name }}</b>
-                        <div>
-                            <p>{{ data.memo }}</p>
-                        </div>
-                    </li> -->
                     <li v-for="data in inquiryItem.replys" :key="data.id">
                         <b>{{ data.name }}</b>
                         <div>
@@ -134,7 +133,6 @@ export default {
         return{
             id: this.$route.params.id,
             inquiryItem: {},
-            replysAdds: []
         }
     },
     methods: {
@@ -151,30 +149,38 @@ export default {
                     
                 })
         },
-        replysAdd(e){
-            e.preventDefault();
-            let comment = {}
-            document.querySelectorAll('.commentArea *').forEach((element)=>{
-                comment[element.name] = element.value
-            })
-            let isValue = Object.entries(comment).find((arr)=>{
-                return !arr[1]
-            })
-            
-            if(isValue){
-                document.querySelector(`[name="${isValue[0]}"]`).focus();
-            }else{
-                this.replysAdds.push(comment)
-                document.querySelectorAll('.commentArea *').forEach((element)=>{
-                    element.value = ''
-                })
-                api.admin('comment', {id: this.id, data: comment})
-                    .then((result)=>{
-                        if(result.statusCode === '200'){
+        replysAdd(){
+            const nameSelector = document.querySelector('[name="name"]')
+            const memoSelector = document.querySelector('[name="memo"]')
+            nameSelector.value || (nameSelector.value = sessionStorage.getItem('adminName'))
+            if(!memoSelector.value){
+                memoSelector.focus();
+                return;
+            }
+            api.admin('comment', {id: this.id, data: {name: nameSelector.value, memo:memoSelector.value}})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        document.querySelectorAll('.commentArea *').forEach((element)=>{
+                            element.value = ''
+                        })
+                        if(!this.inquiryItem.replys.length){
+                            const test = {};
+                            test['name'] = this.inquiryItem['name'];
+                            test['company'] = this.inquiryItem['company'];
+                            test['phonenum'] = this.inquiryItem['phonenum'];
+                            test['email'] = this.inquiryItem['email'];
+                            test['inquirystate'] = '3';
+                            api.admin('update', {type: 'inquiry/update', id: this.id, data: test})
+                                .then((result)=>{
+                                    if(result.statusCode === '200'){
+                                        this.detailData();
+                                    }
+                                })
+                        }else{
                             this.detailData();
                         }
-                    })
-            }
+                    }
+                })
         },
         onUpdate(e){
             e.preventDefault();

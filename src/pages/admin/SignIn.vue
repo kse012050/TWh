@@ -49,6 +49,7 @@ export default {
                     .then((result)=>{
                         if(result.res_code){
                             sessionStorage.setItem('token', result.accessToken)
+                            sessionStorage.setItem('adminName', result.username)
                             this.$router.push({path: this.nextPagePath})
                         }else{
                             this.modalText['title'] = '알림'
