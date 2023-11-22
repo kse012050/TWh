@@ -38,7 +38,7 @@
                     </div>
                 </li>
                 <li>
-                    <b class="required">RE100 이행목표</b>
+                    <b>RE100 이행목표</b>
                     <div>
                         <p>{{ inquiryItem.implementgoal }}</p>
                     </div>
@@ -50,7 +50,7 @@
                     </div>
                 </li>
                 <li>
-                    <b class="required">상담목적</b>
+                    <b>이행 방안</b>
                     <div>
                         <p>{{ inquiryItem.implementplan }}</p>
                     </div>

@@ -230,7 +230,7 @@
                         <li>
                             <label for="">문의내용</label>
                             <div>
-                                <input type="radio" id="inquerydetail-contract" name="inquerydetail" value="LONGTERMCONTRACT" @input="onChange" required>
+                                <input type="radio" id="inquerydetail-contract" name="inquerydetail" value="LONGTERMCONTRACT" @input="onChange" required checked>
                                 <label for="inquerydetail-contract">장기고정계약</label>
                                 <input type="radio" id="inquerydetail-forSale" name="inquerydetail" value="FORSALE" @input="onChange" required>
                                 <label for="inquerydetail-forSale">발전소 매각</label>
@@ -241,7 +241,7 @@
                         <li>
                             <label for="">발전소 현황</label>
                             <div>
-                                <input type="radio" id="plantstatus-beforeCompletion" name="plantstatus" value="BEFORECOMPLETION" @input="onChange" required>
+                                <input type="radio" id="plantstatus-beforeCompletion" name="plantstatus" value="BEFORECOMPLETION" @input="onChange" required checked>
                                 <label for="plantstatus-beforeCompletion">준공전 발전소</label>
                                 <input type="radio" id="plantstatus-inOperation" name="plantstatus" value="INOPERATION" @input="onChange" required>
                                 <label for="plantstatus-inOperation">운영중 발전소</label>

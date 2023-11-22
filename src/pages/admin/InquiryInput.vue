@@ -58,15 +58,15 @@
                         </div>
                     </li>
                     <li>
-                        <label for="implementplan">상담목적</label>
+                        <label for="implementplan">이행 방안</label>
                         <div>
-                            <input type="checkbox" id="implementplan-PPA" name="implementplan" value="PPA" :checked="implementplan[0]" @input="onChange" required>
+                            <input type="checkbox" id="implementplan-PPA" name="implementplan" value="PPA" :checked="implementplan[0]" @input="onChange">
                             <label for="implementplan-PPA">PPA</label>
-                            <input type="checkbox" id="implementplan-REC" name="implementplan" value="REC구매" :checked="implementplan[1]" @input="onChange" required>
+                            <input type="checkbox" id="implementplan-REC" name="implementplan" value="REC구매" :checked="implementplan[1]" @input="onChange">
                             <label for="implementplan-REC">REC 구매</label>
-                            <input type="checkbox" id="implementplan-sunlight" name="implementplan" value="자가소비형 태양광 구축"  :checked="implementplan[2]" @input="onChange"  required>
+                            <input type="checkbox" id="implementplan-sunlight" name="implementplan" value="자가소비형 태양광 구축"  :checked="implementplan[2]" @input="onChange" >
                             <label for="implementplan-sunlight">자가소비형 태양광 구축</label>
-                            <input type="checkbox" id="implementplan-inquiry" name="implementplan" value="종합솔류션 문의"  :checked="implementplan[3]" @input="onChange"  required>
+                            <input type="checkbox" id="implementplan-inquiry" name="implementplan" value="종합솔류션 문의"  :checked="implementplan[3]" @input="onChange" >
                             <label for="implementplan-inquiry">종합솔루션 문의</label>
                         </div>
                     </li>
