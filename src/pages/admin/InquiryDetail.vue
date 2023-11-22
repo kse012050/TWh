@@ -105,12 +105,12 @@
                     </fieldset>
                 </form>
                 <ul>
-                    <li v-for="(data, idx) in replysAdds" :key="idx">
+                    <!-- <li v-for="(data, idx) in replysAdds" :key="idx">
                         <b>{{ data.name }}</b>
                         <div>
                             <p>{{ data.memo }}</p>
                         </div>
-                    </li>
+                    </li> -->
                     <li v-for="data in inquiryItem.replys" :key="data.id">
                         <b>{{ data.name }}</b>
                         <div>
@@ -169,9 +169,11 @@ export default {
                     element.value = ''
                 })
                 api.admin('comment', {id: this.id, data: comment})
-                    /* .then((result)=>{
-                        console.log(result);
-                    }) */
+                    .then((result)=>{
+                        if(result.statusCode === '200'){
+                            this.detailData();
+                        }
+                    })
             }
         },
         onUpdate(e){

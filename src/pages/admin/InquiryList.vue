@@ -25,9 +25,9 @@
             <b>회신 여부</b>
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
-            <li v-for="data in inquiryList" :key="data.id">
+            <li v-for="(data, idx) in inquiryList" :key="data.id">
                 <router-link :to="`/admins/inquiry/input/${data.id}`">
-                    <span>{{ data.id }}</span>
+                    <span>{{ idx + 1 }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
                     <span>{{ data.phonenum }}</span>
