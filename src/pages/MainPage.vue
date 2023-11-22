@@ -1,4 +1,14 @@
+
+
 <template>
+    <template v-for="(data, idx) in popupList" :key="data.id">
+        <div v-if="isPopup[idx]" class="content-popup" @click.prevent="isPopup[idx] = false">
+            <a href="" @click.stop>
+                <img :src="data.medias[0].imageurl" alt="팝업 이미지">
+                <button @click.prevent="isPopup[idx] = false">팝업 닫기</button>
+            </a>
+        </div>
+    </template>
     <section class="mainPage">
         <ol class="fullPager">
         </ol>
@@ -129,14 +139,33 @@
 </template>
 
 <script>
+import * as api from '../api/api'
+
 export default {
     name: 'MainPage',
     data() {
         return{
-            isFull: false
+            isFull: false,
+            isPopup: [],
+            popupList: []
         }
     },
     methods: {
+        popup(){
+            api.user('list',{type: 'notice'})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        console.log(result);
+                        this.popupList = [...result.list]
+                        this.popupList = this.popupList.filter((value)=> value.medias.length !== 0);
+                        this.popupList.forEach(()=>{
+                            this.isPopup.push(true);
+                        })
+                        console.log(this.popupList);
+                        console.log(this.isPopup);
+                    }
+                })
+        },
         fullPager() {
             const fullPager = document.querySelector('.fullPager');
             const fullSelectors = document.querySelectorAll('[data-full]');
@@ -256,6 +285,7 @@ export default {
         }
     },
     mounted() {
+        this.popup();
         this.fullPager();
         this.fullEvent(this.fullMoveEvent);
     },

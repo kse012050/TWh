@@ -135,7 +135,7 @@ body:has(.content-modal){overflow: hidden;}
 body:has(.content-modal) .userPage .topArea{z-index: -1;}
 body:has(.content-modal) .userPage .topArea ~ *{position: static;}
 body:has(.content-modal) .userPage [class*="Page"]{position: static;}
-.content-modal{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); isolation: isolate; z-index: 1000;}
+.content-modal, .content-popup{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); /* isolation: isolate; */ z-index: 1000;}
 .content-modal > div{padding: var(--paddingBlock) var(--paddingInline); width: calc(100% - (var(--spacing) * 2)); background-color: white; box-sizing: border-box; position: relative;}
 .content-modal > div strong{font-weight: 600; display: block;}
 .content-modal > div .close{aspect-ratio: 1; position: absolute; right: var(--paddingInline); top: var(--paddingBlock); background: url(../images/icon-close2.png) no-repeat center / cover; text-indent: -9999px;}
@@ -156,6 +156,9 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
+.content-popup a{--width: 30px; max-width: 598px; width: calc(100% - (var(--spacing) * 2) - (var(--width) * 2)); aspect-ratio: 598 / 418; position: relative;}
+.content-popup a img{width: 100%; height: 100%; object-fit: cover;}
+.content-popup a button{position: absolute; width: var(--width); aspect-ratio: 1; background: url(../images/icon-close-white.png) no-repeat center / cover; text-indent: -9999px;}
 
 
 /* 유저 해더 */

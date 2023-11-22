@@ -1,6 +1,7 @@
 // api url
 const adminURL = 'http://52.79.208.109:5000/';
 const userURL = 'http://52.79.208.109:5000/';
+const userListURL = 'http://52.79.208.109:5000/api/v1/';
 
 const validationMap = {
     number(value) {
@@ -311,7 +312,17 @@ export function admin(type, data){
     return adminMap[type](type, data);
 }
 
-function userApi(type, method, data){
+
+function userListApi(type, method){
+    return fetch(`${userListURL}${type}`, {
+        method: method,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+function userInquiryApi(type, method, data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     data = JSON.stringify(data)
@@ -326,9 +337,14 @@ function userApi(type, method, data){
 }
 
 const userMap = {
+    list(type, data){
+        const method = 'GET';
+        type = `${data['type']}`
+        return userListApi(type, method)
+    },
     inquiry(type, data){
         const method = 'POST';
-        return userApi(type, method, data)
+        return userInquiryApi(type, method, data)
     }
 }
 

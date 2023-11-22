@@ -74,8 +74,18 @@
     </section>
 </template>
 <script>
+// import * as api from '../api/api'
+
 export default {
-    
+    name: 'BoardPage',
+    methods: {
+        list(){
+   
+        }
+    },
+    mounted(){
+        this.list();
+    }
 }
 </script>
 <style>

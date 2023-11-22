@@ -50,8 +50,8 @@
     </section>
 </template>
 <script>
-import ListPager from '@/components/admin/ListPager.vue'
 import * as api from '../../api/api'
+import ListPager from '@/components/admin/ListPager.vue'
 
 export default {
     name: 'BoardList',
