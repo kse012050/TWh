@@ -85,8 +85,7 @@ export default {
             modalText: {
                 title: '',
                 description: '',
-            },
-            isModalMove: false
+            }
         }
     },
     methods: {
@@ -171,10 +170,10 @@ export default {
                     }
                 })
         },
-        modalClose(){
+        modalClose(isMove){
             this.isModalAlert = false;
-            this.isModalConfirm && this.$router.push({path: this.nextPagePath})
             this.isModalConfirm = false;
+            isMove && this.$router.push({path: this.nextPagePath})
         },
         modalConfirm(){
             api.admin('delete', {type: 'notice', id: this.id})

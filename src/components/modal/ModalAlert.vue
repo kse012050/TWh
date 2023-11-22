@@ -4,7 +4,7 @@
             <strong>{{ modalText['title'] }}</strong>
             <p v-html="modalText['description']"></p>
             <div class="btnArea">
-                <button class="black" @click.prevent="$emit('modalClose')">확인</button>
+                <button class="black" @click.prevent="$emit('modalClose', true)">확인</button>
             </div>
             <button class="close" @click.prevent="$emit('modalClose')">모달 닫기</button>
         </div>

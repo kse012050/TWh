@@ -1,7 +1,7 @@
 <template>
     <section class="boardInputPage contentSize">
         <h2>
-            <router-link to="/admins/board">
+            <router-link :to="nextPagePath">
                 <template v-if="id">
                     No.{{id}}
                 </template>
@@ -61,7 +61,7 @@
                     <input type="checkbox" name="exposeyn" id="exposeyn" value="Y" :checked="boardItem.exposeyn === 'Y'" @input="onChange">
                     <label for="exposeyn">노출여부</label>
                     <template v-if="id">
-                        <button class="btn-border">삭제</button>
+                        <button class="btn-border" @click.prevent="onDelete">삭제</button>
                         <input type="submit" value="수정" class="btn-black" @click="onUpdate">
                     </template>
                     <template v-else>
@@ -70,13 +70,21 @@
                 </div>
             </fieldset>
         </form>
+        <modal-confirm v-if="isModalConfirm" :isModal="isModalConfirm" @modalClose="modalClose" @modalConfirm="modalConfirm" :modalText="modalText"/>
+        <modal-alert v-if="isModalAlert" :isModal="isModalAlert" @modalClose="modalClose" :modalText="modalText"/>
     </section>
 </template>
 <script>
 import * as api from '../../api/api'
+import ModalAlert from '@/components/modal/ModalAlert.vue';
+import ModalConfirm from '@/components/modal/ModalConfirm.vue';
 
 export default {
     name: 'BoardInput',
+    components: { 
+        ModalAlert,
+        ModalConfirm
+    },
     data(){
         return{
             id: this.$route.params.id,
@@ -85,7 +93,14 @@ export default {
             imgAdds: [],
             // 기존 데이터 이미지
             imgData: [],
-            imgDeletes: []
+            imgDeletes: [],
+            nextPagePath: '/admins/board',
+            isModalAlert: false,
+            isModalConfirm: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods: {
@@ -128,6 +143,11 @@ export default {
             this.imgDeletes.push(id);
             this.imgData.splice(idx, 1)
         },
+        onDelete(){
+            this.modalText['title'] = '삭제';
+            this.modalText['description'] = '게시글을 삭제하시겠습니다?<br>즉시 홈페이지에서 삭제되며 복구할 수 없습니다.';
+            this.isModalConfirm = true;
+        },
         onUpdate(e){
             e.preventDefault();
             delete this.boardItem.regymdt;
@@ -139,6 +159,9 @@ export default {
             api.admin('update', {type: 'boards', id: this.id, data: {...this.boardItem}, imgDeletes: this.imgDeletes})
                 .then((result)=>{
                     if(result.statusCode === '200'){
+                        this.modalText['title'] = '저장';
+                        this.modalText['description'] = '변경사항이 저장되었습니다.';
+                        this.isModalAlert = true;
                         this.detailData();
                     }
                 })
@@ -148,7 +171,25 @@ export default {
             api.admin('create', {type: 'boards', data: {...this.boardItem}})
                 .then((result)=>{
                     if(result.statusCode === '200'){
+                        this.modalText['title'] = '등록';
+                        this.modalText['description'] = '작성 내용이 저장되었습니다.';
+                        this.isModalAlert = true;
                         this.detailData();
+                    }
+                })
+        },
+        modalClose(isMove){
+            this.isModalAlert = false;
+            this.isModalConfirm = false;
+            isMove && this.$router.push({path: this.nextPagePath})
+        },
+        modalConfirm(){
+            api.admin('delete', {type: 'boards', id: this.id})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.modalText['title'] = '삭제';
+                        this.modalText['description'] = '삭제가 완료되었습니다.';
+                        this.isModalAlert = true;
                     }
                 })
         }
