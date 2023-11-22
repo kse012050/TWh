@@ -264,12 +264,7 @@
                             <textarea id="content" name="content" placeholder="기타 문의 및 참고 내용을 작성하세요. (200자 내)" @input="onChange"></textarea>
                         </li>
                     </ul>
-                    <div>
-                        <input type="checkbox" name="privacyagree" id="privacyagree" required @input="onChange">
-                        <label for="privacyagree"><strong>(필수)</strong><b>개인정보이용방침</b>에 동의합니다.</label>
-                        <input type="checkbox" name="maketagree" id="maketagree" @input="onChange">
-                        <label for="maketagree"><strong>(선택)</strong>마케팅 정보 수신에 동의합니다.</label>
-                    </div>
+                    <inquiry-agree :inputsRequired="inputsRequired" :inputs="inputs"></inquiry-agree>
                     <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
                 </fieldset>
             </form>
@@ -278,9 +273,13 @@
 </template>
 <script>
 import * as api from '../api/api'
+import InquiryAgree from '@/components/InquiryAgree.vue';
 
 export default {
     name: 'RecruitPage',
+    components : {
+        InquiryAgree,
+    },
     data() {
         return {
             topClassName: '[data-subTopAni] .topArea',
@@ -291,7 +290,7 @@ export default {
             inputs: {}
         }
     },
-    methods : {
+    methods: {
         init(){
             this.topElement = document.querySelector(this.topClassName);
             this.titleElement = document.querySelector(`${this.topClassName} h2`);
@@ -328,6 +327,8 @@ export default {
         },
         onSubmit(e){
             e.preventDefault();
+            // console.log(this.inputsRequired);
+            // console.log(this.inputs);
             if(!api.isRequired(this.inputsRequired)){
                 api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RECURUT'})
                     .then((result)=>{

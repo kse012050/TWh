@@ -5,7 +5,7 @@ const userURL = 'http://52.79.208.109:5000/';
 const validationMap = {
     number(value) {
         const regex = /^[0-9]+$/;
-        return regex.test(value);
+        return regex.test(value) || !value;
     },
     company(value){
         const regex = /^.{2,20}$/;
@@ -35,8 +35,7 @@ export function onChange(e, inputsRequired, inputs){
     let { type, name, value } = e.target
 
     const isRequired = Object.keys(inputsRequired).includes(name);
-    if(!validation(e.target.dataset.formet, e.target.value) && e.target.value !== ''){
-        console.log(!validation(e.target.dataset.formet, e.target.value));
+    if(!validation(e.target.dataset.formet, e.target.value)){
         e.target.value = isRequired ? inputsRequired[e.target.name] : (inputs[e.target.name] || '')
         return
     }
