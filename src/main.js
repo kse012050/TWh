@@ -21,6 +21,7 @@ import BoardList from './pages/admin/BoardList'
 import BoardInput from './pages/admin/BoardInput'
 import AdminInquiry from './pages/admin/AdminInquiry'
 import InquiryList from './pages/admin/InquiryList'
+import InquirySearch from './pages/admin/InquirySearch'
 import InquiryDetail from './pages/admin/InquiryDetail'
 import InquiryInput from './pages/admin/InquiryInput'
 
@@ -116,6 +117,14 @@ const routes = [
                     {
                         path: ':page',
                         component: InquiryList
+                    },
+                    {
+                        path: 'search',
+                        component: InquirySearch
+                    },
+                    {
+                        path: 'search/:page',
+                        component: InquirySearch
                     },
                     {
                         path: 'detail/:id',

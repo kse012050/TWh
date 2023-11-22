@@ -3,10 +3,7 @@
         <h2>사업 문의 관리</h2>
 
         <div class="admin-tab">
-            <router-link to="/admins/inquiry/1" :class="{active: listType === ''}">전체({{this.listTotal.all}})</router-link>
-            <router-link to="/admins/inquiry/1?type=GENERAL" :class="{active: listType === 'GENERAL'}">일반({{this.listTotal.general}})</router-link>
-            <router-link to="/admins/inquiry/1?type=RE100" :class="{active: listType === 'RE100'}">RE100({{this.listTotal.re100}})</router-link>
-            <router-link to="/admins/inquiry/1?type=RECURUT" :class="{active: listType === 'RECURUT'}">발전소 매입({{this.listTotal.recurut}})</router-link>
+            <p>총 {{ total }}건이 검색되었습니다.</p>
             <inquiry-search />
         </div>
         <div class="admin-board-title">
@@ -48,11 +45,12 @@
                                 (data.inquirystate === '2' ? '회신 안함' :
                                     '회신 완료')
                         }}
+                        <!-- {{ data.inquirystate }} -->
                     </span>
                 </router-link>
             </li>
         </ul>
-        <list-pager :page="page" :lastPage="lastPage" :listType="listType" :pageName="pageName"/>
+        <list-pager :page="page" :lastPage="lastPage" :listSearch="listSearch" :pageName="pageName"/>
     </section>
 </template>
 <script>
@@ -70,16 +68,11 @@ export default {
         return {
             tabName: 'All',
             inquiryList: [],
-            listTotal: {
-                all: undefined,
-                general: undefined,
-                re100: undefined,
-                recurut: undefined,
-            },
-            pageName: 'inquiry',
+            pageName: 'inquiry/search',
             page: Number(this.$route.params.page) || 1,
-            listType: this.$route.query.type || '',
-            lastPage: undefined
+            listSearch: this.$route.query.search,
+            lastPage: undefined,
+            total: undefined
         }
     },
     methods: {
@@ -88,47 +81,24 @@ export default {
             this.$router.push({path: `/admins/inquiry/detail/${id}`})
         },
         list(){
-            this.page= Number(this.$route.params.page) || 1;
-            this.listType = this.$route.query.type || '';
-            api.admin('list',{type: 'inquiry', page: this.page, listType: this.listType})
+            this.page = Number(this.$route.params.page) || 1;
+            this.listSearch = this.$route.query.search;
+            api.admin('search',{type: 'inquiry', word: this.$route.query.search})
                 .then((result)=>{
                     if(result.statusCode === '200'){
-                        this.inquiryList = [...result.list]
-                        this.lastPage = result.meta.last_page
+                        this.lastPage = Math.floor(result.list.length / 20) + 1;
+                        this.total = result.list.length
+                        this.inquiryList = result.list.splice((this.page - 1) * 20, 20)
                     }
                 })
         }
     },
     mounted(){
-        api.admin('list',{type: 'inquiry', page: 1})
-            .then((result)=>{
-                if(result.statusCode === '200'){
-                    this.listTotal['all'] = result.meta.total
-                }
-            })
-        api.admin('list',{type: 'inquiry', page: 1, listType: 'GENERAL'})
-            .then((result)=>{
-                if(result.statusCode === '200'){
-                    this.listTotal['general'] = result.meta.total
-                }
-            })
-        api.admin('list',{type: 'inquiry', page: 1, listType: 'RE100'})
-            .then((result)=>{
-                if(result.statusCode === '200'){
-                    this.listTotal['re100'] = result.meta.total
-                }
-            })
-        api.admin('list',{type: 'inquiry', page: 1, listType: 'RECURUT'})
-            .then((result)=>{
-                if(result.statusCode === '200'){
-                    this.listTotal['recurut'] = result.meta.total
-                }
-            })
         this.list();
     },
     watch: {
         '$route' (to) {
-            if(to.path.includes('inquiry') && this.page){
+            if(to.path.includes('inquiry/search') && this.page){
                 this.list();
             }
         }

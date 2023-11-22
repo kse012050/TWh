@@ -222,14 +222,15 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 
 
 /* 관리자 - 텝 */
-.admin-tab{display: flex; align-items: center; gap: 41px; margin-bottom: 30px; padding-top: 30px; position: relative;}
-.admin-tab > :is(button, a){font-size: 15px; line-height: 30px; color: #BBB; font-weight: 600;}
+.admin-tab{font-size: 15px; display: flex; align-items: center; gap: 41px; margin-bottom: 30px; padding-top: 30px; position: relative;}
+.admin-tab > :is(button, a){line-height: 30px; color: #BBB; font-weight: 600;}
 .admin-tab > :is(button, a):not(:last-of-type){position: relative;}
 .admin-tab > :is(button, a):not(:last-of-type)::after{content: ''; width: 1px; height: 18px; background-color: var(--color-line); position: absolute; right: -20px; top: 50%; transform: translateY(-50%);}
 .admin-tab > :is(button, a):is(.active, :hover){color: #222;}
+.admin-tab > p{line-height: 20px; font-weight: 600;}
 .admin-tab .search{position: absolute; right: 0; bottom: 0; max-width: 400px;}
-.admin-tab .search input{font-size: 15px; height: 50px; width: 400px; font-weight: 300; padding: 15px 50px 15px 15px; box-sizing: border-box;}
-.admin-tab .search button{position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 32px; aspect-ratio: 1; background: url(../images/icon-search.png) no-repeat center / cover; text-indent: -9999px;}
+.admin-tab .search input{height: 50px; width: 400px; font-weight: 300; padding: 15px 50px 15px 15px; box-sizing: border-box;}
+.admin-tab .search :is(button, a) {position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 32px; aspect-ratio: 1; background: url(../images/icon-search.png) no-repeat center / cover; text-indent: -9999px;}
 
 
 /* 관리자 게시판 */

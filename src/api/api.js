@@ -147,6 +147,24 @@ function adminListApi(type, method){
         .catch(error => console.log('error', error));
 }
 
+// 관리자 각 페이지별 검색
+function adminSearchApi(type, method, data){
+    var myHeaders = new Headers();
+
+    addToken(myHeaders)
+
+    const formdata = dataToFormData(data);
+    
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
 // 관리자 각 페이지별 상세
 function adminDetailApi(type, method){
     var myHeaders = new Headers();
@@ -256,6 +274,12 @@ const adminMap = {
         type = `${data['type']}/list/${data['page']}`
         data['listType'] && (type = type + '?type=' + data['listType']);
         return adminListApi(type, method)
+    },
+    search(type, data){
+        const method = 'POST';
+        type = `${data['type']}/search`
+        data = {word: data['word']}
+        return adminSearchApi(type, method, data)
     },
     detail(type, data){
         const method = 'GET';

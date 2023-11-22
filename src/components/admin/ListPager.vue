@@ -22,11 +22,13 @@ export default {
         pageName: String,
         page: Number,
         lastPage: Number,
-        listType: String
+        listType: String,
+        listSearch: String
     },
     data(){
         return{
-            type: undefined
+            type: undefined,
+            search: this.$route.query.search
         }
     },
     methods: {
@@ -35,7 +37,10 @@ export default {
         }
     },
     updated(){
-        this.type = this.listType ? `?type=${this.listType}` :  ''
+        this.listType && (this.type = `?type=${this.listType}`);
+        this.search && (this.type = `?search=${this.search}`);
+        // this.type = this.listType ? `?type=${this.listType}` :  '';
+        // this.search && (this.type = `?search=${this.search}`);
     }
 }
 </script>
