@@ -136,12 +136,18 @@ body:has(.content-modal) .userPage .topArea{z-index: -1;}
 body:has(.content-modal) .userPage .topArea ~ *{position: static;}
 body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .content-modal{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); isolation: isolate; z-index: 1000;}
-.content-modal > div{--paddingBlock: 40px; --paddingInline: 30px; padding: var(--paddingBlock) var(--paddingInline); background-color: white; position: relative;}
+.content-modal > div{--paddingBlock: 40px; --paddingInline: 30px; padding: var(--paddingBlock) var(--paddingInline); width: calc(100% - (var(--spacing) * 2)); background-color: white; box-sizing: border-box; position: relative;}
 .content-modal > div strong{font-size: 26px; line-height: 30px; font-weight: 600; display: block;}
 .content-modal > div .close{width: 30px; aspect-ratio: 1; position: absolute; right: var(--paddingInline); top: var(--paddingBlock); background: url(../images/icon-close2.png) no-repeat center / cover; text-indent: -9999px;}
 .content-modal .infoArea{max-width: 800px;}
 .content-modal .infoArea strong{margin-bottom: 20px;}
-.content-modal .infoArea p{height: 440px; padding: 30px; font-size: 18px; line-height: 26px; font-weight: 300; background-color: var(--color-BG02); box-sizing: border-box; overflow: auto;}
+.content-modal .infoArea p{height: 40.7407vh; max-height: 440px; padding: 30px; font-size: 18px; line-height: 26px; font-weight: 300; background-color: var(--color-BG02); box-sizing: border-box; overflow: auto;}
+.content-modal .alertArea{max-width: 600px;}
+.content-modal .alertArea strong{margin-bottom: 30px;}
+.content-modal .alertArea p{font-size: 22px; line-height: 34px; font-weight: 300;}
+.userPage .content-modal .btnArea{margin-top: 40px; gap: 10px; display: flex; justify-content: flex-end;}
+.userPage .content-modal .btnArea button{width: 95px; height: 60px; font-size: 20px;}
+.userPage .content-modal .btnArea button.black{background-color: #222; color: white;}
 
 
 /* 유저 해더 */

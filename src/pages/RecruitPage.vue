@@ -216,7 +216,7 @@
                             </div>
                         </li>
                         <li>
-                            <label for="phonenum">연락전화번호처</label>
+                            <label for="phonenum">전화번호</label>
                             <div>
                                 <input type="text" id="phonenum" name="phonenum" @input="onChange" maxlength="11" data-formet="number" required>
                             </div>
@@ -265,20 +265,23 @@
                         </li>
                     </ul>
                     <inquiry-agree :inputsRequired="inputsRequired" :inputs="inputs"></inquiry-agree>
-                    <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
+                    <input type="submit" value="문의하기" class="btn-black" @click.prevent="onSubmit">
                 </fieldset>
             </form>
+            <modal-alert v-if="isModal" :isModal="isModal" @modalClose="modalClose" :modalText="modalText"/>
         </div>
     </section>
 </template>
 <script>
 import * as api from '../api/api'
 import InquiryAgree from '@/components/InquiryAgree.vue';
+import ModalAlert from '@/components/modal/ModalAlert.vue';
 
 export default {
     name: 'RecruitPage',
     components : {
         InquiryAgree,
+        ModalAlert
     },
     data() {
         return {
@@ -287,7 +290,12 @@ export default {
             topContents: undefined,
             titleElement: undefined,
             inputsRequired: {},
-            inputs: {}
+            inputs: {},
+            isModal: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods: {
@@ -325,19 +333,24 @@ export default {
                 }
             })
         },
-        onSubmit(e){
-            e.preventDefault();
-            // console.log(this.inputsRequired);
-            // console.log(this.inputs);
+        onSubmit(){
             if(!api.isRequired(this.inputsRequired)){
                 api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RECURUT'})
                     .then((result)=>{
-                        alert(result.message)
+                        if(result.statusCode === '200'){
+                            this.modalText['title'] = '문의'
+                            this.modalText['description'] = '요청이 완료되었습니다' 
+                            this.isModal = true
+                            api.dataInit({...this.inputsRequired, ...this.inputs})
+                        }
                     })
             }
         },
         onChange(e){
             api.onChange(e, this.inputsRequired, this.inputs)
+        },
+        modalClose(){
+            this.isModal = false;
         }
     },
     mounted() {

@@ -25,6 +25,31 @@ const validationMap = {
     },
 }
 
+// 데이터 초기화
+export function dataInit(/* inputsRequired, inputs */ test){
+    Object.entries(test).forEach(([key])=>{
+        const element = document.querySelector(`[name=${key}]`);
+        element.classList.remove('error');
+        element.type === 'checkbox' ?
+            element.checked = false :
+            element.value = '';
+    })
+    // Object.entries(inputsRequired).forEach(([key])=>{
+    //     const element = document.querySelector(`[name=${key}]`);
+    //     element.classList.remove('error');
+    //     element.type === 'checkbox' ?
+    //         element.checked = false :
+    //         element.value = '';
+    // })
+    // Object.entries(inputs).forEach(([key])=>{
+    //     const element = document.querySelector(`[name=${key}]`);
+    //     element.classList.remove('error');
+    //     element.type === 'checkbox' ?
+    //         element.checked = false :
+    //         element.value = '';
+    // })
+}
+
 // 
 export function validation(type, value){
     return Object.keys(validationMap).includes(type) ? validationMap[type](value) : true

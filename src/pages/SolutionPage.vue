@@ -265,19 +265,24 @@
                         </li>
                     </ul>
                     <inquiry-agree :inputsRequired="inputsRequired" :inputs="inputs"></inquiry-agree>
-                    <input type="submit" value="문의하기" class="btn-black" @click="onSubmit">
+                    <input type="submit" value="문의하기" class="btn-black" @click.prevent="onSubmit">
                 </fieldset>
             </form>
+            <modal-alert v-if="isModal" :isModal="isModal" @modalClose="modalClose" :modalText="modalText"/>
         </div>
     </section>
 </template>
 <script>
-import InquiryAgree from '@/components/InquiryAgree.vue';
 import * as api from '../api/api'
+import InquiryAgree from '@/components/InquiryAgree.vue';
+import ModalAlert from '@/components/modal/ModalAlert.vue';
 
 export default {
     name: 'SolutionPage',
-    components: { InquiryAgree },
+    components: { 
+        InquiryAgree,
+        ModalAlert
+    },
     data() {
         return {
             topClassName: '[data-subTopAni] .topArea',
@@ -285,7 +290,12 @@ export default {
             topContents: undefined,
             titleElement: undefined,
             inputsRequired: {},
-            inputs: {}
+            inputs: {},
+            isModal: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods : {
@@ -323,18 +333,24 @@ export default {
                 }
             })
         },
-        onSubmit(e){
-            e.preventDefault();
+        onSubmit(){
             if(!api.isRequired(this.inputsRequired)){
                 api.user('inquiry', {...this.inputsRequired, ...this.inputs, consultpurpose: 'RE100'})
                     .then((result)=>{
-                        console.log(result);
-                        alert(result.message)
+                        if(result.statusCode === '200'){
+                            this.modalText['title'] = '문의'
+                            this.modalText['description'] = '요청이 완료되었습니다' 
+                            this.isModal = true
+                            api.dataInit({...this.inputsRequired, ...this.inputs})
+                        }
                     })
             }
         },
         onChange(e){
             api.onChange(e, this.inputsRequired, this.inputs)
+        },
+        modalClose(){
+            this.isModal = false;
         }
     },
     mounted() {
