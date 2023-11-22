@@ -1,7 +1,7 @@
 <template>
     <section class="noticesInputPage contentSize">
         <h2>
-            <router-link to="/admins/notices">
+            <router-link :to="nextPagePath">
                 <template v-if="id">
                     No.{{id}}
                 </template>
@@ -46,22 +46,30 @@
                     <input type="checkbox" name="exposeyn" id="exposeyn" value="Y" :checked="noticeItem.exposeyn === 'Y'" @input="onChange">
                     <label for="exposeyn">노출여부</label>
                     <template v-if="id">
-                        <button class="btn-border">삭제</button>
-                        <input type="submit" value="수정" class="btn-black" @click="onUpdate">
+                        <button class="btn-border" @click.prevent="onDelete">삭제</button>
+                        <input type="submit" value="수정" class="btn-black" @click.prevent="onUpdate">
                     </template>
                     <template v-else>
-                        <input type="submit" value="작성" class="btn-black" @click="onSubmit">
+                        <input type="submit" value="작성" class="btn-black" @click.prevent="onSubmit">
                     </template>
                 </div>
             </fieldset>
         </form>
+        <modal-confirm v-if="isModalConfirm" :isModal="isModalConfirm" @modalClose="modalClose" @modalConfirm="modalConfirm" :modalText="modalText"/>
+        <modal-alert v-if="isModalAlert" :isModal="isModalAlert" @modalClose="modalClose" :modalText="modalText"/>
     </section>
 </template>
 <script>
 import * as api from '../../api/api'
+import ModalAlert from '@/components/modal/ModalAlert.vue';
+import ModalConfirm from '@/components/modal/ModalConfirm.vue';
 
 export default {
     name: 'NoticesInput',
+    components: { 
+        ModalAlert,
+        ModalConfirm
+    },
     data(){
         return{
             id: this.$route.params.id,
@@ -70,13 +78,21 @@ export default {
             imgAdds: [],
             // 기존 데이터 이미지
             imgData: [],
-            imgDeletes: []
+            imgDeletes: [],
+            nextPagePath: '/admins/notices',
+            isModalAlert: false,
+            isModalConfirm: false,
+            modalText: {
+                title: '',
+                description: '',
+            },
+            isModalMove: false
         }
     },
     methods: {
         detailData(){
             if(this.id) {
-                api.admin('detail', {type: 'notice', id: this.$route.params.id})
+                api.admin('detail', {type: 'notice', id: this.id})
                     .then((result)=>{
                         this.noticeItem = {...result.noticeItem}
                         this.imgData = [...this.noticeItem.medias]
@@ -119,8 +135,12 @@ export default {
             this.noticeItem['linkurl'] = ''
             document.querySelector('input[type="url"]').focus();
         },
-        onUpdate(e){
-            e.preventDefault();
+        onDelete(){
+            this.modalText['title'] = '삭제';
+            this.modalText['description'] = '게시글을 삭제하시겠습니다?<br>즉시 홈페이지에서 삭제되며 복구할 수 없습니다.';
+            this.isModalConfirm = true;
+        },
+        onUpdate(){
             delete this.noticeItem.enddate;
             delete this.noticeItem.id;
             delete this.noticeItem.regymdt;
@@ -131,18 +151,38 @@ export default {
 
             api.admin('update', {type: 'notice', id: this.id, data: {...this.noticeItem}, imgDeletes: this.imgDeletes})
                 .then((result)=>{
+                    console.log(result);
                     if(result.statusCode === '200'){
+                        this.modalText['title'] = '저장';
+                        this.modalText['description'] = '변경사항이 저장되었습니다.';
+                        this.isModalAlert = true;
                         this.detailData();
                     }
                 })
         },
-        onSubmit(e){
-            e.preventDefault();
+        onSubmit(){
             api.admin('create', {type: 'notice', data: {...this.noticeItem}})
                 .then((result)=>{
                     if(result.statusCode === '200'){
-                        console.log(result);
+                        this.modalText['title'] = '등록';
+                        this.modalText['description'] = '작성 내용이 저장되었습니다.';
+                        this.isModalAlert = true;
                         this.detailData();
+                    }
+                })
+        },
+        modalClose(){
+            this.isModalAlert = false;
+            this.isModalConfirm && this.$router.push({path: this.nextPagePath})
+            this.isModalConfirm = false;
+        },
+        modalConfirm(){
+            api.admin('delete', {type: 'notice', id: this.id})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.modalText['title'] = '삭제';
+                        this.modalText['description'] = '삭제가 완료되었습니다.';
+                        this.isModalAlert = true;
                     }
                 })
         }

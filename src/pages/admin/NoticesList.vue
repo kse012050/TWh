@@ -18,7 +18,7 @@
                         {{ data.regymdt[0] }}<br>
                         {{ data.regymdt[1] }}
                     </time>
-                    <span>{{ data.useYn === "Y" ? '노출' : '비노출' }}</span>
+                    <span>{{ data.exposeyn === "Y" ? '노출' : '비노출' }}</span>
                 </router-link>
             </li>
         </ul>
@@ -48,13 +48,15 @@ export default {
     mounted() {
         api.admin('list',{type: 'notice', page: this.page})
             .then((result)=>{
-                this.noticeList = [...result.list]
-                this.noticeList.forEach((arr)=>{
-                    arr.regymdt = arr.regymdt.split('T');
-                    arr.regymdt[0] = arr.regymdt[0].replaceAll('-','.')
-                    arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
-                })
-                this.lastPage = result.meta.last_page
+                if(result.statusCode === '200'){
+                    this.noticeList = [...result.list]
+                    this.noticeList.forEach((arr)=>{
+                        arr.regymdt = arr.regymdt.split('T');
+                        arr.regymdt[0] = arr.regymdt[0].replaceAll('-','.')
+                        arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
+                    })
+                    this.lastPage = result.meta.last_page
+                }
             })
 
     }

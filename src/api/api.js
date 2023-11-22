@@ -32,25 +32,10 @@ export function dataInit(inputsRequired, inputs){
         const element = document.querySelector(`[name=${key}]`);
         element.classList.remove('error');
         element.type === 'checkbox' ?
-        element.checked = false :
-        element.value = '';
+            element.checked = false :
+            element.value = '';
         test[key] = '';
-        console.log(test[key]);
     })
-    // Object.entries(inputsRequired).forEach(([key])=>{
-    //     const element = document.querySelector(`[name=${key}]`);
-    //     element.classList.remove('error');
-    //     element.type === 'checkbox' ?
-    //         element.checked = false :
-    //         element.value = '';
-    // })
-    // Object.entries(inputs).forEach(([key])=>{
-    //     const element = document.querySelector(`[name=${key}]`);
-    //     element.classList.remove('error');
-    //     element.type === 'checkbox' ?
-    //         element.checked = false :
-    //         element.value = '';
-    // })
 }
 
 // 
@@ -166,7 +151,8 @@ function adminListApi(type, method){
 function adminDetailApi(type, method){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iuygle2YhOq4sCIsImlhdCI6MTY5OTI1MTY0MCwiZXhwIjoxNjk5MjUxNjQzfQ.klmyC8BvXzNULUjJlyH5p9RIsfvFCs1azX4tSnptFEg');
+    addToken(myHeaders)
+
     return fetch(`${adminURL}${type}`, {
         method: method,
         headers: myHeaders,
@@ -179,7 +165,6 @@ function adminDetailApi(type, method){
 // 관리자 각 페이지별 상세 수정
 function adminUpdateApi(type, method, data, imgType, imgDeletes){
     var myHeaders = new Headers();
-
     addToken(myHeaders)
 
     // 관리자 이미지 삭제
@@ -202,6 +187,19 @@ function adminUpdateApi(type, method, data, imgType, imgDeletes){
         method: method,
         headers: myHeaders,
         body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+function adminDeleteApi(type, method){
+    var myHeaders = new Headers();
+    addToken(myHeaders)
+
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
         redirect: 'follow'
     })
         .then(response => response.json())
@@ -271,6 +269,11 @@ const adminMap = {
         type = `${data['type']}/${data['id']}`;
         data = {...data['data']}
         return adminUpdateApi(type, method, data, imgType, imgDeletes)
+    },
+    delete(type, data){
+        const method = 'DELETE';
+        type = `${data['type']}/${data['id']}`;
+        return adminDeleteApi(type, method)
     },
     comment(type, data){
         const method = 'PATCH';
