@@ -40,7 +40,19 @@
                     <span>{{ data.privacyagree ? '동의' : '비동의' }}</span>
                     <span>{{ data.maketagree ? '동의' : '비동의' }}</span>
                     <button @click="(e)=>detailMove(e, data.id)">상세보기</button>
-                    <span class="unread">읽지 않음</span>
+                    <span :class="
+                        {
+                            unread: data.inquirystate === '1',
+                            noReply: data.inquirystate === '2'
+                        }
+                    ">
+                        {{
+                            data.inquirystate === '1' ? '읽지 않음' :
+                                (data.inquirystate === '2' ? '회신 안함' :
+                                    '회신 완료')
+                        }}
+                        <!-- {{ data.inquirystate }} -->
+                    </span>
                 </router-link>
             </li>
           <!--   <li>

@@ -1,7 +1,7 @@
 <template>
     <section class="inquiryInputPage contentSize">
         <h2>
-            <router-link to="/admins/inquiry">
+            <router-link :to="nextPagePath">
                 No.{{id}}
             </router-link>
         </h2>
@@ -48,7 +48,7 @@
                     <li>
                         <label for="implementgoal">RE100 이행목표</label>
                         <div class="limited">
-                            <input type="text" name="implementgoal" id="implementgoal" :value="inquiryItem.implementgoal" @input="onChange" required>
+                            <input type="text" name="implementgoal" id="implementgoal" :value="inquiryItem.implementgoal" @input="onChange">
                         </div>
                     </li>
                     <li>
@@ -78,32 +78,46 @@
                     </li>
                 </ul>
                 <div class="content-btn">
-                    <button class="btn-border">삭제</button>
-                    <input type="submit" value="수정" class="btn-black" @click="onSubmit">
+                    <button class="btn-border" @click.prevent="onDelete">삭제</button>
+                    <input type="submit" value="수정" class="btn-black" @click.prevent="onUpdate">
                 </div>
             </fieldset>
         </form>
+        <modal-confirm v-if="isModalConfirm" :isModal="isModalConfirm" @modalClose="modalClose" @modalConfirm="modalConfirm" :modalText="modalText"/>
+        <modal-alert v-if="isModalAlert" :isModal="isModalAlert" @modalClose="modalClose" :modalText="modalText"/>
     </section>
 </template>
 <script>
 import * as api from '../../api/api'
+import ModalAlert from '@/components/modal/ModalAlert.vue';
+import ModalConfirm from '@/components/modal/ModalConfirm.vue';
 
 export default {
     name: 'InquiryInput',
+    components: { 
+        ModalAlert,
+        ModalConfirm
+    },
     data(){
         return{
             id: this.$route.params.id,
             inquiryItem: {},
             implementplan: [],
             inputsRequired: {},
-            inputs: {}
+            inputs: {},
+            nextPagePath: '/admins/inquiry',
+            isModalAlert: false,
+            isModalConfirm: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods: {
         detailData(){
             api.admin('detail', {type: 'inquiry', id: this.id})
                 .then((result)=>{
-                    // console.log(result);
                     this.inquiryItem = {...result.inquiryItem}
                     this.implementplan = [this.inquiryItem.implementplan.includes('PPA'), this.inquiryItem.implementplan.includes('REC구매'), this.inquiryItem.implementplan.includes('자가소비형 태양광 구축'), this.inquiryItem.implementplan.includes('종합솔류션 문의')]
                     document.querySelectorAll('.admin-input ul li :is(input, textarea)').forEach((element)=>{
@@ -114,19 +128,41 @@ export default {
                 })
            
         },
-        onSubmit(e){
-            e.preventDefault();
+        onChange(e){
+            api.onChange(e, this.inputsRequired, this.inputs)
+        },
+        onDelete(){
+            this.modalText['title'] = '삭제';
+            this.modalText['description'] = '게시글을 삭제하시겠습니다?<br>즉시 홈페이지에서 삭제되며 복구할 수 없습니다.';
+            this.isModalConfirm = true;
+        },
+        onUpdate(){
             if(!api.isRequired(this.inputsRequired)){
                 api.admin('update', {type: 'inquiry/update', id: this.id, data: {...this.inputsRequired, ...this.inputs}})
                     .then((result)=>{
                         if(result.statusCode === '200'){
+                            this.modalText['title'] = '저장';
+                            this.modalText['description'] = '변경사항이 저장되었습니다.';
+                            this.isModalAlert = true;
                             this.detailData();
                         }
                     })
             }
         },
-        onChange(e){
-            api.onChange(e, this.inputsRequired, this.inputs)
+        modalClose(isMove){
+            this.isModalAlert = false;
+            this.isModalConfirm = false;
+            isMove && this.$router.push({path: this.nextPagePath})
+        },
+        modalConfirm(){
+            api.admin('delete', {type: 'inquiry', id: this.id})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.modalText['title'] = '삭제';
+                        this.modalText['description'] = '삭제가 완료되었습니다.';
+                        this.isModalAlert = true;
+                    }
+                })
         }
     },
     mounted() {
