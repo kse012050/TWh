@@ -90,6 +90,20 @@ b.case01{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
 .content-inquiry input[type="submit"]{margin-top: 50px;}
 
 
+/* 모달 */
+.content-modal > div{--paddingBlock: 30px; --paddingInline: 20px;}
+.content-modal > div strong{font-size: 16px; line-height: 1.375;}
+.content-modal > div .close{width: 22px;}
+.content-modal .infoArea{max-width: 400px;}
+.content-modal .infoArea strong{margin-bottom: 15px;}
+.content-modal .infoArea p{padding: 20px; font-size: 12px; line-height: 1.333;}
+.content-modal :is(.alertArea, .confirmArea){max-width: 300px;}
+.content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 20px;}
+.content-modal :is(.alertArea, .confirmArea) p{font-size: 14px;}
+.content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 30px; gap: 10px;}
+.content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 45px; font-size: 12px;}
+
+
 /* 유저 해더 */
 .userPage header div button{--width: 36px;}
 .userPage header div nav ul{width: 240px; padding: 80px 30px;}

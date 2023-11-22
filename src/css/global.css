@@ -136,19 +136,26 @@ body:has(.content-modal) .userPage .topArea{z-index: -1;}
 body:has(.content-modal) .userPage .topArea ~ *{position: static;}
 body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .content-modal{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); isolation: isolate; z-index: 1000;}
-.content-modal > div{--paddingBlock: 40px; --paddingInline: 30px; padding: var(--paddingBlock) var(--paddingInline); width: calc(100% - (var(--spacing) * 2)); background-color: white; box-sizing: border-box; position: relative;}
-.content-modal > div strong{font-size: 26px; line-height: 30px; font-weight: 600; display: block;}
-.content-modal > div .close{width: 30px; aspect-ratio: 1; position: absolute; right: var(--paddingInline); top: var(--paddingBlock); background: url(../images/icon-close2.png) no-repeat center / cover; text-indent: -9999px;}
-.content-modal .infoArea{max-width: 800px;}
-.content-modal .infoArea strong{margin-bottom: 20px;}
-.content-modal .infoArea p{height: 40.7407vh; max-height: 440px; padding: 30px; font-size: 18px; line-height: 26px; font-weight: 300; background-color: var(--color-BG02); box-sizing: border-box; overflow: auto;}
-.content-modal :is(.alertArea, .confirmArea){max-width: 600px;}
-.content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 30px;}
-.content-modal :is(.alertArea, .confirmArea) p{font-size: 22px; line-height: 34px; font-weight: 300;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 40px; gap: 10px; display: flex; justify-content: flex-end;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 95px; height: 60px; font-size: 20px;}
+.content-modal > div{padding: var(--paddingBlock) var(--paddingInline); width: calc(100% - (var(--spacing) * 2)); background-color: white; box-sizing: border-box; position: relative;}
+.content-modal > div strong{font-weight: 600; display: block;}
+.content-modal > div .close{aspect-ratio: 1; position: absolute; right: var(--paddingInline); top: var(--paddingBlock); background: url(../images/icon-close2.png) no-repeat center / cover; text-indent: -9999px;}
+.content-modal .infoArea p{height: 40.7407vh; max-height: 440px; font-weight: 300; background-color: var(--color-BG02); box-sizing: border-box; overflow: auto;}
+.content-modal :is(.alertArea, .confirmArea) p{line-height: 1.5454; font-weight: 300;}
+.content-modal :is(.alertArea, .confirmArea) .btnArea{display: flex; justify-content: flex-end;}
+.content-modal :is(.alertArea, .confirmArea) .btnArea button{aspect-ratio: 90 / 60;}
 .content-modal :is(.alertArea, .confirmArea) .btnArea button.black{background-color: #222; color: white;}
 .content-modal :is(.alertArea, .confirmArea) .btnArea button.border{border: 1px solid#222;}
+.adminsPage .content-modal > div{--paddingBlock: 35px; --paddingInline: 25px;}
+.adminsPage .content-modal > div strong{font-size: 21px; line-height: 1.375;}
+.adminsPage .content-modal > div .close{width: 26px;}
+.adminsPage .content-modal .infoArea{max-width: 600px;}
+.adminsPage .content-modal .infoArea strong{margin-bottom: 17.5px;}
+.adminsPage .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
 
 
 /* 유저 해더 */

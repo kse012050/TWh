@@ -16,9 +16,9 @@
             <b>노출여부</b>
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 게시판이 없습니다.">
-            <li v-for="data in boardList" :key="data.id">
+            <li v-for="(data, idx) in boardList" :key="data.id">
                 <router-link :to="`/admins/board/input/${data.id}`">
-                    <span>{{ data.id }}</span>
+                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
                     <span>{{ data.type !== 'BLOG' ? '보도자료' : '블로그' }}</span>
                     <p>{{ data.title }}</p>
                     <p>{{ data.description }}</p>

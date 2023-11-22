@@ -9,9 +9,9 @@
             <b>노출여부</b>
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
-            <li v-for="data in noticeList" :key="data.id">
+            <li v-for="(data, idx) in noticeList" :key="data.id">
                 <router-link :to="`/admins/notices/input/${data.id}`">
-                    <span>{{ data.id }}</span>
+                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
                     <div><img :src="data.medias[0]?.imageurl" alt="미리 보기 이미지"></div>
                     <p>{{ data.description }}</p>
                     <time>
