@@ -151,7 +151,7 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .adminsPage .content-modal .infoArea{max-width: 600px;}
 .adminsPage .content-modal .infoArea strong{margin-bottom: 17.5px;}
 .adminsPage .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
+.adminsPage .content-modal :is(.alertArea, .confirmArea){max-width: 450px;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
 .adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}

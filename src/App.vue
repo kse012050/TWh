@@ -23,7 +23,7 @@ export default {
             element.style.setProperty('--styleIdx', idx);
           })
         })
-      },100)
+      },150)
     }
   },
   mounted() {

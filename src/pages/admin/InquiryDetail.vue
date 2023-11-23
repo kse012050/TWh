@@ -84,14 +84,15 @@
                             <li>
                                 <label for="">회신 여부</label>
                                 <div class="inquirystateArea">
-                                    {{
+                                    <!-- {{
                                         inquiryItem.inquirystate === '1' ? '읽지 않음' :
                                             (inquiryItem.inquirystate === '2' ? '회신 안함' :
                                                 '회신 완료')
-                                    }}
-                                    <!-- <select name="" id="">
-                                        <option value="">회신완료</option>
-                                    </select> -->
+                                    }} -->
+                                    <select name="inquirystate" id="inquirystate" v-model="inquirystateUpdate.inquirystate">
+                                        <option value="2">회신 안함</option>
+                                        <option value="3">회신 완료</option>
+                                    </select>
                                 </div>
                             </li>
                             <li>
@@ -104,8 +105,8 @@
                         </ul>
                         <input type="submit" value="저장" class="btn-black" @click.prevent="replysAdd">
                         <div class="content-btn">
-                            <button class="btn-border">삭제</button>
-                            <input type="submit" value="수정" class="btn-black" @click="onUpdate">
+                            <button class="btn-border" @click.prevent="onDelete">삭제</button>
+                            <input type="submit" value="수정" class="btn-black" @click.prevent="onUpdate">
                         </div>
                     </fieldset>
                 </form>
@@ -122,17 +123,35 @@
                 </ul>
             </div>
         </div>
+        <modal-confirm v-if="isModalConfirm" :isModal="isModalConfirm" @modalClose="modalClose" @modalConfirm="modalConfirm" :modalText="modalText"/>
+        <modal-alert v-if="isModalAlert" :isModal="isModalAlert" @modalClose="modalClose" :modalText="modalText"/>
     </section>
 </template>
 <script>
 import * as api from '../../api/api'
+import ModalAlert from '@/components/modal/ModalAlert.vue';
+import ModalConfirm from '@/components/modal/ModalConfirm.vue';
 
 export default {
-    name: 'InquiryInput',
+    name: 'InquiryDetail',
+    components: { 
+        ModalAlert,
+        ModalConfirm
+    },
     data(){
         return{
             id: this.$route.params.id,
             inquiryItem: {},
+            inquirystateUpdate: {
+                inquirystate: undefined
+            },
+            nextPagePath: '/admins/inquiry',
+            isModalAlert: false,
+            isModalConfirm: false,
+            modalText: {
+                title: '',
+                description: '',
+            }
         }
     },
     methods: {
@@ -146,6 +165,7 @@ export default {
                         arr.regymdt[0] = arr.regymdt[0].replaceAll('-','.')
                         arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
                     })
+                    this.inquirystateUpdate['inquirystate'] = result.inquiryItem['inquirystate']
                     
                 })
         },
@@ -163,27 +183,44 @@ export default {
                         document.querySelectorAll('.commentArea *').forEach((element)=>{
                             element.value = ''
                         })
-                        if(!this.inquiryItem.replys.length){
-                            const test = {};
-                            test['name'] = this.inquiryItem['name'];
-                            test['company'] = this.inquiryItem['company'];
-                            test['phonenum'] = this.inquiryItem['phonenum'];
-                            test['email'] = this.inquiryItem['email'];
-                            test['inquirystate'] = '3';
-                            api.admin('update', {type: 'inquiry/update', id: this.id, data: test})
-                                .then((result)=>{
-                                    if(result.statusCode === '200'){
-                                        this.detailData();
-                                    }
-                                })
-                        }else{
-                            this.detailData();
-                        }
+                        this.detailData();
                     }
                 })
         },
-        onUpdate(e){
-            e.preventDefault();
+        onDelete(){
+            this.modalText['title'] = '삭제';
+            this.modalText['description'] = '게시글을 삭제하시겠습니다?<br>즉시 홈페이지에서 삭제되며 복구할 수 없습니다.';
+            this.isModalConfirm = true;
+        },
+        onUpdate(){
+            this.inquirystateUpdate['name'] = this.inquiryItem['name'];
+            this.inquirystateUpdate['company'] = this.inquiryItem['company'];
+            this.inquirystateUpdate['phonenum'] = this.inquiryItem['phonenum'];
+            this.inquirystateUpdate['email'] = this.inquiryItem['email'];
+            api.admin('update', {type: 'inquiry/update', id: this.id, data: this.inquirystateUpdate})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.modalText['title'] = '저장';
+                        this.modalText['description'] = '변경사항이 저장되었습니다.';
+                        this.isModalAlert = true;
+                        this.detailData();
+                    }
+                })
+        },
+        modalClose(isMove){
+            this.isModalAlert = false;
+            this.isModalConfirm = false;
+            isMove && this.$router.push({path: this.nextPagePath})
+        },
+        modalConfirm(){
+            api.admin('delete', {type: 'inquiry', id: this.id})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.modalText['title'] = '삭제';
+                        this.modalText['description'] = '삭제가 완료되었습니다.';
+                        this.isModalAlert = true;
+                    }
+                })
         }
     },
     mounted(){
