@@ -359,7 +359,11 @@ export default {
         this.init();
         this.scrollEvent();
         document.querySelectorAll('input[required]').forEach((element)=>{
-            element.required && (this.inputsRequired[element.name] = '')
+            if(element.type === 'radio'){
+                this.inputsRequired[element.name] = element.checked;
+                return;
+            }
+            element.required && (this.inputsRequired[element.name] = '');
         })
     }
 }
