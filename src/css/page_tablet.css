@@ -143,15 +143,19 @@
 
 
 /* 게시판 - 상세 */
-.boardDetail :is(small, time){font-size: 13px;}
+.boardDetail :is(small, time){font-size: 16.5px;}
 .boardDetail small{margin-bottom: 17.5px;}
-.boardDetail h2{font-size: 26px; line-height: 1.2307; margin-bottom: 30px;}
+.boardDetail h2{font-size: 33px; line-height: 1.2307; margin-bottom: 35px;}
 .boardDetail time{margin-bottom: 25px;}
-.boardDetail div{padding-block: 40px;}
+.boardDetail div{padding-block: 50px;}
+.boardDetail div p{font-size: 18.5px; line-height: 1.6;}
+.boardDetail div ul{margin-top: 50px;}
+.boardDetail div a{font-size: 18.5px; line-height: 1.3333; margin-top: 90px;}
+.boardDetail > a{margin-top: 65px;}
 
 
 /* 사업 문의 */
-.inquiryPage h2{font-size: 30px; line-height: 1.2; margin-bottom: 60px;}
+.inquiryPage h2{font-size: 45px; line-height: 1.2; margin-bottom: 60px;}
 
 
 /* 관리자 - 로그인 페이지 */

@@ -40,8 +40,9 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 게시판 */
-ul.user-board li a{font-weight: 600;}
-ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250;}
+ul.user-board li a{display: block; font-weight: 600;}
+ul.user-board li a:not(:has(img))::before{content: ''; display: block; aspect-ratio: 380 / 250; background: url(https://placehold.co/600x400) no-repeat center / cover;}
+ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250; object-fit: cover;}
 ul.user-board li a small{display: block; color: #999;}
 ul.user-board li a p{color: #222;}
 

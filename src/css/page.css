@@ -167,7 +167,11 @@ header.white + .mainPage .fullPager{--color: white;}
 .boardDetail small{font-weight: 600;}
 .boardDetail h2{font-weight: 600;}
 .boardDetail div{border-width: 1px 0; border-style: solid; border-color: #222;}
-.boardDetail > a{margin-top: 80px;}
+.boardDetail div p{font-weight: 300;}
+.boardDetail div ul{gap: 0 2.8%; display: flex; flex-wrap: wrap;}
+.boardDetail div ul li{width: 31.4667%; aspect-ratio: 390 / 260;}
+.boardDetail div ul li img{width: 100%; height: 100%;}
+.boardDetail div a{color: #999; display: inline-block;}
 
 
 /* 사업 문의 */

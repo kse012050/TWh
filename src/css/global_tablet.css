@@ -28,6 +28,7 @@
 
 /* 게시판 */
 ul.user-board{display: flex;}
+ul.user-board li a:not(:has(img))::before{margin-bottom: 20px;}
 ul.user-board li a img{margin-bottom: 20px;}
 ul.user-board li a small{font-size: 16.5px; line-height: 1.384; margin-bottom: 15px;}
 ul.user-board li a p{font-size: 21px; line-height: 1.25;}

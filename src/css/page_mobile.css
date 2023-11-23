@@ -148,6 +148,15 @@
 .boardDetail h2{font-size: 26px; line-height: 1.2307; margin-bottom: 30px;}
 .boardDetail time{margin-bottom: 20px;}
 .boardDetail div{padding-block: 40px;}
+.boardDetail div p{font-size: 15px; line-height: 1.6;}
+.boardDetail div ul{margin-top: 40px;}
+@media screen and (width < 400px) {
+    .boardDetail div ul{flex-direction: column;}
+    .boardDetail div ul li{width: 100%;}
+    .boardDetail div ul li:not(:last-child){margin-bottom: 20px;}
+}
+.boardDetail div a{font-size: 15px; line-height: 1.3333; margin-top: 60px;}
+.boardDetail > a{margin-top: 50px;}
 
 
 /* 사업 문의 */

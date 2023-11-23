@@ -1,17 +1,52 @@
 <template>
-    <section class="boardDetail contentSize">
-        <small>보도자료</small>
-        <h2>전력중개사 ‘한화 신한 테라와트아워’ 출범…에너지·금융 전문성 결합</h2>
-        <time>2023.12.01</time>
+    <section class="boardDetail contentSize" v-if="boardItem.id">
+        <small>
+            {{
+                boardItem.type === "NEWS" ? '보도자료' : '인터뷰'
+            }}
+        </small>
+        <h2>{{ boardItem.title }}</h2>
+        <time>{{ boardItem.regymdt[0] }}</time>
         <div>
-            컨텐츠 내용
+            <p>{{ boardItem.description }}</p>
+            <ul v-if="boardItem.medias.length">
+                <li v-for="data in boardItem.medias" :key="data.id">
+                    <img :src="data.imageurl" alt="">
+                </li>
+            </ul>
+            <a v-if="boardItem.linkurl.trim()" :href="boardItem.linkurl">{{ boardItem.linkurl }}</a>
         </div>
-        <router-link to="board" class="btn-black">목록으로</router-link>
+        <router-link to="/board" class="btn-black">목록으로</router-link>
     </section>
 </template>
 <script>
+import * as api from '../api/api'
+
 export default {
     name: 'BoardDetail',
+    data(){
+        return{
+            id: this.$route.params.id,
+            boardItem: {},
+        }
+    },
+    methods: {
+        detail(){
+            api.user('detail',{type: 'board', id: this.id})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        console.log(result);
+                        this.boardItem = {...result.boardItem}
+                        this.boardItem.regymdt = this.boardItem.regymdt.split('T');
+                        this.boardItem.regymdt[0] = this.boardItem.regymdt[0].replaceAll('-','.')
+                        this.boardItem.regymdt[1] = this.boardItem.regymdt[1].replace('.000Z','')
+                    }
+                })
+        }
+    },
+    mounted(){
+        this.detail()
+    }
 }
 </script>
 <style>

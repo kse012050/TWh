@@ -1,5 +1,3 @@
-
-
 <template>
     <template v-for="(data, idx) in popupList" :key="data.id">
         <div v-if="isPopup[idx]" class="content-popup" @click.prevent="isPopup[idx] = false">
@@ -108,29 +106,21 @@
                 <div class="contentSize">
                     <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을<br class="mobile"> 확인해보세요.</h3>
                     <ul class="user-board">
-                        <li>
-                            <a href="#">
-                                <img src="../images/delete/board01.png" alt="">
-                                <small>보도자료</small>
-                                <p>재생에너지 전력거래 전문 합작법인‘한화 신한 테라와트아워’</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="../images/delete/board02.png" alt="">
-                                <small>인터뷰</small>
-                                <p>‘한화 신한 테라와트아워’ 고성훈 대표 고성훈 대표</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="../images/delete/board03.png" alt="">
-                                <small>보도자료</small>
-                                <p>한화컨버전스-신한자산 운용, 전문 합작법인 설립 협약</p>
-                            </a>
-                        </li>
+                        <template v-for="data in boardList" :key="data.id">
+                            <li>
+                                <router-link :to="`/boardDetail/${data.id}`">
+                                    <img v-if="data.medias.length" :src="data.medias[0].imageurl" alt="">
+                                    <small>
+                                        {{
+                                            data.type === "NEWS" ? '보도자료' : '인터뷰'
+                                        }}
+                                    </small>
+                                    <p>{{ data.title }}</p>
+                                </router-link>
+                            </li>
+                        </template>
                     </ul>
-                    <a href="#" class="arrow-black">게시판 보기<span></span></a>
+                    <router-link to="/board" class="arrow-black">게시판 보기<span></span></router-link>
                 </div>
             </div>
         </div>
@@ -147,7 +137,8 @@ export default {
         return{
             isFull: false,
             isPopup: [],
-            popupList: []
+            popupList: [],
+            boardList: []
         }
     },
     methods: {
@@ -163,6 +154,14 @@ export default {
                         })
                         console.log(this.popupList);
                         console.log(this.isPopup);
+                    }
+                })
+        },
+        board(){
+            api.user('list',{type: 'board'})
+                .then((result)=>{
+                    if(result.statusCode === '200'){
+                        this.boardList = [...result.list.splice(0, 3)];
                     }
                 })
         },
@@ -286,6 +285,7 @@ export default {
     },
     mounted() {
         this.popup();
+        this.board();
         this.fullPager();
         this.fullEvent(this.fullMoveEvent);
     },

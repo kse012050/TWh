@@ -313,6 +313,7 @@ export function admin(type, data){
 }
 
 
+// 유저 리스트
 function userListApi(type, method){
     return fetch(`${userListURL}${type}`, {
         method: method,
@@ -322,6 +323,19 @@ function userListApi(type, method){
         .catch(error => console.log('error', error));
 }
 
+
+// 유저 리스트 상세
+function userDetailApi(type, method){
+    return fetch(`${userListURL}${type}`, {
+        method: method,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+
+// 유저 문의하기
 function userInquiryApi(type, method, data){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -341,6 +355,11 @@ const userMap = {
         const method = 'GET';
         type = `${data['type']}`
         return userListApi(type, method)
+    },
+    detail(type, data){
+        const method = 'GET';
+        type = `${data['type']}/${data['id']}`
+        return userDetailApi(type, method)
     },
     inquiry(type, data){
         const method = 'POST';

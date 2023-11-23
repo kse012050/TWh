@@ -150,6 +150,10 @@
 .boardDetail h2{font-size: 40px; line-height: 54px; margin-bottom: 40px;}
 .boardDetail time{margin-bottom: 30px;}
 .boardDetail div{padding-block: 60px;}
+.boardDetail div p{font-size: 22px; line-height: 38px;}
+.boardDetail div ul{margin-top: 60px;}
+.boardDetail div a{font-size: 22px; line-height: 38px; margin-top: 120px;}
+.boardDetail > a{margin-top: 80px;}
 
 
 /* 사업 문의 */

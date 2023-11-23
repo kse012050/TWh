@@ -31,6 +31,7 @@ br.mobile{display: none;}
 /* 게시판 */
 ul.user-board{gap: 80px 4%; display: flex; flex-wrap: wrap;}
 ul.user-board li{width: 30.6666%;}
+ul.user-board li a:not(:has(img))::before{margin-bottom: 30px;}
 ul.user-board li a img{margin-bottom: 30px;}
 ul.user-board li a small{font-size: 20px; line-height: 20px; margin-bottom: 20px;}
 ul.user-board li a p{font-size: 26px; line-height: 38px;}
