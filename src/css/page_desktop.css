@@ -20,12 +20,13 @@
 .mainPage .solutionArea ul li:nth-child(1) div{margin-left: auto;}
 .mainPage .solutionArea ul li:nth-child(2) div{margin-right: auto;}
 .mainPage .solutionArea ul li div strong{font-size: 60px; line-height: 76px; margin-bottom: 40px;}
+.mainPage .solutionArea ul li:nth-child(2) div strong{min-height: 228px;}
 .mainPage .solutionArea ul li div p{font-size: 30px; line-height: 40px;}
 .mainPage .solutionArea ul li div a{margin-top: min(9.2592vh, 100px);}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage [class^="terra"][class*="Area"] > div > div{justify-content: flex-end;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 30px; line-height: 40px; margin-right: 145px; padding-top: min(9.2592vh, 100px);}
-.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 60px; line-height: 76px; margin-bottom: min(2.7778vh, 30px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 50px; line-height: 76px; margin-bottom: min(2.7778vh, 30px);}
 .mainPage [class^="terra"][class*="Area"] > div > div div{width: 380px; height: min(42.5925vh, 460px); padding: min(3.7037vh, 40px) 50px min(5.5555vh, 60px);}
 .mainPage [class^="terra"][class*="Area"] > div > div div:not(:last-of-type){margin-right: 60px;}
 .mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: min(9.2592vh, 100px);}

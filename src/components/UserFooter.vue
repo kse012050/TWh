@@ -9,7 +9,7 @@
                 <li><router-link to="">사업 문의</router-link></li>
             </ul>
             <div>
-                <button @click="isFamilySite = !isFamilySite">패밀리사이트+</button>
+                <button @click="isFamilySite = !isFamilySite">FAMILY SITE+</button>
                 <div :class="{active: isFamilySite}">
                     <ul title="제조/건설">
                         <li><a href="">(주)한화</a></li>
@@ -51,7 +51,7 @@
                 </dl>
                 <dl>
                     <dt>사업자 주소</dt>
-                    <dd>04541 서울시 중구 삼일대로 363 장교빌딩 1906호 </dd>
+                    <dd>04541 서울시 중구 삼일대로 363 장교빌딩 1107호</dd>
                 </dl>
                 <dl>
                     <dt>사업자 번호</dt>
@@ -75,7 +75,7 @@
                 </ul>
                 <ul>
                     <li><a href="">인스타그램 링크</a></li>
-                    <li><a href="">페이스북 링크</a></li>
+                    <!-- <li><a href="">페이스북 링크</a></li> -->
                 </ul>
             </div>
         </div>

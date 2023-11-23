@@ -23,7 +23,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .solutionArea ul li{display: flex; flex-direction: column; justify-content: center; align-items: center; background-position: center; background-size: cover; position: relative;}
 .mainPage .solutionArea ul li:nth-child(1){background-image: url(../images/main-listBG01.png);}
 .mainPage .solutionArea ul li:nth-child(2){background-image: url(../images/main-listBG02.png);}
-.mainPage .solutionArea ul li div strong{font-weight: 600; display: block;}
+.mainPage .solutionArea ul li div strong{font-weight: 600; display: flex; justify-content: center; align-items: center;}
 .mainPage .solutionArea ul li div p .font-hanwha{font-weight: 600;}
 .mainPage .solutionArea ul li div a{justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */

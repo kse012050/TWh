@@ -1,4 +1,4 @@
-input, textarea, select{outline: none;}
+:is(input, textarea, select):focus{outline: 1px solid black;}
 
 hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
@@ -14,7 +14,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 한화폰트 적용 */
-.font-hanwha{font-family: 'hanwha';}
+body [class*="Page"] .font-hanwha{font-family: 'hanwha';}
 
 
 /* 로고 */
@@ -201,6 +201,7 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li:last-child{margin-left: auto;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
 .userPage .goToTop{position: fixed; aspect-ratio: 1; background: url(../images/icon-goToTop.png) no-repeat center / cover; text-indent: -9999px; opacity: 0; pointer-events: none; transition: opacity 0.5s;}
 .userPage .goToTop.active{opacity: 1; pointer-events: all;}
@@ -251,7 +252,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .admin-board-list li a{height: 84px;}
 .admin-board-title{font-weight: 600; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
 .admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 300; text-align: center; display: block; content: attr(data-noneListText);}
-
+.admin-board-list:not(:has(li)) ~ .admin-board-pager{display: none;}
 
 /* 관리자 게시판 페이저 */
 .admin-board-pager{--gap: 10px; margin-top: 60px; display: flex; justify-content: center; gap: var(--gap);}

@@ -14,10 +14,17 @@
     </div>
 </template>
 <script>
+import { globalStyle } from '../../css/style.js'
+
 export default {
     name: 'AdminRoot',
     mounted() {
         !sessionStorage.getItem('token') && this.$router.push({path: '/admin'})
+        globalStyle();
+    },
+    updated(){
+        console.log('이건?');
+        globalStyle();
     }
 }
 </script>

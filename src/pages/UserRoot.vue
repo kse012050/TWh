@@ -6,6 +6,7 @@
   </div>
 </template>
 <script>
+import { globalStyle, userStyle, userResize } from '../css/style.js'
 import UserHeader from "@/components/UserHeader.vue";
 import UserFooter from '@/components/UserFooter.vue';
 
@@ -48,20 +49,21 @@ export default {
         })
       },0)
     },
-    hanshwFontSize(){
-      document.querySelectorAll('.font-hanwha').forEach((element)=>{
-        element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px')
-      })
-    }
+    
   },
   mounted() {
     this.aniIdx();
-    this.hanshwFontSize();
+    globalStyle();
+    userStyle();
+    userResize();
+  },
+  updated(){
+    globalStyle();
+    userStyle();
   },
   watch: {
     '$route' () {
       this.aniIdx();
-      this.hanshwFontSize();
     }
   }
 }

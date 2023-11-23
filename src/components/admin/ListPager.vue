@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-board-pager" data-styleIdx="a" v-if="lastPage">
+    <div class="admin-board-pager" data-styleIdx="a">
         <router-link :to="`/admins/${pageName}/1${type}`">첫 페이지</router-link>
         <router-link :to="`/admins/${pageName}/${page === 1 ? 1 : Number(page) - 1}${type}`">이전 페이지</router-link>
         <ol>

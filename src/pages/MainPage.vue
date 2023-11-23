@@ -33,7 +33,7 @@
                             복잡한 RE100 이행,<br>
                             <span class="font-hanwha">테라와트아워</span>로 쉬워집니다.
                         </p>
-                        <a href="#" class="arrow-white">자세히 보기<span></span></a>
+                        <router-link to="/solution" class="arrow-white">자세히 보기<span></span></router-link>
                     </div>
                 </li>
                 <li>
@@ -46,7 +46,7 @@
                             업계 최고 수준의<br>
                             발전소 매입 조건을 제안합니다.
                         </p>
-                        <a href="#" class="arrow-white">자세히 보기<span></span></a>
+                        <router-link to="/recruit" class="arrow-white">자세히 보기<span></span></router-link>
                     </div>
                 </li>
             </ul>
@@ -99,7 +99,7 @@
                 <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br class="mobile">
                 성장하겠습니다.
             </p>
-            <a href="#" class="arrow-white">기업 소개 보기 <span></span></a>
+            <router-link to="/company" class="arrow-white">기업 소개 보기 <span></span></router-link>
         </div>
         <div class="boardArea" data-full>
             <div>
@@ -146,14 +146,11 @@ export default {
             api.user('list',{type: 'notice'})
                 .then((result)=>{
                     if(result.statusCode === '200'){
-                        console.log(result);
                         this.popupList = [...result.list]
                         this.popupList = this.popupList.filter((value)=> value.medias.length !== 0);
                         this.popupList.forEach(()=>{
                             this.isPopup.push(true);
                         })
-                        console.log(this.popupList);
-                        console.log(this.isPopup);
                     }
                 })
         },
