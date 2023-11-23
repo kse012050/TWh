@@ -77,7 +77,7 @@
                 <dt>*직접PPA</dt>
                 <dd>
                     재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
-                    재생에너지 전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
+                    재생에너지전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
                 </dd>
             </dl>
         </div>
@@ -91,7 +91,7 @@
             <ul data-styleIdx>
                 <li>
                     <span>설비 용량</span>
-                    <b>100kW 이상</b>
+                    <b>300kW 이상</b>
                     <small>*단일 발전소 기준</small>
                 </li>
                 <li>
@@ -194,6 +194,8 @@
                 </li>
             </ul>
         </div>
+
+        <hr class="case01">
 
         <div class="contentSize-padding">
             <p>

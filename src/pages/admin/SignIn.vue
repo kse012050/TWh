@@ -17,28 +17,35 @@
                     <input type="submit" value="로그인" @click="onSubmit">
                 </fieldset>
             </form>
-            <modal-alert v-if="isModal" :isModal="isModal" @modalClose="modalClose" :modalText="modalText"/>
+            <div class="content-modal" v-if="isModal" @click="modalClose">
+                <div class="alertArea" @click.stop>
+                    <strong>알림</strong>
+                    <p>
+                        ID/PW를 확인하세요.<br>
+                        문제가 지속되는 경우 개발사에 문의하세요.
+                    </p>
+                    <dl>
+                        <dt>개발사 연락처</dt>
+                        <dd>
+                            <a href="tel:+8201082103442">(주)1985<br> 010.8210.3442 장혜령(PM)</a>
+                        </dd>
+                    </dl>
+                    <button class="close" @click.prevent="modalClose">모달 닫기</button>
+                </div>
+            </div>
         </section>
     </div>
 </template>
 <script>
 import * as api from '../../api/api'
-import ModalAlert from '@/components/modal/ModalAlert.vue';
 
 export default {
     name: 'SignIn',
-    components: { 
-        ModalAlert
-    },
     data(){
         return{
             inputsRequired: {},
             nextPagePath: '/admins/notices',
-            isModal: false,
-            modalText: {
-                title: '',
-                description: '',
-            }
+            isModal: false
         }
     },
     methods: {
@@ -52,8 +59,6 @@ export default {
                             sessionStorage.setItem('adminName', result.username)
                             this.$router.push({path: this.nextPagePath})
                         }else{
-                            this.modalText['title'] = '알림'
-                            this.modalText['description'] = 'ID/PW를 확인하세요.<br>문제가 지속되는 경우 개발사에 문의하세요<br><br> 개발사: <a href="tel:+8201082103442">(주)1985 010.8210.3442 장혜령(PM)</a>' 
                             this.isModal = true
                             api.dataInit(this.inputsRequired)
                         }

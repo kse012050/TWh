@@ -54,6 +54,7 @@
 .companyPage .historyArea strong{font-size: 38px; line-height: 1.307; margin-bottom: 60px;}
 .companyPage .historyArea ol::before{font-size: 45px; line-height: 1.2; margin-bottom: 40px; display: block;}
 .companyPage .historyArea ol li{font-size: 21px; --lineHeight: 26.5px;}
+.companyPage .historyArea ol li::before{width: 7px; margin-right: 9px;}
 .companyPage .historyArea ol li:not(:last-child){padding-bottom: 45px;}
 .companyPage .historyArea ol li small{font-size: 19px; margin-right: 30px;}
 .companyPage .bottomArea::before{content: ''; display: block; max-width: 300px; margin: 0 auto 30px;}
@@ -110,11 +111,11 @@
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 45px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 20px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
-.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 20px; height: 305px;}
-.recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 205px;}
-.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 18px; line-height: 1.2857; margin-bottom: 20px;}
-.recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 20.5px; line-height: 1.333; margin-bottom: 11px;}
-.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 16.5px; line-height: 1.3846;}
+.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 25px; padding: 30px var(--spacing); height: 350px;}
+.recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 228px;}
+.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 18px; line-height: 1.2857; margin-bottom: 15px;}
+.recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 21.5px; line-height: 1.352; margin-bottom: 11px;}
+.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 14px; line-height: 1.3333;}
 .recruitPage [class*="condition"][class*="Area"] ul li::after{width: 143.5px;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 23px; line-height: 1.5; margin-top: 60px;}
 .recruitPage .condition02Area strong{margin-bottom: 25px;}

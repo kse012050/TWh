@@ -64,6 +64,7 @@
 .companyPage .historyArea ol::before{font-size: 60px; line-height: 72px; position: absolute; left: 0; top: 0;}
 .companyPage .historyArea ol li{width: 980px; font-size: 26px; --lineHeight: 31px;}
 .companyPage .historyArea ol li:first-child{margin-top: 12px;}
+.companyPage .historyArea ol li::before{width: 8px; margin-right: 12px;}
 .companyPage .historyArea ol li:not(:last-child){padding-bottom: 60px;}
 .companyPage .historyArea ol li small{font-size: 24px; margin-right: 40px;}
 .companyPage .bottomArea::before{content: ''; display: block; max-width: 660px; margin: 0 auto 60px;}
@@ -114,10 +115,10 @@
 .recruitPage .content-img .box-img{aspect-ratio: 1240 / 639.33; background-image: url(../images/recruit-RE100-PC.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 60px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 30px;}
-.recruitPage [class*="condition"][class*="Area"] ul li{--spacing: 30px; height: 370px; flex: 1;}
-.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 22px; line-height: 30px; margin-bottom: 30px;}
+.recruitPage [class*="condition"][class*="Area"] ul li{--spacing: 30px; padding: 40px var(--spacing); height: 370px; flex: 1;}
+.recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 22px; line-height: 30px; margin-bottom: 20px;}
 .recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 26px; line-height: 36px; margin-bottom: 12px;}
-.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 20px; line-height: 26px;}
+.recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 16px; line-height: 26px;}
 .recruitPage [class*="condition"][class*="Area"] ul li::after{width: 170px;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 30px; line-height: 42px; margin-top: 80px;}
 .recruitPage .condition02Area strong{margin-bottom: 30px;}
@@ -128,7 +129,7 @@
 .recruitPage .textArea li::before,
 .recruitPage .textArea li::after{--height: 24px; transform: translateY(-17px);}
 .recruitPage .simplifyArea > p{margin-bottom: 100px;}
-.recruitPage .simplifyArea ul{display: flex; justify-content: space-between;}
+.recruitPage .simplifyArea ul{max-width: 1170px; margin-inline: auto; display: flex; justify-content: space-between;}
 .recruitPage .simplifyArea ul::before{width: 30px;}
 .recruitPage .simplifyArea ul li{width: 41.9354%; min-width: 520px;}
 .recruitPage .simplifyArea ul li b{font-size: 30px; line-height: 38px; margin-bottom: 20px;}

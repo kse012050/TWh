@@ -92,18 +92,18 @@ b.case01{padding: 9px 25px; font-size: 19.5px; line-height: 1.2;}
 
 
 /* 모달 */
-.content-modal > div{--paddingBlock: 35px; --paddingInline: 25px;}
-.content-modal > div strong{font-size: 21px; line-height: 1.375;}
-.content-modal > div .close{width: 26px;}
-.content-modal .infoArea{max-width: 600px;}
-.content-modal .infoArea strong{margin-bottom: 17.5px;}
-.content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
-.content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
-.content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
-.content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
-.content-popup a button{right: calc((var(--width) + 15px) * -1); top: 0;}
+.userPage .content-modal > div{--paddingBlock: 35px; --paddingInline: 25px;}
+.userPage .content-modal > div strong{font-size: 21px; line-height: 1.375;}
+.userPage .content-modal > div .close{width: 26px;}
+.userPage .content-modal .infoArea{max-width: 600px;}
+.userPage .content-modal .infoArea strong{margin-bottom: 17.5px;}
+.userPage .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
+.userPage .content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
+.userPage .content-popup a button{right: calc((var(--width) + 15px) * -1); top: 0;}
 
 
 /* 유저 해더 */

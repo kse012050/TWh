@@ -146,17 +146,20 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .content-modal :is(.alertArea, .confirmArea) .btnArea button{aspect-ratio: 90 / 60;}
 .content-modal :is(.alertArea, .confirmArea) .btnArea button.black{background-color: #222; color: white;}
 .content-modal :is(.alertArea, .confirmArea) .btnArea button.border{border: 1px solid#222;}
-.adminsPage .content-modal > div{--paddingBlock: 35px; --paddingInline: 25px;}
-.adminsPage .content-modal > div strong{font-size: 21px; line-height: 1.375;}
-.adminsPage .content-modal > div .close{width: 26px;}
-.adminsPage .content-modal .infoArea{max-width: 600px;}
-.adminsPage .content-modal .infoArea strong{margin-bottom: 17.5px;}
-.adminsPage .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea){max-width: 450px;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
-.adminsPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
+:is(.adminPage, .adminsPage) .content-modal > div{--paddingBlock: 30px; --paddingInline: 30px;}
+:is(.adminPage, .adminsPage) .content-modal > div strong{font-size: 20px; line-height: 35px;}
+:is(.adminPage, .adminsPage) .content-modal > div .close{width: 30px;}
+/* :is(.adminPage, .adminsPage) .content-modal .infoArea{max-width: 600px;}
+:is(.adminPage, .adminsPage) .content-modal .infoArea strong{margin-bottom: 17.5px;}
+:is(.adminPage, .adminsPage) .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;} */
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 20px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) p{font-size: 15px; line-height: 22px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 35px; gap: 10px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 75px; font-size: 16px;}
+.adminPage .content-modal .alertArea dl{font-size: 13px; line-height: 18px; margin-top: 20px;}
+.adminPage .content-modal .alertArea dl dt{font-weight: 600; margin-bottom: 6px;}
+.adminPage .content-modal .alertArea dl dd{font-weight: 300;}
 .content-popup a{--width: 30px; max-width: 598px; width: calc(100% - (var(--spacing) * 2) - (var(--width) * 2)); aspect-ratio: 598 / 418; position: relative;}
 .content-popup a img{width: 100%; height: 100%; object-fit: cover;}
 .content-popup a button{position: absolute; width: var(--width); aspect-ratio: 1; background: url(../images/icon-close-white.png) no-repeat center / cover; text-indent: -9999px;}
@@ -281,7 +284,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .admin-input ul li > div:has(input[type="file"]) > *{width: 180px; height: 120px;}
 .admin-input ul li > div:has(input[type="file"]) label{border: 2px dotted #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
 .admin-input ul li > div:has(input[type="file"]) div{position: relative;}
-.admin-input ul li > div:has(input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover;}
+.admin-input ul li > div:has(input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover; border: 1px solid #F1F1F1; box-sizing: border-box;}
 .admin-input ul li > div:has(input[type="file"]) div button.delete{position: absolute; right: 0; top: 0; transform: translate(50%, -50%);}
 .admin-input ul li > div:has(input[type="url"]){position: relative;}
 .admin-input ul li > div:has(input[type="url"]) input[type="url"]{padding-right: 52px;}

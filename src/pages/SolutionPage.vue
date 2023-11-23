@@ -78,7 +78,7 @@
                     </strong>
                     <p>
                         직접 PPA<br>
-                        제3자 간 PPA<br>
+                        제3자간 PPA<br>
                         V.PPA
                     </p>
                 </li>
@@ -115,13 +115,13 @@
                 <dt>*직접PPA</dt>
                 <dd>
                     재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
-                    재생에너지 전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
+                    재생에너지전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
                 </dd>
             </dl>
         </div>
         
         <div class="PPA02Area content-img contentSize-padding">
-            <strong>제3 자간 PPA</strong>
+            <strong>제3자간 PPA</strong>
             <p>
                 발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
                 각각 계약을 체결하는 방식
@@ -245,7 +245,7 @@
                                 <input type="checkbox" id="implementplan-PPA" name="implementplan" value="PPA" @input="onChange">
                                 <label for="implementplan-PPA">직접 PPA</label>
                                 <input type="checkbox" id="implementplan-REC" name="implementplan" value="REC구매" @input="onChange">
-                                <label for="implementplan-REC">제3자 간 PPA</label>
+                                <label for="implementplan-REC">제3자간 PPA</label>
                                 <input type="checkbox" id="implementplan-sunlight" name="implementplan" value="자가소비형 태양광 구축" @input="onChange">
                                 <label for="implementplan-sunlight">V.PPA</label>
                                 <input type="checkbox" id="implementplan-inquiry" name="implementplan" value="종합솔류션 문의" @input="onChange">
@@ -257,7 +257,7 @@
                             <div data-unit="GWh">
                                 <input type="text" id="annualusage" name="annualusage" placeholder="연간 전력사용량을 작성하세요." @input="onChange" data-formet="number">
                             </div>
-                            <small>다수의 사업장이 있을 경우 각 사업장 별 연간 전력 사용량을 내용에 적어주세요.</small>
+                            <small>다수의 사업장이 있을 경우, 각 사업장 별 연간 전력 사용량을 하단 상세 내용에 적어주세요.</small>
                         </li>
                         <li>
                             <label for="content">상세 내용</label>
