@@ -11,31 +11,21 @@
             </div>
         </div>
         <div class="VPPArea contentSize-padding">
-            <!-- css도 제거해야 한다 -->
-            <!-- <p>
-                에너지를 생산하는<br class="mobile"> 발전사업자와<br>
-                소비하는 기업을 연결하는<br>
-                <b>국내 최대의 전력거래<br class="mobile"> 플랫폼</b>으로<br>
-                자리매김 하겠습니다.
-            </p> -->
             <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
-        <div class="missionArea contentSize-padding">
-            <b>사명</b>
-            <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
-            <!-- css 삭제? -->
-            <!-- <p>
-                안정적이고 전문적인 재생에너지 전력거래로<br>
-                지속가능한 내일을 만들어갑니다.
-            </p> -->
-        </div>
-        <div class="visionArea contentSize-padding">
-            <b>비전</b>
-            <strong>
-                Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
-            </strong>
-            <!-- css 삭제? -->
-            <!-- <p>분산에너지 중심의<br class="mobile"> 에너지 패러다임 전환을 선도하겠습니다.</p> -->
+        <div class="ani-fixed" data-styleIdx>
+            <div class="missionArea contentSize-padding" data-textAniParents="0" data-aniDelay="4" data-aniType="basic">
+                <b>사명</b>
+                <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
+            </div>
+            <div>
+                <div class="visionArea contentSize-padding" data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
+                    <b>비전</b>
+                    <strong>
+                        Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
+                    </strong>
+                </div>
+            </div>
         </div>
         <div class="peopleArea contentSize-padding">
             <strong>
@@ -122,7 +112,7 @@ export default {
             })
         },
         scrollEvent() {
-            const topElement = this.topElement;
+            const topElement = this.topElement;   
             const topContents = this.topContents;
             const headerElement = document.querySelector('header');
             topElement.style.setProperty('--totalContent', topContents.length);
@@ -142,6 +132,20 @@ export default {
                     topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 100) + 'px');
                 }
             })
+
+            
+            const aniFixed = document.querySelector('.ani-fixed');
+            const aniFixedChildren = document.querySelectorAll('.ani-fixed > *');
+            window.addEventListener('scroll', ()=>{
+                const scrollTop = window.scrollY;
+                aniFixedChildren.forEach((childrenElement, idx)=>{
+                    if(scrollTop > childrenElement.offsetHeight * idx + aniFixed.offsetTop){
+                        aniFixedChildren[idx].classList.add('active');
+                    }else{
+                        aniFixedChildren[idx].classList.remove('active');
+                    }
+                })
+            })
         }
     },
     mounted() {
@@ -156,4 +160,10 @@ export default {
     .companyPage .topArea > div:nth-of-type(2)[data-aniType="basic"].active:has( + .active){transform: translateY(0); opacity: 0; transition-delay: var(--aniDelay); pointer-events: none;}
     .companyPage .topArea > div:nth-of-type(3){transform: translateX(100%);}
     .companyPage .topArea > div:nth-of-type(3).active{transform: translateX(0);} */
+
+    /* 픽스드 애니메이션 */
+    .companyPage .ani-fixed{/* overflow: hidden; */}
+    .companyPage .ani-fixed > *:nth-child(2){overflow: hidden;}
+    .companyPage .ani-fixed > *:nth-child(2) > div{transform: translateX(100%); transition: transform .6s ease-in-out;}
+    .companyPage .ani-fixed > *:nth-child(2).active > div{transform: translateX(0);}
 </style>

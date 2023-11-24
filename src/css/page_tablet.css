@@ -38,11 +38,9 @@
 /* 기업 소개 페이지 */
 .companyPage .topArea > div strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px;}
 .companyPage .topArea > div p{font-size: 30px; line-height: 1.3;}
-.companyPage .VPPArea p{font-size: 38px; line-height: 1.307; margin-bottom: 80px;}
 .companyPage .VPPArea .box-img{aspect-ratio: 360 / 755; background-image: url(../images/company-VVPImg-M.png);}
 .companyPage :is(.missionArea, .visionArea) b{font-size: 24px; line-height: 1.667; margin-bottom: 30px;}
-.companyPage :is(.missionArea, .visionArea) strong{font-size: 52px; line-height: 1.176; margin-bottom: 45px;}
-.companyPage :is(.missionArea, .visionArea) p{font-size: 21px; line-height: 1.375;}
+.companyPage :is(.missionArea, .visionArea) strong{font-size: 52px; line-height: 1.176;}
 .companyPage .peopleArea strong{font-size: 26px; line-height: 1.307; margin-bottom: 80px;}
 .companyPage .peopleArea ul{gap: 80px 20px;}
 .companyPage .peopleArea ul li img{margin-bottom: 37.5px;}
