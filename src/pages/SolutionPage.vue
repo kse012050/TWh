@@ -145,20 +145,21 @@
                 </div>
                 <div class="box-img">제3자 PPA 이미지</div>
             </div>
+
+            <div class="PPA03Area content-img contentSize-padding">
+                <strong class="subTitle">V.PPA</strong>
+                <p class="subTItle2">
+                    전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
+                    도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
+                </p>
+                <div>
+                    <b>#RE100 단기 이행이 필요한 기업</b>
+                    <b>#안정적인 REC 조달을 희망하는 기업</b>
+                </div>
+                <div class="box-img">PPA 이미지</div>
+            </diV>
         </div>
         
-        <div class="PPA03Area content-img contentSize-padding">
-            <strong class="subTitle">V.PPA</strong>
-            <p class="subTItle2">
-                전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
-                도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
-            </p>
-            <div>
-                <b>#RE100 단기 이행이 필요한 기업</b>
-                <b>#안정적인 REC 조달을 희망하는 기업</b>
-            </div>
-            <div class="box-img">PPA 이미지</div>
-        </diV>
 
         <div class="ani-sticky" data-styleIdx data-scroll>
             <div class="expertArea contentSize-padding">
@@ -333,7 +334,6 @@ export default {
             const headerElementHeight = document.querySelector('header').offsetHeight;
             const PPAElement = document.querySelectorAll('.PPA01Area, .PPA02Area, .PPA03Area');
             PPAElement.forEach((element, idx)=>{
-                // console.log(element.parentNode.classList.contains('PPAArea'));
                 const test = element.parentNode.classList.contains('PPAArea') ? document.querySelector('.PPAArea').offsetTop : 0;
                 if(scrollTop > element.offsetTop - tabElementHeight - headerElementHeight + test - 10){
                     tabListElement.forEach((tabList)=>{
@@ -344,6 +344,9 @@ export default {
                     tabListElement.item(idx).classList.remove('active');
                 }
             })
+            if(scrollTop < document.querySelector('.PPAArea').offsetTop){
+                tabListElement.item(0).classList.add('active');
+            }
         },
         tabClick(){
             const tabElementHeight = document.querySelector('.PPAArea > .tab-btn').offsetHeight;

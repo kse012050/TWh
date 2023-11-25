@@ -92,7 +92,7 @@ ul.user-board li a p{color: #222;}
 
 [data-subTopAni] .ani-fixed{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight)); position: relative; z-index: 1;}
 [data-subTopAni] .ani-fixed > *{left: 0; top: calc(var(--headerHeight)); width: 100%; z-index: -1;}
-[data-subTopAni] .ani-fixed > *:first-child{position: sticky;}
+[data-subTopAni] .ani-fixed::before{position: sticky;}
 [data-subTopAni] .ani-fixed > *:not(:first-child){position: fixed;}
 
 [data-subTopAni] .ani-sticky{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight));}

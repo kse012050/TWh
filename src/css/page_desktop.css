@@ -87,11 +87,15 @@
 .solutionPage .topArea div:nth-of-type(3) ul li p{--fontSize: 30px; line-height: 42px;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-bottom: 40px;}
 .solutionPage .content-process ul li p{font-size: 22px; line-height: 30px; margin-top: 30px;}
+.solutionPage .PPAArea{padding-block: 100px;}
+.solutionPage .PPAArea > .tab-btn{gap: 60px;}
+.solutionPage .PPAArea > .tab-btn li button{font-size: 26px; line-height: 80px;}
+.solutionPage .PPAArea > .tab-btn li button.active::after{height: 5px;}
 .solutionPage .PPA01Area{padding-block: 80px 150px;}
 .solutionPage .PPA01Area .box-img{aspect-ratio: 1240 / 805; background-image: url(../images/solution-PPAImg01-PC.png);}
-.solutionPage .PPA02Area{padding-block: 150px 220px;}
+.solutionPage .PPA02Area{padding-block: 150px 150px;}
 .solutionPage .PPA02Area .box-img{aspect-ratio: 1240 / 703; background-image: url(../images/solution-PPAImg02-PC.png);}
-.solutionPage .PPA03Area{padding-block: 80px 160px;}
+.solutionPage .PPA03Area{padding-block: 150px 60px;}
 .solutionPage .PPA03Area .box-img{aspect-ratio: 1240 / 703; background-image: url(../images/solution-PPAImg03-PC.png);}
 .solutionPage .content-img p{margin-bottom: 40px;}
 .solutionPage .content-img div:not([class]){max-width: 555px; gap: 15px; margin-bottom: 80px;}

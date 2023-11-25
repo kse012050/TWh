@@ -13,7 +13,7 @@
         <div class="VPPArea contentSize-padding">
             <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
-        <div class="ani-fixed" data-styleIdx>
+        <div class="fixedArea ani-fixed" data-styleIdx>
             <div class="missionArea contentSize-padding" data-textAniParents="0" data-aniType="basic">
                 <b>사명</b>
                 <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
@@ -163,7 +163,11 @@ export default {
 
     /* 픽스드 애니메이션 */
     .companyPage .ani-fixed{/* overflow: hidden; */}
-    .companyPage .ani-fixed > *:nth-child(2){overflow: hidden;}
+    .companyPage .ani-fixed > *:nth-child(1){pointer-events: none;}
+    .companyPage .ani-fixed > *:nth-child(1).active{pointer-events: all; transition: opacity 0.3s 0.3s ease-in-out;;}
+    .companyPage .ani-fixed > *:nth-child(1).active:has( + .active){opacity: 0;}
+    .companyPage .ani-fixed > *:nth-child(2){overflow: hidden; pointer-events: none;}
     .companyPage .ani-fixed > *:nth-child(2) > div{transform: translateX(100%); transition: transform .6s ease-in-out;}
+    .companyPage .ani-fixed > *:nth-child(2).active{pointer-events: all;}
     .companyPage .ani-fixed > *:nth-child(2).active > div{transform: translateX(0);}
 </style>

@@ -1,7 +1,7 @@
 <template>
     <template v-for="(data, idx) in popupList" :key="data.id">
         <div v-if="isPopup[idx]" class="content-popup" @click.prevent="isPopup[idx] = false">
-            <a href="" @click.stop>
+            <a :href="data.linkurl" @click.stop>
                 <img :src="data.medias[0].imageurl" alt="팝업 이미지">
                 <button @click.prevent="isPopup[idx] = false">팝업 닫기</button>
             </a>
@@ -285,7 +285,7 @@ export default {
             })
             setTimeout(()=>{
                 this.fullSelectors[idx].removeAttribute('style');
-            }, 1000)
+            }, 1500)
         },
         goToTop(){
             document.querySelector('header').classList.add('white');

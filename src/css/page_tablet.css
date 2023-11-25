@@ -77,9 +77,16 @@
 .solutionPage .content-process ul li{display: flex;  align-items: center;}
 .solutionPage .content-process ul li strong{flex: 1; flex-shrink: 0;}
 .solutionPage .content-process ul li p{font-size: 18px; line-height: 1.571; margin-left: 25px; text-align: left;}
+.solutionPage .PPAArea{padding-block: 70px;}
+.solutionPage .PPAArea > .tab-btn{gap: 50px;}
+.solutionPage .PPAArea > .tab-btn li button{font-size: 21px; line-height: 67px;}
+.solutionPage .PPAArea > .tab-btn li button.active::after{height: 4px;}
 .solutionPage :is(.PPA01Area, .PPA02Area, .PPA03Area) .box-img{aspect-ratio: 360 / 778;}
+.solutionPage .PPA01Area{padding-block: 60px 110px;}
 .solutionPage .PPA01Area .box-img{background-image: url(../images/solution-PPAImg01-M.png);}
+.solutionPage .PPA02Area{padding-block: 110px 110px;}
 .solutionPage .PPA02Area .box-img{background-image: url(../images/solution-PPAImg02-M.png);}
+.solutionPage .PPA03Area{padding-block: 110px 60px;}
 .solutionPage .PPA03Area .box-img{background-image: url(../images/solution-PPAImg03-M.png);}
 .solutionPage .content-img p{margin-bottom: 35px;}
 .solutionPage .content-img div:not([class]){max-width: 445px; gap: 10px; margin-bottom: 65px;}

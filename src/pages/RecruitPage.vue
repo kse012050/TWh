@@ -172,11 +172,11 @@
                         </b>
                     </li>
                 </ul>
-                <p data-textAni="3">
+              <!--   <p data-textAni="3">
                     사업 부지부터 운영 중인 발전소까지<br class="mobile"> <b>다양한 형태의 자산</b><br>
                     신속한 사업 검토와 <b>자금 투입</b><br>
                     유연한 대금 <b>지급 조건 협의</b>
-                </p>
+                </p> -->
             </div>
         </div>
 
