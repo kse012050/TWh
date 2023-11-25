@@ -108,7 +108,7 @@
 .recruitPage .productArea > strong{margin-bottom: 80px;}
 .recruitPage .productArea ul{gap: 6.4516%; display: flex;}
 .recruitPage .productArea ul li{flex: 1; aspect-ratio: 580 / 680; background-image: url(../images/recruit-productBG-PC.png);}
-.recruitPage .productArea ul li:nth-child(2){transform: translateY(-17.5%);}
+.recruitPage .productArea ul li:nth-child(2){translate: 0 -17.5%;}
 .recruitPage .productArea ul li strong{font-size: 40px; line-height: 48px; margin-bottom: 30px;}
 .recruitPage .productArea ul li p{font-size: 24px; line-height: 34px;}
 .recruitPage .content-img p{margin-bottom: 80px;}

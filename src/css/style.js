@@ -52,3 +52,23 @@ export function userResize(){
         hanshwFontSize();
     });
 }
+
+export function scrollPositionAdd(){
+    window.addEventListener('scroll', scrollPosition)
+}
+
+export function scrollPosition(){
+    const scrollTop = window.scrollY;
+    const headerElementHeight = document.querySelector('header').offsetHeight;
+    document.querySelectorAll('[data-scroll]').forEach((element)=>{
+        if(scrollTop > element.offsetTop - headerElementHeight){
+            element.classList.add('active');
+        }else{
+            element.classList.remove('active');
+        }
+    })
+}
+
+export function scrollPositionRemove(){
+    window.removeEventListener('scroll', scrollPosition)
+}

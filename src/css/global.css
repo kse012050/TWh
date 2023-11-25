@@ -56,9 +56,11 @@ ul.user-board li a p{color: #222;}
 .active [data-bCaseAni] > span{transform: translateY(0); transition-delay: var(--aniDelay);}
 [data-processAni] li{opacity: 0; transform: translateY(100%); transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
 .active [data-processAni] li{opacity: 1; transform: translateY(0); transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
-.expertArea{overflow: hidden;}
+[data-rightToleft]{overflow: hidden;}
 [data-rightToleft] li{transform: translateX(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
 .active [data-rightToleft] li{transform: translateX(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
+[data-bottomToTop] li{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
+.active [data-bottomToTop] li{transform: translateX(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */

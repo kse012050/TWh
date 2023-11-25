@@ -264,6 +264,7 @@
 import * as api from '../api/api'
 import InquiryAgree from '@/components/InquiryAgree.vue';
 import ModalAlert from '@/components/modal/ModalAlert.vue';
+import { scrollPositionAdd, scrollPositionRemove } from '../css/style.js'
 
 export default {
     name: 'SolutionPage',
@@ -321,17 +322,7 @@ export default {
                 }
             })
 
-            window.addEventListener('scroll', ()=>{
-                const scrollTop = window.scrollY;
-                const headerElementHeight = headerElement.offsetHeight;
-                document.querySelectorAll('[data-scroll]').forEach((element)=>{
-                    if(scrollTop > element.offsetTop - headerElementHeight){
-                        element.classList.add('active');
-                    }else{
-                        element.classList.remove('active');
-                    }
-                })
-            })
+            
 
             window.addEventListener('scroll', this.test)
         },
@@ -393,6 +384,7 @@ export default {
         this.init();
         this.scrollEvent();
         this.tabClick();
+        scrollPositionAdd();
         document.querySelectorAll('input[required]').forEach((element)=>{
             element.required && (this.inputsRequired[element.name] = '')
         })
@@ -400,6 +392,7 @@ export default {
         
     },
     beforeUnmount(){
+        scrollPositionRemove();
         window.removeEventListener('scroll',this.test)
     }
 }

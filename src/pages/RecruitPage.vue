@@ -16,54 +16,60 @@
             </div>
         </div>
 
-        <div class="productArea contentSize-padding">
-            <strong class="subTitle">주요 상품 소개</strong>
-            <ul data-styleIdx>
-                <li>
-                    <strong>RE100 장기고정계약</strong>
-                    <p>
-                        RPS 장기고정계약 대비<br>
-                        경쟁력 있는 계약 조건
-                    </p>
-                </li>
-                <li>
-                    <strong>발전소 매입</strong>
-                    <p>
-                        토지부터 운영 중인 발전소까지<br>
-                        다양한 형태의 자산 매입
-                    </p>
-                </li>
-            </ul>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="productArea contentSize-padding">
+                <strong class="subTitle" data-textAni="0">주요 상품 소개</strong>
+                <ul data-styleIdx data-bottomToTop data-aniDelay="4">
+                    <li>
+                        <strong>RE100 장기고정계약</strong>
+                        <p>
+                            RPS 장기고정계약 대비<br>
+                            경쟁력 있는 계약 조건
+                        </p>
+                    </li>
+                    <li>
+                        <strong>발전소 매입</strong>
+                        <p>
+                            토지부터 운영 중인 발전소까지<br>
+                            다양한 형태의 자산 매입
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="content-process contentSize-padding">
-            <p class="subTitle">
-                장기고정계약도, 발전소 매입도<br>
-                <b>간소화된 계약 절차로</b>
-            </p>
-            <b class="case01">수익최적화 솔루션 프로세스</b>
-            <ul>
-                <li>
-                    <strong>문의 접수</strong>
-                </li>
-                <li>
-                    <strong>검토 자료 제출</strong>
-                </li>
-                <li>
-                    <strong>사업성 검토</strong>
-                </li>
-                <li>
-                    <strong>사업 제안</strong>
-                </li>
-                <li>
-                    <strong>
-                        RE100<br>
-                        장기고정계약
-                        <span></span>
-                        매입 계약
-                    </strong>
-                </li>
-            </ul>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="content-process contentSize-padding">
+                <p class="subTitle" data-textAni="0">
+                    장기고정계약도, 발전소 매입도<br>
+                    <b>간소화된 계약 절차로</b>
+                </p>
+                <b data-bCaseAni data-aniDelay="8">
+                    <span>수익최적화 솔루션 프로세스</span>
+                </b>
+                <ul data-styleIdx data-processAni data-aniDelay="10">
+                    <li>
+                        <strong>문의 접수</strong>
+                    </li>
+                    <li>
+                        <strong>검토 자료 제출</strong>
+                    </li>
+                    <li>
+                        <strong>사업성 검토</strong>
+                    </li>
+                    <li>
+                        <strong>사업 제안</strong>
+                    </li>
+                    <li>
+                        <strong>
+                            RE100<br>
+                            장기고정계약
+                            <span></span>
+                            매입 계약
+                        </strong>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="content-img contentSize-padding">
@@ -82,102 +88,112 @@
             </dl>
         </div>
         
-        <div class="condition01Area contentSize-padding">
-            <b class="case01">RE100 장기고정계약 요건</b>
-            <!-- <p>
-                글로벌 태양광 시장을 선도하는<br>
-                <b>한화그룹 재생에너지 전문가</b>가 함께합니다.
-            </p> -->
-            <ul data-styleIdx>
-                <li>
-                    <span>설비 용량</span>
-                    <b>300kW 이상</b>
-                    <small>*단일 발전소 기준</small>
-                </li>
-                <li>
-                    <span>발전소 유형</span>
-                    <b>육상형</b>
-                    <small>
-                        *ESS 연계, 수상형, <br>
-                        지붕형 별도 협의
-                    </small>
-                </li>
-                <li>
-                    <span>계약 기간</span>
-                    <b>20년 이상</b>
-                    <small>
-                        *단기계약의 경우 <br>
-                        별도 협의
-                    </small>
-                </li>
-                <li>
-                    <span>계약 요건</span>
-                    <b>
-                        RPS 고정가격계약,<br>
-                        FIT 미체결 발전소
-                    </b>
-                </li>
-            </ul>
-            <p>
-                RPS 장기고정계약 대비 <b>경쟁력 있는 수익 조건</b><br>
-                수의계약으로 보다 <b>간소한 계약 절차</b>
-            </p>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="condition01Area contentSize-padding">
+                <b data-bCaseAni>
+                    <span>
+                        <span>RE100 장기고정계약 요건</span>
+                    </span>
+                </b>
+                <ul data-styleIdx data-processAni data-aniDelay="4">
+                    <li>
+                        <span>설비 용량</span>
+                        <b>300kW 이상</b>
+                        <small>*단일 발전소 기준</small>
+                    </li>
+                    <li>
+                        <span>발전소 유형</span>
+                        <b>육상형</b>
+                        <small>
+                            *ESS 연계, 수상형, <br>
+                            지붕형 별도 협의
+                        </small>
+                    </li>
+                    <li>
+                        <span>계약 기간</span>
+                        <b>20년 이상</b>
+                        <small>
+                            *단기계약의 경우 <br>
+                            별도 협의
+                        </small>
+                    </li>
+                    <li>
+                        <span>계약 요건</span>
+                        <b>
+                            RPS 고정가격계약,<br>
+                            FIT 미체결 발전소
+                        </b>
+                    </li>
+                </ul>
+                <p data-textAni="2">
+                    RPS 장기고정계약 대비 <b>경쟁력 있는 수익 조건</b><br>
+                    수의계약으로 보다 <b>간소한 계약 절차</b>
+                </p>
+            </div>
         </div>
 
-        <div class="condition02Area contentSize-padding">
-            <strong class="subTitle">발전소 매입</strong>
-            <p class="subTItle2">
-                <b>업계 최고가 수준</b>으로<br class="mobile"> 발전자원을 매입합니다.
-            </p>
-            <b class="case01">발전소 매입 주요 조건</b>
-            <ul data-styleIdx>
-                <li>
-                    <span>설비 용량</span>
-                    <b>300kW 이상</b>
-                </li>
-                <li>
-                    <span>발전소 유형</span>
-                    <b>육상형</b>
-                </li>
-                <li>
-                    <span>부지 유형</span>
-                    <b>자가 소유, 임대</b>
-                </li>
-                <li>
-                    <span>사업자 유형</span>
-                    <b>
-                        법인 또는 <br>
-                        개인사업자
-                    </b>
-                </li>
-                <li>
-                    <span>사업 개발 단계</span>
-                    <b>
-                        인허가 및 <br>
-                        계통 확보 완료 <br>
-                        발전소
-                    </b>
-                </li>
-            </ul>
-            <p>
-                사업 부지부터 운영 중인 발전소까지<br class="mobile"> <b>다양한 형태의 자산</b><br>
-                신속한 사업 검토와 <b>자금 투입</b><br>
-                유연한 대금 <b>지급 조건 협의</b>
-            </p>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="condition02Area contentSize-padding">
+                <strong class="subTitle" data-textAni>발전소 매입</strong>
+                <p class="subTItle2" data-textAni="1">
+                    <b>업계 최고가 수준</b>으로<br class="mobile"> 발전자원을 매입합니다.
+                </p>
+                <b data-bCaseAni data-aniDelay="8">
+                    <span>
+                        <span>발전소 매입 주요 조건</span>
+                    </span>
+                </b>
+                <ul data-styleIdx data-processAni data-aniDelay="10">
+                    <li>
+                        <span>설비 용량</span>
+                        <b>300kW 이상</b>
+                    </li>
+                    <li>
+                        <span>발전소 유형</span>
+                        <b>육상형</b>
+                    </li>
+                    <li>
+                        <span>부지 유형</span>
+                        <b>자가 소유, 임대</b>
+                    </li>
+                    <li>
+                        <span>사업자 유형</span>
+                        <b>
+                            법인 또는 <br>
+                            개인사업자
+                        </b>
+                    </li>
+                    <li>
+                        <span>사업 개발 단계</span>
+                        <b>
+                            인허가 및 <br>
+                            계통 확보 완료 <br>
+                            발전소
+                        </b>
+                    </li>
+                </ul>
+                <p data-textAni="3">
+                    사업 부지부터 운영 중인 발전소까지<br class="mobile"> <b>다양한 형태의 자산</b><br>
+                    신속한 사업 검토와 <b>자금 투입</b><br>
+                    유연한 대금 <b>지급 조건 협의</b>
+                </p>
+            </div>
         </div>
 
-        <ul class="textArea contentSize-padding">
-            <li>다양한 형태의 자산 매입</li>
-            <li>신속한 사업 검토와 자금 투입</li>
-            <li>유연한 대금 지급조건 협의</li>
-        </ul>
-
-        <div class="simplifyArea contentSize-padding">
-            <p class="subTitle">
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <ul class="textArea contentSize-padding" data-styleIdx data-rightToleft data-aniDelay="0">
+                <li>다양한 형태의 자산 매입</li>
+                <li>신속한 사업 검토와 자금 투입</li>
+                <li>유연한 대금 지급조건 협의</li>
+            </ul>
+        </div>
+    
+        <div class="simplifyArea contentSize-padding" data-scroll>
+            <p class="subTitle" data-textAni>
                 빠른 지급, 유연한 협의<br>
                 <b class="font-hanwha">테라와트아워</b>라 가능합니다.
             </p>
-            <ul data-styleIdx>
+            <ul data-styleIdx data-aniDelay="4">
                 <li>
                     <b>글로벌 재생에너지 No.1</b>
                     <p>
@@ -278,6 +294,7 @@
 import * as api from '../api/api'
 import InquiryAgree from '@/components/InquiryAgree.vue';
 import ModalAlert from '@/components/modal/ModalAlert.vue';
+import { scrollPositionAdd, scrollPositionRemove } from '../css/style.js'
 
 export default {
     name: 'RecruitPage',
@@ -358,6 +375,7 @@ export default {
     mounted() {
         this.init();
         this.scrollEvent();
+        scrollPositionAdd();
         document.querySelectorAll('input[required]').forEach((element)=>{
             if(element.type === 'radio'){
                 this.inputsRequired[element.name] = element.checked;
@@ -365,9 +383,14 @@ export default {
             }
             element.required && (this.inputsRequired[element.name] = '');
         })
+    },
+    beforeUnmount(){
+        scrollPositionRemove();
     }
 }
 </script>
 <style>
-    
+    .simplifyArea ul li, .simplifyArea ul::before{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
+    .simplifyArea.active ul::before{--styleIdx: 0.5;}
+    .simplifyArea.active ul li, .simplifyArea.active ul::before{transform: translateY(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.4s));}
 </style>

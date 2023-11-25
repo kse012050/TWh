@@ -121,13 +121,13 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 발전자원 모집 페이지 */
-.recruitPage .productArea{padding-block: var(--padding02);}
+.recruitPage .productArea{padding-block: var(--padding02); background-color: white;}
 .recruitPage .productArea > strong{text-align: left;}
 .recruitPage .productArea ul{color: white; font-weight: 600; text-align: center;}
 .recruitPage .productArea ul li{background-repeat: no-repeat; background-position: top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center; background-size: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .recruitPage .content-process ul li strong:has(span){flex-direction: column;}
 .recruitPage .content-process ul li strong span{width: 60px; height: 1px; background-color: #222;}
-.recruitPage .content-img{padding-block: var(--padding02) var(--padding03);}
+.recruitPage .content-img{padding-top: var(--padding02);}
 .recruitPage [class*="condition"][class*="Area"]{padding-bottom: var(--padding02); text-align: center;}
 .recruitPage [class*="condition"][class*="Area"] ul{display: flex;}
 .recruitPage [class*="condition"][class*="Area"] ul li{text-align: left; background-color: white; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.07); box-sizing: border-box; position: relative;}
@@ -136,13 +136,14 @@ header.white + .mainPage .fullPager{--color: white;}
 .recruitPage [class*="condition"][class*="Area"] ul li b{font-weight: 600;}
 .recruitPage [class*="condition"][class*="Area"] ul li small{color: #999;}
 .recruitPage [class*="condition"][class*="Area"] ul li::after{aspect-ratio: 170 / 130; content: ''; position: absolute; right: 0; bottom: var(--spacing); background-repeat: no-repeat; background-position: top calc(100% / (var(--styleTotal) - 1) * var(--styleIdx)) center; background-size: 100%;}
-.recruitPage .condition01Area ul li::after{background: url(../images/recruit-icon01.png);}
-.recruitPage .condition01Area ul li b{color: var(--color-point01);}
-.recruitPage .condition02Area ul li::after{background: url(../images/recruit-icon02.png);}
-.recruitPage .condition02Area ul li b{color: #214DA8;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-weight: 300;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child b{font-weight: 600;}
+.recruitPage .condition01Area{padding-top: var(--padding03); background-color: white;}
+.recruitPage .condition01Area ul li::after{background: url(../images/recruit-icon01.png);}
+.recruitPage .condition01Area ul li b{color: var(--color-point01);}
 .recruitPage .condition02Area{padding-top: var(--padding02); background-color: var(--color-BG02);}
+.recruitPage .condition02Area ul li::after{background: url(../images/recruit-icon02.png);}
+.recruitPage .condition02Area ul li b{color: #214DA8;}
 .recruitPage .textArea{background-color: #162446;}
 .recruitPage .textArea li{color: white; background-color: #223259; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.10); font-weight: 600; display: flex; justify-content: center; align-items: center;}
 .recruitPage .textArea li::before,
@@ -151,7 +152,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .recruitPage .textArea li::after{--iconIdx: 1; margin-left: 0.4em;}
 .recruitPage .simplifyArea{padding-block: var(--padding02);}
 .recruitPage .simplifyArea ul{position: relative;}
-.recruitPage .simplifyArea ul::before{content: ''; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url(../images/icon-plus.png) no-repeat center / cover;}
+.recruitPage .simplifyArea ul::before{content: ''; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; translate: -50% -50%; background: url(../images/icon-plus.png) no-repeat center / cover;}
 .recruitPage .simplifyArea ul li{aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 3px solid var(--color); border-radius: 100%;}
 .recruitPage .simplifyArea ul li:nth-child(1){--color: var(--color-point01);}
 .recruitPage .simplifyArea ul li:nth-child(2){--color: var(--color-point02);}
