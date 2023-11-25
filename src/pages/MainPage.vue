@@ -24,29 +24,29 @@
         <div class="solutionArea" data-full>
             <ul>
                 <li>
-                    <div>
-                        <strong>
+                    <div data-aniDelay="3">
+                        <strong data-textAni="1">
                             기업을 위한<br>
                             재생에너지<br> 전력거래 솔루션
                         </strong>
-                        <p>
+                        <p data-textAni="3">
                             복잡한 RE100 이행,<br>
                             <span class="font-hanwha">테라와트아워</span>로 쉬워집니다.
                         </p>
-                        <router-link to="/solution" class="arrow-white">자세히 보기<span></span></router-link>
+                        <router-link to="/solution" class="arrow-white" data-aniDelay="10">자세히 보기<span></span></router-link>
                     </div>
                 </li>
                 <li>
-                    <div>
-                        <strong>
+                    <div data-aniDelay="3">
+                        <strong data-textAni="1">
                             발전사업자를 위한<br>
                             수익 최적화 솔루션
                         </strong>
-                        <p>
+                        <p data-textAni="3">
                             업계 최고 수준의<br>
                             발전소 매입 조건을 제안합니다.
                         </p>
-                        <router-link to="/recruit" class="arrow-white">자세히 보기<span></span></router-link>
+                        <router-link to="/recruit" class="arrow-white" data-aniDelay="10">자세히 보기<span></span></router-link>
                     </div>
                 </li>
             </ul>
@@ -54,18 +54,18 @@
         <div class="terra01Area" data-full>
             <div>
                 <div class="contentSize">
-                    <p>
-                        <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+                    <strong class="font-hanwha" data-aniDelay="3" data-textAni="1">한화 신한 테라와트아워는</strong>
+                    <p data-aniDelay="3" data-textAni="2">
                         전문성과 안정성을 갖춘<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
-                    <div>
-                        <strong>1GW<small>+</small></strong>
-                        <p>재생에너지 구축,<br> 운영 사업 역량</p>
+                    <div data-aniDelay="10">
+                        <strong data-aniDelay="3" data-textAni="5">1GW<small>+</small></strong>
+                        <p data-aniDelay="3" data-textAni="6">재생에너지 구축,<br> 운영 사업 역량</p>
                     </div>
-                    <div>
-                        <strong>1500<small>억 규모</small></strong>
-                        <p>재생에너지 사업을 위한<br> 펀드 설정</p>
+                    <div data-aniDelay="10">
+                        <strong data-aniDelay="3" data-textAni="5">1500<small>억 규모</small></strong>
+                        <p data-aniDelay="3" data-textAni="6">재생에너지 사업을 위한<br> 펀드 설정</p>
                     </div>
                 </div>
             </div>
@@ -73,19 +73,19 @@
         <div class="terra02Area" data-full>
             <div>
                 <div class="contentSize">
-                    <p>
-                        <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+                    <strong class="font-hanwha" data-aniDelay="3" data-textAni="1">한화 신한 테라와트아워는</strong>
+                    <p data-aniDelay="3" data-textAni="2">
                         RE100 기업 수요와<br class="mobile"> KPX 전력시장을 아우르는<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
-                    <div>
-                        <p>
+                    <div data-aniDelay="10">
+                        <p data-aniDelay="3" data-textAni="5">
                             재생에너지전기공급<br>
                             (PPA)
                         </p>
                     </div>
-                    <div>
-                        <p>
+                    <div data-aniDelay="10">
+                        <p data-aniDelay="3" data-textAni="5">
                             통합발전소<br>
                             (VPP)
                         </p>
@@ -94,18 +94,20 @@
             </div>
         </div>
         <div class="companyArea" data-full>
-            <p class="contentSize">
-                재생에너지의<br class="mobile"> 생산과 소비를 연결하는
-                <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br class="mobile">
-                성장하겠습니다.
-            </p>
-            <router-link to="/company" class="arrow-white">기업 소개 보기 <span></span></router-link>
+            <div class="contentSize">
+                <p data-aniDelay="3" data-textAni="1">
+                    재생에너지의<br class="mobile"> 생산과 소비를 연결하는<br>
+                    <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br>
+                    성장하겠습니다.
+                </p>
+                <router-link to="/company" class="arrow-white" data-aniDelay="8">기업 소개 보기 <span></span></router-link>
+            </div>
         </div>
         <div class="boardArea" data-full>
             <div>
                 <div class="contentSize">
-                    <h3><b class="font-hanwha">테라와트아워</b>의 최신 소식을<br class="mobile"> 확인해보세요.</h3>
-                    <ul class="user-board">
+                    <h3 data-aniDelay="3" data-textAni="1"><b class="font-hanwha">테라와트아워</b>의 최신 소식을<br class="mobile"> 확인해보세요.</h3>
+                    <ul class="user-board" data-aniDelay="6">
                         <template v-for="data in boardList" :key="data.id">
                             <li>
                                 <router-link :to="`/boardDetail/${data.id}`">
@@ -120,7 +122,7 @@
                             </li>
                         </template>
                     </ul>
-                    <router-link to="/board" class="arrow-black">게시판 보기<span></span></router-link>
+                    <router-link to="/board" class="arrow-black" data-aniDelay="10">게시판 보기<span></span></router-link>
                 </div>
             </div>
         </div>
@@ -354,23 +356,50 @@ export default {
         100%{clip-path: circle(100% at 50% 50%); opacity: 1;}
     } */
 
-    .mainPage .solutionArea ul li{transform: translateY(0); transition: 0.5s transform;}
+    /* 메인 솔루션 애니메이션 */
+    .mainPage .solutionArea ul li{transform: translateY(0); transition: 0.6s transform ease-in-out;}
     .mainPage .solutionArea ul li:nth-child(1){transform: translateY(-100%);}
     .mainPage .solutionArea ul li:nth-child(2){transform: translateY(100%);}
-    .mainPage .solutionArea ul li div{opacity: 0; transform: translateY(100px);}
-    .mainPage .solutionArea.active ul li{transform: translateY(0); transition: 0.5s transform;}
-    .mainPage .solutionArea.active ul li div{opacity: 1; transform: translateY(0); transition-property: opacity, transform; transition-duration: 0.5s; transition-delay: 0.3s; }
-    .mainPage [class^="terra"][class*="Area"] > div > div > *{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.5s;}
-    .mainPage [class^="terra"][class*="Area"].active > div > div > *{transform: translateY(0%); opacity: 1; transition-delay: 0.5s;}
-    .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div > *{transform: translateY(-100%); opacity: 0; transition-delay: 0s;}
+    .mainPage .solutionArea ul li a{opacity: 0; transition: 0.6s opacity ease-in-out;}
+    .mainPage .solutionArea ul li a span{background: transparent;}
+    .mainPage .solutionArea ul li a span::before{content: ''; position: absolute; left: 0; top: 0; width: 0; height: 100%; background: white; transition: 0.2s width ease-in-out;}
+    .mainPage .solutionArea ul li a span::after{transition: 0.2s width ease-in-out;}
+    .mainPage .solutionArea:not(.active) ul li a span::after{width: 0;}
+    .mainPage .solutionArea.active ul li{transform: translateY(0);}
+    .mainPage .solutionArea.active ul li a{opacity: 1; transition-delay: var(--aniDelay);}
+    .mainPage .solutionArea.active ul li a span::before{width: 100%; transition-delay: calc(var(--aniDelay) + 0.4s);}
+    .mainPage .solutionArea.active ul li a span::after{transition-delay: calc(var(--aniDelay) + 0.5s);}
+    /* 메인 테라와트아워는~ */
     .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
-    .mainPage .terra01Area > div > div > *{transition-delay: 0.5s;}
     .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center right / cover;}
-    .mainPage .companyArea p{transform: translateY(calc(100vh - 100%)); transition: 0.5s transform;}
-    .mainPage .companyArea a{opacity: 0; transition: 0s 0s opacity;}
-    .mainPage .companyArea.active p{transform: translateY(0%);}
-    .mainPage .companyArea.active a{opacity: 1; transition: 0.5s 0.3s opacity;}
-    .mainPage .boardArea div{transform: translateY(100%); transition: 0.5s transform;}
+    .mainPage [class^="terra"][class*="Area"] > div > div > div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}
+    .mainPage [class^="terra"][class*="Area"].active > div > div > div{transform: translateY(0%); opacity: 1; transition-delay: calc(var(--aniDelay) + (0.2s * var(--styleIdx)));}
+    .mainPage .terra02Area > div > div{transform: translateY(100%); opacity: 0; transition-delay: 0s; transition-property: transform, opacity; transition-duration: 0.6s;}
+    .mainPage [class^="terra"][class*="Area"].active > div > div{transform: translateY(0%); opacity: 1; transition-property: transform, opacity; transition-duration: 0.6s;}
+    .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div{transform: translateY(-100%); opacity: 0; transition-delay: 0s;}
+    /* 메인 회사소개 */
+    .mainPage .companyArea div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}
+    .mainPage .companyArea div a{opacity: 0; transition: 0.6s opacity ease-in-out;}
+    .mainPage .companyArea div a span{background: transparent;}
+    .mainPage .companyArea div a span::before{content: ''; position: absolute; left: 0; top: 0; width: 0; height: 100%; background: white; transition: 0.2s width ease-in-out;}
+    .mainPage .companyArea div a span::after{transition: 0.2s width ease-in-out;}
+    .mainPage .companyArea:not(.active) div a span::after{width: 0;}
+    .mainPage .companyArea.active div{transform: translateY(0%); opacity: 1;}
+    .mainPage .companyArea.active div a{opacity: 1; transition-delay: var(--aniDelay);}
+    .mainPage .companyArea.active div a span::before{width: 100%; transition-delay: calc(var(--aniDelay) + 0.4s);}
+    .mainPage .companyArea.active div a span::after{transition-delay: calc(var(--aniDelay) + 0.5s);}
+    /* 메인 게시판 */
+    .mainPage .boardArea div{transform: translateY(100%); transition: var(--aniDutaion) transform;}
+    .mainPage .boardArea div ul{opacity: 0; transition: var(--aniDutaion) opacity ease-in-out;}
+    .mainPage .boardArea div a{opacity: 0; transition: 0.6s opacity ease-in-out;}
+    .mainPage .boardArea div a span{background: transparent;}
+    .mainPage .boardArea div a span::before{content: ''; position: absolute; left: 0; top: 0; width: 0; height: 100%; background: var(--bc); transition: 0.2s width ease-in-out;}
+    .mainPage .boardArea div a span::after{transition: 0.2s width ease-in-out;}
+    .mainPage .boardArea:not(.active) div a span::after{width: 0;}
     .mainPage .boardArea.active div{transform: translateY(0);}
+    .mainPage .boardArea.active div ul{opacity: 1; transition-delay: var(--aniDelay);}
+    .mainPage .boardArea.active div a{opacity: 1; transition-delay: var(--aniDelay);}
+    .mainPage .boardArea.active div a span::before{width: 100%; transition-delay: calc(var(--aniDelay) + 0.4s);}
+    .mainPage .boardArea.active div a span::after{transition-delay: calc(var(--aniDelay) + 0.5s);}
     .mainPage:has(~ footer.active) [data-full].active{transition-duration: 0.5s;}
 </style>

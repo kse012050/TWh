@@ -25,7 +25,8 @@
 .mainPage .solutionArea ul li div a{margin-top: min(9.2592vh, 100px);}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage [class^="terra"][class*="Area"] > div > div{justify-content: flex-end;}
-.mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 30px; line-height: 40px; margin-right: 145px; padding-top: min(9.2592vh, 100px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 50px; line-height: 76px; margin-bottom: min(2.7778vh, 30px); padding-top: min(9.2592vh, 100px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 30px; line-height: 40px; margin-right: 145px;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 50px; line-height: 76px; margin-bottom: min(2.7778vh, 30px);}
 .mainPage [class^="terra"][class*="Area"] > div > div div{width: 380px; height: min(42.5925vh, 460px); padding: min(3.7037vh, 40px) 50px min(5.5555vh, 60px);}
 .mainPage [class^="terra"][class*="Area"] > div > div div:not(:last-of-type){margin-right: 60px;}
@@ -37,8 +38,8 @@
 .mainPage .terra01Area > div > div div::before{--height: 70px;}
 .mainPage .terra02Area > div > div div::before{--height: 72px;}
 /* 메인 페이지 - 기업 소개 영역 */
-.mainPage .companyArea p{font-size: 50px; line-height: 70px; max-width: 780px;}
-.mainPage .companyArea a{margin-top: min(5.5556vh, 60px);}
+.mainPage .companyArea div p{font-size: 50px; line-height: 70px;}
+.mainPage .companyArea div a{margin-top: min(5.5556vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div > div h3{font-size: 50px; line-height: 60px; margin-bottom: min(5.5556vh, 60px);}
 .mainPage .boardArea > div > div > a{margin-top: min(5.5556vh, 60px);}

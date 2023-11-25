@@ -75,7 +75,7 @@ ul.user-board li a p{color: #222;}
 [data-subTopAni] .topArea > div[data-textAniParents]{color: white; text-align: center;}
 [data-subTopAni] :where(.topArea ~ *:not([class|="ani"])){background-color: white; position: relative; z-index: 2;}
 /* 서브 페이지 탑 애니메이션 */
-[data-subTopAni]{--aniDutaion: .6s;}
+/* [data-subTopAni]{--aniDutaion: .6s;} */
 [data-subTopAni] .topArea h2{transform: translateY(-100%); transition: all var(--aniDutaion) ease-in-out;}
 [data-subTopAni] .topArea h2.active{transform: translateY(0%);}
 [data-subTopAni] .topArea h2.active:has(+ .active){transform: translateY(-100%);}

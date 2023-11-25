@@ -26,8 +26,8 @@
 .mainPage .terra01Area > div > div div::before{--height: 30px;}
 .mainPage .terra02Area > div > div div::before{--height: 38px;}
 /* 메인 페이지 - 기업 소개 영역 */
-.mainPage .companyArea p{font-size: 26px; line-height: 1.307; max-width: 240px;}
-.mainPage .companyArea a{margin-top: min(9.375vh, 60px);}
+.mainPage .companyArea div p{font-size: 26px; line-height: 1.307; max-width: 240px;}
+.mainPage .companyArea div a{margin-top: min(9.375vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
 .mainPage .boardArea > div > div h3{font-size: 26px; line-height: 1.307; margin-bottom: min(6.25vh, 40px);}
 .mainPage .boardArea .user-board{gap: 20px; overflow: auto; width: calc(100% + (var(--spacing) * 2)); transform: translateX(calc(var(--spacing) * -1)); padding-inline: var(--spacing); box-sizing: border-box;}
