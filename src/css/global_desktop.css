@@ -48,6 +48,8 @@ ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 /* 검은 배경 케이스 */
 b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
+b[data-bCaseAni]{font-size: 24px; line-height: 34px;}
+b[data-bCaseAni] > span{padding: 10px 30px;}
 
 
 /* 컨텐츠 - 이미지 */

@@ -86,10 +86,13 @@ header.white + .mainPage .fullPager{--color: white;}
 /* 전력거래 솔루션, 발전자원 모집 페이지 공통 */
 :is(.solutionPage, .recruitPage) .topArea div > strong{font-weight: 600; text-align: center;}
 :is(.solutionPage, .recruitPage) .topArea div > p b{font-weight: 600;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > :where(:first-child:not([class])){display: block; text-align: center;}
+:is(.solutionPage, .recruitPage) .subTitle{display: block; text-align: center;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 300;}
+:is(.solutionPage, .recruitPage) .subTitle b,
+:is(.solutionPage, .recruitPage) strong.subTitle{font-weight: 600;}
+/* :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 300;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2) b,
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 600;}
+:is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 600;} */
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry){padding-block: var(--padding02) var(--padding01);}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{text-align: left;}
 
@@ -103,6 +106,11 @@ header.white + .mainPage .fullPager{--color: white;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{font-size: var(--fontSize); font-weight: 300;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-top: auto;}
 .solutionPage .topArea div:nth-of-type(3) ul li p svg{height: calc(var(--fontSize) + 3px); transform: translateY(4px);}
+.solutionPage .PPAArea{padding-top: 100px;}
+.solutionPage .PPAArea > .tab-btn{gap: 60px; position: sticky; top: var(--headerHeight); display: flex; justify-content: center; align-items: center; background-color: white;}
+.solutionPage .PPAArea > .tab-btn li button{line-height: 80px; font-size: 26px; font-weight: 700; color: #BBB;}
+.solutionPage .PPAArea > .tab-btn li button.active{color: #222; position: relative;}
+.solutionPage .PPAArea > .tab-btn li button.active::after{content: ''; width: 100%; height: 5px; background-color: #222; position: absolute; left: 0; bottom: 0;}
 .solutionPage .content-process ul li p{font-weight: 300;}
 .solutionPage .content-img{padding-block: var(--padding02);}
 .solutionPage .content-img div:not([class]){display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}

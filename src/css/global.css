@@ -51,6 +51,14 @@ ul.user-board li a p{color: #222;}
 [data-textAni] > span{display: block; overflow: hidden; min-height: calc(1em + 7px);}
 [data-textAni] > span span{display: block; transform: translateY(100%); transition: transform var(--aniDutaion) ease-in-out;}
 .active [data-textAni] > span span{transform: translateY(0%); transition-delay: calc(var(--aniDelay) * var(--textIdx));}
+[data-bCaseAni]{overflow: hidden; position: relative;}
+[data-bCaseAni] > span{transform: translateY(calc(100% + 10px)); transition: transform var(--aniDutaion) ease-in-out;}
+.active [data-bCaseAni] > span{transform: translateY(0); transition-delay: var(--aniDelay);}
+[data-processAni] li{opacity: 0; transform: translateY(100%); transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
+.active [data-processAni] li{opacity: 1; transform: translateY(0); transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
+.expertArea{overflow: hidden;}
+[data-rightToleft] li{transform: translateX(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
+.active [data-rightToleft] li{transform: translateX(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */
@@ -85,9 +93,14 @@ ul.user-board li a p{color: #222;}
 [data-subTopAni] .ani-fixed > *:first-child{position: sticky;}
 [data-subTopAni] .ani-fixed > *:not(:first-child){position: fixed;}
 
+[data-subTopAni] .ani-sticky{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight));}
+[data-subTopAni] .ani-sticky > *{position: sticky; top: calc(var(--headerHeight));}
+
 
 /* 검은 배경 케이스 */
 b.case01{font-weight: 600; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
+b[data-bCaseAni]{font-weight: 600; display: inline-block;}
+b[data-bCaseAni] > span{color: white; background-color: #222; border-radius: 25px; display: inline-block;}
 
 
 /* 이미지 박스 */

@@ -20,7 +20,7 @@ export default {
     aniIdx(){
       setTimeout(()=>{
         document.querySelectorAll('[data-aniDelay]').forEach((element)=>{
-          element.style.setProperty('--aniDelay', `0.${element.getAttribute('data-aniDelay')}s`)
+          element.style.setProperty('--aniDelay', `${element.getAttribute('data-aniDelay') / 10}s`)
         })
         document.querySelectorAll('[data-textAniParents]').forEach((parents)=>{
           parents.childNodes.forEach((element, idx)=>{
@@ -47,6 +47,13 @@ export default {
             element.appendChild(spanElement);
           })
         })
+
+      /*   document.querySelectorAll('[data-bCaseAni]').forEach((element)=>{
+          const spanElement = document.createElement('span');
+          spanElement.innerHTML = element.innerHTML;
+          element.innerHTML = '';
+          element.appendChild(spanElement);
+        }) */
       },0)
     },
     

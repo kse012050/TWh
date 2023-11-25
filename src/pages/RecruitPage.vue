@@ -17,7 +17,7 @@
         </div>
 
         <div class="productArea contentSize-padding">
-            <strong>주요 상품 소개</strong>
+            <strong class="subTitle">주요 상품 소개</strong>
             <ul data-styleIdx>
                 <li>
                     <strong>RE100 장기고정계약</strong>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="content-process contentSize-padding">
-            <p>
+            <p class="subTitle">
                 장기고정계약도, 발전소 매입도<br>
                 <b>간소화된 계약 절차로</b>
             </p>
@@ -67,8 +67,8 @@
         </div>
 
         <div class="content-img contentSize-padding">
-            <strong>RE100 장기고정계약</strong>
-            <p>
+            <strong class="subTitle">RE100 장기고정계약</strong>
+            <p class="subTItle2">
                 <b>RE100 이행을 원하는 기업</b>과<br class="mobile"> 장기고정계약으로<br>
                 안정적인 수익을 창출하세요.
             </p>
@@ -125,8 +125,8 @@
         </div>
 
         <div class="condition02Area contentSize-padding">
-            <strong>발전소 매입</strong>
-            <p>
+            <strong class="subTitle">발전소 매입</strong>
+            <p class="subTItle2">
                 <b>업계 최고가 수준</b>으로<br class="mobile"> 발전자원을 매입합니다.
             </p>
             <b class="case01">발전소 매입 주요 조건</b>
@@ -173,7 +173,7 @@
         </ul>
 
         <div class="simplifyArea contentSize-padding">
-            <p>
+            <p class="subTitle">
                 빠른 지급, 유연한 협의<br>
                 <b class="font-hanwha">테라와트아워</b>라 가능합니다.
             </p>
@@ -198,7 +198,7 @@
         <hr class="case01">
 
         <div class="contentSize-padding">
-            <p>
+            <p class="subTitle">
                 RE100 장기고정계약 & 발전소 매입<br>
                 <b class="font-hanwha">테라와트아워</b>에 문의하세요!
             </p>

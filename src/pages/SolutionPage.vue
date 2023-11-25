@@ -51,92 +51,105 @@
             </div>
         </div>
 
-        <div class="content-process contentSize-padding">
-            <p>
-                재생에너지 전력거래<br class="mobile"> 전문 기업 <b class="font-hanwha">테라와트아워</b>가<br>
-                최적의 솔루션을 제안합니다.
-            </p>
-            <b class="case01">전력거래 솔루션 프로세스</b>
-            <ul>
-                <li>
-                    <strong>문의 접수</strong>
-                </li>
-                <li>
-                    <strong>
-                        전력 수요 예측<br>
-                        & 기술 검토
-                    </strong>
-                    <p>
-                        사업장 전력량 및<br>
-                        사용 패턴 분석
-                    </p>
-                </li>
-                <li>
-                    <strong>
-                        재생에너지<br>
-                        포트폴리오 제안
-                    </strong>
-                    <p>
-                        직접 PPA<br>
-                        제3자간 PPA<br>
-                        V.PPA
-                    </p>
-                </li>
-                <li>
-                    <strong>
-                        재생E 조달<br>
-                        및 이행
-                    </strong>
-                    <p>발전 자원 조달</p>
-                </li>
-                <li>
-                    <strong>관리, 운영</strong>
-                    <p>
-                        RE100 이행 관리<br>
-                        정기 리포트
-                    </p>
-                </li>
-            </ul>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="content-process contentSize-padding">
+                <p class="subTitle" data-textAni="0">
+                    재생에너지 전력거래<br class="mobile"> 전문 기업 <b class="font-hanwha">테라와트아워</b>가<br>
+                    최적의 솔루션을 제안합니다.
+                </p>
+                <b data-bCaseAni data-aniDelay="8">
+                    <span>
+                        <span>전력거래 솔루션 프로세스</span>
+                    </span>
+                </b>
+                <ul data-styleIdx data-processAni data-aniDelay="10">
+                    <li>
+                        <strong>문의 접수</strong>
+                    </li>
+                    <li>
+                        <strong>
+                            전력 수요 예측<br>
+                            & 기술 검토
+                        </strong>
+                        <p>
+                            사업장 전력량 및<br>
+                            사용 패턴 분석
+                        </p>
+                    </li>
+                    <li>
+                        <strong>
+                            재생에너지<br>
+                            포트폴리오 제안
+                        </strong>
+                        <p>
+                            직접 PPA<br>
+                            제3자간 PPA<br>
+                            V.PPA
+                        </p>
+                    </li>
+                    <li>
+                        <strong>
+                            재생E 조달<br>
+                            및 이행
+                        </strong>
+                        <p>발전 자원 조달</p>
+                    </li>
+                    <li>
+                        <strong>관리, 운영</strong>
+                        <p>
+                            RE100 이행 관리<br>
+                            정기 리포트
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="PPA01Area content-img contentSize-padding">
-            <strong>직접 PPA</strong>
-            <p>
-                재생에너지전기공급사업자를 통해<br>
-                발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
-            </p>
-            <div>
-                <b>장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
-                <b>#전력 다소비 기업</b>
-                <b>#낮 시간대 전력 소비가 많은 기업</b>
+        <div class="PPAArea">
+            <ul class="tab-btn">
+                <li><button class="active">직접 PPA</button></li>
+                <li><button>제3자간 PPA</button></li>
+                <li><button>V.PPA</button></li>
+            </ul>
+            <div class="PPA01Area content-img contentSize-padding">
+                <strong class="subTitle">직접 PPA</strong>
+                <p class="subTItle2">
+                    재생에너지전기공급사업자를 통해<br>
+                    발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
+                </p>
+                <div>
+                    <b>장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
+                    <b>#전력 다소비 기업</b>
+                    <b>#낮 시간대 전력 소비가 많은 기업</b>
+                </div>
+                <div class="box-img">직접 PPA 이미지</div>
+                <dl>
+                    <dt>*직접PPA</dt>
+                    <dd>
+                        재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
+                        재생에너지전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
+                    </dd>
+                </dl>
             </div>
-            <div class="box-img">직접 PPA 이미지</div>
-            <dl>
-                <dt>*직접PPA</dt>
-                <dd>
-                    재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
-                    재생에너지전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
-                </dd>
-            </dl>
-        </div>
-        
-        <div class="PPA02Area content-img contentSize-padding">
-            <strong>제3자간 PPA</strong>
-            <p>
-                발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
-                각각 계약을 체결하는 방식
-            </p>
-            <div>
-                <b>#장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
-                <b>#전력소비량이 상대적으로 적은 기업</b>
-                <b>#24시간 조업 기업</b>
+            
+            <div class="PPA02Area content-img contentSize-padding">
+                <strong class="subTitle">제3자간 PPA</strong>
+                <p class="subTItle2">
+                    발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
+                    각각 계약을 체결하는 방식
+                </p>
+                <div>
+                    <b>#장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
+                    <b>#전력소비량이 상대적으로 적은 기업</b>
+                    <b>#24시간 조업 기업</b>
+                </div>
+                <div class="box-img">제3자 PPA 이미지</div>
             </div>
-            <div class="box-img">제3자 PPA 이미지</div>
         </div>
         
         <div class="PPA03Area content-img contentSize-padding">
-            <strong>V.PPA</strong>
-            <p>
+            <strong class="subTitle">V.PPA</strong>
+            <p class="subTItle2">
                 전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
                 도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
             </p>
@@ -147,62 +160,37 @@
             <div class="box-img">PPA 이미지</div>
         </diV>
 
-        <!-- <div class="contractArea contentSize-padding">
-            <p>
-                <b>20년 장기계약 PPA,</b><br>
-                안정적인 자원 조달이 가능한 테라와트아워와 함께하세요.
-            </p>
-            <ul data-aniIdx>
-                <li>
-                    <p>
-                        재생에너지
-                        <b>펀드 조성</b>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        전력거래를 위한
-                        <b>기업 안정성 확보</b>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        원활한 발전자원 조달,
-                        <b>최적의 발전소 매칭</b>
-                    </p>
-                </li>
-            </ul>
-        </div> -->
-
-        <div class="expertArea contentSize-padding">
-            <p>
-                <b>20년 장기계약 PPA,</b><br>
-                안정적인 자원 조달이 가능한<br class="mobile"> <b class="font-hanwha">테라와트아워</b>와 함께하세요.
-            </p>
-            <ul>
-                <li>
-                    <div>
-                        글로벌 태양광 시장을<br>
-                        선도하는 <span class="font-hanwha">한화그룹</span> 경쟁력
-                    </div>
-                </li>
-                <li>
-                    사업개발, EPC, O&M<br>
-                    다운스트림 전 영역의<br>
-                    밸류체인 보유
-                </li>
-                <li>
-                    <div>
-                        글로벌 태양광 발전소<br>
-                        1GW 관리 · 운영 경험의<br>
-                        <span class="font-hanwha">한화컨버전스</span>
-                    </div>
-                </li>
-            </ul>
+        <div class="ani-sticky" data-styleIdx data-scroll>
+            <div class="expertArea contentSize-padding">
+                <p class="subTitle" data-textAni="0">
+                    <b>20년 장기계약 PPA,</b><br>
+                    안정적인 자원 조달이 가능한<br class="mobile"> <b class="font-hanwha">테라와트아워</b>와 함께하세요.
+                </p>
+                <ul data-styleIdx data-rightToleft data-aniDelay="10">
+                    <li>
+                        <div>
+                            글로벌 태양광 시장을<br>
+                            선도하는 <span class="font-hanwha">한화그룹</span> 경쟁력
+                        </div>
+                    </li>
+                    <li>
+                        사업개발, EPC, O&M<br>
+                        다운스트림 전 영역의<br>
+                        밸류체인 보유
+                    </li>
+                    <li>
+                        <div>
+                            글로벌 태양광 발전소<br>
+                            1GW 관리 · 운영 경험의<br>
+                            <span class="font-hanwha">한화컨버전스</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="contentSize-padding">
-            <p>
+            <p class="subTitle">
                 RE100 이행,<br>
                 <b>지금 바로 문의하세요!</b>
             </p>
@@ -332,6 +320,54 @@ export default {
                     topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 100) + 'px');
                 }
             })
+
+            window.addEventListener('scroll', ()=>{
+                const scrollTop = window.scrollY;
+                const headerElementHeight = headerElement.offsetHeight;
+                document.querySelectorAll('[data-scroll]').forEach((element)=>{
+                    if(scrollTop > element.offsetTop - headerElementHeight){
+                        element.classList.add('active');
+                    }else{
+                        element.classList.remove('active');
+                    }
+                })
+            })
+
+            window.addEventListener('scroll', this.test)
+        },
+        test(){
+            const scrollTop = window.scrollY;
+            const tabListElement = document.querySelectorAll('.PPAArea > .tab-btn li button');
+            const tabElementHeight = document.querySelector('.PPAArea > .tab-btn').offsetHeight;
+            const headerElementHeight = document.querySelector('header').offsetHeight;
+            const PPAElement = document.querySelectorAll('.PPA01Area, .PPA02Area, .PPA03Area');
+            PPAElement.forEach((element, idx)=>{
+                // console.log(element.parentNode.classList.contains('PPAArea'));
+                const test = element.parentNode.classList.contains('PPAArea') ? document.querySelector('.PPAArea').offsetTop : 0;
+                if(scrollTop > element.offsetTop - tabElementHeight - headerElementHeight + test - 10){
+                    tabListElement.forEach((tabList)=>{
+                        tabList.classList.remove('active');
+                    })
+                    tabListElement.item(idx).classList.add('active');
+                }else{
+                    tabListElement.item(idx).classList.remove('active');
+                }
+            })
+        },
+        tabClick(){
+            const tabElementHeight = document.querySelector('.PPAArea > .tab-btn').offsetHeight;
+            const headerElement = document.querySelector('header');
+            const headerElementHeight = headerElement.offsetHeight;
+            const tabBtn = document.querySelectorAll('.PPAArea > .tab-btn li button')
+            const PPAElement = document.querySelectorAll('.PPA01Area, .PPA02Area, .PPA03Area');
+            tabBtn.forEach((btnElement, idx)=>{
+                btnElement.addEventListener('click',()=>{
+                    let offsetTop = PPAElement.item(idx).offsetTop - tabElementHeight - headerElementHeight;
+                    PPAElement.item(idx).parentNode.classList.contains('PPAArea') && (offsetTop += document.querySelector('.PPAArea').offsetTop);
+                    console.log(offsetTop);
+                    window.scrollTo({top: offsetTop,behavior: "smooth"});
+                })
+            })
         },
         onSubmit(){
             if(!api.isRequired(this.inputsRequired)){
@@ -356,9 +392,15 @@ export default {
     mounted() {
         this.init();
         this.scrollEvent();
+        this.tabClick();
         document.querySelectorAll('input[required]').forEach((element)=>{
             element.required && (this.inputsRequired[element.name] = '')
         })
+
+        
+    },
+    beforeUnmount(){
+        window.removeEventListener('scroll',this.test)
     }
 }
 </script>

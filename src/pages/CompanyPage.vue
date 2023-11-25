@@ -2,7 +2,7 @@
     <section class="companyPage" data-subTopAni>
         <div class="topArea">
             <h2 class="contentSize-padding"><span data-textAni='1'>기업 소개</span></h2>
-            <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
+            <div data-textAniParents="1" data-aniType="basic">
                 <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
                 <p>
                     에너지를 생산하는 발전사업자와<br class="mobile"> 소비하는 기업을 연결하는<br>
@@ -14,12 +14,12 @@
             <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
         <div class="ani-fixed" data-styleIdx>
-            <div class="missionArea contentSize-padding" data-textAniParents="0" data-aniDelay="4" data-aniType="basic">
+            <div class="missionArea contentSize-padding" data-textAniParents="0" data-aniType="basic">
                 <b>사명</b>
                 <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             </div>
             <div>
-                <div class="visionArea contentSize-padding" data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
+                <div class="visionArea contentSize-padding" data-textAniParents="1" data-aniType="basic">
                     <b>비전</b>
                     <strong>
                         Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market

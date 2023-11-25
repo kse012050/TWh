@@ -45,6 +45,7 @@ ul.user-board li a p{font-size: 16px; line-height: 1.25;}
 
 /* 검은 배경 케이스 */
 b.case01{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
+b[data-bCaseAni] span{padding: 8px 20px; font-size: 15px; line-height: 1.2;}
 
 
 /* 이미지 박스 */
