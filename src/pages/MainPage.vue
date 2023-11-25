@@ -135,13 +135,24 @@ export default {
     name: 'MainPage',
     data() {
         return{
-            isFull: false,
+            // isFull: false,
             isPopup: [],
             popupList: [],
-            boardList: []
+            boardList: [],
+            fullSelectors: [...document.querySelectorAll('[data-full]'), document.querySelector('footer')],
+            fullPagerSeletor: document.querySelector('.fullPager'),
+            eventListeners: [],
+            touchStart: {
+                x: undefined,
+                y: undefined
+            }
         }
     },
     methods: {
+        init(){
+            this.fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')]
+            this.fullPagerSeletor = document.querySelector('.fullPager');
+        },
         popup(){
             api.user('list',{type: 'notice'})
                 .then((result)=>{
@@ -163,14 +174,13 @@ export default {
                 })
         },
         fullPager() {
-            const fullPager = document.querySelector('.fullPager');
             const fullSelectors = document.querySelectorAll('[data-full]');
-            fullPager.replaceChildren(); // 자식 요소 초기화
+            this.fullPagerSeletor.replaceChildren(); // 자식 요소 초기화
             fullSelectors.forEach((_, idx)=>{
                 const fullPageList = document.createElement('li');
                 fullPageList.innerText = `${idx} Page`;
                 idx === 0 && fullPageList.classList.add('active');
-                fullPager.appendChild(fullPageList);
+                this.fullPagerSeletor.appendChild(fullPageList);
             })
         },
         typingEvent() {
@@ -196,79 +206,84 @@ export default {
             //     }, 100);
             // },1000);
         },
-        fullEvent(fullMoveEvent){
-            const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
+        fullUserEvent(){
             // const fullSelectors = document.querySelectorAll('[data-full]');
-            fullSelectors.forEach((element, idx)=>{
-                const currentIdx = idx;
-                element.addEventListener('mousewheel', function(e){
-                    if(this.isFull){return}
-                    let delta = e.wheelDelta;
-                    fullMoveEvent(fullSelectors, delta, currentIdx)            
-                })
-                //  element.addEventListener('mousewheel', this.test)
-                let touchStartX = undefined;
-                let touchStartY = undefined;
-                element.addEventListener('touchstart', function(e){
-                    touchStartX = e.touches[0].clientX
-                    touchStartY = e.touches[0].clientY
-                })
-                element.addEventListener('touchend', function(e){
-                    const delta = (touchStartY - e.changedTouches[0].clientY) * -1;
-                    const touchEndX = Math.abs(touchStartX - e.changedTouches[0].clientX);
-                    const touchEndY = Math.abs(delta);
-                    if(touchEndX < touchEndY){
-                        fullMoveEvent(fullSelectors, delta, currentIdx)  
-                    }
-                })
+            this.fullSelectors.forEach((element, idx)=>{
+                const fullCallback = this.fullEvent.bind(null, idx);
+                element.addEventListener('mousewheel', fullCallback)
+                element.addEventListener('touchstart', fullCallback);
+                element.addEventListener('touchend', fullCallback)
+                
+                this.eventListeners.push({ element, fullCallback: fullCallback});
             })
         },
-        fullMoveEvent(fullSelectors, delta, currentIdx){
-            // 임시방편..
-            if(!document.querySelector('.mainPage')){return}
-            const fullPager = document.querySelector('.fullPager');
-            const fullPagerList = document.querySelectorAll('.fullPager li');
-            if(delta < 0 && fullSelectors[currentIdx + 1]){
-                currentIdx++;
-                if(fullSelectors[currentIdx].localName === 'footer'){
-                    const footerEle = document.querySelector('footer');
-                    document.querySelectorAll('[data-full].active').forEach((element)=>{
-                        element.style.top = -footerEle.offsetHeight + 'px'
-                    })
-                    fullPager.style.top = -footerEle.offsetHeight + 'px'
-                }
-                fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.remove('white');
-                fullSelectors[currentIdx].classList.add('active')
-                this.isFull = true;
-            }else if(delta > 0 && fullSelectors[currentIdx - 1]){
-                fullSelectors[currentIdx].classList.remove('active')
-                this.isFull = true;
-                if(fullSelectors[currentIdx].localName === 'footer'){
-                    document.querySelectorAll('[data-full].active').forEach((element)=>{
-                        element.removeAttribute('style')
-                    })
-                    fullPager.removeAttribute('style')
-                }else{
-                    fullSelectors[currentIdx].classList.contains('boardArea') && document.querySelector('header').classList.add('white');
-                    currentIdx--;
-                }
+        fullEvent(idx, e){
+            let delta;
+            if(e.type === 'mousewheel'){
+                delta = e.wheelDelta;
             }
 
-            // 최상단 이동
-            const goToTopElement = document.querySelector('.goToTop');
-            currentIdx ? 
-                goToTopElement.classList.add('active') :
-                goToTopElement.classList.remove('active');
+            if(e.type === 'touchstart'){
+                this.touchStart['x'] = e.touches[0].clientX;
+                this.touchStart['y'] = e.touches[0].clientY;
+                return
+            }
 
-            if(this.isFull){
-                fullSelectors[currentIdx].localName !== 'footer' && fullPagerList.forEach((element, idx)=>{
+            if(e.type === 'touchend'){
+                delta = (this.touchStart['y'] - e.changedTouches[0].clientY) * -1;
+                const touchEndX = Math.abs(this.touchStart['x'] - e.changedTouches[0].clientX);
+                const touchEndY = Math.abs(delta);
+                if(touchEndX > touchEndY){
+                    return;
+                }
+            }
+            this.fullMoveEvent(idx, delta)
+        },
+        fullMoveEvent(idx, delta){
+            const currentIdx = idx;
+            
+            if(delta < 0 && this.fullSelectors[idx + 1]){
+                idx++;
+                this.fullSelectors[idx].classList.add('active')
+            }else if(delta > 0 && this.fullSelectors[idx - 1]){
+                idx--;
+                this.fullSelectors[currentIdx].classList.remove('active')
+            }
+
+            // 페이저, 해더 페이저 스타일
+            if(this.fullSelectors[idx].localName !== 'footer'){
+                // 페이저
+                this.fullPagerSeletor.childNodes.forEach((element)=>{
                     element.classList.remove('active');
-                    idx === currentIdx && element.classList.add('active');
                 })
-                setTimeout(()=>{
-                    this.isFull = false;
-                },1000)
+                this.fullPagerSeletor.childNodes.item(idx).classList.add('active');
+
+                // 해더 페이저 스타일
+                this.fullSelectors[idx].classList.contains('boardArea') ?
+                    document.querySelector('header').classList.remove('white') :
+                    document.querySelector('header').classList.add('white');
             }
+
+            // 푸터 이동
+            if(this.fullSelectors[idx].localName === 'footer'){
+                document.querySelectorAll('[data-full].active, .fullPager').forEach((element)=>{
+                    element.style.top = -document.querySelector('footer').offsetHeight + 'px'
+                })
+            }
+
+            if(this.fullSelectors[currentIdx].localName === 'footer'){
+                document.querySelectorAll('[data-full].active, .fullPager').forEach((element)=>{
+                    element.removeAttribute('style')
+                })
+            }
+
+            // 이동 막기
+            this.fullSelectors.forEach((element)=>{
+                element.style.pointerEvents = 'none';
+            })
+            setTimeout(()=>{
+                this.fullSelectors[idx].removeAttribute('style');
+            }, 1000)
         },
         goToTop(){
             document.querySelector('header').classList.add('white');
@@ -278,19 +293,21 @@ export default {
             document.querySelectorAll('.mainPage > [style]').forEach((element)=>{
                 element.removeAttribute('style');
             })
+
+            this.fullPagerSeletor.childNodes.item(0).classList.add('active');
         }
     },
     mounted() {
+        this.init();
         this.popup();
         this.board();
         this.fullPager();
-        this.fullEvent(this.fullMoveEvent);
+        this.fullUserEvent();
     },
     beforeUnmount() {
-        const fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')];
-        fullSelectors.forEach((element)=>{
-            element.removeEventListener("mousewheel", this.fullMoveEvent);
-        })
+        this.eventListeners.forEach(({ element, fullCallback }) => {
+            element.removeEventListener('mousewheel', fullCallback);
+        });
     },
 }
 </script>
