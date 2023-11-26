@@ -166,22 +166,22 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .content-modal > div strong{font-weight: 600; display: block;}
 .content-modal > div .close{aspect-ratio: 1; position: absolute; right: var(--paddingInline); top: var(--paddingBlock); background: url(../images/icon-close2.png) no-repeat center / cover; text-indent: -9999px;}
 .content-modal .infoArea p{height: 40.7407vh; max-height: 440px; font-weight: 300; background-color: var(--color-BG02); box-sizing: border-box; overflow: auto;}
-.content-modal :is(.alertArea, .confirmArea) p{line-height: 1.5454; font-weight: 300;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea{display: flex; justify-content: flex-end;}
-.userPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{aspect-ratio: 90 / 60;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea button.black{background-color: #222; color: white;}
-.content-modal :is(.alertArea, .confirmArea) .btnArea button.border{border: 1px solid#222;}
+.content-modal :is(.alertArea, .confirmArea, .logoutArea) p{line-height: 1.5454; font-weight: 300;}
+.content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea{display: flex; justify-content: flex-end;}
+.userPage .content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea button{aspect-ratio: 90 / 60;}
+.content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea button.black{background-color: #222; color: white;}
+.content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea button.border{border: 1px solid#222;}
 :is(.adminPage, .adminsPage) .content-modal > div{--paddingBlock: 30px; --paddingInline: 30px;}
 :is(.adminPage, .adminsPage) .content-modal > div strong{font-size: 20px; line-height: 30px;}
 :is(.adminPage, .adminsPage) .content-modal > div .close{width: 30px;}
 /* :is(.adminPage, .adminsPage) .content-modal .infoArea{max-width: 600px;}
 :is(.adminPage, .adminsPage) .content-modal .infoArea strong{margin-bottom: 17.5px;}
 :is(.adminPage, .adminsPage) .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;} */
-:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea){max-width: 400px;}
-:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 20px;}
-:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) p{font-size: 15px; line-height: 22px;}
-:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 40px; gap: 10px;}
-:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 86px; font-size: 15px; aspect-ratio: 86 / 40;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea, .logoutArea){max-width: 400px; border: 1px solid #222;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea, .logoutArea) strong{margin-bottom: 20px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea, .logoutArea) p{font-size: 15px; line-height: 22px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea{margin-top: 40px; gap: 10px;}
+:is(.adminPage, .adminsPage) .content-modal :is(.alertArea, .confirmArea, .logoutArea) .btnArea button{width: 86px; font-size: 15px; aspect-ratio: 86 / 40;}
 .adminPage .content-modal .alertArea dl{font-size: 13px; line-height: 18px; margin-top: 20px;}
 .adminPage .content-modal .alertArea dl dt{font-weight: 600; margin-bottom: 6px;}
 .adminPage .content-modal .alertArea dl dd{font-weight: 300;}
@@ -333,3 +333,4 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .adminsPage header div ul li a.router-link-active{position: relative;}
 .adminsPage header div ul li a:is(.router-link-active, :hover){color: #222;}
 .adminsPage header div ul li a.router-link-active::after{content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background-color: #222;}
+.adminsPage header div > button{position: absolute; right: 0; top: 0; font-size: 13px; line-height: 70px; font-weight: 300; color: #999; text-decoration: underline; text-underline-offset: 2px;}
