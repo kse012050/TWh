@@ -1,35 +1,35 @@
 <template>
     <section class="recruitPage" data-subTopAni>
-        <div class="topArea">
-            <h2 class="contentSize-padding"><span data-textAni='1'>발전자원 모집</span></h2>
-            <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
-                <strong>
+        <div class="topArea" data-aniDelay-basic="5">
+            <h2 class="contentSize-padding"><span data-textAni>발전자원 모집</span></h2>
+            <div>
+                <strong data-textAni>
                     발전사업자를 위한<br>
                     수익 최적화 솔루션
                 </strong>
             </div>
-            <div data-textAniParents="1" data-aniDelay="4" data-aniType="basic">
-                <p>
+            <div>
+                <p data-textAni>
                     <b>업계 최고수준 조건</b>으로<br>
                      발전사업자의<br class="mobile"> 수익 최적화를 돕습니다.
                 </p>
             </div>
         </div>
 
-        <div class="ani-sticky" data-styleIdx data-scroll>
+        <div data-stickyAni data-scrollPosition>
             <div class="productArea contentSize-padding">
-                <strong class="subTitle" data-textAni="0">주요 상품 소개</strong>
-                <ul data-styleIdx data-bottomToTop data-aniDelay="4">
+                <strong class="subTitle" data-textAni>주요 상품 소개</strong>
+                <ul data-animate-list="bottomToTop" data-aniDelay="4">
                     <li>
-                        <strong>RE100 장기고정계약</strong>
-                        <p>
+                        <strong data-textAni data-aniDelay="7">RE100 장기고정계약</strong>
+                        <p data-textAni data-aniDelay="9">
                             RPS 장기고정계약 대비<br>
                             경쟁력 있는 계약 조건
                         </p>
                     </li>
                     <li>
-                        <strong>발전소 매입</strong>
-                        <p>
+                        <strong data-textAni data-aniDelay="9">발전소 매입</strong>
+                        <p data-textAni data-aniDelay="11">
                             토지부터 운영 중인 발전소까지<br>
                             다양한 형태의 자산 매입
                         </p>
@@ -38,16 +38,16 @@
             </div>
         </div>
 
-        <div class="ani-sticky" data-styleIdx data-scroll>
+        <div data-stickyAni data-scrollPosition>
             <div class="content-process contentSize-padding">
-                <p class="subTitle" data-textAni="0">
+                <p class="subTitle" data-textAni>
                     장기고정계약도, 발전소 매입도<br>
                     <b>간소화된 계약 절차로</b>
                 </p>
-                <b data-bCaseAni data-aniDelay="8">
-                    <span>수익최적화 솔루션 프로세스</span>
+                <b class="case01" data-textAni data-aniDelay="4">
+                    수익최적화 솔루션 프로세스
                 </b>
-                <ul data-styleIdx data-processAni data-aniDelay="10">
+                <ul data-animate-list="bottomToTop" data-aniDelay="6">
                     <li>
                         <strong>문의 접수</strong>
                     </li>
@@ -88,14 +88,12 @@
             </dl>
         </div>
         
-        <div class="ani-sticky" data-styleIdx data-scroll>
+        <div data-stickyAni data-scrollPosition>
             <div class="condition01Area contentSize-padding">
-                <b data-bCaseAni>
-                    <span>
-                        <span>RE100 장기고정계약 요건</span>
-                    </span>
+                <b class="case01" data-textAni>
+                    RE100 장기고정계약 요건
                 </b>
-                <ul data-styleIdx data-processAni data-aniDelay="4">
+                <ul data-animate-list="bottomToTop" data-aniDelay="4">
                     <li>
                         <span>설비 용량</span>
                         <b>300kW 이상</b>
@@ -125,25 +123,23 @@
                         </b>
                     </li>
                 </ul>
-                <p data-textAni="2">
+                <p data-textAni>
                     RPS 장기고정계약 대비 <b>경쟁력 있는 수익 조건</b><br>
                     수의계약으로 보다 <b>간소한 계약 절차</b>
                 </p>
             </div>
         </div>
 
-        <div class="ani-sticky" data-styleIdx data-scroll>
+        <div data-stickyAni data-scrollPosition>
             <div class="condition02Area contentSize-padding">
                 <strong class="subTitle" data-textAni>발전소 매입</strong>
-                <p class="subTitle2" data-textAni="1">
+                <p class="subTitle2" data-textAni data-aniDelay="2">
                     <b>업계 최고가 수준</b>으로<br class="mobile"> 발전자원을 매입합니다.
                 </p>
-                <b data-bCaseAni data-aniDelay="8">
-                    <span>
-                        <span>발전소 매입 주요 조건</span>
-                    </span>
+                <b class="case01" data-textAni data-aniDelay="4">
+                    발전소 매입 주요 조건
                 </b>
-                <ul data-styleIdx data-processAni data-aniDelay="10">
+                <ul data-animate-list="bottomToTop" data-aniDelay="8">
                     <li>
                         <span>설비 용량</span>
                         <b>300kW 이상</b>
@@ -172,43 +168,42 @@
                         </b>
                     </li>
                 </ul>
-              <!--   <p data-textAni="3">
-                    사업 부지부터 운영 중인 발전소까지<br class="mobile"> <b>다양한 형태의 자산</b><br>
-                    신속한 사업 검토와 <b>자금 투입</b><br>
-                    유연한 대금 <b>지급 조건 협의</b>
-                </p> -->
             </div>
         </div>
 
-        <div class="ani-sticky" data-styleIdx data-scroll>
-            <ul class="textArea contentSize-padding" data-styleIdx data-rightToleft data-aniDelay="0">
-                <li>다양한 형태의 자산 매입</li>
-                <li>신속한 사업 검토와 자금 투입</li>
-                <li>유연한 대금 지급조건 협의</li>
-            </ul>
+        <div data-stickyAni data-scrollPosition>
+            <div>
+                <ul class="textArea contentSize-padding" data-animate-list="rightToLeft">
+                    <li>다양한 형태의 자산 매입</li>
+                    <li>신속한 사업 검토와 자금 투입</li>
+                    <li>유연한 대금 지급조건 협의</li>
+                </ul>
+            </div>
         </div>
     
-        <div class="simplifyArea contentSize-padding" data-scroll>
-            <p class="subTitle" data-textAni>
-                빠른 지급, 유연한 협의<br>
-                <b class="font-hanwha">테라와트아워</b>라 가능합니다.
-            </p>
-            <ul data-styleIdx data-aniDelay="4">
-                <li>
-                    <b>글로벌 재생에너지 No.1</b>
-                    <p>
-                        RE100 참여기업 파이프라인 확보<br>
-                        안정적인 발전소 운영 및 성능 보장
-                    </p>
-                </li>
-                <li>
-                    <b>국내 최대 금융사</b>
-                    <p>
-                        1500억 규모 펀드 설립<br>
-                        장기계약 시 금융 상품 연계 지원
-                    </p>
-                </li>
-            </ul>
+        <div data-stickyAni data-scrollPosition>
+            <div class="simplifyArea contentSize-padding">
+                <p class="subTitle" data-textAni>
+                    빠른 지급, 유연한 협의<br>
+                    <b class="font-hanwha">테라와트아워</b>라 가능합니다.
+                </p>
+                <ul data-animate-list="bottomToTop" data-aniDelay="4" data-aniDelay-list="4">
+                    <li>
+                        <b>글로벌 재생에너지 No.1</b>
+                        <p>
+                            RE100 참여기업 파이프라인 확보<br>
+                            안정적인 발전소 운영 및 성능 보장
+                        </p>
+                    </li>
+                    <li>
+                        <b>국내 최대 금융사</b>
+                        <p>
+                            1500억 규모 펀드 설립<br>
+                            장기계약 시 금융 상품 연계 지원
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <hr class="case01">
@@ -390,7 +385,6 @@ export default {
 }
 </script>
 <style>
-    .simplifyArea ul li, .simplifyArea ul::before{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
-    .simplifyArea.active ul::before{--styleIdx: 0.5;}
-    .simplifyArea.active ul li, .simplifyArea.active ul::before{transform: translateY(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.4s));}
+    .simplifyArea ul[data-animate-list="bottomToTop"]::before{opacity: 0; transform: translateY(100%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
+    .active .simplifyArea ul[data-animate-list="bottomToTop"]::before{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) / 2));}
 </style>
