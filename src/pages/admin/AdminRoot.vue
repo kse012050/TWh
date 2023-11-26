@@ -32,7 +32,7 @@ export default {
             this.isLogout = true
             sessionStorage.removeItem('adminName')
             sessionStorage.removeItem('token')
-        }
+        },
     },
     mounted() {
         !sessionStorage.getItem('token') && this.$router.push({path: '/admin'})
@@ -40,7 +40,8 @@ export default {
     },
     updated(){
         globalStyle();
-    }
+    },
+
 }
 </script>
 <style>

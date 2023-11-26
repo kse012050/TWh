@@ -30,35 +30,42 @@ const routes = [
         children: [
             {
                 path: '/',
+                name: 'TWh',
                 component: Main
             },
             {
                 path: '/company',
+                name: '기업 소개 - TWh',
                 component: Company
             },
             {
                 path: '/solution',
+                name: '전력거래 솔루션 - TWh',
                 component: Solution
             },
             {
                 path: '/recruit',
+                name: '발전자원 모집 - TWh',
                 component: Recruit
             },
             {
                 path: '/board',
+                name: '게시판 - TWh',
                 component: Board
             },
             {
                 path: '/boardDetail/:id',
+                name: '게시판 상세 - TWh',
                 component: BoardDetail
             },
             {
                 path: '/inquiry',
+                name: '사업 문의 - TWh',
                 component: Inquiry
             }
         ]
     },
-    {path: '/admin', component: SignIn},
+    {path: '/admin', name: '관리자 로그인 - TWh', component: SignIn},
     {
         path: '/admins', component: AdminRoot,
         children: [
@@ -68,18 +75,22 @@ const routes = [
                 children: [
                     {
                         path: '',
+                        name: '공지사항 관리 - 관리자 - TWh',
                         component: NoticesList
                     },
                     {
                         path: ':page',
+                        name: '공지사항 - 관리자 - TWh',
                         component: NoticesList
                     },
                     {
                         path: 'input',
+                        name: '공지사항 작성 - 관리자 - TWh',
                         component: NoticesInput
                     },
                     {
                         path: 'input/:id',
+                        name: '공지사항 수정 - 관리자 - TWh',
                         component: NoticesInput
                     },
                 ]
@@ -90,18 +101,22 @@ const routes = [
                 children: [
                     {
                         path: '',
+                        name: '게시판 관리 - 관리자 - TWh',
                         component: BoardList
                     },
                     {
                         path: ':page',
+                        name: '게시판 - 관리자 - TWh',
                         component: BoardList
                     },
                     {
                         path: 'input',
+                        name: '게시판 작성 - 관리자 - TWh',
                         component: BoardInput
                     },
                     {
                         path: 'input/:id',
+                        name: '게시판 수정 - 관리자 - TWh',
                         component: BoardInput
                     },
                 ]
@@ -112,30 +127,37 @@ const routes = [
                 children: [
                     {
                         path: '',
+                        name: '사업 문의 관리 - 관리자 - TWh',
                         component: InquiryList
                     },
                     {
                         path: ':page',
+                        name: '사업 문의 - 관리자 - TWh',
                         component: InquiryList
                     },
                     {
                         path: 'search',
+                        name: '사업 문의 검색 결과 - 관리자 - TWh',
                         component: InquirySearch
                     },
                     {
                         path: 'search/:page',
+                        name: '사업 문의 검색 - 관리자 - TWh',
                         component: InquirySearch
                     },
                     {
                         path: 'detail/:id',
+                        name: '사업 문의 상세 - 관리자 - TWh',
                         component: InquiryDetail
                     },
                     {
                         path: 'input',
+                        name: '',
                         component: InquiryInput
                     },
                     {
                         path: 'input/:id',
+                        name: '사업 문의 수정 - 관리자 - TWh',
                         component: InquiryInput
                     }
                 ]

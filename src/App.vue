@@ -6,10 +6,17 @@
 export default {
   name: 'App',
   methods: {
-
+    pageTitle(){
+      document.title = this.$route.name
+    }
   },
-  mounted() {
-
+  created(){
+    this.pageTitle();
+  },
+  watch: {
+    '$route' () {
+      this.pageTitle();
+    }
   }
 }
 </script>

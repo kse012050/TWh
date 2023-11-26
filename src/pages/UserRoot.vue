@@ -67,7 +67,6 @@ export default {
         positionActive('add');
       },0)
     },
-    
   },
   mounted() {
     this.aniIdx();
