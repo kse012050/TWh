@@ -7,7 +7,7 @@
             </a>
         </div>
     </template>
-    <section class="mainPage">
+    <section class="mainPage" data-aniDelay-basic="5">
         <ol class="fullPager">
         </ol>
         <div class="topArea" data-full>
@@ -154,7 +154,7 @@ export default {
         init(){
             this.fullSelectors = [...document.querySelectorAll('[data-full]'), document.querySelector('footer')]
             this.fullPagerSeletor = document.querySelector('.fullPager');
-            
+
             this.fullSelectors.forEach((element)=>{
                 element.removeAttribute('style');
             })

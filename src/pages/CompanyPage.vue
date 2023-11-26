@@ -1,10 +1,10 @@
 <template>
     <section class="companyPage" data-subTopAni>
-        <div class="topArea">
-            <h2 class="contentSize-padding"><span data-textAni='1'>기업 소개</span></h2>
-            <div data-textAniParents="1" data-aniType="basic">
-                <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
-                <p>
+        <div class="topArea" data-aniDelay-basic="6">
+            <h2 class="contentSize-padding"><span data-textAni>기업 소개</span></h2>
+            <div>
+                <strong class="font-hanwha" data-textAni>한화 신한 테라와트아워는</strong>
+                <p data-textAni data-aniDelay="4">
                     에너지를 생산하는 발전사업자와<br class="mobile"> 소비하는 기업을 연결하는<br>
                     <b>국내 최대의 전력거래 플랫폼</b>으로<br class="mobile"> 자리매김 하겠습니다.
                 </p>
@@ -13,27 +13,27 @@
         <div class="VPPArea contentSize-padding">
             <div class="box-img">통합발전소 VPP 이미지</div>
         </div>
-        <div class="fixedArea ani-fixed" data-styleIdx>
-            <div class="missionArea contentSize-padding" data-textAniParents="0" data-aniType="basic">
-                <b>사명</b>
-                <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
+        <div class="fixedArea" data-stepAni data-styleIdx>
+            <div class="missionArea contentSize-padding">
+                <b data-textAni>사명</b>
+                <strong data-textAni data-aniDelay="4">Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             </div>
-            <div>
-                <div class="visionArea contentSize-padding" data-textAniParents="1" data-aniType="basic">
-                    <b>비전</b>
-                    <strong>
+            <div data-aniDelay-basic="6">
+                <div class="visionArea contentSize-padding">
+                    <b data-textAni>비전</b>
+                    <strong data-textAni data-aniDelay="4">
                         Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
                     </strong>
                 </div>
             </div>
         </div>
         <div class="peopleArea contentSize-padding">
-            <strong>
+            <strong data-textAni data-scrollPosition="70">
                 재생에너지, 금융 분야<br>
                 최고의 전문가가 함께합니다.
             </strong>
             <ul>
-                <li>
+                <li data-animate="bottomToTop" data-scrollPosition="70">
                     <img src="../images/company-people01.png" alt="고성훈 이미지">
                     <b>고성훈</b>
                     <span>Ko Sung Hoon</span>
@@ -43,7 +43,7 @@
                     <p>한화시스템 전략기획팀장 </p>
                     <p>LGCNS 스마트시티 사업개발</p>
                 </li>
-                <li>
+                <li data-animate="bottomToTop" data-scrollPosition="70">
                     <img src="../images/company-people02.png" alt="차성종 이미지">
                     <b>차성종</b>
                     <span>Cha Seong Jong</span>
@@ -53,7 +53,7 @@
                     <p>신한은행 목포금융센터장 </p>
                     <p>신한은행 순천연향동지점장</p>
                 </li>
-                <li>
+                <li data-animate="bottomToTop" data-scrollPosition="70">
                     <img src="../images/company-people03.png" alt="김영근 이미지">
                     <b>김영근</b>
                     <span>Kim Young Keun</span>
@@ -61,7 +61,7 @@
                     <p>한화컨버전스 에너지플랫폼사업팀</p>
                     <p>한화임팩트 IPP사업팀</p>
                 </li>
-                <li>
+                <li data-animate="bottomToTop" data-scrollPosition="70">
                     <img src="../images/company-people04.png" alt="정윤지 이미지">
                     <b>정윤지</b>
                     <span>Jung Yun Ji</span>
@@ -71,10 +71,12 @@
                 </li>
             </ul>
         </div>
-        <hr class="case01">
+        <span class="hrArea">
+            <hr class="case01" data-animate="hr" data-scrollPosition="70">
+        </span>
         <div class="historyArea contentSize-padding">
-            <strong>연혁</strong>
-            <ol title="2023">
+            <strong data-textAni data-scrollPosition="70">연혁</strong>
+            <ol title="2023" data-animate="bottomToTop" data-scrollPosition="70">
                 <li><small>09</small>한화 신한 테라와트아워 설립</li>
                 <li><small>04</small>신한자산운용, 한화컨버전스 재생에너지 전력거래사업 전문 합작법인 설립 협약 체결</li>
             </ol>
@@ -137,8 +139,8 @@ export default {
             window.addEventListener('scroll', this.fixedScrollRemove)
         },
         fixedScrollRemove(){
-            const aniFixed = document.querySelector('.ani-fixed');
-            const aniFixedChildren = document.querySelectorAll('.ani-fixed > *');
+            const aniFixed = document.querySelector('[data-stepAni]');
+            const aniFixedChildren = document.querySelectorAll('[data-stepAni] > *');
             const scrollTop = window.scrollY;
             aniFixedChildren.forEach((childrenElement, idx)=>{
                 if(scrollTop > childrenElement.offsetHeight * idx + aniFixed.offsetTop){
@@ -166,12 +168,11 @@ export default {
     .companyPage .topArea > div:nth-of-type(3).active{transform: translateX(0);} */
 
     /* 픽스드 애니메이션 */
-    .companyPage .ani-fixed{/* overflow: hidden; */}
-    .companyPage .ani-fixed > *:nth-child(1){pointer-events: none;}
-    .companyPage .ani-fixed > *:nth-child(1).active{pointer-events: all; transition: opacity 0.3s 0.3s ease-in-out;;}
-    .companyPage .ani-fixed > *:nth-child(1).active:has( + .active){opacity: 0;}
-    .companyPage .ani-fixed > *:nth-child(2){overflow: hidden; pointer-events: none;}
-    .companyPage .ani-fixed > *:nth-child(2) > div{transform: translateX(100%); transition: transform .6s ease-in-out;}
-    .companyPage .ani-fixed > *:nth-child(2).active{pointer-events: all;}
-    .companyPage .ani-fixed > *:nth-child(2).active > div{transform: translateX(0);}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1){pointer-events: none;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active{pointer-events: all; transition: opacity 0.3s 0.3s ease-in-out;;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active:has( + .active){opacity: 0;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2){overflow: hidden; pointer-events: none;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2) > div{transform: translateX(100%); transition: transform .6s ease-in-out;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active > div{transform: translateX(0);}
 </style>

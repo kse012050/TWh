@@ -26,6 +26,9 @@ export default {
         document.querySelectorAll('[data-aniDelay-list]').forEach((element)=>{
           element.style.setProperty('--aniDelay-list', `${element.getAttribute('data-aniDelay-list') / 10}s`)
         })
+        document.querySelectorAll('[data-aniDelay-basic]').forEach((element)=>{
+          element.style.setProperty('--aniDelay-basic', `${element.getAttribute('data-aniDelay-basic') / 10}s`)
+        })
       /*   document.querySelectorAll('[data-textAniParents]').forEach((parents)=>{
           parents.childNodes.forEach((element, idx)=>{
             element.setAttribute('data-textAni', idx + (Number(parents.getAttribute('data-textAniParents')) || 0))

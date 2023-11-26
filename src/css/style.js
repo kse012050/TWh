@@ -69,13 +69,15 @@ export function scrollPositionAdd(){
 
 // 스크롤 위치에 따른 active 클래스
 export function scrollPosition(){
-    if(!document.querySelectorAll('[data-scroll]').length){
+    if(!document.querySelectorAll('[data-scrollPosition]').length){
         return
     }
-    const scrollTop = window.scrollY;
+    // const scrollTop = window.scrollY;
     const headerElementHeight = document.querySelector('header').offsetHeight;
-    document.querySelectorAll('[data-scroll]').forEach((element)=>{
-        if(scrollTop > element.offsetTop - headerElementHeight){
+    document.querySelectorAll('[data-scrollPosition]').forEach((element)=>{
+        const setPosition = element.getAttribute('data-scrollPosition') ? window.innerHeight * (element.getAttribute('data-scrollPosition') / 100) : 0;
+        // console.log(window.innerHeight * (element.getAttribute('data-scroll') / 100));
+        if(element.getBoundingClientRect().y < headerElementHeight + setPosition){
             element.classList.add('active');
         }else{
             element.classList.remove('active');
