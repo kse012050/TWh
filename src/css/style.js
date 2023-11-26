@@ -69,6 +69,9 @@ export function scrollPositionAdd(){
 
 // 스크롤 위치에 따른 active 클래스
 export function scrollPosition(){
+    if(!document.querySelectorAll('[data-scroll]').length){
+        return
+    }
     const scrollTop = window.scrollY;
     const headerElementHeight = document.querySelector('header').offsetHeight;
     document.querySelectorAll('[data-scroll]').forEach((element)=>{
@@ -82,4 +85,17 @@ export function scrollPosition(){
 
 export function scrollPositionRemove(){
     window.removeEventListener('scroll', scrollPosition)
+}
+
+const positionActiveMap = {
+    add(){
+        window.addEventListener('scroll', scrollPosition)
+    },
+    remove(){
+        window.removeEventListener('scroll', scrollPosition)
+    }
+}
+
+export function positionActive(type){
+    return positionActiveMap[type]()
 }

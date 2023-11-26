@@ -113,7 +113,7 @@
             </ul>
             <div class="PPA01Area content-img contentSize-padding">
                 <strong class="subTitle">직접 PPA</strong>
-                <p class="subTItle2">
+                <p class="subTitle2">
                     재생에너지전기공급사업자를 통해<br>
                     발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
                 </p>
@@ -134,7 +134,7 @@
             
             <div class="PPA02Area content-img contentSize-padding">
                 <strong class="subTitle">제3자간 PPA</strong>
-                <p class="subTItle2">
+                <p class="subTitle2">
                     발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
                     각각 계약을 체결하는 방식
                 </p>
@@ -148,7 +148,7 @@
 
             <div class="PPA03Area content-img contentSize-padding">
                 <strong class="subTitle">V.PPA</strong>
-                <p class="subTItle2">
+                <p class="subTitle2">
                     전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
                     도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
                 </p>
@@ -265,7 +265,7 @@
 import * as api from '../api/api'
 import InquiryAgree from '@/components/InquiryAgree.vue';
 import ModalAlert from '@/components/modal/ModalAlert.vue';
-import { scrollPositionAdd, scrollPositionRemove } from '../css/style.js'
+// import { positionActive } from '../css/style.js'
 
 export default {
     name: 'SolutionPage',
@@ -387,7 +387,7 @@ export default {
         this.init();
         this.scrollEvent();
         this.tabClick();
-        scrollPositionAdd();
+        // positionActive('add');
         document.querySelectorAll('input[required]').forEach((element)=>{
             element.required && (this.inputsRequired[element.name] = '')
         })
@@ -395,7 +395,7 @@ export default {
         
     },
     beforeUnmount(){
-        scrollPositionRemove();
+        // positionActive('remove');
         window.removeEventListener('scroll',this.test)
     }
 }

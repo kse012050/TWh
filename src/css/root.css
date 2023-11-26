@@ -8,7 +8,10 @@
     --color-point01: #F37321;
     --color-point02: #0046FF;
     --responsive: 1240px;
-    --aniDutaion: .6s;
+    --aniDuration: 0.6s;
+    --aniDelay: 0s; 
+    --aniDelay-list: 0s;
+    --aniDelay-basic: 0s;
 }
 
 /* html{--scrollWidth: 17px;} */

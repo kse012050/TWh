@@ -74,7 +74,7 @@
 
         <div class="content-img contentSize-padding">
             <strong class="subTitle">RE100 장기고정계약</strong>
-            <p class="subTItle2">
+            <p class="subTitle2">
                 <b>RE100 이행을 원하는 기업</b>과<br class="mobile"> 장기고정계약으로<br>
                 안정적인 수익을 창출하세요.
             </p>
@@ -135,7 +135,7 @@
         <div class="ani-sticky" data-styleIdx data-scroll>
             <div class="condition02Area contentSize-padding">
                 <strong class="subTitle" data-textAni>발전소 매입</strong>
-                <p class="subTItle2" data-textAni="1">
+                <p class="subTitle2" data-textAni="1">
                     <b>업계 최고가 수준</b>으로<br class="mobile"> 발전자원을 매입합니다.
                 </p>
                 <b data-bCaseAni data-aniDelay="8">

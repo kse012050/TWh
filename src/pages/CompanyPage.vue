@@ -134,24 +134,28 @@ export default {
             })
 
             
+            window.addEventListener('scroll', this.fixedScrollRemove)
+        },
+        fixedScrollRemove(){
             const aniFixed = document.querySelector('.ani-fixed');
             const aniFixedChildren = document.querySelectorAll('.ani-fixed > *');
-            window.addEventListener('scroll', ()=>{
-                const scrollTop = window.scrollY;
-                aniFixedChildren.forEach((childrenElement, idx)=>{
-                    if(scrollTop > childrenElement.offsetHeight * idx + aniFixed.offsetTop){
-                        aniFixedChildren[idx].classList.add('active');
-                    }else{
-                        aniFixedChildren[idx].classList.remove('active');
-                    }
-                })
+            const scrollTop = window.scrollY;
+            aniFixedChildren.forEach((childrenElement, idx)=>{
+                if(scrollTop > childrenElement.offsetHeight * idx + aniFixed.offsetTop){
+                    aniFixedChildren[idx].classList.add('active');
+                }else{
+                    aniFixedChildren[idx].classList.remove('active');
+                }
             })
         }
     },
     mounted() {
         this.init();
         this.scrollEvent();
-    }
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.fixedScrollRemove)
+    },
 }
 </script>
 <style>

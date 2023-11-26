@@ -73,7 +73,7 @@
 :is(.solutionPage, .recruitPage) .topArea div > strong{font-size: 60px; line-height: 76px;}
 :is(.solutionPage, .recruitPage) .topArea div > p{font-size: 50px; line-height: 70px;}
 :is(.solutionPage, .recruitPage) .subTitle{font-size: 50px; line-height: 70px;}
-:is(.solutionPage, .recruitPage) .subTItle2{font-size: 40px; line-height: 54px;}
+:is(.solutionPage, .recruitPage) .subTitle2{font-size: 40px; line-height: 54px;}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{margin-bottom: 100px;}
 
 
