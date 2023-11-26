@@ -11,12 +11,12 @@
         <ol class="fullPager">
         </ol>
         <div class="topArea" data-full>
-            <div>
+            <div class="textArea">
                 <h2 class="font-hanwha">
                     <b>TWh</b>
                     한화 신한 테라와트아워
                 </h2>
-                <p class="cursor">재생에너지 전력거래,<br class="mobile"> 지속 가능한 내일을 만듭니다.</p>
+                <p>재생에너지 전력거래,<br class="mobile"> 지속 가능한 내일을 만듭니다.</p>
             </div>
             <div class="bg"></div>
             <div class="scroll">SCROLL<span></span></div>
@@ -157,7 +157,12 @@ export default {
 
             this.fullSelectors.forEach((element)=>{
                 element.removeAttribute('style');
+                element.classList.remove('active');
             })
+
+            
+            document.querySelector('.topArea').classList.remove('intro')
+            document.querySelector('.topArea').classList.remove('introFin')
         },
         popup(){
             api.user('list',{type: 'notice'})
@@ -191,26 +196,26 @@ export default {
         },
         typingEvent() {
             const typingEle = document.querySelector('.topArea p');
-            // const typginBackup = typingEle.innerHTML;
-            typingEle.innerHTML = ''
-            this.fullEvent();
+            const typginBackup = typingEle.innerHTML.replace('<br class="mobile">',window.innerWidth <= 1100 ? "\n" : '').split('').map((text) => text === "\n" ? '<br class="mobile">' : text);
+            typingEle.innerText = ''
+            // this.fullEvent();
             // let count = 0;
-            // setTimeout(()=>{
-            //     const typingAni = setInterval(() => {
-            //         typingEle.innerHTML += typginBackup[count];
+            setTimeout(()=>{
+                const typingAni = setInterval(() => {
+                    typingEle.innerHTML += typginBackup.shift();
             //         count++
-            //         if(!typginBackup[count]){
-            //             clearInterval(typingAni);
-            //             setTimeout(()=>{
-            //                 typingEle.classList.remove('cursor');
-            //                 document.querySelector('.topArea').classList.add('intro');
-            //                 document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
-            //                     this.fullEvent();
-            //                 })
-            //             }, 1000)
-            //         }
-            //     }, 100);
-            // },1000);
+                    if(!typginBackup.length){
+                        clearInterval(typingAni);
+                        setTimeout(()=>{
+                            document.querySelector('.topArea').classList.add('introFin');
+                            sessionStorage.setItem('intro','true');
+                            document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
+                                this.fullUserEvent();
+                            })
+                        }, 1000)
+                    }
+                }, 100);
+            },1000);
         },
         fullUserEvent(){
             // const fullSelectors = document.querySelectorAll('[data-full]');
@@ -308,9 +313,15 @@ export default {
         this.popup();
         this.board();
         this.fullPager();
-        this.fullUserEvent();
+        if(!sessionStorage.getItem('intro')){
+            document.querySelector('.topArea').classList.add('intro')
+            this.typingEvent();
+        }else{
+            this.fullUserEvent();
+        }
     },
     beforeUnmount() {
+        this.init();
         this.eventListeners.forEach(({ element, fullCallback }) => {
             element.removeEventListener('mousewheel', fullCallback);
         });
@@ -335,30 +346,32 @@ export default {
     .mainPage:has( ~ footer.active) [data-full].active{z-index: 1; transition-property: z-index, top; transition-duration: 0s, 0.5s; transition-delay: 0.5s, 0s;}
 
 
-    .mainPage .topArea{color: white;}
     /* 인트로 */
-   /*  header:has(+ .mainPage){opacity: 0; pointer-events: none;}
-    .mainPage .topArea{--color: #222; color: var(--color); position: relative; z-index: 1; background-color: white;}
-    .mainPage .topArea > div{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
-    .mainPage .topArea > div h2{opacity: 0;}
-    .mainPage .topArea > div p.cursor::after{content: ''; position: absolute; right: -0.2em; top: 0; width: 2px; height: 100%; background-color: var(--color);
-    animation: cursor 1s steps(2) infinite;}
-    .mainPage .topArea > .bg{clip-path: circle(0% at 50% 50%);}
+    header:has(+ .mainPage .topArea.intro){opacity: 0; pointer-events: none;}
+    .mainPage .topArea{z-index: 1; background-color: white;}
+    .mainPage .topArea.intro{--color: #222; color: var(--color); position: relative;}
+    .mainPage .topArea.intro > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
+    .mainPage .topArea.intro > div.textArea h2{opacity: 0;}
+    .mainPage .topArea.intro > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor .9s infinite steps(2);}
+    .mainPage .topArea.intro > .bg{clip-path: circle(0% at 50% 50%);}
+    .mainPage .topArea.intro > .scroll{opacity: 0;}
 
     @keyframes cursor {
         0%{opacity: 0;}
         100%{opacity: 1;}
     }
 
-    header:has(+ .mainPage .topArea.intro){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
-    .mainPage .topArea.intro{--color: white; transition: 1s 2s color;}
-    .mainPage .topArea.intro > div{transform: translateY(0); transition: 1s transform;}
-    .mainPage .topArea.intro > div h2{opacity: 1; transition: 1s 0.8s opacity;}
-    .mainPage .topArea.intro > .bg{animation: topBG 3s 1.3s forwards;}
+    header:has(+ .mainPage .topArea.introFin){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
+    .mainPage .topArea.introFin{color: white; transition: 1s 2s color;}
+    .mainPage .topArea.introFin > div.textArea{transform: translateY(0); transition: 1s transform;}
+    .mainPage .topArea.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;}
+    .mainPage .topArea.intro > div.textArea p::after{animation: none; border-color: transparent;}
+    .mainPage .topArea.introFin > .bg{animation: topBG 3s 1.3s forwards;}
+    .mainPage .topArea.introFin > .scroll{opacity: 1; transition: 1s 2.5s opacity;}
     @keyframes topBG {
         0%{clip-path: circle(0% at 50% 50%); opacity: 0;}
         100%{clip-path: circle(100% at 50% 50%); opacity: 1;}
-    } */
+    }
 
 
     /* 메인 솔루션 애니메이션 */

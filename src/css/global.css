@@ -145,7 +145,7 @@ input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-weight: 600; background-color: #F1F1F1; border-radius: 30px; cursor: pointer;}
 .content-inquiry ul li div:has([type="checkbox"], [type="radio"]) input:checked + label{color: white; background-color: #222;}
 .content-inquiry ul li small{font-weight: 300; color: #999; display: block;}
-.content-inquiry ul li div input.error{border: 2px solid var(--color-point01); box-sizing: border-box;}
+.content-inquiry ul li div input.error:not(:focus){border: 2px solid var(--color-point01); box-sizing: border-box;}
 .content-inquiry > div input[type="checkbox"] + label{font-weight: 300; display: flex; align-items: center; cursor: pointer;}
 .content-inquiry > div input[type="checkbox"] + label b{font-weight: 600; text-decoration: underline;}
 .content-inquiry > div input[type="checkbox"] + label strong{font-weight: 600; margin-right: 0.4em;}

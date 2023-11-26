@@ -6,7 +6,7 @@
 header.white + .mainPage .fullPager{--color: white;}
 /* 메인 페이지 - 페이저 */
 /* 메인 페이지 - 최상단 영역 */
-.mainPage .topArea{display: flex; justify-content: center; align-items: center; position: relative; font-weight: 600; text-align: center;}
+.mainPage .topArea{--color: white; color: var(--color); display: flex; justify-content: center; align-items: center; position: relative; font-weight: 600; text-align: center;}
 .mainPage .topArea > div{display: flex; flex-direction: column; align-items: center;}
 .mainPage .topArea > div h2 b{display: block;}
 .mainPage .topArea > div p{line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
