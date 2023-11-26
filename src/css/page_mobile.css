@@ -142,8 +142,14 @@
 .boardPage h2{font-size: 30px; line-height: 1.2; margin-bottom: 30px;}
 .boardPage div{gap: 10px; margin-bottom: 60px;}
 .boardPage div button{font-size: 15px; line-height: 3.0667; padding-inline: 20px;}
-.boardPage .user-board{flex-wrap: wrap; justify-content: center; gap: 40px 20px;}
-.boardPage .user-board li{flex-basis: calc((100% - 20px) / 2); flex-grow: 1; min-width: 260px;}
+.boardPage .user-board{flex-wrap: wrap; gap: 40px 20px;}
+/* .boardPage .user-board li{flex-basis: calc((100% - 20px) / 2); min-width: 260px;} */
+@media screen and (width > 550px) {
+    .boardPage .user-board li{width: calc((100% - 20px) / 2);}
+}
+@media screen and (width <= 550px) {
+    .boardPage .user-board li{width: 100%;}
+}
 .boardPage .user-board li a{display: block;}
 .boardPage > button{margin-top: 40px;}
 

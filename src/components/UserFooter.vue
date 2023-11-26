@@ -2,11 +2,11 @@
     <footer>
         <div class="contentSize">
             <ul>
-                <li><router-link to="">기업 소개</router-link></li>
-                <li><router-link to="">전력거래 솔루션</router-link></li>
-                <li><router-link to="">발전자원 모집</router-link></li>
-                <li><router-link to="">게시판</router-link></li>
-                <li><router-link to="">사업 문의</router-link></li>
+                <li><router-link to="/company">기업 소개</router-link></li>
+                <li><router-link to="/solution">전력거래 솔루션</router-link></li>
+                <li><router-link to="/recruit">발전자원 모집</router-link></li>
+                <li><router-link to="/board">게시판</router-link></li>
+                <li><router-link to="/inquiry">사업 문의</router-link></li>
             </ul>
             <div>
                 <button @click="isFamilySite = !isFamilySite">FAMILY SITE+</button>
@@ -25,14 +25,14 @@
                         <li><a href="https://www.hanwhasystems.com/kr/index.do" target="_blank">한화시스템</a></li>
                         <li><a href="https://www.hanwha-pm.com/ko/index.asp" target="_blank">한화정밀기계</a></li>
                         <li><a href="https://www.hanwhasolutions.com/ko/" target="_blank">한화솔루션</a></li>
-                        <li><a href="" target="_blank">한화토탈에너지스</a></li>
+                        <li><a href="https://www.htpchem.com/" target="_blank">한화토탈에너지스</a></li>
                         <li><a href="https://hec.hanwha.co.kr/main.do" target="_blank">한화에너지</a></li>
                         <li><a href="https://hanwhaconvergence.com/kr/" target="_blank">한화컨버전스</a></li>
                     </ul>
                     <ul title="금융">
                         <li><a href="https://www.hanwhalife.com/index.jsp" target="_blank">한화생명</a></li>
                         <li><a href="https://www.hwgeneralins.com/" target="_blank">한화손해보험</a></li>
-                        <li><a href="" target="_blank">한화투자증권</a></li>
+                        <li><a href="https://www.hanwhawm.com/main/main/index.cmd" target="_blank">한화투자증권</a></li>
                         <li><a href="http://www.hanwhafund.co.kr/webapp/hw_kor/hw_sys/hw_main.jsp" target="_blank">한화자산운용</a></li>
                         <li><a href="https://www.hanwhasbank.com/main.act" target="_blank">한화저축은행</a></li>
                     </ul>
@@ -60,19 +60,19 @@
                 </dl>
                 <dl>
                     <dt>대표 전화</dt>
-                    <dd>02-318-2309</dd>
+                    <dd><a href="tel:+82023182309">02-318-2309</a></dd>
                 </dl>
                 <dl>
                     <dt>대표 이메일</dt>
-                    <dd>sales@twh.co.kr</dd>
+                    <dd><a href="mailto:sales@twh.co.kr">sales@twh.co.kr</a></dd>
                 </dl>
             </address>
             <p>© 2023 TWh, INC. All rights reserved.</p>
             <div>
                 <ul>
-                    <li><router-link to="">개인정보 처리방침</router-link></li>
+                    <li><a href="https://hanwhaconvergence.com/kr/sub/policy/privacy.asp" target="_blank">개인정보 처리방침</a></li>
                     <li><router-link to="">개인정보 수집 및 처리 목적</router-link></li>
-                    <li><router-link to="">사업 문의</router-link></li>
+                    <li><router-link to="/inquiry">사업 문의</router-link></li>
                 </ul>
                 <ul>
                     <li><a href="">인스타그램 링크</a></li>
