@@ -111,7 +111,7 @@
                         <template v-for="data in boardList" :key="data.id">
                             <li>
                                 <router-link :to="`/boardDetail/${data.id}`">
-                                    <img v-if="data.medias.length" :src="data.medias[0].imageurl" alt="">
+                                    <img v-if="data.medias.length" :src="data.medias[0].imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='https://placehold.co/380x250'">
                                     <small>
                                         {{
                                             data.type === "NEWS" ? '보도자료' : '인터뷰'
