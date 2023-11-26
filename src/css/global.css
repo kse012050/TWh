@@ -120,7 +120,7 @@ b.case01[data-textAni] > span > span{font-weight: 600; color: white; background-
 .content-img dl dd{color: #999; font-weight: 300;}
 
 /* 컨텐츠 - 프로세스 */
-.content-process{padding-block: var(--padding02); background-color: var(--color-BG02);; text-align: center;}
+.content-process{padding-block: var(--padding02); background-color: var(--color-BG02); text-align: center;}
 .content-process ul{position: relative;}
 .content-process ul::before{content: ''; position: absolute; background-color: #222; }
 .content-process ul li strong{max-width: var(--width); display: block; font-weight: 600; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
@@ -128,7 +128,7 @@ b.case01[data-textAni] > span > span{font-weight: 600; color: white; background-
 
 /* 폼 공통 */
 input:not([type="file"]), textarea, select{border: none;}
-input:not([type="file"], [type="submit"]), textarea, select{background-color: #F8F8F8;}
+input:not([type="file"], [type="submit"]), textarea, select{background-color: var(--color-BG02);}
 input:is([type="checkbox"], [type="radio"], input[type="file"]){display: none;}
 :is(input, textarea, select)::placeholder{color: #BBB;}
 
@@ -251,6 +251,14 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .adminsPage :is(input:not([type="submit"]), select){height: 50px; }
 .adminsPage :is(input:not([type="submit"]), select, textarea){font-size: 15px; line-height: 22px; padding: 15px; font-weight: 300; box-sizing: border-box;}
 .adminsPage select{background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
+.adminsPage .select-box{position: relative; font-size: 15px; line-height: 20px; font-weight: 300;}
+.adminsPage .select-box button{padding-inline: 15px; text-align: left;}
+.adminsPage .select-box > button{width: 100%; height: 50px; line-height: 22px; box-sizing: border-box; background-color: var(--color-BG02); border: 1px solid var(--color-BG02); position: relative;}
+.adminsPage .select-box > button::after{content: ''; width: 22px; aspect-ratio: 1; background: url(../images/icon-select.png) no-repeat center / cover; position: absolute; right: 14px; top: 50%; transform: translateY(-50%);}
+.adminsPage .select-box.active > button{border: 1px solid #222;}
+.adminsPage .select-box > div{position: absolute; top: calc(100% + 5px); left: 0; width: 100%; padding-block: 10px; background-color: var(--color-BG02); box-sizing: border-box; border: 1px solid #222;}
+.adminsPage .select-box > div button{width: 100%; padding-block: 10px; box-sizing: border-box;}
+.adminsPage .select-box > div button:hover{font-weight: 600;}
 
 
 /* 관리자 버튼 */

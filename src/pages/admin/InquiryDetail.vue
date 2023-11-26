@@ -84,15 +84,17 @@
                             <li>
                                 <label for="">회신 여부</label>
                                 <div class="inquirystateArea">
-                                    <!-- {{
-                                        inquiryItem.inquirystate === '1' ? '읽지 않음' :
-                                            (inquiryItem.inquirystate === '2' ? '회신 안함' :
-                                                '회신 완료')
-                                    }} -->
-                                    <select name="inquirystate" id="inquirystate" v-model="inquirystateUpdate.inquirystate">
-                                        <option value="2">회신 안함</option>
-                                        <option value="3">회신 완료</option>
-                                    </select>
+                                    <div class="select-box" :class="{active: isSelect}">
+                                        <button @click.prevent="isSelect = true" @click.stop>
+                                            {{
+                                                inquirystateUpdate.inquirystate === '2' ? '회신 안함' : '회신 완료'
+                                            }}
+                                        </button>
+                                        <div v-if="isSelect">
+                                            <button @click.prevent="inquirystateUpdate.inquirystate = '2'">회신 안함</button>
+                                            <button @click.prevent="inquirystateUpdate.inquirystate = '3'">회신 완료</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </li>
                             <li>
@@ -142,6 +144,7 @@ export default {
         return{
             id: this.$route.params.id,
             inquiryItem: {},
+            isSelect: false,
             inquirystateUpdate: {
                 inquirystate: undefined
             },
@@ -168,6 +171,9 @@ export default {
                     this.inquirystateUpdate['inquirystate'] = result.inquiryItem['inquirystate']
                     
                 })
+        },
+        onSelect(){
+            this.isSelect = false;
         },
         replysAdd(){
             const nameSelector = document.querySelector('[name="name"]')
@@ -225,6 +231,10 @@ export default {
     },
     mounted(){
         this.detailData();
+        window.addEventListener('click',this.onSelect)
+    },
+    beforeUnmount() {
+        window.removeEventListener('click',this.onSelect)
     }
 }
 </script>

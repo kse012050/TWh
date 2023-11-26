@@ -16,10 +16,17 @@
                     <li>
                         <label for="">카테고리</label>
                         <div class="limited">
-                            <select name="type" id="type" @input="onChange">
-                                <option value="NEWS" :selected="boardItem.type === 'NEWS'">보도자료</option>
-                                <option value="BLOG" :selected="boardItem.type === 'BLOG'">블로그</option>
-                            </select>
+                            <div class="select-box" :class="{active: isSelect}">
+                                <button @click.prevent="isSelect = true" @click.stop>
+                                    {{
+                                        boardItem.type === 'NEWS' ? '보도자료' : '블로그'
+                                    }}
+                                </button>
+                                <div v-if="isSelect">
+                                    <button @click.prevent="boardItem.type = 'NEWS'">보도자료</button>
+                                    <button @click.prevent="boardItem.type = 'BLOG'">블로그</button>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -89,6 +96,7 @@ export default {
         return{
             id: this.$route.params.id,
             boardItem: {},
+            isSelect: false,
             // 유저 추가 이미지
             imgAdds: [],
             // 기존 데이터 이미지
@@ -121,6 +129,9 @@ export default {
                 this.boardItem.type = 'NEWS'
                 this.boardItem.medias = []
             }
+        },
+        onSelect(){
+            this.isSelect = false;
         },
         onChange(e){
             api.onChange(e, {}, this.boardItem)
@@ -196,6 +207,10 @@ export default {
     },
     mounted() {
         this.detailData();
+        window.addEventListener('click',this.onSelect)
+    },
+    beforeUnmount() {
+        window.removeEventListener('click',this.onSelect)
     }
     
 }

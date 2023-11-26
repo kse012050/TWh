@@ -259,8 +259,9 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div .answerArea fieldset ul li label{margin-bottom: 12px; display: block; font-weight: 600;}
 /* .inquiryDetailPage > div .answerArea fieldset ul li div.inquirystateArea{width: 200px; line-height: 50px; padding-inline: 15px; background-color: var(--color-BG02); box-sizing: border-box;} */
 .inquiryDetailPage > div .answerArea fieldset ul li div :is(input, select){width: 200px; padding-inline: 15px; background-color: var(--color-BG02); box-sizing: border-box;}
+.inquiryDetailPage > div .answerArea fieldset ul li div .select-box{width: 200px;}
 .inquiryDetailPage > div .answerArea fieldset ul li div textarea{width: 100%; height: 150px;}
-.inquiryDetailPage > div .answerArea fieldset ul li div *:not(:last-child){margin-bottom: 10px;}
+.inquiryDetailPage > div .answerArea fieldset ul li > div:not(.inquirystateArea) *:not(:last-child){margin-bottom: 10px;}
 .inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; font-size: 13px; display: block; margin-left: auto;}
 .inquiryDetailPage > div .answerArea > ul{max-height: 409px; overflow: auto;}
 .inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}

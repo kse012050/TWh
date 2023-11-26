@@ -27,7 +27,7 @@ export default {
     },
     data(){
         return{
-            type: undefined,
+            type: '',
             search: this.$route.query.search
         }
     },
