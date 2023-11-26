@@ -71,9 +71,7 @@
                 </li>
             </ul>
         </div>
-        <span class="hrArea">
-            <hr class="case01" data-animate="hr" data-scrollPosition="70">
-        </span>
+        <hr class="case01" data-animate="hr" data-scrollPosition="70">
         <div class="historyArea contentSize-padding">
             <strong data-textAni data-scrollPosition="70">연혁</strong>
             <ol title="2023" data-animate="bottomToTop" data-scrollPosition="70">

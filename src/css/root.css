@@ -10,7 +10,7 @@
     --responsive: 1240px;
     --aniDuration: 0.6s;
     --aniDelay: 0s; 
-    --aniDelay-list: 0s;
+    --aniDelay-list: 0.2s;
     --aniDelay-basic: 0s;
 }
 

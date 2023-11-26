@@ -47,9 +47,8 @@ ul.user-board li a p{font-size: 26px; line-height: 38px;}
 
 
 /* 검은 배경 케이스 */
-b.case01{padding: 10px 30px; font-size: 24px; line-height: 34px;}
-b[data-bCaseAni]{font-size: 24px; line-height: 34px;}
-b[data-bCaseAni] > span{padding: 10px 30px;}
+b.case01:not([data-textAni]){padding: 10px 30px; font-size: 24px; line-height: 34px;}
+b.case01[data-textAni] > span > span{padding: 10px 30px; font-size: 24px; line-height: 34px;}
 
 
 /* 컨텐츠 - 이미지 */
@@ -64,6 +63,8 @@ b[data-bCaseAni] > span{padding: 10px 30px;}
 .content-process b{margin-bottom: 60px;}
 .content-process ul{--width: 248px; display: flex; justify-content: center;}
 .content-process ul::before{right: 50%; top: calc(var(--width) / 2); width: calc(100% + (100vw - var(--contentSize-padding))); height: 1px; transform: translateX(50%);}
+[data-scrollposition] .content-process ul[data-animate-list]::before{transition: width  var(--aniDuration) ease-in-out;}
+[data-scrollposition]:not(.active) .content-process ul[data-animate-list]::before{width: 0;}
 .content-process ul li{flex: 1;}
 .content-process ul li strong{font-size: 26px; line-height: 38px;}
 
@@ -147,6 +148,7 @@ b[data-bCaseAni] > span{padding: 10px 30px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li:last-child{margin-left: auto;}
 .userPage .goToTop{right: 40px; bottom: 40px; width: 70px;}
 
 

@@ -96,7 +96,7 @@
 .solutionPage .expertArea ul{max-width: 240px; aspect-ratio: 240 / 690; margin-inline: auto;}
 .solutionPage .expertArea ul li{width: 100%; font-size: 18px; line-height: 1.333; position: absolute; left: 0;}
 .solutionPage .expertArea ul li:nth-child(1){top: 0;}
-.solutionPage .expertArea ul li:nth-child(2){top: 50%; transform: translateY(-50%);}
+.solutionPage .expertArea ul li:nth-child(2){top: 50%; translate: 0 -50%;}
 .solutionPage .expertArea ul li:nth-child(3){bottom: 0;}
 
 

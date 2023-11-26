@@ -51,25 +51,20 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 /* 텍스트 애니메이션 */
 [data-textAni]{--aniDelay-list: 0.3s;}
 [data-textAni] > span{display: block; overflow: hidden; min-height: calc(1em + 7px);}
-[data-textAni] > span span{display: block; transform: translateY(100%); transition: transform var(--aniDuration) ease-in-out;}
+[data-textAni] > span span{display: block; transform: translateY(calc(100% + 10px)); transition: transform var(--aniDuration) ease-in-out;}
 :is(.active [data-textAni], [data-textAni].active) > span span{transform: translateY(0%); transition-delay: calc((var(--aniIdx) * var(--aniDelay-list) + var(--aniDelay) + var(--aniDelay-basic)));}
 /* 아래 -> 위 애니메이션 */
 [data-animate="bottomToTop"]{opacity: 0; transform: translateY(30%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
 .active [data-animate="bottomToTop"],[data-animate="bottomToTop"].active{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic));}
-
+[data-animate-list="bottomToTop"] > *{opacity: 0; transform: translateY(30%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
+.active [data-animate-list="bottomToTop"] > *{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
+/* 분리 선 애니메이션 */
 [data-animate="hr"]{transition: border-color var(--aniDuration) ease-in-out;}
 [data-animate="hr"]:not(.active){border-top-color: white;}
-
-[data-bCaseAni]{overflow: hidden; position: relative;}
-[data-bCaseAni] > span{transform: translateY(calc(100% + 10px)); transition: transform var(--aniDutaion) ease-in-out;}
-.active [data-bCaseAni] > span{transform: translateY(0); transition-delay: var(--aniDelay);}
-[data-processAni] li{opacity: 0; transform: translateY(100%); transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
-.active [data-processAni] li{opacity: 1; transform: translateY(0); transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
-[data-rightToleft]{overflow: hidden;}
-[data-rightToleft] li{transform: translateX(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
-.active [data-rightToleft] li{transform: translateX(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
-[data-bottomToTop] li{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: var(--aniDutaion); transition-timing-function: ease-in-out;}
-.active [data-bottomToTop] li{transform: translateX(0); opacity: 1; transition-delay: calc(var(--aniDelay) + (var(--styleIdx) * 0.2s));}
+/* 오른쪽 -> 왼쪽 애니메이션 */
+*:has( > [data-animate-list="rightToLeft"]){overflow: hidden;}
+[data-animate-list="rightToLeft"] > *{opacity: 0; transform: translateX(50%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
+.active [data-animate-list="rightToLeft"] > *{opacity: 1; transform: translateX(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */
@@ -89,10 +84,11 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 [data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.02s; transition-timing-function: ease-in-out, linear;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
-[data-subTopAni] .topArea > div{transition: all .6s ease-in-out;}
-[data-subTopAni] .topArea > div[data-aniType="basic"]{transform: translateY(100%);}
-[data-subTopAni] .topArea > div[data-aniType="basic"].active{transform: translateY(0);}
-[data-subTopAni] .topArea > div[data-aniType="basic"].active:has( + .active){transform: translateY(-100%);}
+[data-subTopAni] .topArea > div{transition: transform var(--aniDuration) ease-in-out; transform: translateY(100%);}
+/* [data-subTopAni] .topArea > div{transform: translateY(100%);} */
+[data-subTopAni] .topArea > div.active{transform: translateY(0);}
+[data-subTopAni] .topArea > div.active:has( + .active){transform: translateY(-100%);}
+[data-subTopAni] .topArea > div ul{color: #222; text-align: left;}
 [data-subTopAni][class*="Page"]{position: relative; z-index: 0;}
 [data-subTopAni] + footer{position: relative; z-index: 1;}
 
@@ -102,14 +98,15 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 [data-subTopAni] [data-stepAni]::before{position: sticky;}
 [data-subTopAni] [data-stepAni] > *:not(:first-child){position: fixed;}
 
-[data-subTopAni] .ani-sticky{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight));}
-[data-subTopAni] .ani-sticky > *{position: sticky; top: calc(var(--headerHeight));}
+[data-subTopAni] [data-stickyAni]{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight));}
+[data-subTopAni] [data-stickyAni] > *{position: sticky; top: calc(var(--headerHeight));}
 
 
 /* 검은 배경 케이스 */
-b.case01{font-weight: 600; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
-b[data-bCaseAni]{font-weight: 600; display: inline-block;}
-b[data-bCaseAni] > span{color: white; background-color: #222; border-radius: 25px; display: inline-block;}
+b.case01:not([data-textAni]){font-weight: 600; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
+b.case01[data-textAni]{display: inline-block;}
+b.case01[data-textAni] > span{display: inline-block;}
+b.case01[data-textAni] > span > span{font-weight: 600; color: white; background-color: #222; border-radius: 25px; display: inline-block;}
 
 
 /* 이미지 박스 */
@@ -232,7 +229,6 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2){gap: 20px; display: flex;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(1){--iconIdx: 0;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:nth-child(2){--iconIdx: 1;}
-.userPage footer > div:nth-child(2) div ul:nth-child(2) li:last-child{margin-left: auto;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li a{height: var(--height); aspect-ratio: 1; background: url(../images/icon-sns.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%; text-indent: -9999px;}
 .userPage .goToTop{position: fixed; aspect-ratio: 1; background: url(../images/icon-goToTop.png) no-repeat center / cover; text-indent: -9999px; opacity: 0; pointer-events: none; transition: opacity 0.5s;}
 .userPage .goToTop.active{opacity: 1; pointer-events: all;}

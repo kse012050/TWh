@@ -81,8 +81,8 @@
 .solutionPage .topArea div:nth-of-type(3) ul{display: flex; gap: 40px; justify-content: space-between; width: 100%; max-width: 1160px;}
 .solutionPage .topArea div:nth-of-type(3) ul li{flex: 1; max-width: 540px; height: min(50vh, 540px); padding: 70px 60px;}
 .solutionPage .topArea div:nth-of-type(3) ul li::before{--width: 250px;}
-.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){transform: translateY(-5.5556vh);}
-.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){transform: translateY(5.5556vh);}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(1){translate: 0 -5.5556vh;}
+.solutionPage .topArea div:nth-of-type(3) ul li:nth-child(2){translate: 0 5.5556vh;}
 .solutionPage .topArea div:nth-of-type(3) ul li > mark{font-size: 50px;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{--fontSize: 30px; line-height: 42px;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-bottom: 40px;}

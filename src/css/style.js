@@ -1,7 +1,7 @@
 
 // css용 index
 function styleIdx(){
-    document.querySelectorAll('[data-styleIdx]').forEach((parents)=>{
+    document.querySelectorAll('[data-styleIdx], [data-animate-list], [data-stickyAni]').forEach((parents)=>{
         let children = []
         parents.getAttribute('data-styleIdx') ?
             parents.childNodes.forEach((element)=>{
