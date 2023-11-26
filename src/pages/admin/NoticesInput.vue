@@ -16,7 +16,7 @@
                     <li>
                         <label for="test">이미지</label>
                         <div>
-                            <input type="file" name="test" id="test" @change="imgAdd">
+                            <input type="file" name="test" id="test" @change="imgAdd" accept="image/*">
                             <label for="test" v-if="imgAdds.length + imgData.length < 3">+ 이미지 등록</label>
                             <div v-for="(data, idx) in imgAdds" :key="idx">
                                 <img :src="data" alt="임시 이미지">

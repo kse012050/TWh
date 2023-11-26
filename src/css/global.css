@@ -196,14 +196,18 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .userPage header.white{--imgIdx: 1; background-color: transparent;}
 .userPage header div nav ul li a{display: block; font-weight: 600;}
 @media screen and (width <= 1240px) {
+    body:has(nav.active){overflow: hidden;}
     .userPage header{padding-inline: var(--spacing);}
     .userPage header div{height: var(--headerHeight);}
     .userPage header div button{width: var(--width); aspect-ratio: 1; text-indent: -9999px;}
-    .userPage header div nav{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);}
-    .userPage header div nav{display: none;}
+    .userPage header div nav{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); transition: background-color var(--aniDuration) ease-in-out;}
+    .userPage header div nav:not(.active){z-index: -100; background-color: transparent; pointer-events: none;}
     .userPage header div nav.active{display: flex;}
-    .userPage header div nav ul{height: 100%; background-color: white; margin-left: auto;}
-    .userPage header div nav button{position: absolute; background: url(../images/icon-close.png) no-repeat center / cover;}
+    .userPage header div nav ul{height: 100%; background-color: white; margin-left: auto; transform: translateX(0%); transition: transform var(--aniDuration) ease-in-out;}
+    .userPage header div nav:not(.active) ul{transform: translateX(100%);}
+    .userPage header div nav button{position: absolute; background: url(../images/icon-close.png) no-repeat center / cover; opacity: 1; transition-property: opacity; transition-timing-function: ease-in-out;}
+    .userPage header div nav.active button{transition-duration: var(--aniDuration); transition-delay: 0.3s;}
+    .userPage header div nav:not(.active) button{opacity: 0;}
 }
 
 
@@ -281,6 +285,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .admin-board-title{font-weight: 600; border-width: 1px; border-style: solid; border-color: #222 transparent var(--color-line);}
 .admin-board-list:not(:has(li))::after{font-size: 16px; line-height: 22px; padding-block: 160px; font-weight: 300; text-align: center; display: block; content: attr(data-noneListText);}
 .admin-board-list:not(:has(li)) ~ .admin-board-pager{display: none;}
+.admin-board-list li a p{overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 
 /* 관리자 게시판 페이저 */
 .admin-board-pager{--gap: 10px; margin-top: 60px; display: flex; justify-content: center; gap: var(--gap);}
