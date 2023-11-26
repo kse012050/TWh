@@ -18,7 +18,7 @@ body [class*="Page"] .font-hanwha{font-family: 'hanwha';}
 
 
 /* 로고 */
-.logo{/* --imgIdx: 0; */ display: block; height: var(--height); aspect-ratio: 283 / 47; background: url(../images/logo2.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
+.logo{/* --imgIdx: 0; */ display: block; height: var(--height); aspect-ratio: 283 / 48; background: url(../images/logo.png) no-repeat top calc(var(--height) * var(--imgIdx) * -1) center / 100%; text-indent: -9999px;}
 
 
 /* 자세히 링크 */
@@ -327,7 +327,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 /* 관리자 해더 */
 .adminsPage header{position: sticky; left: 0; top: 0; width: 100%; background-color: white; border-bottom: 1px solid var(--color-line); z-index: 100;}
 .adminsPage header div{max-width: 1920px; margin-inline: auto; display: flex; justify-content: center; align-items: center; position: relative;}
-.adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo2.png) no-repeat top center / cover; text-indent: -9999px;}
+.adminsPage header div h1{width: 236px; aspect-ratio: 236 / 40; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: url(../images/logo.png) no-repeat top center / cover; text-indent: -9999px;}
 .adminsPage header div ul{gap: 80px; display: flex; align-items: center;}
 .adminsPage header div ul li a{font-size: 16px; line-height: 70px; font-weight: 600; color: #BBB;}
 .adminsPage header div ul li a.router-link-active{position: relative;}

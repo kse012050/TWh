@@ -241,15 +241,15 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div ul.infoArea{}
 .inquiryDetailPage > div ul.infoArea li{display: flex;}
 .inquiryDetailPage > div ul.infoArea li:not(:last-child){border-bottom: 1px solid var(--color-line);}
-.inquiryDetailPage > div ul.infoArea li > *{padding-block: 32px;}
-.inquiryDetailPage > div ul.infoArea li b{width: 160px; font-weight: 600; position: relative;}
+.inquiryDetailPage > div ul.infoArea li > *{}
+.inquiryDetailPage > div ul.infoArea li b{width: 160px; font-weight: 600; flex-shrink: 0; position: relative; display: flex; align-items: center;}
 .inquiryDetailPage > div ul.infoArea li b::before{content: ''; position: absolute; left: 0; bottom: -1px; width: 100%; height: 1px; background-color: #222;}
 .inquiryDetailPage > div ul.infoArea li b.required{display: flex; align-items: center;}
 .inquiryDetailPage > div ul.infoArea li b.required::after{transform: translateY(2px); content: '*'; color: var(--color-point01);}
-.inquiryDetailPage > div ul.infoArea li div{padding-inline: 40px;}
-.inquiryDetailPage > div ul.infoArea li div p{font-weight: 300;}
+.inquiryDetailPage > div ul.infoArea li div{padding-inline: 40px; padding-block: 20px; min-height: 84px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;}
+.inquiryDetailPage > div ul.infoArea li div p{font-weight: 300; word-break: break-all;}
 .inquiryDetailPage > div ul.infoArea li div dl{display: flex; align-items: center;}
-.inquiryDetailPage > div ul.infoArea li div dl:not(:last-of-type){margin-bottom: 10px;}
+.inquiryDetailPage > div ul.infoArea li div dl:not(:last-of-type){margin-bottom: 4px;}
 .inquiryDetailPage > div ul.infoArea li div dl dt{min-width: 108px; margin-right: 10px; font-weight: 300; color: #999;}
 .inquiryDetailPage > div ul.infoArea li div dl dd{font-weight: 600;}
 .inquiryDetailPage > div .answerArea{padding-top: 45px;}
@@ -264,7 +264,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div .answerArea fieldset > input[type="submit"]{width: 63px; font-size: 13px; display: block; margin-left: auto;}
 .inquiryDetailPage > div .answerArea > ul{max-height: 409px; overflow: auto;}
 .inquiryDetailPage > div .answerArea > ul li{display: flex; padding-block: 20px;}
-.inquiryDetailPage > div .answerArea > ul li:not(:last-child){border-bottom: 1px dashed var(--color-line);}
+.inquiryDetailPage > div .answerArea > ul li{border-bottom: 1px dashed var(--color-line);}
+.inquiryDetailPage > div .answerArea > ul li:first-child{border-top: 1px dashed var(--color-line);;}
 .inquiryDetailPage > div .answerArea > ul li :is(b, time){font-size: 13px;}
 .inquiryDetailPage > div .answerArea > ul li b{width: 100px; flex-shrink: 0; font-weight: 600;}
 .inquiryDetailPage > div .answerArea > ul li div{font-weight: 300;}
