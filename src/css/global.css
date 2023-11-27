@@ -54,17 +54,19 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 [data-textAni] > span span{display: block; transform: translateY(calc(100% + 10px)); transition: transform var(--aniDuration) ease-in-out;}
 :is(.active [data-textAni], [data-textAni].active) > span span{transform: translateY(0%); transition-delay: calc(var(--aniIdx) * var(--aniDelay-list) + var(--aniDelay) + var(--aniDelay-basic));}
 /* 아래 -> 위 애니메이션 */
-[data-animate="bottomToTop"]{opacity: 0; transform: translateY(30%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
+[data-animate="bottomToTop"]{opacity: 0; transform: translateY(min(30%, 100px)); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
 .active [data-animate="bottomToTop"],[data-animate="bottomToTop"].active{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic));}
 [data-animate-list="bottomToTop"] > *{opacity: 0; transform: translateY(30%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
-.active [data-animate-list="bottomToTop"] > *{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
+.active [data-animate-list="bottomToTop"] > *,
+[data-animate-list="bottomToTop"].active > *{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
 /* 분리 선 애니메이션 */
 [data-animate="hr"]{transition: border-color var(--aniDuration) ease-in-out;}
 [data-animate="hr"]:not(.active){border-top-color: white;}
 /* 오른쪽 -> 왼쪽 애니메이션 */
 *:has( > [data-animate-list="rightToLeft"]){overflow: hidden;}
 [data-animate-list="rightToLeft"] > *{opacity: 0; transform: translateX(50%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
-.active [data-animate-list="rightToLeft"] > *{opacity: 1; transform: translateX(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
+.active [data-animate-list="rightToLeft"] > *,
+[data-animate-list="rightToLeft"].active > *{opacity: 1; transform: translateX(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic) + (var(--aniDelay-list) * var(--styleIdx)));}
 
 
 /* 서브 페이지 탑 애니 기본 형태 */

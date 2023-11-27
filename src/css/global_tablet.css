@@ -61,7 +61,7 @@ b.case01[data-textAni] > span > span{padding: 9px 25px; font-size: 19.5px; line-
 
 /* 컨텐츠 - 프로세스 */
 .content-process > p{margin-bottom: 75px;}
-.content-process b{margin-bottom: 50px;}
+.content-process > b{margin-bottom: 50px;}
 .content-process ul{--width: 205px;}
 .content-process ul::before{left: calc(var(--width) / 2); top: 0; width: 1px; height: 100%;}
 [data-scrollposition] .content-process ul[data-animate-list]::before{transition-property: height; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}

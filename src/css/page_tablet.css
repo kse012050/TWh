@@ -90,8 +90,8 @@
 .solutionPage .PPA03Area{padding-block: 110px 60px;}
 .solutionPage .PPA03Area .box-img{background-image: url(../images/solution-PPAImg03-M.png);}
 .solutionPage .content-img p{margin-bottom: 35px;}
-.solutionPage .content-img div:not([class]){max-width: 445px; gap: 10px; margin-bottom: 65px;}
-.solutionPage .content-img div:not([class]) b{font-size: 18px; line-height: 1.285; padding: 7px 10px;}
+.solutionPage .content-img div.hashArea{max-width: 445px; gap: 10px; margin-bottom: 65px;}
+.solutionPage .content-img div.hashArea b{font-size: 18px; line-height: 1.285; padding: 7px 10px;}
 .solutionPage .content-img dl{margin-top: 40px;}
 .solutionPage .expertArea p{margin-bottom: 80px;}
 .solutionPage .expertArea ul{max-width: 360px; aspect-ratio: 240 / 690; margin-inline: auto;}

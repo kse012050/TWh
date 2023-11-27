@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="productArea contentSize-padding">
                 <strong class="subTitle" data-textAni>주요 상품 소개</strong>
                 <ul data-animate-list="bottomToTop" data-aniDelay="4">
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="content-process contentSize-padding">
                 <p class="subTitle" data-textAni>
                     장기고정계약도, 발전소 매입도<br>
@@ -73,13 +73,13 @@
         </div>
 
         <div class="content-img contentSize-padding">
-            <strong class="subTitle">RE100 장기고정계약</strong>
-            <p class="subTitle2">
+            <strong class="subTitle" data-textAni data-scrollPosition="70">RE100 장기고정계약</strong>
+            <p class="subTitle2" data-textAni data-scrollPosition="70">
                 <b>RE100 이행을 원하는 기업</b>과<br class="mobile"> 장기고정계약으로<br>
                 안정적인 수익을 창출하세요.
             </p>
-            <div class="box-img">RE100 장기고정계약 이미지</div>
-            <dl>
+            <div class="box-img" data-animate="bottomToTop" data-scrollPosition="70">RE100 장기고정계약 이미지</div>
+            <dl data-animate-list="bottomToTop" data-scrollPosition="70">
                 <dt>*직접PPA</dt>
                 <dd>
                     재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
@@ -88,7 +88,7 @@
             </dl>
         </div>
         
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="condition01Area contentSize-padding">
                 <b class="case01" data-textAni>
                     RE100 장기고정계약 요건
@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="condition02Area contentSize-padding">
                 <strong class="subTitle" data-textAni>발전소 매입</strong>
                 <p class="subTitle2" data-textAni data-aniDelay="2">
@@ -171,7 +171,7 @@
             </div>
         </div>
 
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="textArea contentSize-padding">
                 <ul data-animate-list="rightToLeft">
                     <li>다양한 형태의 자산 매입</li>
@@ -181,7 +181,7 @@
             </div>
         </div>
     
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="simplifyArea contentSize-padding">
                 <p class="subTitle" data-textAni>
                     빠른 지급, 유연한 협의<br>
@@ -208,13 +208,13 @@
 
         <hr class="case01">
 
-        <div class="contentSize-padding">
-            <p class="subTitle">
+        <div class="contentSize-padding" data-scrollPosition="70">
+            <p class="subTitle" data-textAni>
                 RE100 장기고정계약 & 발전소 매입<br>
                 <b class="font-hanwha">테라와트아워</b>에 문의하세요!
             </p>
             <form>
-                <fieldset class="content-inquiry">
+                <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
                     <ul>
                         <li>
                             <label for="company">기업명</label>

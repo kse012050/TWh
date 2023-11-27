@@ -90,8 +90,8 @@
 .solutionPage .PPA03Area{padding-block: 77px 40px;}
 .solutionPage .PPA03Area .box-img{background-image: url(../images/solution-PPAImg03-M.png);}
 .solutionPage .content-img p{margin-bottom: 30px;}
-.solutionPage .content-img div:not([class]){max-width: 370px; gap: 10px; margin-bottom: 50px;}
-.solutionPage .content-img div:not([class]) b{font-size: 14px; line-height: 1.285; padding: 7px 10px;}
+.solutionPage .content-img div.hashArea{max-width: 370px; gap: 10px; margin-bottom: 50px;}
+.solutionPage .content-img div.hashArea b{font-size: 14px; line-height: 1.285; padding: 7px 10px;}
 .solutionPage .content-img dl{margin-top: 20px;}
 .solutionPage .expertArea p{margin-bottom: 60px;}
 .solutionPage .expertArea ul{max-width: 240px; aspect-ratio: 240 / 690; margin-inline: auto;}
@@ -129,10 +129,10 @@
 .recruitPage .condition02Area strong{margin-bottom: 20px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 50px;}
 .recruitPage .textArea{padding-block: 165px;}
-.recruitPage .textArea li{ font-size: 20px; border-radius: 10px; height: 90px;}
-.recruitPage .textArea li:not(:last-child){margin-bottom: 20px;}
-.recruitPage .textArea li::before,
-.recruitPage .textArea li::after{--height: 13px; transform: translateY(-10px);}
+.recruitPage .textArea ul li{ font-size: 20px; border-radius: 10px; height: 90px;}
+.recruitPage .textArea ul li:not(:last-child){margin-bottom: 20px;}
+.recruitPage .textArea ul li::before,
+.recruitPage .textArea ul li::after{--height: 13px; transform: translateY(-10px);}
 .recruitPage .simplifyArea > p{margin-bottom: 60px;}
 .recruitPage .simplifyArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
 .recruitPage .simplifyArea ul::before{width: 22px;}

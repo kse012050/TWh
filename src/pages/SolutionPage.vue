@@ -104,24 +104,24 @@
         </div>
 
         <div class="PPAArea">
-            <ul class="tab-btn" data-scrollPosition="70" data-animate="bottomToTop">
+            <ul class="tab-btn" data-animate="bottomToTop" data-scrollPosition="70">
                 <li><button class="active">직접 PPA</button></li>
                 <li><button>제3자간 PPA</button></li>
                 <li><button>V.PPA</button></li>
             </ul>
             <div class="PPA01Area content-img contentSize-padding">
-                <strong class="subTitle" data-scrollPosition="70" data-textAni>직접 PPA</strong>
-                <p class="subTitle2" data-scrollPosition="70" data-textAni>
+                <strong class="subTitle" data-textAni data-scrollPosition="70">직접 PPA</strong>
+                <p class="subTitle2" data-textAni data-scrollPosition="70">
                     재생에너지전기공급사업자를 통해<br>
                     발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
                 </p>
-                <div>
+                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
                     <b>장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
                     <b>#전력 다소비 기업</b>
                     <b>#낮 시간대 전력 소비가 많은 기업</b>
                 </div>
-                <div class="box-img">직접 PPA 이미지</div>
-                <dl>
+                <div class="box-img" data-animate="bottomToTop" data-scrollPosition="70">직접 PPA 이미지</div>
+                <dl data-animate-list="bottomToTop" data-scrollPosition="70">
                     <dt>*직접PPA</dt>
                     <dd>
                         재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
@@ -131,41 +131,41 @@
             </div>
             
             <div class="PPA02Area content-img contentSize-padding">
-                <strong class="subTitle">제3자간 PPA</strong>
-                <p class="subTitle2">
+                <strong class="subTitle" data-textAni data-scrollPosition="70">제3자간 PPA</strong>
+                <p class="subTitle2" data-textAni data-scrollPosition="70">
                     발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
                     각각 계약을 체결하는 방식
                 </p>
-                <div>
+                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
                     <b>#장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
                     <b>#전력소비량이 상대적으로 적은 기업</b>
                     <b>#24시간 조업 기업</b>
                 </div>
-                <div class="box-img">제3자 PPA 이미지</div>
+                <div class="box-img" data-animate="bottomToTop" data-scrollPosition="70">제3자 PPA 이미지</div>
             </div>
 
             <div class="PPA03Area content-img contentSize-padding">
-                <strong class="subTitle">V.PPA</strong>
-                <p class="subTitle2">
+                <strong class="subTitle" data-textAni data-scrollPosition="70">V.PPA</strong>
+                <p class="subTitle2" data-textAni data-scrollPosition="70">
                     전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
                     도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
                 </p>
-                <div>
+                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
                     <b>#RE100 단기 이행이 필요한 기업</b>
                     <b>#안정적인 REC 조달을 희망하는 기업</b>
                 </div>
-                <div class="box-img">PPA 이미지</div>
+                <div class="box-img" data-animate="bottomToTop" data-scrollPosition="70">PPA 이미지</div>
             </diV>
         </div>
         
 
-        <div data-stickyAni data-scrollPosition>
-            <div class="expertArea contentSize-padding">
+        <div>
+            <div class="expertArea contentSize-padding" data-scrollPosition="50">
                 <p class="subTitle" data-textAni>
                     <b>20년 장기계약 PPA,</b><br>
                     안정적인 자원 조달이 가능한<br class="mobile"> <b class="font-hanwha">테라와트아워</b>와 함께하세요.
                 </p>
-                <ul data-animate-list="rightToLeft" data-aniDelay="4">
+                <ul data-animate-list="rightToLeft" data-scrollPosition="70" data-aniDelay="4">
                     <li>
                         <div>
                             글로벌 태양광 시장을<br>
@@ -188,13 +188,13 @@
             </div>
         </div>
 
-        <div class="contentSize-padding">
-            <p class="subTitle">
+        <div class="contentSize-padding" data-scrollPosition="70">
+            <p class="subTitle" data-textAni>
                 RE100 이행,<br>
                 <b>지금 바로 문의하세요!</b>
             </p>
             <form>
-                <fieldset class="content-inquiry">
+                <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
                     <ul>
                         <li>
                             <label for="company">기업명</label>

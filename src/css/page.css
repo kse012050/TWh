@@ -116,8 +116,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .solutionPage .PPAArea > .tab-btn li button.active{color: #222; position: relative;}
 .solutionPage .PPAArea > .tab-btn li button.active::after{content: ''; width: 100%; background-color: #222; position: absolute; left: 0; bottom: 0;}
 .solutionPage .content-process ul li p{font-weight: 300;}
-.solutionPage .content-img div:not([class]){display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
-.solutionPage .content-img div:not([class]) b{font-weight: 600; background-color: #EFEFEF;}
+.solutionPage .content-img div.hashArea{display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
+.solutionPage .content-img div.hashArea b{font-weight: 600; background-color: #EFEFEF;}
 .solutionPage .expertArea{padding-block: var(--padding02); color: white; background-color: var(--color-BG01);}
 .solutionPage .expertArea ul{position: relative;}
 .solutionPage .expertArea ul li{font-weight: 600; text-align: center; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; background-color: rgba(255, 255, 255, .1); border: 1px dashed white; border-radius: 100%;}

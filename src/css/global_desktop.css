@@ -47,26 +47,26 @@ ul.user-board li a p{font-size: 21px; line-height: 1.25;}
 
 
 /* 검은 배경 케이스 */
-b.case01:not([data-textAni]){padding: 10px 30px; font-size: 24px; line-height: 34px;}
-b.case01[data-textAni] > span > span{padding: 10px 30px; font-size: 24px; line-height: 34px;}
+b.case01:not([data-textAni]){padding: 9px 25px; font-size: 19.5px; line-height: 1.2;}
+b.case01[data-textAni] > span > span{padding: 9px 25px; font-size: 19.5px; line-height: 1.2;}
 
 
 /* 컨텐츠 - 이미지 */
 .content-img strong{margin-bottom: 30px;}
-.content-img dl{font-size: 18px; line-height: 30px; display: flex; justify-content: center; align-items: center;}
+.content-img dl{font-size: 15.5px; line-height: 1.666; display: flex; justify-content: center; align-items: center;}
 .content-img dl dd{text-align: left; display: flex;}
 .content-img dl dd::before{content: ''; width: 1px; background-color: var(--color-line); margin-inline: 40px;}
 
 
 /* 컨텐츠 - 프로세스 */
-.content-process > p{margin-bottom: 100px;}
-.content-process b{margin-bottom: 60px;}
-.content-process ul{--width: 248px; display: flex; justify-content: center;}
+.content-process > p{margin-bottom: 75px;}
+.content-process > b{margin-bottom: 50px;}
+.content-process ul{--width: 200px; display: flex; justify-content: center;}
 .content-process ul::before{right: 50%; top: calc(var(--width) / 2); width: calc(100% + (100vw - var(--contentSize-padding))); height: 1px; transform: translateX(50%);}
 [data-scrollposition] .content-process ul[data-animate-list]::before{transition-property: width, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
 [data-scrollposition]:not(.active) .content-process ul[data-animate-list]::before{width: 0; opacity: 0;}
 .content-process ul li{flex: 1;}
-.content-process ul li strong{font-size: 26px; line-height: 38px;}
+.content-process ul li strong{font-size: 21px; line-height: 1.375;}
 
 
 
