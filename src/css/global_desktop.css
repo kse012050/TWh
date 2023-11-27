@@ -5,7 +5,7 @@ br.mobile{display: none;}
 
 
 /* 서브 페이지 위아래 간격 */
-.boardPage, .boardDetail, .inquiryPage{padding-top: 240px;}
+.boardPage, .boardDetail, .inquiryPage{padding-top: 180px;}
 
 
 /* 한화폰트 적용 */
@@ -22,10 +22,10 @@ br.mobile{display: none;}
 
 
 /* 버튼 */
-.userPage [class|="btn"]{width: 100%; max-width: 310px; height: 60px;}
-.userPage [class|='btn']:is([class$='black'], [class$='border'], [class$="download"]){font-size: 20px;}
-.userPage [class|="btn"][class$="download"]{padding-inline: 25px;}
-.userPage [class|="btn"][class$="download"]::after{width: 31.5px;}
+.userPage [class|="btn"]{width: 100%; max-width: 335px; height: 55px;}
+.userPage [class|='btn']:is([class$='black'], [class$='border'], [class$="download"]){font-size: 18px;}
+.userPage [class|="btn"][class$="download"]{padding-inline: 22.5px;}
+.userPage [class|="btn"][class$="download"]::after{width: 29px;}
 
 
 /* 게시판 */
@@ -74,42 +74,42 @@ b.case01[data-textAni] > span > span{padding: 9px 25px; font-size: 19.5px; line-
 
 
 /* 유저 페이지 문의 form */
-.content-inquiry ul{row-gap: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
-.content-inquiry ul li{font-size: 22px;}
+.content-inquiry ul{row-gap: 45px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.content-inquiry ul li{font-size: 18.5px;}
 .content-inquiry ul li.full{width: 100%;}
 .content-inquiry ul li:not(:is(:has(textarea), .full)){width: 46.7741%;}
 .content-inquiry ul li:has(textarea, input[type="checkbox"], .full){width: 100%;}
-.content-inquiry ul li label:first-child{line-height: 34px; margin-bottom: 20px;}
-.content-inquiry ul li label[data-comment]::after{font-size: 18px; margin-left: 20px;}
-.content-inquiry ul li :is(input, textarea){padding: 20px;}
-.content-inquiry ul li div input{height: 70px;}
-.content-inquiry ul li div[data-unit]::after{font-size: 22px; right: 20px;}
-.content-inquiry ul li div[data-unit] input{padding-right: 75px;}
-.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 580px;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 20px;}
-.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 22px; line-height: 34px; padding: 13px 30px;}
-.content-inquiry ul li small{font-size: 18px; line-height: 26px; margin-top: 15px;}
-.content-inquiry ul li textarea{height: 140px; line-height: 34px;}
-.content-inquiry > div{margin-top: 60px;}
-.content-inquiry > div input[type="checkbox"] + label{font-size: 20px; line-height: 26px;}
-.content-inquiry > div input[type="checkbox"] + label::before{--width: 26px; margin-right: 20px;}
-.content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 40px;}
-.content-inquiry input[type="submit"]{margin-top: 80px;}
+.content-inquiry ul li label:first-child{line-height: 1.333; margin-bottom: 16px;}
+.content-inquiry ul li label[data-comment]::after{font-size: 15px; margin-left: 13.5px;}
+.content-inquiry ul li :is(input, textarea){padding: 17.5px;}
+.content-inquiry ul li div input{height: 60px;}
+.content-inquiry ul li div[data-unit]::after{font-size: 18.5px; right: 17.5px;}
+.content-inquiry ul li div[data-unit] input{padding-right: 65px;}
+.content-inquiry ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 480px;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]){gap: 15px;}
+.content-inquiry ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 18.5px; line-height: 27px; padding: 13px 25px;}
+.content-inquiry ul li small{font-size: 15px; line-height: 1.333; margin-top: 12px;}
+.content-inquiry ul li textarea{height: 120px; line-height: 1.333;}
+.content-inquiry > div{margin-top: 45px;}
+.content-inquiry > div input[type="checkbox"] + label{font-size: 16.5px; line-height: 1.538;}
+.content-inquiry > div input[type="checkbox"] + label::before{--width: 24px; margin-right: 15px;}
+.content-inquiry > div input[type="checkbox"] + label:not(:last-of-type){margin-bottom: 30px;}
+.content-inquiry input[type="submit"]{margin-top: 65px;}
 
 
 /* 모달 */
-.userPage .content-modal > div{--paddingBlock: 40px; --paddingInline: 30px;}
-.userPage .content-modal > div strong{font-size: 26px; line-height: 30px;}
-.userPage .content-modal > div .close{width: 30px;}
-.userPage .content-modal .infoArea{max-width: 800px;}
-.userPage .content-modal .infoArea strong{margin-bottom: 20px;}
-.userPage .content-modal .infoArea p{padding: 30px; font-size: 18px; line-height: 26px;}
-.userPage .content-modal :is(.alertArea, .confirmArea){max-width: 600px;}
-.userPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 30px;}
-.userPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 22px;}
+.userPage .content-modal > div{--paddingBlock: 35px; --paddingInline: 25px;}
+.userPage .content-modal > div strong{font-size: 21px; line-height: 1.375;}
+.userPage .content-modal > div .close{width: 26px;}
+.userPage .content-modal .infoArea{max-width: 600px;}
+.userPage .content-modal .infoArea strong{margin-bottom: 17.5px;}
+.userPage .content-modal .infoArea p{padding: 25px; font-size: 15px; line-height: 1.333;}
+.userPage .content-modal :is(.alertArea, .confirmArea){max-width: 500px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) strong{margin-bottom: 25px;}
+.userPage .content-modal :is(.alertArea, .confirmArea) p{font-size: 18px;}
 .userPage .content-modal :is(.alertArea, .confirmArea) .btnArea{margin-top: 40px; gap: 10px;}
-.userPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 95px; font-size: 20px;}
-.userPage .content-popup a button{right: calc((var(--width) + 15px) * -1); top: 0;}
+.userPage .content-modal :is(.alertArea, .confirmArea) .btnArea button{width: 70px; font-size: 20px;}
+
 
 
 /* 유저 해더 */
@@ -133,23 +133,23 @@ b.case01[data-textAni] > span > span{padding: 9px 25px; font-size: 19.5px; line-
 
 
 /* 유저 푸터 */
-.userPage footer > div{font-size: 18px; display: flex; justify-content: space-between;}
-.userPage footer > div:nth-child(1){margin-bottom: 50px; align-items: center;}
-.userPage footer > div:nth-child(1) > ul{gap: 50px;}
+.userPage footer > div{font-size: 15.5px; display: flex; justify-content: space-between;}
+.userPage footer > div:nth-child(1){margin-bottom: 40px; align-items: center;}
+.userPage footer > div:nth-child(1) > ul{gap: 35px;}
 .userPage footer > div:nth-child(1) > ul li a{line-height: 100px;}
-.userPage footer > div:nth-child(1) > div button{line-height: 30px;}
+.userPage footer > div:nth-child(1) > div button{line-height: 100px;}
 .userPage footer > div:nth-child(1) > div div{gap: 20px; right: 0; bottom: calc(100% + 5px); padding: 30px;}
 .userPage footer > div:nth-child(1) > div div ul{font-size: 15px; width: 120px;}
-.userPage footer > div:nth-child(2){font-size: 15px; flex-wrap: wrap;}
-.userPage footer > div:nth-child(2) address h2{margin-bottom: 30px;}
-.userPage footer > div:nth-child(2) address dl{line-height: 30px;}
-.userPage footer > div:nth-child(2) > p{font-size: 14px; line-height: 20px; margin-block: 60px 40px; order: 1; width: 100%;}
-.userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 40px; text-align: right;}
-.userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 20px;}
+.userPage footer > div:nth-child(2){font-size: 13.5px; line-height: 1.5; flex-wrap: wrap;}
+.userPage footer > div:nth-child(2) address h2{--height: 43px; margin-bottom: 25px;}
+.userPage footer > div:nth-child(2) address dl{line-height: 25px;}
+.userPage footer > div:nth-child(2) > p{font-size: 12.5px; line-height: 1.363; margin-block: 50px 40px; order: 1; width: 100%;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1){margin-bottom: 32.5px; text-align: right;}
+.userPage footer > div:nth-child(2) div ul:nth-child(1) li:not(:last-child){margin-bottom: 15px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(1) li a{line-height: 20px;}
-.userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 60px;}
+.userPage footer > div:nth-child(2) div ul:nth-child(2) li a{--height: 53px;}
 .userPage footer > div:nth-child(2) div ul:nth-child(2) li:last-child{margin-left: auto;}
-.userPage .goToTop{right: 40px; bottom: 40px; width: 70px;}
+.userPage .goToTop{right: 30px; bottom: 30px; width: 61px;}
 
 
 /* 관리자 공통 */
