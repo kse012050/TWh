@@ -33,7 +33,7 @@
                         </strong>
                         <p data-textAni data-aniDelay="10">
                             복잡한 RE100 이행,<br>
-                            <span class="font-hanwha">테라와트아워</span>로 쉬워집니다.
+                            <b class="font-hanwha">테라와트아워</b>로 쉬워집니다.
                         </p>
                         <router-link to="/solution" class="arrow-white" data-aniDelay="18">자세히 보기<span></span></router-link>
                     </div>

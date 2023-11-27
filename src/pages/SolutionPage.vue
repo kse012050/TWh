@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div data-stickyAni data-scrollPosition>
+        <div data-scrollPosition="50">
             <div class="content-process contentSize-padding">
                 <p class="subTitle" data-textAni>
                     재생에너지 전력거래<br class="mobile"> 전문 기업 <b class="font-hanwha">테라와트아워</b>가<br>
@@ -104,14 +104,14 @@
         </div>
 
         <div class="PPAArea">
-            <ul class="tab-btn">
+            <ul class="tab-btn" data-scrollPosition="70" data-animate="bottomToTop">
                 <li><button class="active">직접 PPA</button></li>
                 <li><button>제3자간 PPA</button></li>
                 <li><button>V.PPA</button></li>
             </ul>
             <div class="PPA01Area content-img contentSize-padding">
-                <strong class="subTitle">직접 PPA</strong>
-                <p class="subTitle2">
+                <strong class="subTitle" data-scrollPosition="70" data-textAni>직접 PPA</strong>
+                <p class="subTitle2" data-scrollPosition="70" data-textAni>
                     재생에너지전기공급사업자를 통해<br>
                     발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
                 </p>

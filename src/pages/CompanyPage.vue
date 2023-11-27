@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="VPPArea contentSize-padding">
-            <div class="box-img">통합발전소 VPP 이미지</div>
+            <div class="box-img" data-scrollPosition="70" data-animate="bottomToTop">통합발전소 VPP 이미지</div>
         </div>
         <div class="fixedArea" data-stepAni data-styleIdx>
             <div class="missionArea contentSize-padding">

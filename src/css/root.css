@@ -1,5 +1,5 @@
 :root{
-    --contentSize: 1240px;
+    --contentSize: 1000px;
     --contentSize-padding: calc(var(--contentSize) + var(--scrollWidth));
     --padding04: 100px;
     --color-BG01: #162446;
@@ -32,10 +32,10 @@
 
 @media screen and (width > 1100px) {
     :root{
-        --headerHeight: 100px;
-        --padding01: 200px;
-        --padding02: 160px;
-        --padding03: 120px;
+        --headerHeight: 80px;
+        --padding01: 140px;
+        --padding02: 120px;
+        --padding03: 90px;
         --spacing: 25px;
     }
 }

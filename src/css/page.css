@@ -111,7 +111,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{font-size: var(--fontSize); font-weight: 300;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-top: auto;}
 .solutionPage .topArea div:nth-of-type(3) ul li p svg{height: calc(var(--fontSize) + 3px); transform: translateY(4px);}
-.solutionPage .PPAArea > .tab-btn{position: sticky; top: var(--headerHeight); display: flex; justify-content: center; align-items: center; background-color: white;}
+.solutionPage .PPAArea > .tab-btn{position: sticky; top: var(--headerHeight); display: flex; justify-content: center; align-items: center; background-color: white; z-index: 10;}
 .solutionPage .PPAArea > .tab-btn li button{font-weight: 700; color: #BBB;}
 .solutionPage .PPAArea > .tab-btn li button.active{color: #222; position: relative;}
 .solutionPage .PPAArea > .tab-btn li button.active::after{content: ''; width: 100%; background-color: #222; position: absolute; left: 0; bottom: 0;}

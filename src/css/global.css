@@ -14,7 +14,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 
 
 /* 한화폰트 적용 */
-body [class*="Page"] .font-hanwha{font-family: 'hanwha';}
+body [class*="Page"] .font-hanwha{font-family: 'hanwha'; display: inline-block; transform: translateY(-2px);}
 
 
 /* 로고 */
@@ -69,7 +69,7 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 
 /* 서브 페이지 탑 애니 기본 형태 */
 [data-subTopAni]{padding-top: var(--headerHeight);}
-[data-subTopAni] .topArea{height: calc(var(--fullHeight) * var(--totalContent) + var(--fullHeight)); background-color: #000F35; position: relative; /* z-index: -1; */}
+[data-subTopAni] .topArea{height: max(calc(var(--fullHeight) * var(--totalContent)), calc(var(--fullHeight) * 1 + var(--fullHeight) / 2)); background-color: #000F35; position: relative; /* z-index: -1; */}
 [data-subTopAni] .topArea::before{content: ''; position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(100% + var(--headerHeight)); transform: translate3d(0, var(--bgY),0); background-repeat: no-repeat; background-position: top center; background-size: cover;}
 .companyPage .topArea::before{background-image: url('../images/company-topBG.png');}
 .solutionPage .topArea::before{background-image: url('../images/solution-topBG.png');}
@@ -124,6 +124,7 @@ b.case01[data-textAni] > span > span{font-weight: 600; color: white; background-
 .content-process ul{position: relative;}
 .content-process ul::before{content: ''; position: absolute; background-color: #222; }
 .content-process ul li strong{max-width: var(--width); display: block; font-weight: 600; aspect-ratio: 1; background-color: white; display: flex; justify-content: center; align-items: center; border: 1px solid #222; box-sizing: border-box; border-radius: 100%; position: relative; z-index: 1;}
+[data-scrollposition].active ul::before{transition-delay: calc(var(--aniDelay) + var(--aniDelay-list) * var(--styleTotal));}
 
 
 /* 폼 공통 */

@@ -25,7 +25,7 @@ export function globalStyle(){
 function hanshwFontSize(){
     document.querySelectorAll('.font-hanwha').forEach((element)=>{
         element.removeAttribute('style');
-        // element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px');
+        element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px');
     })
 }
 
