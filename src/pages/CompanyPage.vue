@@ -15,8 +15,8 @@
         </div>
         <div class="fixedArea" data-stepAni data-styleIdx>
             <div class="missionArea contentSize-padding">
-                <b data-textAni>사명</b>
-                <strong data-textAni data-aniDelay="4">Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
+                <b>사명</b>
+                <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             </div>
             <div data-aniDelay-basic="6">
                 <div class="visionArea contentSize-padding">
@@ -117,8 +117,8 @@ export default {
             document.querySelectorAll('[data-stepAni] > *').forEach((element)=>{
                 element.classList.remove('active');
             })
-            document.querySelector('[data-stepAni]').style.setProperty('--scale',0)
-            document.querySelector('[data-stepAni]').style.setProperty('--color',0)
+            document.querySelector('[data-stepAni]').style.setProperty('--bgWidth',`300px`)
+            document.querySelector('[data-stepAni]').style.setProperty('--bgHeight',`100px`)
         },
         scrollEvent() {
             const topElement = this.topElement;   
@@ -150,17 +150,12 @@ export default {
             const aniFixedChildren = document.querySelectorAll('[data-stepAni] > *');
             const aniFixedY = aniFixed.getBoundingClientRect().y;
 
-            if(aniFixedY - window.innerHeight * 0.5 < 0){
-                aniFixedChildren[0].classList.add('active')
-            }else{
-                aniFixedChildren[0].classList.remove('active')
-            }
-
-            
             if(aniFixedY > 0){
+                aniFixedChildren[0].classList.remove('active')
                 return
             }
             // const scrollTop = window.scrollY;
+            aniFixedChildren[0].classList.add('active')
             let scrollPercentage = Math.abs(aniFixedY / (aniFixed.offsetHeight - window.innerHeight - 300));
             if(scrollPercentage < 1){
                 aniFixedChildren[0].classList.add('active')
@@ -169,7 +164,12 @@ export default {
                 scrollPercentage = 1;
                 aniFixedChildren[1].classList.add('active')
             }
-            aniFixed.style.setProperty('--scale', scrollPercentage);
+            if(scrollPercentage * window.innerWidth > 300){
+                aniFixed.style.setProperty('--bgWidth', scrollPercentage * window.innerWidth + 'px');
+            }
+            if(scrollPercentage * window.innerHeight > 100){
+                aniFixed.style.setProperty('--bgHeight', scrollPercentage * window.innerHeight + 'px');
+            }
             aniFixed.style.setProperty('--color', scrollPercentage * 255);
             // aniFixedChildren[0].style.transform = `scale(${Math.abs(aniFixed.getBoundingClientRect().y / aniFixedChildren[0].offsetHeight)})`
             // aniFixedChildren.forEach((childrenElement, idx)=>{
@@ -207,7 +207,8 @@ export default {
     .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active > div{transform: translateX(0);}
 
-    .companyPage .fixedArea[data-stepAni]{--scale: 0; --color: 0;}
+    .companyPage .fixedArea:has( > *:nth-child(1):not(.active))::before{display: none;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active::before{display: none;}
+    .companyPage .fixedArea[data-stepAni]{--color: 0;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1){color: rgb(var(--color), var(--color), var(--color));}
-    .companyPage .fixedArea[data-stepAni]::before{transform: scale(var(--scale)); transform-origin: center bottom; transition: 0.2s linear;}
 </style>

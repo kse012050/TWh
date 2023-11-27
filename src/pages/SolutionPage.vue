@@ -291,13 +291,17 @@ export default {
             this.topElement = document.querySelector(this.topClassName);
             this.titleElement = document.querySelector(`${this.topClassName} h2`);
             this.topContents = document.querySelectorAll(`${this.topClassName} > div`);
+            // 타이틀 초기화
             this.titleElement.classList.remove('active');
+            // 서브페이지 탑 애니메이션 초기화
+            this.topElement.style.setProperty('--bgY', 0);
             setTimeout(() => {
                 this.titleElement.classList.add('active');
             }, 300);
             this.topContents.forEach((element)=>{
                 element.classList.remove('active');
             })
+            console.log(this.topContents);
         },
         scrollEvent() {
             const topElement = this.topElement;
@@ -393,6 +397,7 @@ export default {
         
     },
     beforeUnmount(){
+        this.init();
         // positionActive('remove');
         window.removeEventListener('scroll',this.test)
     }

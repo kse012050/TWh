@@ -28,6 +28,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .solutionArea ul li div p .font-hanwha{font-weight: 600;}
 .mainPage .solutionArea ul li div a{justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
+.mainPage .terraTitle{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none;}
+.mainPage .terraTitle div strong{color: white; font-weight: 600;}
 .mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;}
 .mainPage [class^="terra"][class*="Area"] > div{height: 100%; display: flex; align-items: center;}
 .mainPage [class^="terra"][class*="Area"] > div > div{display: flex; flex-wrap: wrap;}
@@ -59,9 +61,12 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .VPPArea{padding-block: var(--padding02); text-align: center;}
 .companyPage :is(.missionArea, .visionArea){display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(var(--fullHeight) - var(--headerHeight)); font-weight: 600; color: white; text-align: center;}
 .companyPage :is(.missionArea, .visionArea) b{display: block;}
-.companyPage .fixedArea::before{content: ''; display: block; position: sticky; left: 0; top: calc(var(--headerHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); background: url('../images/company-missionBG.png') no-repeat center / cover; z-index: -2;}
+.companyPage .fixedArea::before{position: fixed;}
+.companyPage .fixedArea::before,
+.companyPage .missionArea::before{content: ''; display: block; left: 50%; bottom: 0; transform: translateX(-50%); width: var(--bgWidth); height: var(--bgHeight); background: url('../images/company-missionBG.png') no-repeat center right / cover; border-radius: 50px 50px 0 0; z-index: -2;}
 .companyPage .missionArea{}
-.companyPage .missionArea{position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 0;}
+.companyPage .missionArea{position: sticky; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 0;}
+.companyPage .missionArea::before{position: absolute;}
 .companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center / cover;}
 .companyPage .peopleArea{padding-block: var(--padding02);}
 .companyPage .peopleArea strong{font-weight: 600; text-align: center; display: block;}

@@ -14,14 +14,17 @@
 .mainPage .solutionArea ul li{height: 50%;}
 .mainPage .solutionArea ul li div strong{font-size: 43px; line-height: 1.307; margin-bottom: 35px;}
 .mainPage .solutionArea ul li div p{display: none;}
-/* 메인 페이지 - 솔루션 영역 */
-.mainPage [class^="terra"][class*="Area"] > div > div{justify-content: center;}
-.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 38px; line-height: 1.307; margin-bottom: min(2.9514vh, 25px);}
+/* 메인 페이지 - 테라 영역 */
+/* 테라 타이틀 */
+.mainPage .terraTitle div{height: 628px;}
+.mainPage .terraTitle div strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px;}
+.mainPage [class^="terra"][class*="Area"] > div > div{height: 628px; justify-content: center;}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px; /* margin-bottom: min(2.9514vh, 25px); */}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 24px; line-height: 1.333; margin-bottom: 40px;}
-.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 38px; line-height: 1.307; margin-bottom: min(2.9514vh, 25px);}
-.mainPage [class^="terra"][class*="Area"] > div > div div{width: calc((100% - 20px) / 2); max-width: 620px; height: min(35.35875vh, 320px); padding: min(3.023725vh, 27.5px) 32.5px min(4.3405vh, 40px);}
-.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: min(6.25vh, 100px); margin-right: 20px;}
-.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 37.5px; line-height: 1.2; margin-bottom: min(2.17015vh, 20px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px; /* margin-bottom: min(2.9514vh, 25px); */}
+.mainPage [class^="terra"][class*="Area"] > div > div div{width: calc((100% - 20px) / 2); max-width: 620px; height: 320px; padding: 27.5px 32.5px 40px; /* height: min(35.35875vh, 320px); padding: min(3.023725vh, 27.5px) 32.5px min(4.3405vh, 40px); */}
+.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: 100px; /* margin-top: min(6.25vh, 100px); */ margin-right: 20px;}
+.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 37.5px; line-height: 1.2; margin-bottom: 20px; /* margin-bottom: min(2.17015vh, 20px); */}
 .mainPage [class^="terra"][class*="Area"] > div > div div strong small{font-size: 22.5px;}
 .mainPage [class^="terra"][class*="Area"] > div > div div p{font-size: 18px; line-height: 1.5;}
 .mainPage .terra01Area > div > div div::before{--height: 50px;}
