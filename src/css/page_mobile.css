@@ -116,13 +116,15 @@
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 30px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 12px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
-.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 12px) / 2); --spacing: 20px; padding: var(--spacing); height: 230px;}
+.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 12px) / 2); --spacing: 20px; padding: var(--spacing);}
 .recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 150px;}
 .recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 14px; line-height: 1.2857; margin-bottom: 10px;}
 .recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 17px; line-height: 1.352; margin-bottom: 10px;}
 .recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 12px; line-height: 1.3333;}
 .recruitPage [class*="condition"][class*="Area"] ul li::after{width: 117px;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 16px; line-height: 1.5; margin-top: 40px;}
+.recruitPage .condition01Area ul li{height: 230px;}
+.recruitPage .condition02Area ul li{height: 250px;}
 .recruitPage .condition02Area strong{margin-bottom: 20px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 50px;}
 .recruitPage .textArea{padding-block: 165px;}

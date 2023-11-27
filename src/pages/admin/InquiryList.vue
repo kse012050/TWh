@@ -27,8 +27,8 @@
                     <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
-                    <span>{{ data.phonenum }}</span>
-                    <button>{{ data.email }}</button>
+                    <span>{{ data.phonenum.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3') }}</span>
+                    <span>{{ data.email }}</span>
                     <span>{{ 
                         data.consultpurpose === 'GENERAL' ? '일반' :
                             data.consultpurpose === 'RE100' ? 'RE100' :

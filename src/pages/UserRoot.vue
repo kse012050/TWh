@@ -32,22 +32,8 @@ export default {
         document.querySelectorAll('[data-aniDelay-basic]').forEach((element)=>{
           element.style.setProperty('--aniDelay-basic', `${element.getAttribute('data-aniDelay-basic') / 10}s`)
         })
-      /*   document.querySelectorAll('[data-textAniParents]').forEach((parents)=>{
-          parents.childNodes.forEach((element, idx)=>{
-            element.setAttribute('data-textAni', idx + (Number(parents.getAttribute('data-textAniParents')) || 0))
-          })
-        }) */
-        
-        // document.querySelectorAll('[data-aniIdx]').forEach((parents)=>{
-        //   parents.style.setProperty('--aniTotal', parents.childNodes.length);
-        //   parents.childNodes.forEach((element, idx)=>{
-        //     element.style.setProperty('--aniIdx', Number(parents.getAttribute('data-aniIdx') || 0) + idx);
-        //     window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
-        //   })
-        // })
+
         document.querySelectorAll('[data-textAni]').forEach((element)=>{
-          // element.style.setProperty('--textIdx', element.getAttribute('data-textAni') || 0);
-          // window.getComputedStyle(element).getPropertyValue('--aniDelay') || element.style.setProperty('--aniDelay', `0.6s`);
           let text = element.innerHTML.replaceAll('<span>','').replaceAll('</span>','').split('<br>');
           element.innerHTML = ''
           text.forEach((value, idx)=>{
@@ -57,13 +43,7 @@ export default {
             element.appendChild(spanElement);
           })
         })
-
-      /*   document.querySelectorAll('[data-bCaseAni]').forEach((element)=>{
-          const spanElement = document.createElement('span');
-          spanElement.innerHTML = element.innerHTML;
-          element.innerHTML = '';
-          element.appendChild(spanElement);
-        }) */
+ 
         positionActive('add');
       },0)
     },

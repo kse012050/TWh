@@ -8,7 +8,7 @@
         <h2>{{ boardItem.title }}</h2>
         <time>{{ boardItem.regymdt[0] }}</time>
         <div>
-            <p>{{ boardItem.description }}</p>
+            <p v-html="boardItem.description"></p>
             <ul v-if="boardItem.medias.length">
                 <li v-for="data in boardItem.medias" :key="data.id">
                     <img :src="data.imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='https://placehold.co/380x250'">
@@ -35,11 +35,11 @@ export default {
             api.user('detail',{type: 'board', id: this.id})
                 .then((result)=>{
                     if(result.statusCode === '200'){
-                        console.log(result);
-                        this.boardItem = {...result.boardItem}
+                        this.boardItem = {...result.boardItem};
                         this.boardItem.regymdt = this.boardItem.regymdt.split('T');
-                        this.boardItem.regymdt[0] = this.boardItem.regymdt[0].replaceAll('-','.')
-                        this.boardItem.regymdt[1] = this.boardItem.regymdt[1].replace('.000Z','')
+                        this.boardItem.regymdt[0] = this.boardItem.regymdt[0].replaceAll('-','.');
+                        this.boardItem.regymdt[1] = this.boardItem.regymdt[1].replace('.000Z','');
+                        this.boardItem.description = this.boardItem.description.replaceAll('\r\n', '<br />');
                     }
                 })
         }

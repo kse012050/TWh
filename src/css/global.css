@@ -42,7 +42,7 @@ body [class*="Page"] .font-hanwha{font-family: 'hanwha';}
 /* 게시판 */
 ul.user-board li a{display: block; font-weight: 600;}
 ul.user-board li a:not(:has(img))::before{content: ''; display: block; aspect-ratio: 380 / 250; background: url(https://placehold.co/600x400) no-repeat center / cover;}
-ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250; object-fit: cover;}
+ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250; object-fit: cover; border: 1px solid #F1F1F1;}
 ul.user-board li a small{display: block; color: #999;}
 ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 
@@ -52,7 +52,7 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 [data-textAni]{--aniDelay-list: 0.3s;}
 [data-textAni] > span{display: block; overflow: hidden; min-height: calc(1em + 7px);}
 [data-textAni] > span span{display: block; transform: translateY(calc(100% + 10px)); transition: transform var(--aniDuration) ease-in-out;}
-:is(.active [data-textAni], [data-textAni].active) > span span{transform: translateY(0%); transition-delay: calc((var(--aniIdx) * var(--aniDelay-list) + var(--aniDelay) + var(--aniDelay-basic)));}
+:is(.active [data-textAni], [data-textAni].active) > span span{transform: translateY(0%); transition-delay: calc(var(--aniIdx) * var(--aniDelay-list) + var(--aniDelay) + var(--aniDelay-basic));}
 /* 아래 -> 위 애니메이션 */
 [data-animate="bottomToTop"]{opacity: 0; transform: translateY(30%); transition-property: transform, opacity; transition-duration: var(--aniDuration); transition-timing-function: ease-in-out;}
 .active [data-animate="bottomToTop"],[data-animate="bottomToTop"].active{opacity: 1; transform: translateY(0%); transition-delay: calc(var(--aniDelay) + var(--aniDelay-basic));}

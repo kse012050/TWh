@@ -116,20 +116,22 @@
 .recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 45px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 20px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
-.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 25px; padding: 30px var(--spacing); height: 350px;}
+.recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 25px; padding: 30px var(--spacing);}
 .recruitPage [class*="condition"][class*="Area"] ul li:nth-child(5){height: 228px;}
 .recruitPage [class*="condition"][class*="Area"] ul li span{font-size: 18px; line-height: 1.2857; margin-bottom: 15px;}
 .recruitPage [class*="condition"][class*="Area"] ul li b{font-size: 21.5px; line-height: 1.352; margin-bottom: 11px;}
 .recruitPage [class*="condition"][class*="Area"] ul li small{font-size: 14px; line-height: 1.3333;}
 .recruitPage [class*="condition"][class*="Area"] ul li::after{width: 143.5px;}
 .recruitPage [class*="condition"][class*="Area"] p:last-child{font-size: 23px; line-height: 1.5; margin-top: 60px;}
+.recruitPage .condition01Area ul li{height: 300px;}
+.recruitPage .condition02Area ul li{height: 310px;}
 .recruitPage .condition02Area strong{margin-bottom: 25px;}
 .recruitPage .condition02Area p:nth-child(2){margin-bottom: 65px;}
 .recruitPage .textArea{padding-block: 172.5px;}
-.recruitPage .textArea li{max-width: var(--mobileContentSize); margin-inline: auto; font-size: 30px; border-radius: 15px; height: 135px;}
-.recruitPage .textArea li:not(:last-child){margin-bottom: 30px;}
-.recruitPage .textArea li::before,
-.recruitPage .textArea li::after{--height: 18.5px; transform: translateY(-13.5px);}
+.recruitPage .textArea ul li{max-width: var(--mobileContentSize); margin-inline: auto; font-size: 30px; border-radius: 15px; height: 135px;}
+.recruitPage .textArea ul li:not(:last-child){margin-bottom: 30px;}
+.recruitPage .textArea ul li::before,
+.recruitPage .textArea ul li::after{--height: 18.5px; transform: translateY(-13.5px);}
 .recruitPage .simplifyArea > p{margin-bottom: 80px;}
 .recruitPage .simplifyArea ul{max-width: var(--mobileContentSize); margin-inline: auto;}
 .recruitPage .simplifyArea ul::before{width: 26px;}

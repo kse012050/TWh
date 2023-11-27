@@ -18,7 +18,9 @@
                 </h2>
                 <p>재생에너지 전력거래,<br class="mobile"> 지속 가능한 내일을 만듭니다.</p>
             </div>
-            <div class="bg"></div>
+            <div class="bg">
+                <video src="../video/video.mp4" loop muted autoplay></video>
+            </div>
             <div class="scroll">SCROLL<span></span></div>
         </div>
         <div class="solutionArea" data-full>
@@ -147,7 +149,8 @@ export default {
             touchStart: {
                 x: undefined,
                 y: undefined
-            }
+            },
+            clearTimer: undefined
         }
     },
     methods: {
@@ -229,6 +232,10 @@ export default {
             })
         },
         fullEvent(idx, e){
+            // 이동 막기
+            this.fullSelectors.forEach((element)=>{
+                element.style.pointerEvents = 'none';
+            })
             let delta;
             if(e.type === 'mousewheel'){
                 delta = e.wheelDelta;
@@ -251,8 +258,8 @@ export default {
             this.fullMoveEvent(idx, delta)
         },
         fullMoveEvent(idx, delta){
+
             const currentIdx = idx;
-            
             if(delta < 0 && this.fullSelectors[idx + 1]){
                 idx++;
                 this.fullSelectors[idx].classList.add('active')
@@ -260,6 +267,14 @@ export default {
                 idx--;
                 this.fullSelectors[currentIdx].classList.remove('active')
             }
+            
+            //  이동 풀기
+            if(this.clearTimer){
+                clearTimeout(this.clearTimer);
+            }
+            this.clearTimer = setTimeout(()=>{
+                this.fullSelectors[idx].removeAttribute('style');
+            }, 1000)
 
             // 페이저, 해더 페이저 스타일
             if(this.fullSelectors[idx].localName !== 'footer'){
@@ -282,19 +297,14 @@ export default {
                 })
             }
 
-            if(this.fullSelectors[currentIdx].localName === 'footer'){
+            if(this.fullSelectors[currentIdx].localName === 'footer' && delta > 0){
+                console.log(this.fullSelectors[currentIdx].classList.contains('active'));
                 document.querySelectorAll('[data-full].active, .fullPager').forEach((element)=>{
                     element.removeAttribute('style')
                 })
             }
 
-            // 이동 막기
-            this.fullSelectors.forEach((element)=>{
-                element.style.pointerEvents = 'none';
-            })
-            setTimeout(()=>{
-                this.fullSelectors[idx].removeAttribute('style');
-            }, 1500)
+            
         },
         goToTop(){
             document.querySelector('header').classList.add('white');
@@ -352,20 +362,22 @@ export default {
     .mainPage .topArea.intro{--color: #222; color: var(--color); position: relative;}
     .mainPage .topArea.intro > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
     .mainPage .topArea.intro > div.textArea h2{opacity: 0;}
-    .mainPage .topArea.intro > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor .9s infinite steps(2);}
+    .mainPage .topArea.intro > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor 0.9s infinite steps(2);}
     .mainPage .topArea.intro > .bg{clip-path: circle(0% at 50% 50%);}
     .mainPage .topArea.intro > .scroll{opacity: 0;}
+
 
     @keyframes cursor {
         0%{opacity: 0;}
         100%{opacity: 1;}
     }
+ 
 
     header:has(+ .mainPage .topArea.introFin){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
     .mainPage .topArea.introFin{color: white; transition: 1s 2s color;}
     .mainPage .topArea.introFin > div.textArea{transform: translateY(0); transition: 1s transform;}
     .mainPage .topArea.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;}
-    .mainPage .topArea.intro > div.textArea p::after{animation: none; border-color: transparent;}
+    .mainPage .topArea.introFin > div.textArea p::after{animation: none; border-color: transparent;}
     .mainPage .topArea.introFin > .bg{animation: topBG 3s 1.3s forwards;}
     .mainPage .topArea.introFin > .scroll{opacity: 1; transition: 1s 2.5s opacity;}
     @keyframes topBG {

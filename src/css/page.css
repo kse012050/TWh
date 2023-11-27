@@ -10,7 +10,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .topArea > div{display: flex; flex-direction: column; align-items: center;}
 .mainPage .topArea > div h2 b{display: block;}
 .mainPage .topArea > div p{line-height: var(--typingHeight); min-height: var(--typingHeight); position: relative;}
-.mainPage .topArea > .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/main-topBG.png) no-repeat center / cover; z-index: -1;}
+.mainPage .topArea > .bg{position: absolute; left: 0; top: 0; width: 100%; height: 100%; /* background: url(../images/main-topBG.png) no-repeat center / cover; */ z-index: -1;}
+.mainPage .topArea > .bg video{width: 100%; height: 100%; object-fit: cover;}
 .mainPage .topArea > .scroll{font-weight: 600; position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;}
 .mainPage .topArea > .scroll span{width: 1px; background-color: rgba(255, 255, 255, 0.3);}
 .mainPage .topArea > .scroll span::before{content: ''; display: block; width: 100%; height: 0%; background-color: white; animation: scrollAni 3s linear infinite;}
@@ -146,12 +147,14 @@ header.white + .mainPage .fullPager{--color: white;}
 .recruitPage .condition02Area{padding-top: var(--padding02); background-color: var(--color-BG02);}
 .recruitPage .condition02Area ul li::after{background: url(../images/recruit-icon02.png);}
 .recruitPage .condition02Area ul li b{color: #214DA8;}
-.recruitPage .textArea{background-color: #162446;}
-.recruitPage .textArea li{color: white; background-color: #223259; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.10); font-weight: 600; display: flex; justify-content: center; align-items: center;}
-.recruitPage .textArea li::before,
-.recruitPage .textArea li::after{content: ''; transform: translateY(-17px); height: var(--height); aspect-ratio: 27 / 24; background: url(../images/icon-quotes.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%;}
-.recruitPage .textArea li::before{--iconIdx: 0; margin-right: 0.4em;}
-.recruitPage .textArea li::after{--iconIdx: 1; margin-left: 0.4em;}
+
+.recruitPage .textArea{background-color: #162446; min-height: var(--fullHeight); display: flex; align-items: center; justify-content: center;}
+.recruitPage .textArea ul{width: 100%;}
+.recruitPage .textArea ul li{color: white; background-color: #223259; box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.10); font-weight: 600; display: flex; justify-content: center; align-items: center;}
+.recruitPage .textArea ul li::before,
+.recruitPage .textArea ul li::after{content: ''; transform: translateY(-17px); height: var(--height); aspect-ratio: 27 / 24; background: url(../images/icon-quotes.png) no-repeat top calc(var(--height) * var(--iconIdx) * -1) center / 100%;}
+.recruitPage .textArea ul li::before{--iconIdx: 0; margin-right: 0.4em;}
+.recruitPage .textArea ul li::after{--iconIdx: 1; margin-left: 0.4em;}
 .recruitPage .simplifyArea{padding-block: var(--padding02);}
 .recruitPage .simplifyArea ul{position: relative;}
 .recruitPage .simplifyArea ul::before{content: ''; aspect-ratio: 1; position: absolute; left: 50%; top: 50%; translate: -50% -50%; background: url(../images/icon-plus.png) no-repeat center / cover;}
@@ -179,8 +182,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .boardDetail div{border-width: 1px 0; border-style: solid; border-color: #222;}
 .boardDetail div p{font-weight: 300;}
 .boardDetail div ul{gap: 0 2.8%; display: flex; flex-wrap: wrap;}
-.boardDetail div ul li{width: 31.4667%; aspect-ratio: 390 / 260;}
-.boardDetail div ul li img{width: 100%; height: 100%;}
+.boardDetail div ul li{width: 31.4667%; aspect-ratio: 390 / 260; border: 1px solid #f1f1f1;}
+.boardDetail div ul li img{width: 100%; height: 100%; object-fit: cover;}
 .boardDetail div a{color: #999; display: inline-block;}
 
 

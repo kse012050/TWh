@@ -118,8 +118,8 @@
                     <li>
                         <span>계약 요건</span>
                         <b>
-                            RPS 고정가격계약,<br>
-                            FIT 미체결 발전소
+                            RPS<br class="mobile"> 고정가격계약,<br>
+                            FIT 미체결<br class="mobile"> 발전소
                         </b>
                     </li>
                 </ul>
@@ -172,8 +172,8 @@
         </div>
 
         <div data-stickyAni data-scrollPosition>
-            <div>
-                <ul class="textArea contentSize-padding" data-animate-list="rightToLeft">
+            <div class="textArea contentSize-padding">
+                <ul data-animate-list="rightToLeft">
                     <li>다양한 형태의 자산 매입</li>
                     <li>신속한 사업 검토와 자금 투입</li>
                     <li>유연한 대금 지급조건 협의</li>
