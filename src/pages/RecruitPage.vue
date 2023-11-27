@@ -343,7 +343,7 @@ export default {
                     }
                 })
                 if(scrollTop > topElementTop && scrollTop < topElementHeight + topElementTop){
-                    topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 350) + 'px');
+                    topElement.style.setProperty('--bgY', -((scrollTop - topElementTop) / topElementHeight * 250) + 'px');
                 }
             })
         },

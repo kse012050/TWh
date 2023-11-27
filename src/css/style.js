@@ -76,7 +76,6 @@ export function scrollPosition(){
     const headerElementHeight = document.querySelector('header').offsetHeight;
     document.querySelectorAll('[data-scrollPosition]').forEach((element)=>{
         const setPosition = element.getAttribute('data-scrollPosition') ? window.innerHeight * (element.getAttribute('data-scrollPosition') / 100) : 0;
-        // console.log(window.innerHeight * (element.getAttribute('data-scroll') / 100));
         if(element.getBoundingClientRect().y < headerElementHeight + setPosition){
             element.classList.add('active');
         }else{

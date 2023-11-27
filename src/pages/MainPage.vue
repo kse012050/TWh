@@ -419,10 +419,10 @@ export default {
     /* 메인 테라와트아워는~ */
     .mainPage .terraTitle{z-index: -1; opacity: 0;}
     .mainPage .terraTitle:has(+ .terra01Area.active ~ .companyArea:not(.active)){z-index: 5;}
-    .mainPage .terraTitle:has(+ .terra01Area.active){opacity: 1; transition: opacity 0s 1.2s;}
+    .mainPage .terraTitle:has(+ .terra01Area.active){opacity: 1; transition: opacity 0s 1s;}
     .mainPage .terraTitle:has(+ .terra01Area.active ~ .companyArea:not(.active)) > div > strong{pointer-events: all;}
     .mainPage .terraTitle:has(~ .companyArea.active){opacity: 0; transition-delay: 0s;}
-    .mainPage .terra01Area.active > div > div > strong{opacity: 0; transition: opacity 0s 1.2s;}
+    .mainPage .terra01Area.active > div > div > strong{opacity: 0; transition: opacity 0s 1s;}
     .mainPage .terra02Area > div > div > strong{opacity: 0;}
     .mainPage .terra02Area:has(+ .companyArea.active) > div > div > strong {opacity: 1;}
     .mainPage .terra02Area.active.test > div > div > strong{opacity: 1;}
