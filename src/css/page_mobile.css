@@ -16,6 +16,7 @@
 .mainPage .solutionArea ul li div p{display: none;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage [class^="terra"][class*="Area"] > div > div{row-gap: 80px; justify-content: center;}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 26px; line-height: 1.307; margin-bottom: min(3.125vh, 20px);}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 18px; line-height: 1.333;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 26px; line-height: 1.307; margin-bottom: min(3.125vh, 20px);}
 .mainPage [class^="terra"][class*="Area"] > div > div div{width: calc((100% - 20px) / 2); max-width: 300px; height: min(28.125vh, 180px); padding: min(2.34375vh, 15px) 15px min(3.125vh, 20px);}

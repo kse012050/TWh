@@ -99,7 +99,7 @@
             <div class="contentSize">
                 <p data-textAni>
                     재생에너지의<br class="mobile"> 생산과 소비를 연결하는<br>
-                    <b>국내 최대의 전력거래 플랫폼(VPP)</b>으로 <br>
+                    <b>국내 최대의 전력거래<br class="mobile"> 플랫폼(VPP)</b>으로 <br>
                     성장하겠습니다.
                 </p>
                 <router-link to="/company" class="arrow-white" data-aniDelay="10">기업 소개 보기 <span></span></router-link>
