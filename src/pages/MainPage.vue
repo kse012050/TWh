@@ -53,6 +53,11 @@
                 </li>
             </ul>
         </div>
+        <div class="terraTitle">
+            <div class="contentSize">
+                <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+            </div>
+        </div>
         <div class="terra01Area" data-full>
             <div>
                 <div class="contentSize">
@@ -75,13 +80,13 @@
         <div class="terra02Area" data-full>
             <div>
                 <div class="contentSize">
-                    <strong class="font-hanwha" data-textAni>한화 신한 테라와트아워는</strong>
-                    <p data-textAni data-aniDelay="2">
+                    <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+                    <p data-textAni>
                         RE100 기업 수요와<br class="mobile"> KPX 전력시장을 아우르는<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
-                    <div data-animate="bottomToTop" data-aniDelay="12">
-                        <p data-textAni data-aniDelay="14">
+                    <div data-animate="bottomToTop" data-aniDelay="8">
+                        <p data-textAni data-aniDelay="10">
                             재생에너지전기공급<br>
                             (PPA)
                         </p>
@@ -232,10 +237,6 @@ export default {
             })
         },
         fullEvent(idx, e){
-            // 이동 막기
-            this.fullSelectors.forEach((element)=>{
-                element.style.pointerEvents = 'none';
-            })
             let delta;
             if(e.type === 'mousewheel'){
                 delta = e.wheelDelta;
@@ -255,6 +256,10 @@ export default {
                     return;
                 }
             }
+            // 이동 막기
+            this.fullSelectors.forEach((element)=>{
+                element.style.pointerEvents = 'none';
+            })
             this.fullMoveEvent(idx, delta)
         },
         fullMoveEvent(idx, delta){
@@ -272,9 +277,18 @@ export default {
             if(this.clearTimer){
                 clearTimeout(this.clearTimer);
             }
-            this.clearTimer = setTimeout(()=>{
-                this.fullSelectors[idx].removeAttribute('style');
-            }, 1000)
+            // 이동 풀기 - 내렸을 때
+            if(delta < 0){
+                this.clearTimer = setTimeout(()=>{
+                    this.fullSelectors[idx].removeAttribute('style');
+                }, 1000) /* 시간 조정시 테라 타이틀도 조정해야한다 */
+            }
+            // 이동 풀기 - 올렸을 때
+            if(delta > 0){
+                this.clearTimer = setTimeout(()=>{
+                    this.fullSelectors[idx].removeAttribute('style');
+                }, 500)
+            }
 
             // 페이저, 해더 페이저 스타일
             if(this.fullSelectors[idx].localName !== 'footer'){
@@ -302,6 +316,16 @@ export default {
                 document.querySelectorAll('[data-full].active, .fullPager').forEach((element)=>{
                     element.removeAttribute('style')
                 })
+            }
+
+
+
+            // terra 타이틀
+            if(this.fullSelectors[currentIdx].classList.contains('test')){
+                this.fullSelectors[currentIdx].classList.remove('test')
+            }
+            if(this.fullSelectors[currentIdx].classList.contains('companyArea') && this.fullSelectors[idx].classList.contains('terra02Area')){
+                this.fullSelectors[idx].classList.add('test')
             }
 
             
@@ -393,6 +417,17 @@ export default {
     .mainPage .solutionArea:not(.active) ul li a span::after{width: 0;}
     .mainPage .solutionArea.active ul li{transform: translateY(0);}
     /* 메인 테라와트아워는~ */
+    .mainPage .terraTitle{z-index: -1; opacity: 0;}
+    .mainPage .terraTitle:has(+ .terra01Area.active ~ .companyArea:not(.active)){z-index: 5;}
+    .mainPage .terraTitle:has(+ .terra01Area.active){opacity: 1; transition: opacity 0s 1.2s;}
+    .mainPage .terraTitle:has(+ .terra01Area.active ~ .companyArea:not(.active)) > div > strong{pointer-events: all;}
+    .mainPage .terraTitle:has(~ .companyArea.active){opacity: 0; transition-delay: 0s;}
+    .mainPage .terra01Area.active > div > div > strong{opacity: 0; transition: opacity 0s 1.2s;}
+    .mainPage .terra02Area > div > div > strong{opacity: 0;}
+    .mainPage .terra02Area:has(+ .companyArea.active) > div > div > strong {opacity: 1;}
+    .mainPage .terra02Area.active.test > div > div > strong{opacity: 1;}
+    .mainPage .terraTitle:has(~ .terra02Area.active.test){transition-delay: 0.6s;}
+
     .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
     .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center right / cover;}
     .mainPage [class^="terra"][class*="Area"] > div > div > div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}

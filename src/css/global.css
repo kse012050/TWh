@@ -71,19 +71,19 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 
 /* 서브 페이지 탑 애니 기본 형태 */
 [data-subTopAni]{padding-top: var(--headerHeight);}
-[data-subTopAni] .topArea{height: max(calc(var(--fullHeight) * var(--totalContent)), calc(var(--fullHeight) * 1 + var(--fullHeight) / 2)); background-color: #000F35; position: relative; /* z-index: -1; */}
+[data-subTopAni] .topArea{height: calc(var(--fullHeight) + var(--fullHeight) / 1.3 * var(--totalContent)); background-color: #000F35; position: relative; /* z-index: -1; */}
 [data-subTopAni] .topArea::before{content: ''; position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(100% + var(--headerHeight)); transform: translate3d(0, var(--bgY),0); background-repeat: no-repeat; background-position: top center; background-size: cover;}
 .companyPage .topArea::before{background-image: url('../images/company-topBG.png');}
 .solutionPage .topArea::before{background-image: url('../images/solution-topBG.png');}
 .recruitPage .topArea::before{background-image: url('../images/recruit-topBG.png');}
 [data-subTopAni] .topArea h2{font-weight: 600; background-color: white; position: fixed; left: 0; top: var(--headerHeight); width: 100%;}
-[data-subTopAni] .topArea > div{position: sticky; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); padding-inline: var(--spacing); display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; color: white; text-align: center;}
+[data-subTopAni] .topArea > div{position: fixed; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight)); height: calc(var(--fullHeight) - var(--headerHeight)); padding-inline: var(--spacing); display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; color: white; text-align: center;}
 [data-subTopAni] :where(.topArea ~ *:not([class|="ani"])){background-color: white; position: relative; z-index: 2;}
 /* 서브 페이지 탑 애니메이션 */
 [data-subTopAni] .topArea h2{transform: translateY(-100%);}
 [data-subTopAni] .topArea h2.active{transform: translateY(0%); transition: all var(--aniDelay-basic) ease-in-out;}
 [data-subTopAni] .topArea h2.active:has(+ .active){transform: translateY(-100%);}
-[data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0.02s; transition-timing-function: ease-in-out, linear;}
+[data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0s; transition-timing-function: ease-in-out, linear;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
 [data-subTopAni] .topArea > div{transition: transform var(--aniDuration) ease-in-out; transform: translateY(100%);}

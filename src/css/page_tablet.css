@@ -42,7 +42,7 @@
 .companyPage .VPPArea .box-img{aspect-ratio: 360 / 755; background-image: url(../images/company-VVPImg-M.png);}
 .companyPage :is(.missionArea, .visionArea) b{font-size: 24px; line-height: 1.667; margin-bottom: 30px;}
 .companyPage :is(.missionArea, .visionArea) strong{font-size: 52px; line-height: 1.176;}
-.companyPage .peopleArea strong{font-size: 26px; line-height: 1.307; margin-bottom: 80px;}
+.companyPage .peopleArea strong{font-size: 38px; line-height: 1.307; margin-bottom: 80px;}
 .companyPage .peopleArea ul{gap: 80px 90px;}
 .companyPage .peopleArea ul li img{margin-bottom: 37.5px;}
 .companyPage .peopleArea ul li :is(b, span){margin-bottom: 11px;}

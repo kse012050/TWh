@@ -23,16 +23,19 @@
 .mainPage .solutionArea ul li:nth-child(2) div strong{min-height: 168.56px;}
 .mainPage .solutionArea ul li div p{font-size: 23px; line-height: 1.5;}
 .mainPage .solutionArea ul li div a{margin-top: min(9.2592vh, 100px);}
+.mainPage .terraTitle{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none;}
+.mainPage .terraTitle div{height: 656.02px;}
+.mainPage .terraTitle div strong{font-size: 38px; line-height: 1.307; font-weight: 600; padding-top: 100px; color: white;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage [class^="terra"][class*="Area"] > div > div{justify-content: flex-end;}
-.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 38px; line-height: 1.307; margin-bottom: min(2.9514vh, 25px); padding-top: min(9.2592vh, 100px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px; padding-top: 100px; /* margin-bottom: min(2.9514vh, 25px); padding-top: min(9.2592vh, 100px); */}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{font-size: 24px; line-height: 1.333; margin-right: 145px;}
-.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 38px; line-height: 1.307; margin-bottom: min(2.9514vh, 25px);}
-.mainPage [class^="terra"][class*="Area"] > div > div div{width: 380px; height: min(35.35875vh, 320px); padding: min(3.023725vh, 27.5px) 32.5px min(4.3405vh, 40px);}
+.mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-size: 38px; line-height: 1.307; margin-bottom: 25px; /* margin-bottom: min(2.9514vh, 25px); */}
+.mainPage [class^="terra"][class*="Area"] > div > div div{width: 380px; height: 320px; padding: 27.5px 40px; /* height: min(35.35875vh, 320px); padding: min(3.023725vh, 27.5px) 32.5px min(4.3405vh, 40px); */}
 .mainPage [class^="terra"][class*="Area"] > div > div div:not(:last-of-type){margin-right: 60px;}
-.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: min(9.2592vh, 100px);}
-.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(2){translate: 0 calc(min(1.8518vh, 20px) * -1);}
-.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 37.5px; line-height: 1.2; margin-bottom: min(2.17015vh, 20px);}
+.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(1){margin-top: 100px; /* margin-top: min(9.2592vh, 100px); */}
+.mainPage [class^="terra"][class*="Area"] > div > div div:nth-of-type(2){translate: -20px /* translate: 0 calc(min(1.8518vh, 20px) * -1); */}
+.mainPage [class^="terra"][class*="Area"] > div > div div strong{font-size: 37.5px; line-height: 1.2; margin-bottom: 20px; /* margin-bottom: min(2.17015vh, 20px); */}
 .mainPage [class^="terra"][class*="Area"] > div > div div strong small{font-size: 22.5px;}
 .mainPage [class^="terra"][class*="Area"] > div > div div p{font-size: 18px; line-height: 1.5;}
 .mainPage .terra01Area > div > div div::before{--height: 50px;}
@@ -41,7 +44,7 @@
 .mainPage .companyArea div p{font-size: 38px; line-height: 1.307;}
 .mainPage .companyArea div a{margin-top: min(5.5556vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
-.mainPage .boardArea > div > div h3{font-size: 38px; line-height: 1.307; margin-bottom: min(5.9028vh, 50px);}
+.mainPage .boardArea > div > div h3{font-size: 24px; line-height: 1.307; margin-bottom: min(5.9028vh, 50px);}
 .mainPage .boardArea > div > div > a{margin-top: min(5.5556vh, 60px);}
 
 
@@ -51,7 +54,7 @@
 .companyPage .VPPArea .box-img{aspect-ratio: 1240 / 888; background-image: url(../images/company-VVPImg-PC.png);}
 .companyPage :is(.missionArea, .visionArea) b{font-size: 24px; line-height: 1.667; margin-bottom: 30px;}
 .companyPage :is(.missionArea, .visionArea) strong{font-size: 52px; line-height: 1.176;}
-.companyPage .peopleArea strong{font-size: 26px; line-height: 1.307; margin-bottom: 80px;}
+.companyPage .peopleArea strong{font-size: 38px; line-height: 1.307; margin-bottom: 80px;}
 .companyPage .peopleArea ul{gap: 80px 90px;}
 .companyPage .peopleArea ul li img{margin-bottom: 37.5px;}
 .companyPage .peopleArea ul li :is(b, span){margin-bottom: 11px;}
@@ -153,15 +156,15 @@
 
 
 /* 게시판 - 상세 */
-.boardDetail :is(small, time){font-size: 20px;}
-.boardDetail small{margin-bottom: 20px;}
-.boardDetail h2{font-size: 40px; line-height: 54px; margin-bottom: 40px;}
-.boardDetail time{margin-bottom: 30px;}
-.boardDetail div{padding-block: 60px;}
-.boardDetail div p{font-size: 22px; line-height: 38px;}
-.boardDetail div ul{margin-top: 60px;}
-.boardDetail div a{font-size: 22px; line-height: 38px; margin-top: 120px;}
-.boardDetail > a{margin-top: 80px;}
+.boardDetail :is(small, time){font-size: 16.5px;}
+.boardDetail small{margin-bottom: 17.5px;}
+.boardDetail h2{font-size: 33px; line-height: 1.2307; margin-bottom: 35px;}
+.boardDetail time{margin-bottom: 25px;}
+.boardDetail div{padding-block: 50px;}
+.boardDetail div p{font-size: 18.5px; line-height: 1.6;}
+.boardDetail div ul{margin-top: 50px;}
+.boardDetail div a{font-size: 18.5px; line-height: 1.3333; margin-top: 90px;}
+.boardDetail > a{margin-top: 65px;}
 
 
 /* 사업 문의 */
