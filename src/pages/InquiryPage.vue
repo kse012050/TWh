@@ -1,8 +1,8 @@
 <template>
     <section class="inquiryPage contentSize">
-        <h2>사업 문의</h2>
+        <h2 data-textAni>사업 문의</h2>
         <form>
-            <fieldset class="content-inquiry">
+            <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
                 <ul>
                     <li>
                         <label for="company">기업명</label>
@@ -87,6 +87,9 @@ export default {
         document.querySelectorAll('input[required]').forEach((element)=>{
             element.required && (this.inputsRequired[element.name] = '')
         })
+        setTimeout(()=>{
+            document.querySelector('.inquiryPage').classList.add('active');
+        },10)
     }
 }
 </script>

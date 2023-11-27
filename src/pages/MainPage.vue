@@ -169,7 +169,8 @@ export default {
             })
 
             
-            document.querySelector('.topArea').classList.remove('intro')
+            document.querySelector('.topArea').classList.remove('introStart')
+            document.querySelector('.topArea').classList.remove('introCenter')
             document.querySelector('.topArea').classList.remove('introFin')
         },
         popup(){
@@ -208,6 +209,11 @@ export default {
             typingEle.innerText = ''
             // this.fullEvent();
             // let count = 0;
+            
+            setTimeout(()=>{
+                document.querySelector('.topArea').classList.add('introCenter');
+            }, 500)
+
             setTimeout(()=>{
                 const typingAni = setInterval(() => {
                     typingEle.innerHTML += typginBackup.shift();
@@ -223,7 +229,7 @@ export default {
                         }, 1000)
                     }
                 }, 100);
-            },1000);
+            },2000);
         },
         fullUserEvent(){
             // const fullSelectors = document.querySelectorAll('[data-full]');
@@ -348,7 +354,7 @@ export default {
         this.board();
         this.fullPager();
         if(!sessionStorage.getItem('intro')){
-            document.querySelector('.topArea').classList.add('intro')
+            document.querySelector('.topArea').classList.add('introStart')
             this.typingEvent();
         }else{
             this.fullUserEvent();
@@ -381,15 +387,17 @@ export default {
 
 
     /* 인트로 */
-    header:has(+ .mainPage .topArea.intro){opacity: 0; pointer-events: none;}
+    header:has(+ .mainPage .topArea.introStart){opacity: 0; pointer-events: none;}
     .mainPage .topArea{z-index: 1; background-color: white;}
-    .mainPage .topArea.intro{--color: #222; color: var(--color); position: relative;}
-    .mainPage .topArea.intro > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2));}
-    .mainPage .topArea.intro > div.textArea h2{opacity: 0;}
-    .mainPage .topArea.intro > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor 0.9s infinite steps(2);}
-    .mainPage .topArea.intro > .bg{clip-path: circle(0% at 50% 50%);}
-    .mainPage .topArea.intro > .scroll{opacity: 0;}
+    .mainPage .topArea.introStart{--color: #222; color: var(--color); position: relative;}
+    .mainPage .topArea.introStart > div.textArea p{opacity: 0;}
+    .mainPage .topArea.introStart > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor 0.9s infinite steps(2);}
+    .mainPage .topArea.introStart > .bg{clip-path: circle(0% at 50% 50%);}
+    .mainPage .topArea.introStart > .scroll{opacity: 0;}
 
+    .mainPage .topArea.introStart.introCenter > div.textArea h2{opacity: 0; transition: 0.5s 0.2s opacity ease-in-out;}
+    .mainPage .topArea.introStart.introCenter > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2)); transition: 0s 0.7s transform ease-in-out;}
+    .mainPage .topArea.introStart.introCenter > div.textArea p{opacity: 1; transition: 0s 0.7s opacity ease-in-out;}
 
     @keyframes cursor {
         0%{opacity: 0;}
@@ -397,13 +405,13 @@ export default {
     }
  
 
-    header:has(+ .mainPage .topArea.introFin){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
-    .mainPage .topArea.introFin{color: white; transition: 1s 2s color;}
-    .mainPage .topArea.introFin > div.textArea{transform: translateY(0); transition: 1s transform;}
-    .mainPage .topArea.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;}
-    .mainPage .topArea.introFin > div.textArea p::after{animation: none; border-color: transparent;}
-    .mainPage .topArea.introFin > .bg{animation: topBG 3s 1.3s forwards;}
-    .mainPage .topArea.introFin > .scroll{opacity: 1; transition: 1s 2.5s opacity;}
+    header:has(+ .mainPage .topArea.introStart.introCenter.introFin){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
+    .mainPage .topArea.introStart.introCenter.introFin{color: white; transition: 1s 2s color;}
+    .mainPage .topArea.introStart.introCenter.introFin > div.textArea{transform: translateY(0); transition: 1s transform;}
+    .mainPage .topArea.introStart.introCenter.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;}
+    .mainPage .topArea.introStart.introCenter.introFin > div.textArea p::after{animation: none; border-color: transparent;}
+    .mainPage .topArea.introStart.introCenter.introFin > .bg{animation: topBG 3s 1.3s forwards;}
+    .mainPage .topArea.introStart.introCenter.introFin > .scroll{opacity: 1; transition: 1s 2.5s opacity;}
     @keyframes topBG {
         0%{clip-path: circle(0% at 50% 50%); opacity: 0;}
         100%{clip-path: circle(100% at 50% 50%); opacity: 1;}

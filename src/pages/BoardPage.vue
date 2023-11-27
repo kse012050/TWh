@@ -1,11 +1,11 @@
 <template>
     <section class="boardPage contentSize">
         <h2 data-textAni>게시판</h2>
-        <div data-animate="bottomToTop" data-aniDelay="2">
+        <div data-animate="bottomToTop" data-aniDelay="4">
             <button :class="{active: tabName === 'NEWS'}" @click.prevent="tabClick('NEWS')">뉴스</button>
             <button :class="{active: tabName === 'BLOG'}" @click.prevent="tabClick('BLOG')">블로그</button>
         </div>
-        <ul class="user-board" data-animate="bottomToTop" data-aniDelay="2">
+        <ul class="user-board" data-animate="bottomToTop" data-aniDelay="8">
             <template v-for="(data, idx) in showList" :key="data.id">
                 <li v-if="idx + 1 <= showCount">
                     <router-link :to="`/boardDetail/${data.id}`">

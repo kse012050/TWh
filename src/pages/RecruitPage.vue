@@ -317,10 +317,13 @@ export default {
             this.topElement = document.querySelector(this.topClassName);
             this.titleElement = document.querySelector(`${this.topClassName} h2`);
             this.topContents = document.querySelectorAll(`${this.topClassName} > div`);
+            // 타이틀 초기화
             this.titleElement.classList.remove('active');
+            // 서브페이지 탑 애니메이션 초기화
             setTimeout(() => {
                 this.titleElement.classList.add('active');
             }, 300);
+            this.topElement.style.setProperty('--bgY', 0);
             this.topContents.forEach((element)=>{
                 element.classList.remove('active');
             })
@@ -380,6 +383,7 @@ export default {
         })
     },
     beforeUnmount(){
+        this.init();
         scrollPositionRemove();
     }
 }
