@@ -18,10 +18,10 @@
                 <b>사명</b>
                 <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             </div>
-            <div data-aniDelay-basic="6">
-                <div class="visionArea">
-                    <b data-textAni>비전</b>
-                    <strong data-textAni data-aniDelay="4">
+            <div class="visionArea">
+                <div>
+                    <b>비전</b>
+                    <strong>
                         Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
                     </strong>
                 </div>
@@ -123,8 +123,9 @@ export default {
             document.querySelectorAll('[data-stepAni] > *').forEach((element)=>{
                 element.classList.remove('active');
             })
-            document.querySelector('[data-stepAni]').style.setProperty('--bgWidth',`300px`)
-            document.querySelector('[data-stepAni]').style.setProperty('--bgHeight',`100px`)
+            document.querySelector('[data-stepAni]').style.setProperty('--firstWidth',`300px`)
+            document.querySelector('[data-stepAni]').style.setProperty('--firstHeight',`100px`)
+            document.querySelector('[data-stepAni]').style.setProperty('--secondWidth',`0px`)
         },
         scrollEvent() {
             const topElement = this.topElement;   
@@ -163,20 +164,31 @@ export default {
             // const scrollTop = window.scrollY;
             aniFixedChildren[0].classList.add('active')
             let scrollPercentage = Math.abs(aniFixedY / (aniFixed.offsetHeight - window.innerHeight - 300));
-            if(scrollPercentage < 1){
+        /*     if(scrollPercentage < 1){
                 aniFixedChildren[0].classList.add('active')
                 aniFixedChildren[1].classList.remove('active')
             }else{
                 scrollPercentage = 1;
                 aniFixedChildren[1].classList.add('active')
+            } */
+            if(scrollPercentage < 0.5){
+                scrollPercentage *= 2;
+                if(scrollPercentage * window.innerWidth > 300){
+                    aniFixed.style.setProperty('--firstWidth', scrollPercentage * window.innerWidth + 'px');
+                }
+                if(scrollPercentage * window.innerHeight > 100){
+                    aniFixed.style.setProperty('--firstHeight', scrollPercentage * window.innerHeight + 'px');
+                }
+                aniFixed.style.setProperty('--color', scrollPercentage * 255);
+                aniFixed.style.setProperty('--secondWidth', '0px');
+            }else if(scrollPercentage >= 0.5 && scrollPercentage <= 1){
+                scrollPercentage = scrollPercentage / 0.5 - 1;
+                aniFixed.style.setProperty('--firstWidth', window.innerWidth + 'px');
+                aniFixed.style.setProperty('--firstHeight', window.innerHeight + 'px');
+                aniFixed.style.setProperty('--secondWidth', scrollPercentage * window.innerWidth + 'px');
+            }else{
+                aniFixed.style.setProperty('--secondWidth', window.innerWidth + 'px');
             }
-            if(scrollPercentage * window.innerWidth > 300){
-                aniFixed.style.setProperty('--bgWidth', scrollPercentage * window.innerWidth + 'px');
-            }
-            if(scrollPercentage * window.innerHeight > 100){
-                aniFixed.style.setProperty('--bgHeight', scrollPercentage * window.innerHeight + 'px');
-            }
-            aniFixed.style.setProperty('--color', scrollPercentage * 255);
             // aniFixedChildren[0].style.transform = `scale(${Math.abs(aniFixed.getBoundingClientRect().y / aniFixedChildren[0].offsetHeight)})`
             // aniFixedChildren.forEach((childrenElement, idx)=>{
             //     if(scrollTop > childrenElement.offsetHeight * idx + aniFixed.offsetTop){
@@ -205,15 +217,20 @@ export default {
     .companyPage .topArea > div:nth-of-type(3).active{transform: translateX(0);} */
 
     /* 픽스드 애니메이션 */
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(1){pointer-events: none;}
+    /* .companyPage .fixedArea[data-stepAni] > *:nth-child(1){pointer-events: none;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active{pointer-events: all; transition-property: z-index, opacity; transition-duration: 0s; transition-delay: 0.6s, 0s; transition-timing-function: ease-in-out;;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active:has( + .active){z-index: -1; opacity: 0; transition-duration: 0.3s; transition-delay: 0.8s, 0.5s;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(2){width: 0; transition: width var(--aniDuration) ease-in-out; overflow: hidden; pointer-events: none;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(2):not(.active) > .visionArea > *{opacity: 0;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all; width: 100%;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all; width: 100%;} */
 
-    .companyPage .fixedArea:has( > *:nth-child(1):not(.active))::before{display: none;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active::before{display: none;}
+    
+    /* .companyPage .fixedArea:has( > *:nth-child(1):not(.active))::before{display: none;} */
+    .companyPage .fixedArea::before{display: none;}
+    /* .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active::before{display: none;} */
     .companyPage .fixedArea[data-stepAni]{--color: 0;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1){overflow: hidden;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(1)::before{transition-property: width, height; transition: 0.1s; width: var(--firstWidth); height: var(--firstHeight);}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1){color: rgb(var(--color), var(--color), var(--color));}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2){transition-property: width; transition: 0.1s; width: var(--secondWidth); overflow: hidden; pointer-events: none;}
 </style>

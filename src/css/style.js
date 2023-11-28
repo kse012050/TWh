@@ -32,6 +32,7 @@ function hanshwFontSize(){
 
 // 현재 보고 있는 화면의 세로 크기
 function fullStyle(){
+    document.getElementById('app').style.setProperty('--fullWidth', `${window.innerWidth}px`)
     document.getElementById('app').style.setProperty('--fullHeight', `${window.innerHeight}px`)
 }
 
