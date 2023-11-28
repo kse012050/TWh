@@ -319,9 +319,18 @@ export default {
             this.topContents = document.querySelectorAll(`${this.topClassName} > div`);
             // 타이틀 초기화
             this.titleElement.classList.remove('active');
-            // 서브페이지 탑 애니메이션 초기화
             setTimeout(() => {
                 this.titleElement.classList.add('active');
+            }, 300);
+            // 서브페이지 탑 애니메이션 초기화
+            this.topContents.forEach((element)=>{
+                element.classList.remove('active');
+                element.classList.remove('ani');
+            })
+            setTimeout(() => {
+                this.topContents.forEach((element)=>{
+                    element.classList.add('ani');
+                })
             }, 300);
             this.topElement.style.setProperty('--bgY', 0);
             this.topContents.forEach((element)=>{

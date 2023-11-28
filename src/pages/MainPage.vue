@@ -66,7 +66,7 @@
                         전문성과 안정성을 갖춘<br>
                         재생에너지 전력거래 전문 기업입니다.
                     </p>
-                    <div data-animate="bottomToTop" data-aniDelay="12">
+                    <div data-animate="bottomToTop" data-aniDelay="10">
                         <strong data-textAni data-aniDelay="14">1GW<small>+</small></strong>
                         <p data-textAni data-aniDelay="16">재생에너지 구축,<br> 운영 사업 역량</p>
                     </div>
@@ -91,7 +91,7 @@
                             (PPA)
                         </p>
                     </div>
-                    <div data-animate="bottomToTop" data-aniDelay="10">
+                    <div data-animate="bottomToTop" data-aniDelay="8">
                         <p data-textAni data-aniDelay="12">
                             통합발전소<br>
                             (VPP)
@@ -226,7 +226,7 @@ export default {
                             document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
                                 this.fullUserEvent();
                             })
-                        }, 1000)
+                        }, 100)
                     }
                 }, 100);
             },2000);
@@ -390,28 +390,30 @@ export default {
     header:has(+ .mainPage .topArea.introStart){opacity: 0; pointer-events: none;}
     .mainPage .topArea{z-index: 1; background-color: white;}
     .mainPage .topArea.introStart{--color: #222; color: var(--color); position: relative;}
+    .mainPage .topArea.introStart h2{animation: opacityAni 0.8s 0.3s ease-in-out forwards; opacity: 0;}
     .mainPage .topArea.introStart > div.textArea p{opacity: 0;}
-    .mainPage .topArea.introStart > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: cursor 0.9s infinite steps(2);}
+    .mainPage .topArea.introStart > div.textArea p::after{ content: ''; margin-left: .4rem; border-right: 2px solid #222; animation: opacityAni 0.9s infinite steps(2);}
     .mainPage .topArea.introStart > .bg{clip-path: circle(0% at 50% 50%);}
     .mainPage .topArea.introStart > .scroll{opacity: 0;}
 
-    .mainPage .topArea.introStart.introCenter > div.textArea h2{opacity: 0; transition: 0.5s 0.2s opacity ease-in-out;}
-    .mainPage .topArea.introStart.introCenter > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2)); transition: 0s 0.7s transform ease-in-out;}
+    /* .mainPage .topArea.introStart.introCenter > div.textArea h2{opacity: 0; transition: 0.5s 0.2s opacity ease-in-out;}
+    .mainPage .topArea.introStart.introCenter > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2)); transition: 0s 0.7s transform ease-in-out;} */
     .mainPage .topArea.introStart.introCenter > div.textArea p{opacity: 1; transition: 0s 0.7s opacity ease-in-out;}
 
-    @keyframes cursor {
+   
+    @keyframes opacityAni {
         0%{opacity: 0;}
         100%{opacity: 1;}
     }
  
 
-    header:has(+ .mainPage .topArea.introStart.introCenter.introFin){opacity: 1; transition: 1s 2.5s opacity; pointer-events: all;}
-    .mainPage .topArea.introStart.introCenter.introFin{color: white; transition: 1s 2s color;}
-    .mainPage .topArea.introStart.introCenter.introFin > div.textArea{transform: translateY(0); transition: 1s transform;}
-    .mainPage .topArea.introStart.introCenter.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;}
+    header:has(+ .mainPage .topArea.introStart.introCenter.introFin){opacity: 1; transition: 1s 1.5s opacity; pointer-events: all;}
+    .mainPage .topArea.introStart.introCenter.introFin{color: white; transition: 1s 1s color;}
+    /* .mainPage .topArea.introStart.introCenter.introFin > div.textArea{transform: translateY(0); transition: 1s transform;} */
+    /* .mainPage .topArea.introStart.introCenter.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;} */
     .mainPage .topArea.introStart.introCenter.introFin > div.textArea p::after{animation: none; border-color: transparent;}
-    .mainPage .topArea.introStart.introCenter.introFin > .bg{animation: topBG 3s 1.3s forwards;}
-    .mainPage .topArea.introStart.introCenter.introFin > .scroll{opacity: 1; transition: 1s 2.5s opacity;}
+    .mainPage .topArea.introStart.introCenter.introFin > .bg{animation: topBG 3s forwards;}
+    .mainPage .topArea.introStart.introCenter.introFin > .scroll{opacity: 1; transition: 1s 1.5s opacity;}
     @keyframes topBG {
         0%{clip-path: circle(0% at 50% 50%); opacity: 0;}
         100%{clip-path: circle(100% at 50% 50%); opacity: 1;}

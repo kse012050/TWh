@@ -83,10 +83,12 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 [data-subTopAni] .topArea h2{transform: translateY(-100%);}
 [data-subTopAni] .topArea h2.active{transform: translateY(0%); transition: all var(--aniDelay-basic) ease-in-out;}
 [data-subTopAni] .topArea h2.active:has(+ .active){transform: translateY(-100%);}
-[data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-duration: .6s, .5s; transition-delay: 0s, 0s; transition-timing-function: ease-in-out, linear;}
+[data-subTopAni] .topArea::before{transition-property: opacity, transform; transition-delay: 0s, 0s; transition-timing-function: ease-in-out, linear;}
+[data-subTopAni] .topArea:has( > div.ani)::before{transition-duration: .6s, .5s;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(1).active)::before{opacity: 0.3;}
 [data-subTopAni] .topArea:has( > div:nth-of-type(2).active)::before{opacity: 0.1;}
-[data-subTopAni] .topArea > div{transition: transform var(--aniDuration) ease-in-out; transform: translateY(100%);}
+[data-subTopAni] .topArea > div{transform: translateY(100%);}
+[data-subTopAni] .topArea > div.ani{transition: transform var(--aniDuration) ease-in-out;}
 /* [data-subTopAni] .topArea > div{transform: translateY(100%);} */
 [data-subTopAni] .topArea > div.active{transform: translateY(0);}
 [data-subTopAni] .topArea > div.active:has( + .active){transform: translateY(-100%);}
@@ -96,7 +98,7 @@ ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; dis
 
 
 [data-subTopAni] [data-stepAni]{height: calc(var(--fullHeight) * var(--styleTotal) + var(--fullHeight)); position: relative; z-index: 1;}
-[data-subTopAni] [data-stepAni] > *{left: 0; top: calc(var(--headerHeight)); width: 100%; z-index: -1;}
+[data-subTopAni] [data-stepAni] > *{right: 0; top: calc(var(--headerHeight)); width: 100%; z-index: -1;}
 [data-subTopAni] [data-stepAni]::before{position: sticky;}
 [data-subTopAni] [data-stepAni] > *:not(:first-child){position: fixed;}
 

@@ -63,11 +63,11 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage :is(.missionArea, .visionArea) b{display: block;}
 .companyPage .fixedArea::before{position: fixed;}
 .companyPage .fixedArea::before,
-.companyPage .missionArea::before{content: ''; display: block; left: 50%; bottom: 0; transform: translateX(-50%); width: var(--bgWidth); height: var(--bgHeight); background: url('../images/company-missionBG.png') no-repeat center right / cover; border-radius: 50px 50px 0 0; z-index: -2;}
+.companyPage .missionArea::before{content: ''; display: block; left: 50%; bottom: 0; transform: translateX(-50%); width: var(--bgWidth); height: var(--bgHeight); background: url('../images/company-missionBG.png') no-repeat center right / cover; border-radius: 25px 25px 0 0; z-index: -2;}
 .companyPage .missionArea{}
 .companyPage .missionArea{position: sticky; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: 0;}
 .companyPage .missionArea::before{position: absolute;}
-.companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center / cover;}
+.companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center / cover fixed;}
 .companyPage .peopleArea{padding-block: var(--padding02);}
 .companyPage .peopleArea strong{font-weight: 600; text-align: center; display: block;}
 .companyPage .peopleArea ul{display: flex; flex-wrap: wrap; justify-content: center;}
@@ -116,7 +116,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .solutionPage .topArea div:nth-of-type(3) ul li p{font-size: var(--fontSize); font-weight: 300;}
 .solutionPage .topArea div:nth-of-type(3) ul li p:first-of-type{margin-top: auto;}
 .solutionPage .topArea div:nth-of-type(3) ul li p svg{height: calc(var(--fontSize) + 3px); transform: translateY(4px);}
-.solutionPage .PPAArea > .tab-btn{position: sticky; top: var(--headerHeight); display: flex; justify-content: center; align-items: center; background-color: white; z-index: 10;}
+.solutionPage .PPAArea > .tab-btn{position: sticky; top: calc(var(--headerHeight) - 2px); display: flex; justify-content: center; align-items: center; background-color: white; z-index: 10;}
 .solutionPage .PPAArea > .tab-btn li button{font-weight: 700; color: #BBB;}
 .solutionPage .PPAArea > .tab-btn li button.active{color: #222; position: relative;}
 .solutionPage .PPAArea > .tab-btn li button.active::after{content: ''; width: 100%; background-color: #222; position: absolute; left: 0; bottom: 0;}

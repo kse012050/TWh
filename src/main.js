@@ -31,12 +31,13 @@ const routes = [
             {
                 path: '/',
                 name: 'TWh',
-                component: Main
+                component: Main,
             },
             {
                 path: '/company',
                 name: '기업 소개 - TWh',
-                component: Company
+                component: Company,
+                meta: { requiresAuth: true },
             },
             {
                 path: '/solution',
@@ -164,18 +165,14 @@ const routes = [
             },
         ]
     }
-    // { path: '/', component: Main},
-    // { path: '/company', component: Company},
-    // { path: '/solution', component: Solution},
-    // { path: '/recruit', component: Recruit},
-    // { path: '/board', component: Board},
-    // { path: '/boardDetail/:id', component: BoardDetail},
-    // { path: '/inquiry', component: Inquiry},
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    scrollBehavior() {
+    scrollBehavior(to, from) {
+        if(to.fullPath === from.fullPath){
+            return;
+        }
         return { top: 0 }
     },
     routes

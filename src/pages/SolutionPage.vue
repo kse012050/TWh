@@ -115,7 +115,7 @@
                     재생에너지전기공급사업자를 통해<br>
                     발전사업자와 전기사용자가<br class="mobile"> 전력을 직거래하는 계약 방식
                 </p>
-                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
+                <div class="hashArea" data-animate-list="bottomToTop" data-aniDelay="4" data-scrollPosition="70">
                     <b>장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
                     <b>#전력 다소비 기업</b>
                     <b>#낮 시간대 전력 소비가 많은 기업</b>
@@ -136,7 +136,7 @@
                     발전사업자와 한국전력,<br class="mobile"> 한국전력과 전기사용자가<br>
                     각각 계약을 체결하는 방식
                 </p>
-                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
+                <div class="hashArea" data-animate-list="bottomToTop" data-aniDelay="4" data-scrollPosition="70">
                     <b>#장기적으로 안정적인 재생에너지 조달을 희망하는 기업</b>
                     <b>#전력소비량이 상대적으로 적은 기업</b>
                     <b>#24시간 조업 기업</b>
@@ -150,7 +150,7 @@
                     전력거래 당사자간<br class="mobile"> 합의된 고정가격(SMP+REC)과<br>
                     도매전력가격(SMP)<br class="mobile"> 차액 정산을 통한 REC 거래
                 </p>
-                <div class="hashArea" data-animate-list="bottomToTop" data-scrollPosition="70">
+                <div class="hashArea" data-animate-list="bottomToTop" data-aniDelay="4" data-scrollPosition="70">
                     <b>#RE100 단기 이행이 필요한 기업</b>
                     <b>#안정적인 REC 조달을 희망하는 기업</b>
                 </div>
@@ -300,8 +300,14 @@ export default {
             }, 300);
             this.topContents.forEach((element)=>{
                 element.classList.remove('active');
+                element.classList.remove('ani');
             })
-            console.log(this.topContents);
+            setTimeout(() => {
+                this.topContents.forEach((element)=>{
+                    element.classList.add('ani');
+                })
+            }, 300);
+
         },
         scrollEvent() {
             const topElement = this.topElement;
@@ -394,13 +400,12 @@ export default {
             element.required && (this.inputsRequired[element.name] = '')
         })
 
-        
     },
     beforeUnmount(){
         this.init();
         // positionActive('remove');
         window.removeEventListener('scroll',this.test)
-    }
+    },
 }
 </script>
 <style>

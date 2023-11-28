@@ -44,7 +44,7 @@
 .mainPage .companyArea div p{font-size: 38px; line-height: 1.307;}
 .mainPage .companyArea div a{margin-top: min(5.5556vh, 60px);}
 /* 메인 페이지 - 게시판 영역 */
-.mainPage .boardArea > div > div h3{font-size: 24px; line-height: 1.307; margin-bottom: min(5.9028vh, 50px);}
+.mainPage .boardArea > div > div h3{font-size: 30px; line-height: 1.307; margin-bottom: min(5.9028vh, 50px);}
 .mainPage .boardArea > div > div > a{margin-top: min(5.5556vh, 60px);}
 
 

@@ -19,7 +19,7 @@
                 <strong>Powering<br class="mobile"> a Sustainable<br class="mobile"> Future</strong>
             </div>
             <div data-aniDelay-basic="6">
-                <div class="visionArea contentSize-padding">
+                <div class="visionArea">
                     <b data-textAni>비전</b>
                     <strong data-textAni data-aniDelay="4">
                         Leading Change<br class="mobile"> in the Energy<br class="mobile"> Market
@@ -81,7 +81,7 @@
         </div>
         <div class="bottomArea contentSize-padding">
             <div>
-                <a href="" class="btn-download"><b>CI</b>(AI)</a>
+                <a href="./ci/Hanwha Shinhan TWh_4.zip" class="btn-download" download><b>CI</b>(AI)</a>
                 <!-- <a href="" class="btn-download"><b>PR</b>(PDF)</a> -->
             </div>
         </div>
@@ -112,7 +112,13 @@ export default {
             this.topElement.style.setProperty('--bgY', 0);
             this.topContents.forEach((element)=>{
                 element.classList.remove('active');
+                element.classList.remove('ani');
             })
+            setTimeout(() => {
+                this.topContents.forEach((element)=>{
+                    element.classList.add('ani');
+                })
+            }, 300);
             // 픽스트 컨텐츠 초기화
             document.querySelectorAll('[data-stepAni] > *').forEach((element)=>{
                 element.classList.remove('active');
@@ -202,10 +208,9 @@ export default {
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1){pointer-events: none;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active{pointer-events: all; transition-property: z-index, opacity; transition-duration: 0s; transition-delay: 0.6s, 0s; transition-timing-function: ease-in-out;;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active:has( + .active){z-index: -1; opacity: 0; transition-duration: 0.3s; transition-delay: 0.8s, 0.5s;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(2){overflow: hidden; pointer-events: none;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(2) > div{transform: translateX(100%); transition: transform .6s ease-in-out;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all;}
-    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active > div{transform: translateX(0);}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2){width: 0; transition: width var(--aniDuration) ease-in-out; overflow: hidden; pointer-events: none;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2):not(.active) > .visionArea > *{opacity: 0;}
+    .companyPage .fixedArea[data-stepAni] > *:nth-child(2).active{pointer-events: all; width: 100%;}
 
     .companyPage .fixedArea:has( > *:nth-child(1):not(.active))::before{display: none;}
     .companyPage .fixedArea[data-stepAni] > *:nth-child(1).active::before{display: none;}
