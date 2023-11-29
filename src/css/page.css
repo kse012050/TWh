@@ -29,12 +29,14 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .solutionArea ul li div a{justify-content: center;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .terraTitle{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none;}
-.mainPage .terraTitle div strong{color: white; font-weight: 600;}
+.mainPage .terraTitle div strong{color: white; display: block;}
+.mainPage .terraTitle div strong b{font-weight: 600;}
 /* .mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;} */
 .mainPage [class^="terra"][class*="Area"] > div{height: 100%; display: flex; align-items: center;}
 .mainPage [class^="terra"][class*="Area"] > div > div{display: flex; flex-wrap: wrap;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{width: 100%; color: white;}
-.mainPage [class^="terra"][class*="Area"] > div > div > strong{width: 100%; font-weight: 600; color: white;}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong{width: 100%; color: white;}
+.mainPage [class^="terra"][class*="Area"] > div > div > strong b{font-weight: 600;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p strong{font-weight: 600; display: block;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p b{font-weight: 600;}
 .mainPage [class^="terra"][class*="Area"] > div > div div{display: flex; flex-direction: column; align-items: flex-start; background-color: white; font-weight: 600; box-sizing: border-box;}
@@ -45,7 +47,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .mainPage .terra01Area > div > div div::before{aspect-ratio: 280 / 70; background-image: url(../images/main-terraLogo01.png);}
 .mainPage .terra02Area > div > div div::before{aspect-ratio: 181 / 72; background-image: url(../images/main-terraLogo02.png);}
 /* 메인 페이지 - 기업 소개 영역 */
-.mainPage .companyArea{display: flex; justify-content: center; align-items: center; /* background: url(../images/main-companyBG.png) no-repeat center / cover; */ color: white;}
+.mainPage .companyArea{display: flex; justify-content: center; align-items: center; text-align: center; /* background: url(../images/main-companyBG.png) no-repeat center / cover; */ color: white;}
 .mainPage .companyArea div p{text-align: center; margin-inline: auto;}
 .mainPage .companyArea div p b{font-weight: 600;}
 .mainPage .companyArea div a{justify-content: center;}

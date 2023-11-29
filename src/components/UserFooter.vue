@@ -13,12 +13,13 @@
                 <div :class="{active: isFamilySite}">
                     <ul title="제조/건설">
                         <li><a href="https://www.hanwhacorp.co.kr/index.jsp" target="_blank">(주)한화</a></li>
-                        <li><a href="https://www.hanwha-defense.co.kr/kor/index.do" target="_blank">한화디펜스</a></li>
-                        <li><a href="" target="_blank">한화비전</a></li>
+                        <!-- <li><a href="https://www.hanwha-defense.co.kr/kor/index.do" target="_blank">한화디펜스</a></li> -->
+                        <li><a href="https://www.hanwhavision.com/ko/" target="_blank">한화비전</a></li>
                         <li><a href="https://www.hanwhapowersystems.co.kr/" target="_blank">한화파워시스템</a></li>
                         <li><a href="https://www.hanwhaimpact.com/kr/index" target="_blank">한화임팩트</a></li>
                         <li><a href="https://www.yncc.co.kr/ko/index.do" target="_blank">여천NCC</a></li>
                         <li><a href="https://www.hwenc.co.kr/" target="_blank">한화건설</a></li>
+                        <li><a href="https://hanwhaconvergence.com/kr/" target="_blank">한화컨버전스</a></li>
                     </ul>
                     <ul title="">
                         <li><a href="https://www.hanwhaaerospace.co.kr/" target="_blank">한화에어로스페이스</a></li>
@@ -27,7 +28,6 @@
                         <li><a href="https://www.hanwhasolutions.com/ko/" target="_blank">한화솔루션</a></li>
                         <li><a href="https://www.htpchem.com/" target="_blank">한화토탈에너지스</a></li>
                         <li><a href="https://hec.hanwha.co.kr/main.do" target="_blank">한화에너지</a></li>
-                        <li><a href="https://hanwhaconvergence.com/kr/" target="_blank">한화컨버전스</a></li>
                     </ul>
                     <ul title="금융">
                         <li><a href="https://www.hanwhalife.com/index.jsp" target="_blank">한화생명</a></li>
@@ -79,8 +79,8 @@
                     <!-- <li><a href="">페이스북 링크</a></li> -->
                 </ul>
             </div>
+            <modal-info v-if="isModal" :isModal="isModal" @modalClose="modalClose"/>
         </div>
-        <modal-info v-if="isModal" :isModal="isModal" @modalClose="modalClose"/>
         <button v-if="!isGoToTop"  class="goToTop" @click="goToTopEvent">최상위로 이동</button>
     </footer>
 </template>

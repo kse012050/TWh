@@ -72,6 +72,9 @@ export default {
                             this.modalText['description'] = '요청이 완료되었습니다' 
                             this.isModal = true
                             api.dataInit(this.inputsRequired, this.inputs)
+                            gtag('event', 'contact_us', {
+                                'event_name': 'contact_us'
+                            });
                         }
                     })
             }

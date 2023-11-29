@@ -55,13 +55,13 @@
         </div>
         <div class="terraTitle">
             <div class="contentSize">
-                <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+                <strong><b class="font-hanwha">한화 신한 테라와트아워</b>는</strong>
             </div>
         </div>
         <div class="terra01Area" data-full>
             <div>
                 <div class="contentSize">
-                    <strong class="font-hanwha" data-textAni>한화 신한 테라와트아워는</strong>
+                    <strong data-textAni><b class="font-hanwha">한화 신한 테라와트아워</b>는</strong>
                     <p data-textAni data-aniDelay="2">
                         전문성과 안정성을 갖춘<br>
                         재생에너지 전력거래 전문 기업입니다.
@@ -80,7 +80,7 @@
         <div class="terra02Area" data-full>
             <div>
                 <div class="contentSize">
-                    <strong class="font-hanwha">한화 신한 테라와트아워는</strong>
+                    <strong><b class="font-hanwha">한화 신한 테라와트아워</b>는</strong>
                     <p data-textAni>
                         RE100 기업 수요와<br class="mobile"> KPX 전력시장을 아우르는<br>
                         재생에너지 전력거래 전문 기업입니다.
@@ -104,7 +104,7 @@
             <div class="contentSize">
                 <p data-textAni>
                     재생에너지의<br class="mobile"> 생산과 소비를 연결하는<br>
-                    <b>국내 최대의 전력거래<br class="mobile"> 플랫폼(VPP)</b>으로 <br>
+                    <b>국내 최대의 전력거래<br class="mobile"> 플랫폼</b>으로 <br>
                     성장하겠습니다.
                 </p>
                 <router-link to="/company" class="arrow-white" data-aniDelay="10">기업 소개 보기 <span></span></router-link>
@@ -204,32 +204,40 @@ export default {
             })
         },
         typingEvent() {
-            const typingEle = document.querySelector('.topArea p');
-            const typginBackup = typingEle.innerHTML.replace('<br class="mobile">',window.innerWidth <= 1100 ? "\n" : '').split('').map((text) => text === "\n" ? '<br class="mobile">' : text);
-            typingEle.innerText = ''
+            // const typingEle = document.querySelector('.topArea p');
+            // const typginBackup = typingEle.innerHTML.replace('<br class="mobile">',window.innerWidth <= 1100 ? "\n" : '').split('').map((text) => text === "\n" ? '<br class="mobile">' : text);
+            // typingEle.innerText = ''
             // this.fullEvent();
             // let count = 0;
             
             setTimeout(()=>{
                 document.querySelector('.topArea').classList.add('introCenter');
             }, 500)
+            document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
+                
+                document.querySelector('.topArea').classList.add('introFin');
+                setTimeout(()=>{
+                    sessionStorage.setItem('intro','true');
+                    this.fullUserEvent();
+                },2000)
+            })
 
-            setTimeout(()=>{
-                const typingAni = setInterval(() => {
-                    typingEle.innerHTML += typginBackup.shift();
-            //         count++
-                    if(!typginBackup.length){
-                        clearInterval(typingAni);
-                        setTimeout(()=>{
-                            document.querySelector('.topArea').classList.add('introFin');
-                            sessionStorage.setItem('intro','true');
-                            document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
-                                this.fullUserEvent();
-                            })
-                        }, 100)
-                    }
-                }, 100);
-            },2000);
+            // setTimeout(()=>{
+            //     const typingAni = setInterval(() => {
+            //         typingEle.innerHTML += typginBackup.shift();
+            // //         count++
+            //         if(!typginBackup.length){
+            //             clearInterval(typingAni);
+            //             setTimeout(()=>{
+            //                 document.querySelector('.topArea').classList.add('introFin');
+            //                 sessionStorage.setItem('intro','true');
+            //                 document.querySelector('.mainPage .topArea').addEventListener('animationend',()=>{
+            //                     this.fullUserEvent();
+            //                 })
+            //             }, 100)
+            //         }
+            //     }, 100);
+            // },2000);
         },
         fullUserEvent(){
             // const fullSelectors = document.querySelectorAll('[data-full]');
@@ -398,7 +406,7 @@ export default {
 
     /* .mainPage .topArea.introStart.introCenter > div.textArea h2{opacity: 0; transition: 0.5s 0.2s opacity ease-in-out;}
     .mainPage .topArea.introStart.introCenter > div.textArea{transform: translateY(calc(-50% + var(--typingHeight) / 2)); transition: 0s 0.7s transform ease-in-out;} */
-    .mainPage .topArea.introStart.introCenter > div.textArea p{opacity: 1; transition: 0s 0.7s opacity ease-in-out;}
+    .mainPage .topArea.introStart.introCenter > div.textArea p{opacity: 1; transition: 0.6s 0.7s opacity ease-in-out;}
 
    
     @keyframes opacityAni {
@@ -407,13 +415,13 @@ export default {
     }
  
 
-    header:has(+ .mainPage .topArea.introStart.introCenter.introFin){opacity: 1; transition: 1s 1.5s opacity; pointer-events: all;}
+    header:has(+ .mainPage .topArea.introStart.introCenter.introFin){opacity: 1; transition: 1s 2s opacity; pointer-events: all;}
     .mainPage .topArea.introStart.introCenter.introFin{color: white; transition: 1s 1s color;}
     /* .mainPage .topArea.introStart.introCenter.introFin > div.textArea{transform: translateY(0); transition: 1s transform;} */
     /* .mainPage .topArea.introStart.introCenter.introFin > div.textArea h2{opacity: 1; transition: 1s 0.8s opacity;} */
     .mainPage .topArea.introStart.introCenter.introFin > div.textArea p::after{animation: none; border-color: transparent;}
-    .mainPage .topArea.introStart.introCenter.introFin > .bg{animation: topBG 3s forwards;}
-    .mainPage .topArea.introStart.introCenter.introFin > .scroll{opacity: 1; transition: 1s 1.5s opacity;}
+    .mainPage .topArea.introStart.introCenter.introFin > .bg{animation: topBG 3s 0.6s forwards;}
+    .mainPage .topArea.introStart.introCenter.introFin > .scroll{opacity: 1; transition: 1s 2s opacity;}
     @keyframes topBG {
         0%{clip-path: circle(0% at 50% 50%); opacity: 0;}
         100%{clip-path: circle(100% at 50% 50%); opacity: 1;}
@@ -435,7 +443,7 @@ export default {
     .mainPage .terra01Area.active > div > div > strong{opacity: 0; transition: opacity 0s 1s;}
     .mainPage .terra02Area > div > div > strong{opacity: 0;}
     .mainPage .terra02Area:has(+ .companyArea.active) > div > div > strong {opacity: 1;}
-    .mainPage .terra02Area.active.test > div > div > strong{opacity: 1;}
+    .mainPage .terra02Area.active.test > div > div > strong{opacity: 0; transition-delay: 0.6s;}
     .mainPage .terraTitle:has(~ .terra02Area.active.test){transition-delay: 0.6s;}
 
     /* .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
@@ -444,9 +452,9 @@ export default {
     .mainPage .terra01Area.active > div{transform: translateX(0);}
     .mainPage [class^="terra"][class*="Area"] > div > div > div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}
     .mainPage [class^="terra"][class*="Area"].active > div > div > div{transform: translateY(0%); opacity: 1; transition-delay: calc(var(--aniDelay) + (0.2s * var(--styleIdx)));}
-    .mainPage .terra02Area > div > div{transform: translateY(100%); opacity: 0; transition-delay: 0s; transition-property: transform, opacity; transition-duration: 0.6s;}
+    .mainPage .terra02Area > div > div{/* transform: translateY(100%); */ opacity: 0; transition-delay: 0s; transition-property: transform, opacity; transition-duration: 0.6s;}
     .mainPage [class^="terra"][class*="Area"].active > div > div{transform: translateY(0%); opacity: 1; transition-property: transform, opacity; transition-duration: 0.6s;}
-    .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div{transform: translateY(-100%); opacity: 0; transition-delay: 0s;}
+    .mainPage [class^="terra"][class*="Area"].active:has(+ .active) > div > div{/* transform: translateY(-100%); */ opacity: 0; transition-delay: 0s;}
     /* 메인 회사소개 */
     .mainPage .companyArea div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}
     .mainPage .companyArea.active div{transform: translateY(0%); opacity: 1;}

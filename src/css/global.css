@@ -22,8 +22,8 @@ body [class*="Page"] .font-hanwha{font-family: 'hanwha'; display: inline-block; 
 
 
 /* 자세히 링크 */
-[class^='arrow']{font-weight: 600; display: flex;}
-[class^='arrow'] span{height: var(--height); background-color: var(--bc); position: relative;}
+[class^='arrow']{font-weight: 600; position: relative;}
+[class^='arrow'] span{height: var(--height); background-color: var(--bc); position: absolute;  right: 0; transform: translateX(calc(100% + 20px));}
 [class^='arrow'] span::after{content: ''; position: absolute; right: 0; bottom: 0; height: var(--height); background-color: var(--bc); transform: rotate(45deg); transform-origin: right;}
 [class^='arrow'][class$='white']{--bc: white;}
 [class^='arrow'][class$='black']{--bc: black;}

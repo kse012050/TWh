@@ -121,13 +121,13 @@
                     <b>#낮 시간대 전력 소비가 많은 기업</b>
                 </div>
                 <div class="box-img" data-animate="bottomToTop" data-scrollPosition="70">직접 PPA 이미지</div>
-                <dl data-animate-list="bottomToTop" data-scrollPosition="70">
+               <!--  <dl data-animate-list="bottomToTop" data-scrollPosition="70">
                     <dt>*직접PPA</dt>
                     <dd>
                         재생에너지를 이용하여 생산된 전기를 전력시장을 통하지 않고<br>
                         재생에너지전기공급사업자를 통해 전기사용자에게 직접 공급하는 제도
                     </dd>
-                </dl>
+                </dl> -->
             </div>
             
             <div class="PPA02Area content-img contentSize-padding">
@@ -380,6 +380,9 @@ export default {
                             this.modalText['description'] = '요청이 완료되었습니다' 
                             this.isModal = true
                             api.dataInit(this.inputsRequired, this.inputs)
+                           /*  gtag('event', 'contact_us', {
+                                'event_name': 'contact_us'
+                            }); */
                         }
                     })
             }

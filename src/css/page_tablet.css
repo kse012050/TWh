@@ -85,8 +85,9 @@
 .solutionPage .PPAArea > .tab-btn{gap: 50px;}
 .solutionPage .PPAArea > .tab-btn li button{font-size: 21px; line-height: 67px;}
 .solutionPage .PPAArea > .tab-btn li button.active::after{height: 4px;}
-.solutionPage :is(.PPA01Area, .PPA02Area, .PPA03Area) .box-img{aspect-ratio: 360 / 778;}
+.solutionPage :is(.PPA02Area, .PPA03Area) .box-img{aspect-ratio: 360 / 778;}
 .solutionPage .PPA01Area{padding-block: 60px 110px;}
+.solutionPage .PPA01Area .box-img{aspect-ratio: 360 / 870;}
 .solutionPage .PPA01Area .box-img{background-image: url(../images/solution-PPAImg01-M.png);}
 .solutionPage .PPA02Area{padding-block: 110px 110px;}
 .solutionPage .PPA02Area .box-img{background-image: url(../images/solution-PPAImg02-M.png);}
@@ -117,7 +118,7 @@
 .recruitPage .content-process ul li strong span{margin-block: 20px;}
 .recruitPage .content-img p{margin-bottom: 65px;}
 .recruitPage .content-img dl{margin-top: 30px;}
-.recruitPage .content-img .box-img{aspect-ratio: 360 / 658; background-image: url(../images/recruit-RE100-M.png);}
+.recruitPage .content-img .box-img{aspect-ratio: 360 / 870; background-image: url(../images/recruit-RE100-M.png);}
 .recruitPage [class*="condition"][class*="Area"] > b{margin-bottom: 45px;}
 .recruitPage [class*="condition"][class*="Area"] ul{gap: 20px; flex-wrap: wrap; max-width: var(--mobileContentSize); margin-inline: auto;}
 .recruitPage [class*="condition"][class*="Area"] ul li{flex: 1; min-width: calc((100% - 20px) / 2); --spacing: 25px; padding: 30px var(--spacing);}

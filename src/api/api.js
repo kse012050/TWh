@@ -1,7 +1,7 @@
 // api url
-const adminURL = 'http://52.79.208.109:5000/';
-const userURL = 'http://52.79.208.109:5000/';
-const userListURL = 'http://52.79.208.109:5000/api/v1/';
+const adminURL = process.env.VUE_APP_ADMIN_URL;
+const userURL = process.env.VUE_APP_USER_URL;
+const userListURL = process.env.VUE_APP_USER_LIST_URL;
 
 const validationMap = {
     number(value) {
