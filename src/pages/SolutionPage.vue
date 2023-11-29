@@ -223,10 +223,10 @@
                         <li>
                             <label for="implementgoal">RE100 이행목표</label>
                             <div>
-                                <input class="full" type="text" name="implementgoal" id="implementgoal" placeholder="예시 : 2050년까지 100% 재생에너지 전환" @input="onChange">
+                                <input type="text" name="implementgoal" id="implementgoal" placeholder="예시 : 2050년까지 100% 재생에너지 전환" @input="onChange">
                             </div>
                         </li>
-                        <li class="full">
+                        <li>
                             <label for="" data-comment="*중복선택 가능">이행 방안</label>
                             <div>
                                 <input type="checkbox" id="implementplan-PPA" name="implementplan" value="PPA" @input="onChange">
@@ -366,7 +366,6 @@ export default {
                 btnElement.addEventListener('click',()=>{
                     let offsetTop = PPAElement.item(idx).offsetTop - tabElementHeight - headerElementHeight;
                     PPAElement.item(idx).parentNode.classList.contains('PPAArea') && (offsetTop += document.querySelector('.PPAArea').offsetTop);
-                    console.log(offsetTop);
                     window.scrollTo({top: offsetTop,behavior: "smooth"});
                 })
             })
@@ -383,6 +382,11 @@ export default {
                            /*  gtag('event', 'contact_us', {
                                 'event_name': 'contact_us'
                             }); */
+                            this.$gtag.event('click', {
+                                event_category: 'inquiry',
+                                event_label: 'solution inquiry',
+                                value: 'solution inquiry',
+                            })
                         }
                     })
             }

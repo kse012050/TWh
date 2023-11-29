@@ -2,7 +2,7 @@
     <section class="inquiryInputPage contentSize">
         <h2>
             <router-link :to="nextPagePath">
-                No.{{id}}
+                No.{{userId}}
             </router-link>
         </h2>
         <form>
@@ -101,6 +101,7 @@ export default {
     data(){
         return{
             id: this.$route.params.id,
+            userId: sessionStorage.getItem('id'),
             inquiryItem: {},
             implementplan: [],
             inputsRequired: {},

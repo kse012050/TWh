@@ -23,8 +23,8 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 사업문의가 없습니다.">
             <li v-for="(data, idx) in inquiryList" :key="data.id">
-                <router-link :to="`/admins/inquiry/input/${data.id}`">
-                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
+                <router-link :to="`/admins/inquiry/input/${data.id}`" @click="test((total - idx) - (page - 1) * 20)">
+                    <span>{{ (total - idx) - (page - 1) * 20 }}</span>
                     <span>{{ data.name }}</span>
                     <span>{{ data.company }}</span>
                     <span>{{ data.phonenum.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3') }}</span>
@@ -78,6 +78,7 @@ export default {
             },
             pageName: 'inquiry',
             page: Number(this.$route.params.page) || 1,
+            total: undefined,
             listType: this.$route.query.type || '',
             lastPage: undefined
         }
@@ -95,8 +96,12 @@ export default {
                     if(result.statusCode === '200'){
                         this.inquiryList = [...result.list]
                         this.lastPage = result.meta.last_page
+                        this.total = result.meta.total;
                     }
                 })
+        },
+        test(value){
+            sessionStorage.setItem('id',value)
         }
     },
     mounted(){
@@ -125,6 +130,7 @@ export default {
                 }
             })
         this.list();
+        sessionStorage.removeItem('id');
     },
     watch: {
         '$route' (to) {

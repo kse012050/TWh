@@ -2,8 +2,8 @@
     <section class="boardInputPage contentSize">
         <h2>
             <router-link :to="nextPagePath">
-                <template v-if="id">
-                    No.{{id}}
+                <template v-if="userId">
+                    No.{{userId}}
                 </template>
                 <template v-else>
                     게시판 작성
@@ -59,7 +59,7 @@
                     <li>
                         <label for="">링크</label>
                         <div>
-                            <input type="url" name="" id="" placeholder="연결 링크를 입력하세요. (선택)">
+                            <input type="url" name="linkurl" id="linkurl" placeholder="연결 링크를 입력하세요. (선택)" :value="boardItem.linkurl" @input="onChange">
                             <button class="delete">링크 지우기</button>
                         </div>
                     </li>
@@ -95,6 +95,7 @@ export default {
     data(){
         return{
             id: this.$route.params.id,
+            userId: sessionStorage.getItem('id'),
             boardItem: {},
             isSelect: false,
             // 유저 추가 이미지

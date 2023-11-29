@@ -10,8 +10,8 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 공지사항이 없습니다.">
             <li v-for="(data, idx) in noticeList" :key="data.id">
-                <router-link :to="`/admins/notices/input/${data.id}`">
-                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
+                <router-link :to="`/admins/notices/input/${data.id}`" @click="()=>test((total - idx) - (page - 1) * 20)">
+                    <span>{{ (total - idx) - (page - 1) * 20 }}</span>
                     <div><img :src="data.medias[0]?.imageurl" alt="미리 보기 이미지"></div>
                     <p>{{ data.description }}</p>
                     <time>
@@ -40,12 +40,15 @@ export default {
             noticeList: [],
             pageName: 'notices',
             page: Number(this.$route.params.page) || 1,
+            total: undefined,
             listType: this.$route.query.type || '',
             lastPage: undefined
         }
     },
     methods: {
-
+        test(value){
+            sessionStorage.setItem('id',value)
+        }
     },
     mounted() {
         this.page= Number(this.$route.params.page) || 1;
@@ -60,8 +63,10 @@ export default {
                         arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
                     })
                     this.lastPage = result.meta.last_page
+                    this.total = result.meta.total;
                 }
             })
+        sessionStorage.removeItem('id');
 
     }
 }

@@ -23,10 +23,12 @@ export function globalStyle(){
 
 // 한화 폰트 크기조정
 function hanshwFontSize(){
-    document.querySelectorAll('.font-hanwha').forEach((element)=>{
-        element.removeAttribute('style');
-        element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px');
-    })
+    if (!(/iPhone/i.test(navigator.userAgent))) {
+        document.querySelectorAll('.font-hanwha').forEach((element)=>{
+            element.removeAttribute('style');
+            element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px');
+        })
+    }
 }
 
 

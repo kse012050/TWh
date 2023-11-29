@@ -50,7 +50,9 @@ export function onChange(e, inputsRequired, inputs){
 
     const isRequired = Object.keys(inputsRequired).includes(name);
     if(!validation(e.target.dataset.formet, e.target.value)){
-        e.target.value = isRequired ? inputsRequired[e.target.name] : (inputs[e.target.name] || '')
+        // e.target.value = isRequired ? inputsRequired[e.target.name] : (inputs[e.target.name] || '')
+        // e.target.value = e.target.value.at(0);
+        e.target.value = e.target.value.substring(0, e.target.value.length - 1)
         return
     }
     

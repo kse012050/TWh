@@ -58,7 +58,8 @@ header.white + .mainPage .fullPager{--color: white;}
 
 
 /* 기업 소개 페이지 */
-.companyPage .topArea > div strong{font-weight: 600; display: block;}
+.companyPage .topArea > div strong{ display: block;}
+.companyPage .topArea > div strong b{font-weight: 600;}
 .companyPage .topArea > div p b{font-weight: 600;}
 .companyPage .VPPArea{padding-block: var(--padding02); text-align: center;}
 .companyPage :is(.missionArea, .visionArea){display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(var(--fullHeight) - var(--headerHeight)); font-weight: 600; color: white; text-align: center;}

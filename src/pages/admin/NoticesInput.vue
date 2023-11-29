@@ -2,8 +2,8 @@
     <section class="noticesInputPage contentSize">
         <h2>
             <router-link :to="nextPagePath">
-                <template v-if="id">
-                    No.{{id}}
+                <template v-if="userId">
+                    No.{{userId}}
                 </template>
                 <template v-else>
                     게시판 작성
@@ -73,6 +73,7 @@ export default {
     data(){
         return{
             id: this.$route.params.id,
+            userId: sessionStorage.getItem('id'),
             noticeItem: {},
             // 유저 추가 이미지
             imgAdds: [],
@@ -150,7 +151,6 @@ export default {
 
             api.admin('update', {type: 'notice', id: this.id, data: {...this.noticeItem}, imgDeletes: this.imgDeletes})
                 .then((result)=>{
-                    console.log(result);
                     if(result.statusCode === '200'){
                         this.modalText['title'] = '저장';
                         this.modalText['description'] = '변경사항이 저장되었습니다.';

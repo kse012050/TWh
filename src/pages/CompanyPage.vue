@@ -3,7 +3,7 @@
         <div class="topArea" data-aniDelay-basic="6">
             <h2 class="contentSize-padding"><span data-textAni>기업 소개</span></h2>
             <div>
-                <strong class="font-hanwha" data-textAni>한화 신한 테라와트아워는</strong>
+                <strong data-textAni><b class="font-hanwha">한화 신한 테라와트아워</b>는</strong>
                 <p data-textAni data-aniDelay="4">
                     에너지를 생산하는 발전사업자와<br class="mobile"> 소비하는 기업을 연결하는<br>
                     <b>국내 최대의 전력거래 플랫폼</b>으로<br class="mobile"> 자리매김 하겠습니다.
@@ -41,7 +41,7 @@
                     <p>한화컨버전스 에너지플랫폼사업 담당 </p>
                     <p>한화에너지 에너지솔루션 Lab 센터장 </p>
                     <p>한화시스템 전략기획팀장 </p>
-                    <p>LGCNS 스마트시티 사업개발</p>
+                    <!-- <p>LGCNS 스마트시티 사업개발</p> -->
                 </li>
                 <li data-animate="bottomToTop" data-scrollPosition="70">
                     <img src="../images/company-people02.png" alt="차성종 이미지">

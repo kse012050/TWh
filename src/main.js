@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+// import Vue from 'vue'
+import VueGtag from 'vue-gtag'
 import { createRouter, createWebHistory } from 'vue-router'
 import './css/import.css'
 import Main from './pages/MainPage'
@@ -179,6 +181,11 @@ const router = createRouter({
 })
 
 const app = createApp(App);
+app.use(VueGtag, {
+    config: {
+        id: 'G-VTF5KFF15K'  
+    }
+});
 app.use(router);
 app.mount('#app');
 

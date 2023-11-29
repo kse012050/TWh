@@ -371,6 +371,11 @@ export default {
                             /* gtag('event', 'contact_us', {
                                 'event_name': 'contact_us'
                             }); */
+                            this.$gtag.event('click', {
+                                event_category: 'inquiry',
+                                event_label: 'recruit inquiry',
+                                value: 'recruit inquiry',
+                            })
                         }
                     })
             }

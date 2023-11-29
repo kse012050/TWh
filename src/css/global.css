@@ -13,6 +13,7 @@ hr.case01{margin: 0; border-top: 1px solid #DEDEDE; border-bottom: 0;}
 .boardPage, .boardDetail, .inquiryPage{padding-bottom: var(--padding01);}
 
 
+
 /* 한화폰트 적용 */
 body [class*="Page"] .font-hanwha{font-family: 'hanwha'; display: inline-block; transform: translateY(-2px);}
 
@@ -23,7 +24,7 @@ body [class*="Page"] .font-hanwha{font-family: 'hanwha'; display: inline-block; 
 
 /* 자세히 링크 */
 [class^='arrow']{font-weight: 600; position: relative;}
-[class^='arrow'] span{height: var(--height); background-color: var(--bc); position: absolute;  right: 0; transform: translateX(calc(100% + 20px));}
+[class^='arrow'] span{height: var(--height); background-color: var(--bc); position: absolute;  right: 0;}
 [class^='arrow'] span::after{content: ''; position: absolute; right: 0; bottom: 0; height: var(--height); background-color: var(--bc); transform: rotate(45deg); transform-origin: right;}
 [class^='arrow'][class$='white']{--bc: white;}
 [class^='arrow'][class$='black']{--bc: black;}
@@ -41,7 +42,7 @@ body [class*="Page"] .font-hanwha{font-family: 'hanwha'; display: inline-block; 
 
 /* 게시판 */
 ul.user-board li a{display: block; font-weight: 600;}
-ul.user-board li a:not(:has(img))::before{content: ''; display: block; aspect-ratio: 380 / 250; background: url(https://placehold.co/600x400) no-repeat center / cover;}
+ul.user-board li a:not(:has(img))::before{content: ''; display: block; aspect-ratio: 380 / 250; background: url(../images/thumbnail.png) no-repeat center / cover; border: 1px solid #F1F1F1;}
 ul.user-board li a img{width: 100%; aspect-ratio: 380 / 250; object-fit: cover; border: 1px solid #F1F1F1;}
 ul.user-board li a small{display: block; color: #999;}
 ul.user-board li a p{color: #222; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}

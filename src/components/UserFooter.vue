@@ -71,7 +71,7 @@
             <div>
                 <ul>
                     <li><button @click="isModal = true">개인정보 처리방침</button></li>
-                    <li><router-link to="">개인정보 수집 및 처리 목적</router-link></li>
+                    <!-- <li><router-link to="">개인정보 수집 및 처리 목적</router-link></li> -->
                     <li><router-link to="/inquiry">사업 문의</router-link></li>
                 </ul>
                 <ul>

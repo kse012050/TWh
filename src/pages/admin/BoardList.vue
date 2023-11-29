@@ -17,8 +17,8 @@
         </div>
         <ul class="admin-board-list" data-noneListText="작성된 게시판이 없습니다.">
             <li v-for="(data, idx) in boardList" :key="data.id">
-                <router-link :to="`/admins/board/input/${data.id}`">
-                    <span>{{ idx + 1 + ((page - 1) * 20) }}</span>
+                <router-link :to="`/admins/board/input/${data.id}`" @click="()=>test((total - idx) - (page - 1) * 20)">
+                    <span>{{ (total - idx) - (page - 1) * 20 }}</span>
                     <span>{{ data.type !== 'BLOG' ? '보도자료' : '블로그' }}</span>
                     <p>{{ data.title }}</p>
                     <p>{{ data.description }}</p>
@@ -67,6 +67,7 @@ export default {
             },
             pageName: 'board',
             page: Number(this.$route.params.page) || 1,
+            total: undefined,
             listType: this.$route.query.type || '',
             lastPage: undefined
         }
@@ -84,9 +85,15 @@ export default {
                             arr.regymdt[0] = arr.regymdt[0].replaceAll('-','.')
                             arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
                         })
-                        this.lastPage = result.meta.last_page
+                        this.lastPage = result.meta.last_page;
+                        this.total = result.meta.total;
                     }
                 })
+
+                
+        },
+        test(value){
+            sessionStorage.setItem('id',value)
         }
     },
     mounted(){
@@ -109,6 +116,7 @@ export default {
                 }
             })
         this.list();
+        sessionStorage.removeItem('id');
     },
     watch: {
         '$route' (to) {
