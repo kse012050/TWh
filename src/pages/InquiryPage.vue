@@ -1,8 +1,8 @@
 <template>
     <section class="inquiryPage contentSize">
-        <h2 data-textAni>사업 문의</h2>
+        <h2>사업 문의</h2>
         <form>
-            <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
+            <fieldset class="content-inquiry">
                 <ul>
                     <li>
                         <label for="company">기업명</label>

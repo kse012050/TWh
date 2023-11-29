@@ -189,12 +189,12 @@
         </div>
 
         <div class="contentSize-padding" data-scrollPosition="70">
-            <p class="subTitle" data-textAni>
+            <p class="subTitle">
                 RE100 이행,<br>
                 <b>지금 바로 문의하세요!</b>
             </p>
             <form>
-                <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
+                <fieldset class="content-inquiry">
                     <ul>
                         <li>
                             <label for="company">기업명</label>

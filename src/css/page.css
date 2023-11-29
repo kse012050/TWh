@@ -30,7 +30,7 @@ header.white + .mainPage .fullPager{--color: white;}
 /* 메인 페이지 - 솔루션 영역 */
 .mainPage .terraTitle{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; pointer-events: none;}
 .mainPage .terraTitle div strong{color: white; font-weight: 600;}
-.mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;}
+/* .mainPage .terra01Area > div{background: url(../images/main-companyBG.png) no-repeat center / cover;} */
 .mainPage [class^="terra"][class*="Area"] > div{height: 100%; display: flex; align-items: center;}
 .mainPage [class^="terra"][class*="Area"] > div > div{display: flex; flex-wrap: wrap;}
 .mainPage [class^="terra"][class*="Area"] > div > div > p{width: 100%; color: white;}

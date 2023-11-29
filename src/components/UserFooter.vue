@@ -70,26 +70,33 @@
             <p>© 2023 TWh, INC. All rights reserved.</p>
             <div>
                 <ul>
-                    <li><a href="https://hanwhaconvergence.com/kr/sub/policy/privacy.asp" target="_blank">개인정보 처리방침</a></li>
+                    <li><button @click="isModal = true">개인정보 처리방침</button></li>
                     <li><router-link to="">개인정보 수집 및 처리 목적</router-link></li>
                     <li><router-link to="/inquiry">사업 문의</router-link></li>
                 </ul>
                 <ul>
-                    <li><a href="">인스타그램 링크</a></li>
+                    <li><a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQF3yP5RSRYMNQAAAYwUZ8RQTPbf7yhNYwsZUIyJgcHpUcq1oQU2eEFwSgjRPeJ_mELCb5E_EnnERhMOGqdeulevUJrAT2XcB02liw-lWvDTLl4A6_odepl1OdDY8cmmvI9KBDc=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fhanwhashinhantwh" target="_blank">링크드린 링크</a></li>
                     <!-- <li><a href="">페이스북 링크</a></li> -->
                 </ul>
             </div>
         </div>
+        <modal-info v-if="isModal" :isModal="isModal" @modalClose="modalClose"/>
         <button v-if="!isGoToTop"  class="goToTop" @click="goToTopEvent">최상위로 이동</button>
     </footer>
 </template>
 <script>
+import ModalInfo from '@/components/modal/ModalInfo.vue';
+
 export default {
     name: 'UserFooter',
+    components: { 
+        ModalInfo
+    },
     data(){
         return {
             isFamilySite: false,
-            isGoToTop: document.querySelector('.mainPage')
+            isGoToTop: document.querySelector('.mainPage'),
+            isModal: false,
         }
     },
     methods: {
@@ -103,6 +110,9 @@ export default {
         },
         goToTopEvent(){
             window.scrollTo({top: 0,behavior: "smooth"});
+        },
+        modalClose(){
+            this.isModal = false;
         }
     },
     mounted() {

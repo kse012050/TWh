@@ -209,12 +209,12 @@
         <hr class="case01">
 
         <div class="contentSize-padding" data-scrollPosition="70">
-            <p class="subTitle" data-textAni>
+            <p class="subTitle">
                 RE100 장기고정계약 & 발전소 매입<br>
                 <b class="font-hanwha">테라와트아워</b>에 문의하세요!
             </p>
             <form>
-                <fieldset class="content-inquiry" data-animate="bottomToTop" data-aniDelay="4">
+                <fieldset class="content-inquiry">
                     <ul>
                         <li>
                             <label for="company">기업명</label>

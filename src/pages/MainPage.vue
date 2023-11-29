@@ -438,8 +438,10 @@ export default {
     .mainPage .terra02Area.active.test > div > div > strong{opacity: 1;}
     .mainPage .terraTitle:has(~ .terra02Area.active.test){transition-delay: 0.6s;}
 
-    .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
-    .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center right / cover;}
+    /* .mainPage .terra01Area > div{transform: translateX(100%); background: url(../images/main-companyBG1.png) no-repeat center left 100% / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
+    .mainPage .terra01Area.active > div{transform: translateX(0); background: url(../images/main-companyBG.png) no-repeat center right / cover;} */
+    .mainPage .terra01Area > div{transform: translateX(100%); background: rgba(0, 13, 53, 0.9) url(../images/main-companyBG.png) no-repeat center right / cover; transition-property: transform, background; transition-duration: 0.5s, 0.5s; transition-delay: 0s, 0.3s;}
+    .mainPage .terra01Area.active > div{transform: translateX(0);}
     .mainPage [class^="terra"][class*="Area"] > div > div > div{transform: translateY(100%); opacity: 0; transition-property: transform, opacity; transition-duration: 0.6s;}
     .mainPage [class^="terra"][class*="Area"].active > div > div > div{transform: translateY(0%); opacity: 1; transition-delay: calc(var(--aniDelay) + (0.2s * var(--styleIdx)));}
     .mainPage .terra02Area > div > div{transform: translateY(100%); opacity: 0; transition-delay: 0s; transition-property: transform, opacity; transition-duration: 0.6s;}

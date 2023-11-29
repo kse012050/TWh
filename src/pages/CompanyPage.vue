@@ -81,7 +81,7 @@
         </div>
         <div class="bottomArea contentSize-padding">
             <div>
-                <a href="./ci/Hanwha Shinhan TWh_4.zip" class="btn-download" download><b>CI</b>(AI)</a>
+                <a href="http://52.79.208.109:5000/filedown/ci" class="btn-download" download><b>CI</b>(AI)</a>
                 <!-- <a href="" class="btn-download"><b>PR</b>(PDF)</a> -->
             </div>
         </div>
