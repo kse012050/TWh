@@ -209,7 +209,7 @@
         <hr class="case01">
 
         <div class="contentSize-padding" data-scrollPosition="70">
-            <p class="subTitle">
+            <p class="inquiryTitle">
                 RE100 장기고정계약 & 발전소 매입<br>
                 <b class="font-hanwha">테라와트아워</b>에 문의하세요!
             </p>
@@ -374,7 +374,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'recruit inquiry',
-                                value: 'recruit inquiry',
+                                value: 1,
                             })
                         }
                     })

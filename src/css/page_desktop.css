@@ -78,7 +78,7 @@
 :is(.solutionPage, .recruitPage) .topArea div > p{font-size: 38px; line-height: 1.307;}
 :is(.solutionPage, .recruitPage) .subTitle{font-size: 38px; line-height: 1.307;}
 :is(.solutionPage, .recruitPage) .subTitle2{font-size: 30px; line-height: 1.3;}
-:is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{margin-bottom: 80px;}
+:is(.solutionPage, .recruitPage) .inquiryTitle{font-size: 34px; line-height: 44px; margin-bottom: 40px;}
 
 
 /* 전력거래 솔루션 페이지 */
@@ -149,8 +149,8 @@
 
 
 /* 게시판 */
-.boardPage h2{font-size: 45px; line-height: 1.2; margin-bottom: 45px;}
-.boardPage div{gap: 15px; margin-bottom: 90px;}
+.boardPage h2{font-size: 40px; line-height: 48px; margin-bottom: 40px;}
+.boardPage div{gap: 15px; margin-bottom: 80px;}
 .boardPage div button{font-size: 18.5px; line-height: 3.0667; padding-inline: 25px;}
 .boardPage > button{margin-top: 80px;}
 

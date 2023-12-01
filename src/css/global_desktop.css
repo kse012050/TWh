@@ -5,8 +5,8 @@ br.mobile{display: none;}
 
 
 /* 서브 페이지 위아래 간격 */
-.boardPage, .boardDetail{padding-top: 200px;}
-.inquiryPage{padding-top: 140px;}
+.boardPage, .boardDetail, .inquiryPage{padding-top: 140px;}
+
 
 
 /* 한화폰트 적용 */
@@ -84,10 +84,10 @@ b.case01[data-textAni] > span > span{padding: 9px 25px; font-size: 19.5px; line-
 .content-inquiry > ul li label[data-comment]::after{font-size: 12px; margin-left: 10px;}
 .content-inquiry > ul li :is(input, textarea){padding: 17.5px;}
 .content-inquiry > ul li div input{height: 48px;}
-.content-inquiry > ul li div[data-unit]::after{font-size: 18.5px; right: 17.5px;}
+.content-inquiry > ul li div[data-unit]::after{font-size: 14px; right: 10px;}
 .content-inquiry > ul li div[data-unit] input{padding-right: 65px;}
 .content-inquiry > ul li div:not(:has([type="checkbox"], [type="radio"], .full)){max-width: 480px;}
-.content-inquiry > ul li div:has([type="checkbox"], [type="radio"]){gap: 15px;}
+.content-inquiry > ul li div:has([type="checkbox"], [type="radio"]){gap: 10px;}
 .content-inquiry > ul li div:has([type="checkbox"], [type="radio"]) label{font-size: 14px; line-height: 20px; padding: 12px 15px;}
 .content-inquiry > ul li small{font-size: 12px; line-height: 1.333; margin-top: 10px;}
 .content-inquiry > ul li textarea{height: 78px; line-height: 1.333;}

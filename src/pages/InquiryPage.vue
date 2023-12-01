@@ -59,7 +59,7 @@ export default {
             modalText: {
                 title: '',
                 description: '',
-            }
+            },
         }
     },
     methods: {
@@ -78,7 +78,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'inquiry',
-                                value: 'inquiry',
+                                value: 1,
                             })
                         }
                     })

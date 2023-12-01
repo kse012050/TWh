@@ -69,7 +69,8 @@ header.white + .mainPage .fullPager{--color: white;}
 .companyPage .missionArea::before{content: ''; display: block; left: 50%; bottom: 0; transform: translateX(-50%); background: url('../images/company-missionBG.png') no-repeat center right / cover; border-radius: 25px 25px 0 0; z-index: -2;}
 .companyPage .missionArea{position: sticky; left: 0; top: var(--headerHeight); width: 100%; height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; justify-content: center; align-items: center; pointer-events: none; z-index: -2;}
 .companyPage .missionArea::before{position: absolute;}
-.companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center / cover fixed; overflow: hidden;}
+.companyPage .visionArea{background: url('../images/company-visionBG.png') no-repeat center center / cover; overflow: hidden;}
+.companyPage:not(.ios) .visionArea{background-attachment: fixed;}
 .companyPage .visionArea > div{position: absolute; right: 0; top: 0; width: calc(var(--fullWidth) - var(--scrollWidth)); height: calc(var(--fullHeight) - var(--headerHeight)); display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .companyPage .peopleArea{padding-block: var(--padding02);}
 .companyPage .peopleArea strong{font-weight: 600; text-align: center; display: block;}
@@ -103,9 +104,7 @@ header.white + .mainPage .fullPager{--color: white;}
 :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 300;}
 :is(.solutionPage, .recruitPage) .subTitle b,
 :is(.solutionPage, .recruitPage) strong.subTitle{font-weight: 600;}
-/* :is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2){font-weight: 300;}
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > p:nth-child(-n + 2) b,
-:is(.solutionPage, .recruitPage) > div:not(.topArea) > strong{font-weight: 600;} */
+:is(.solutionPage, .recruitPage) .inquiryTitle b{font-weight: 600;}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry){padding-block: var(--padding02) var(--padding01);}
 :is(.solutionPage, .recruitPage) > div:has(.content-inquiry) > p{text-align: left;}
 

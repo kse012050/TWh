@@ -19,7 +19,7 @@
                 <p>재생에너지 전력거래,<br class="mobile"> 지속 가능한 내일을 만듭니다.</p>
             </div>
             <div class="bg">
-                <video src="../video/video.mp4" loop muted autoplay></video>
+                <video src="../video/video.mp4" loop muted autoplay playsinline></video>
             </div>
             <div class="scroll">SCROLL<span></span></div>
         </div>
@@ -266,7 +266,7 @@ export default {
                 delta = (this.touchStart['y'] - e.changedTouches[0].clientY) * -1;
                 const touchEndX = Math.abs(this.touchStart['x'] - e.changedTouches[0].clientX);
                 const touchEndY = Math.abs(delta);
-                if(touchEndX > touchEndY){
+                if(touchEndX > touchEndY || touchEndY < 5){
                     return;
                 }
             }
@@ -326,7 +326,6 @@ export default {
             }
 
             if(this.fullSelectors[currentIdx].localName === 'footer' && delta > 0){
-                console.log(this.fullSelectors[currentIdx].classList.contains('active'));
                 document.querySelectorAll('[data-full].active, .fullPager').forEach((element)=>{
                     element.removeAttribute('style')
                 })

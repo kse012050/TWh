@@ -28,6 +28,8 @@ function hanshwFontSize(){
             element.removeAttribute('style');
             element.style.setProperty('font-size',parseInt(getComputedStyle(element).fontSize) - 2 + 'px');
         })
+    }else{
+        document.querySelector('.companyPage').classList.add('ios');
     }
 }
 

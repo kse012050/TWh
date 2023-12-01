@@ -189,7 +189,7 @@
         </div>
 
         <div class="contentSize-padding" data-scrollPosition="70">
-            <p class="subTitle">
+            <p class="inquiryTitle">
                 RE100 이행,<br>
                 <b>지금 바로 문의하세요!</b>
             </p>
@@ -385,7 +385,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'solution inquiry',
-                                value: 'solution inquiry',
+                                value: 1,
                             })
                         }
                     })
