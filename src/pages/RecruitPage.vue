@@ -374,7 +374,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'recruit inquiry',
-                                value: 1,
+                                value: 'power_plant_recruitment',
                             })
                         }
                     })

@@ -78,7 +78,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'inquiry',
-                                value: 1,
+                                value: 'business_inquiry',
                             })
                         }
                     })

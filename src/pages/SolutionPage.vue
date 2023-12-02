@@ -385,7 +385,7 @@ export default {
                             this.$gtag.event('click', {
                                 event_category: 'inquiry',
                                 event_label: 'solution inquiry',
-                                value: 1,
+                                value: 'solution_inquiry',
                             })
                         }
                     })
