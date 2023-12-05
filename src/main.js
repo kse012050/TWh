@@ -3,6 +3,7 @@ import App from './App.vue'
 // import Vue from 'vue'
 import VueGtag from 'vue-gtag'
 import { createRouter, createWebHistory } from 'vue-router'
+import PrimeVue from 'primevue/config';
 import './css/import.css'
 import Main from './pages/MainPage'
 import UserRoot from './pages/UserRoot'
@@ -187,5 +188,6 @@ app.use(VueGtag, {
     }
 });
 app.use(router);
+app.use(PrimeVue);
 app.mount('#app');
 

@@ -255,6 +255,7 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .userPage .mainPage:has(.topArea ~ .active) + .goToTop{opacity: 1; pointer-events: all;}
 
 
+[class*="Page"] .ql-container{font-family: 'Pretendard';}
 /* 관리자 공통 */
 .adminsPage [class*="Page"]{padding-block: var(--padding04) var(--padding03);}
 .adminsPage [class*="Page"] h2{line-height: 50px; margin-bottom: 30px; font-weight: 600;}
@@ -262,8 +263,8 @@ body:has(.content-modal) .userPage [class*="Page"]{position: static;}
 .adminsPage [class*="Page"] h2:has(a){font-size: 30px;}
 .adminsPage [class*="Page"] h2 a{display: flex; align-items: center;}
 .adminsPage [class*="Page"] h2 a::before{content: ''; width: 38px; margin-right: 15px; aspect-ratio: 1; background: url(../images/icon-back.png) no-repeat center / cover;}
-.adminsPage :is(input:not([type="submit"]), select){height: 50px; }
-.adminsPage :is(input:not([type="submit"]), select, textarea){font-size: 15px; line-height: 22px; padding: 15px; font-weight: 300; box-sizing: border-box;}
+.adminsPage :is(input:not([type="submit"])/* , select */){height: 50px; }
+.adminsPage :is(input:not([type="submit"]), /* select, */ textarea){font-size: 15px; line-height: 22px; padding: 15px; font-weight: 300; box-sizing: border-box;}
 .adminsPage select{background-image: url(../images/icon-select.png); background-repeat: no-repeat; background-position: center right 15px; background-size: 22px;}
 .adminsPage .select-box{position: relative; font-size: 15px; line-height: 20px; font-weight: 300;}
 .adminsPage .select-box button{padding-inline: 15px; text-align: left;}
@@ -330,14 +331,15 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .admin-input ul li > div.limited{max-width: 400px;}
 .admin-input ul li > div > *:first-child{width: 100%;}
 .admin-input ul li > div > textarea{line-height: 22px; height: 360px;}
+.admin-input ul li > div > .p-editor-container .p-editor-content{line-height: 22px; height: 360px;}
 .admin-input ul li > div button.delete{width: 22px; aspect-ratio: 1; background: url(../images/icon-delete.png) no-repeat center / cover; text-indent: -9999px;}
 .admin-input ul li div input.error{border: 1px solid var(--color-point01); box-sizing: border-box;}
-.admin-input ul li > div:has(input[type="file"]){display: flex; gap: 20px;}
-.admin-input ul li > div:has(input[type="file"]) > *{width: 180px; height: 120px;}
-.admin-input ul li > div:has(input[type="file"]) label{border: 2px dotted #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
-.admin-input ul li > div:has(input[type="file"]) div{position: relative;}
-.admin-input ul li > div:has(input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover; border: 1px solid #F1F1F1; box-sizing: border-box;}
-.admin-input ul li > div:has(input[type="file"]) div button.delete{position: absolute; right: 0; top: 0; transform: translate(50%, -50%);}
+.admin-input ul li > div:has( > input[type="file"]){display: flex; gap: 20px;}
+.admin-input ul li > div:has( > input[type="file"]) > *{width: 180px; height: 120px;}
+.admin-input ul li > div:has( > input[type="file"]) label{border: 2px dotted #DEDEDE; display: flex; justify-content: center; align-items: center; box-sizing: border-box;}
+.admin-input ul li > div:has( > input[type="file"]) div{position: relative;}
+.admin-input ul li > div:has( > input[type="file"]) div img{width: 100%; height: 100%; object-fit: cover; border: 1px solid #F1F1F1; box-sizing: border-box;}
+.admin-input ul li > div:has( > input[type="file"]) div button.delete{position: absolute; right: 0; top: 0; transform: translate(50%, -50%);}
 .admin-input ul li > div:has(input[type="url"]){position: relative;}
 .admin-input ul li > div:has(input[type="url"]) input[type="url"]{padding-right: 52px;}
 .admin-input ul li > div:has(input[type="url"]) button{position: absolute; right: 15px; top: 50%; transform: translateY(-50%);}

@@ -8,7 +8,7 @@
         <h2>{{ boardItem.title }}</h2>
         <time>{{ boardItem.regymdt[0] }}</time>
         <div>
-            <p v-html="boardItem.description"></p>
+            <Editor v-model="boardItem.description" readonly></Editor>
             <ul v-if="boardItem.medias.length">
                 <li v-for="data in boardItem.medias" :key="data.id">
                     <img :src="data.imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='https://placehold.co/380x250'">
@@ -21,9 +21,13 @@
 </template>
 <script>
 import * as api from '../api/api'
+import Editor from 'primevue/editor';
 
 export default {
     name: 'BoardDetail',
+    components: { 
+        Editor
+    },
     data(){
         return{
             id: this.$route.params.id,

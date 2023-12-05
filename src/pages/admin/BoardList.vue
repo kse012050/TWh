@@ -21,7 +21,7 @@
                     <span>{{ (total - idx) - (page - 1) * 20 }}</span>
                     <span>{{ data.type !== 'BLOG' ? '보도자료' : '블로그' }}</span>
                     <p>{{ data.title }}</p>
-                    <p>{{ data.description }}</p>
+                    <p>{{ data.description.replace(/<[^>]*>/g, '').replace(/\b(?:src\s*=\s*"[^"]*")?\s*/g, '') }}</p>
                     <time>
                         {{ data.regymdt[0] }}<br>
                         {{ data.regymdt[1] }}

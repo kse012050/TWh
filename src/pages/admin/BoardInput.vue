@@ -38,7 +38,8 @@
                     <li>
                         <label for="description">내용</label>
                         <div>
-                            <textarea name="description" id="description" placeholder="내용을 입력하세요. (5,000자)" :value="boardItem.description" @input="onChange"></textarea>
+                            <Editor v-model="boardItem.description" @input="editorInput"></Editor>
+                            <!-- <textarea name="description" id="description" placeholder="내용을 입력하세요. (5,000자)" :value="boardItem.description" @input="onChange"></textarea> -->
                         </div>   
                     </li>
                     <li>
@@ -85,12 +86,14 @@
 import * as api from '../../api/api'
 import ModalAlert from '@/components/modal/ModalAlert.vue';
 import ModalConfirm from '@/components/modal/ModalConfirm.vue';
+import Editor from 'primevue/editor';
 
 export default {
     name: 'BoardInput',
     components: { 
         ModalAlert,
-        ModalConfirm
+        ModalConfirm,
+        Editor
     },
     data(){
         return{
@@ -109,7 +112,9 @@ export default {
             modalText: {
                 title: '',
                 description: '',
-            }
+            },
+            editorValue: undefined,
+            editorImages: {}
         }
     },
     methods: {
@@ -168,27 +173,68 @@ export default {
 
             this.boardItem.exposeyn = this.boardItem.exposeyn || 'N';
 
-            api.admin('update', {type: 'boards', id: this.id, data: {...this.boardItem}, imgDeletes: this.imgDeletes})
+
+            const images = []
+            Object.values(this.editorImages).forEach((value)=>{
+                images.push(value);
+            })
+            api.admin('fileDown', {files: [...images]})
                 .then((result)=>{
-                    if(result.statusCode === '200'){
-                        this.modalText['title'] = '저장';
-                        this.modalText['description'] = '변경사항이 저장되었습니다.';
-                        this.isModalAlert = true;
-                        this.detailData();
+                    if(result.statusCode === '201'){
+                        Object.keys(this.editorImages).forEach((key, idx)=>{
+                            this.editorImages[key] = result.imageList[idx].imageUrl;
+                        })
+                        Object.entries(this.editorImages).forEach(([key, value])=>{
+                            this.boardItem.description = this.boardItem.description.replaceAll(key, value)
+                        })
+                        api.admin('update', {type: 'boards', id: this.id, data: {...this.boardItem}, imgDeletes: this.imgDeletes})
+                            .then((result)=>{
+                                if(result.statusCode === '200'){
+                                    this.modalText['title'] = '저장';
+                                    this.modalText['description'] = '변경사항이 저장되었습니다.';
+                                    this.isModalAlert = true;
+                                    this.detailData();
+                                }
+                            })
                     }
                 })
+
+
+        },
+        editorInput(e){
+            if(e.target.files){
+                const reader = new FileReader();
+                reader.onloadend = () => {this.editorImages[reader.result] = e.target.files[0]}
+                reader.readAsDataURL(e.target.files[0]);
+            }
         },
         onSubmit(e){
             e.preventDefault();
-            api.admin('create', {type: 'boards', data: {...this.boardItem}})
+            const images = []
+            Object.values(this.editorImages).forEach((value)=>{
+                images.push(value);
+            })
+            api.admin('fileDown', {files: [...images]})
                 .then((result)=>{
-                    if(result.statusCode === '200'){
-                        this.modalText['title'] = '등록';
-                        this.modalText['description'] = '작성 내용이 저장되었습니다.';
-                        this.isModalAlert = true;
-                        this.detailData();
+                    if(result.statusCode === '201'){
+                        Object.keys(this.editorImages).forEach((key, idx)=>{
+                            this.editorImages[key] = result.imageList[idx].imageUrl;
+                        })
+                        Object.entries(this.editorImages).forEach(([key, value])=>{
+                            this.boardItem.description = this.boardItem.description.replaceAll(key, value)
+                        })
+                        api.admin('create', {type: 'boards', data: {...this.boardItem}})
+                            .then((result)=>{
+                                if(result.statusCode === '200'){
+                                    this.modalText['title'] = '등록';
+                                    this.modalText['description'] = '작성 내용이 저장되었습니다.';
+                                    this.isModalAlert = true;
+                                    this.detailData();
+                                }
+                            })
                     }
                 })
+
         },
         modalClose(isMove){
             this.isModalAlert = false;

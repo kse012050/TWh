@@ -244,6 +244,23 @@ function commentUpdateApi(type, method, data){
 }
 
 
+function adminFileDown(type, method, data){
+    var myHeaders = new Headers();
+
+    addToken(myHeaders)
+
+    const formdata = dataToFormData(data);
+    return fetch(`${adminURL}${type}`, {
+        method: method,
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+    })
+        .then(response => response.json())
+        .catch(error => console.log('error', error));
+}
+
+
 // 데이터 -> form data
 function dataToFormData(data){
     const formdata = new FormData();
@@ -307,6 +324,10 @@ const adminMap = {
         type = `inquiry/${data['id']}`
         data = {...data['data']}
         return commentUpdateApi(type, method, data)
+    },
+    fileDown(type, data){
+        const method = 'POST';
+        return adminFileDown(type, method, data)
     }
 }
 
