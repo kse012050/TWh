@@ -38,7 +38,7 @@
                     <li>
                         <label for="description">내용</label>
                         <div>
-                            <Editor v-model="boardItem.description" @input="editorInput"></Editor>
+                            <Editor v-model="boardItem.description" toolbar="minimal" @input="editorInput"></Editor>
                             <!-- <textarea name="description" id="description" placeholder="내용을 입력하세요. (5,000자)" :value="boardItem.description" @input="onChange"></textarea> -->
                         </div>   
                     </li>
@@ -113,8 +113,7 @@ export default {
                 title: '',
                 description: '',
             },
-            editorValue: undefined,
-            editorImages: {}
+            editorImages: {},
         }
     },
     methods: {
@@ -127,6 +126,7 @@ export default {
                         this.boardItem.medias = []
                         this.imgAdds = []
                         this.imgDeletes = []
+                        this.editorImages = {}
                     })
             } else {
                 document.querySelectorAll('.admin-input ul li :is(input:not([type="file"]):not([type="url"]), textarea)').forEach((element)=>{
@@ -217,6 +217,8 @@ export default {
             api.admin('fileDown', {files: [...images]})
                 .then((result)=>{
                     if(result.statusCode === '201'){
+                        console.log(images);
+                        console.log(result);
                         Object.keys(this.editorImages).forEach((key, idx)=>{
                             this.editorImages[key] = result.imageList[idx].imageUrl;
                         })
@@ -253,13 +255,11 @@ export default {
         }
     },
     mounted() {
-        this.detailData();
         window.addEventListener('click',this.onSelect)
     },
     beforeUnmount() {
         window.removeEventListener('click',this.onSelect)
     }
-    
 }
 </script>
 <style lang="">

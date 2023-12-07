@@ -331,7 +331,7 @@ div.content-btn input[type="checkbox"]:checked + label::before{--checkIdx:1;}
 .admin-input ul li > div.limited{max-width: 400px;}
 .admin-input ul li > div > *:first-child{width: 100%;}
 .admin-input ul li > div > textarea{line-height: 22px; height: 360px;}
-.admin-input ul li > div > .p-editor-container .p-editor-content{line-height: 22px; height: 360px;}
+.admin-input ul li > div > .p-editor-container .p-editor-content{line-height: 22px; height: 360px; background-color: var(--color-BG02);}
 .admin-input ul li > div button.delete{width: 22px; aspect-ratio: 1; background: url(../images/icon-delete.png) no-repeat center / cover; text-indent: -9999px;}
 .admin-input ul li div input.error{border: 1px solid var(--color-point01); box-sizing: border-box;}
 .admin-input ul li > div:has( > input[type="file"]){display: flex; gap: 20px;}

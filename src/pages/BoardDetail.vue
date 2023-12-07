@@ -14,7 +14,7 @@
                     <img :src="data.imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='https://placehold.co/380x250'">
                 </li>
             </ul>
-            <a v-if="boardItem.linkurl.trim()" :href="boardItem.linkurl">{{ boardItem.linkurl }}</a>
+            <a v-if="boardItem.linkurl" :href="boardItem.linkurl">{{ boardItem.linkurl }}</a>
         </div>
         <router-link to="/board" class="btn-black">목록으로</router-link>
     </section>
