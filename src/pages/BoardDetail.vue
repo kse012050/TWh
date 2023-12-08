@@ -9,12 +9,12 @@
         <time>{{ boardItem.regymdt[0] }}</time>
         <div>
             <Editor v-model="boardItem.description" readonly></Editor>
-            <ul v-if="boardItem.medias.length">
+            <!-- <ul v-if="boardItem.medias.length">
                 <li v-for="data in boardItem.medias" :key="data.id">
                     <img :src="data.imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='https://placehold.co/380x250'">
                 </li>
-            </ul>
-            <a v-if="boardItem.linkurl" :href="boardItem.linkurl">{{ boardItem.linkurl }}</a>
+            </ul> -->
+            <a v-if="boardItem.linkurl.trim()" :href="boardItem.linkurl">{{ boardItem.linkurl }}</a>
         </div>
         <router-link to="/board" class="btn-black">목록으로</router-link>
     </section>

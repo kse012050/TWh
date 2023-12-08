@@ -38,22 +38,22 @@
                     <li>
                         <label for="description">내용</label>
                         <div>
-                            <Editor v-model="boardItem.description" toolbar="minimal" @input="editorInput"></Editor>
+                            <Editor v-model="boardItem.description" @input="editorInput"></Editor>
                             <!-- <textarea name="description" id="description" placeholder="내용을 입력하세요. (5,000자)" :value="boardItem.description" @input="onChange"></textarea> -->
                         </div>   
                     </li>
                     <li>
-                        <label for="test">이미지</label>
+                        <label for="test">썸네일</label>
                         <div>
                             <input type="file" name="test" id="test" @change="imgAdd" accept="image/*">
-                            <label for="test" v-if="imgAdds.length + imgData.length < 3">+ 이미지 등록</label>
+                            <label for="test" v-if="imgAdds.length + imgData.length < 1">+ 썸네일 등록</label>
                             <div v-for="(data, idx) in imgAdds" :key="idx">
                                 <img :src="data" alt="임시 이미지">
-                                <button class="delete" @click="(e)=>imgDelete(e, idx)">이미지 삭제</button>
+                                <button class="delete" @click="(e)=>imgDelete(e, idx)">썸네일 삭제</button>
                             </div>
                             <div v-for="(data, idx) in imgData" :key="data.id">
                                 <img :src="data.imageurl" alt="임시 이미지">
-                                <button class="delete" @click="(e)=>imgDataDelete(e, idx, data.id)">이미지 삭제</button>
+                                <button class="delete" @click="(e)=>imgDataDelete(e, idx, data.id)">썸네일 삭제</button>
                             </div>
                         </div>
                     </li>
@@ -113,7 +113,7 @@ export default {
                 title: '',
                 description: '',
             },
-            editorImages: {},
+            editorImages: {}, 
         }
     },
     methods: {
@@ -204,8 +204,8 @@ export default {
         editorInput(e){
             if(e.target.files){
                 const reader = new FileReader();
-                reader.onloadend = () => {this.editorImages[reader.result] = e.target.files[0]}
                 reader.readAsDataURL(e.target.files[0]);
+                reader.onloadend = () => {this.editorImages[reader.result] = e.target.files[0]}
             }
         },
         onSubmit(e){
@@ -217,8 +217,6 @@ export default {
             api.admin('fileDown', {files: [...images]})
                 .then((result)=>{
                     if(result.statusCode === '201'){
-                        console.log(images);
-                        console.log(result);
                         Object.keys(this.editorImages).forEach((key, idx)=>{
                             this.editorImages[key] = result.imageList[idx].imageUrl;
                         })
@@ -255,6 +253,7 @@ export default {
         }
     },
     mounted() {
+        this.detailData();
         window.addEventListener('click',this.onSelect)
     },
     beforeUnmount() {
