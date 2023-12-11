@@ -1,7 +1,7 @@
 <template>
     <section class="companyPage" data-subTopAni>
         <div class="topArea" data-aniDelay-basic="6">
-            <h2 class="contentSize-padding"><span data-textAni>기업 소개</span></h2>
+            <h2 class="contentSize-padding"><span data-textAni>회사 소개</span></h2>
             <div>
                 <strong data-textAni><b class="font-hanwha">한화 신한 테라와트아워</b>는</strong>
                 <p data-textAni data-aniDelay="4">
