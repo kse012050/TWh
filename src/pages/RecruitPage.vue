@@ -96,7 +96,7 @@
                 <ul data-animate-list="bottomToTop" data-aniDelay="4">
                     <li>
                         <span>설비 용량</span>
-                        <b>300kW 이상</b>
+                        <b>1MW급 이상</b>
                         <small>*단일 발전소 기준</small>
                     </li>
                     <li>
@@ -142,7 +142,7 @@
                 <ul data-animate-list="bottomToTop" data-aniDelay="8">
                     <li>
                         <span>설비 용량</span>
-                        <b>300kW 이상</b>
+                        <b>1MW급 이상</b>
                     </li>
                     <li>
                         <span>발전소 유형</span>

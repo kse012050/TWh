@@ -107,7 +107,7 @@
                     <b>국내 최대의 전력거래<br class="mobile"> 플랫폼</b>으로 <br>
                     성장하겠습니다.
                 </p>
-                <router-link to="/company" class="arrow-white" data-aniDelay="10">기업 소개 보기 <span></span></router-link>
+                <router-link to="/company" class="arrow-white" data-aniDelay="10">회사 소개 보기 <span></span></router-link>
             </div>
         </div>
         <div class="boardArea" data-full>
