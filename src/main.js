@@ -38,7 +38,7 @@ const routes = [
             },
             {
                 path: '/company',
-                name: '기업 소개 - TWh',
+                name: '회사 소개 - TWh',
                 component: Company,
                 meta: { requiresAuth: true },
             },

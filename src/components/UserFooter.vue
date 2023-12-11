@@ -2,7 +2,7 @@
     <footer>
         <div class="contentSize">
             <ul>
-                <li><router-link to="/company">기업 소개</router-link></li>
+                <li><router-link to="/company">회사 소개</router-link></li>
                 <li><router-link to="/solution">전력거래 솔루션</router-link></li>
                 <li><router-link to="/recruit">발전자원 모집</router-link></li>
                 <li><router-link to="/board">게시판</router-link></li>
