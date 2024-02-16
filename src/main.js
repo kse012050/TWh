@@ -33,7 +33,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                name: 'TWh - 한화 신한 테라와트아워',
+                name: '한화신한테라와트아워',
                 component: Main,
             },
             {
