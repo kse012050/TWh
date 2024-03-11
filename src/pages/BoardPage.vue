@@ -4,6 +4,7 @@
         <div data-animate="bottomToTop" data-aniDelay="4">
             <button :class="{active: tabName === 'NEWS'}" @click.prevent="tabClick('NEWS')">뉴스</button>
             <button :class="{active: tabName === 'BLOG'}" @click.prevent="tabClick('BLOG')">블로그</button>
+            <button :class="{active: tabName === 'BUSINESS'}" @click.prevent="tabClick('BUSINESS')">사업고지</button>
         </div>
         <ul class="user-board" data-animate="bottomToTop" data-aniDelay="8">
             <template v-for="(data, idx) in showList" :key="data.id">
@@ -34,6 +35,7 @@ export default {
             showList: [],
             newsList: [],
             blogList: [],
+            businessList: [],
             showCount: 9
         }
     },
@@ -44,6 +46,7 @@ export default {
                     if(result.statusCode === '200'){
                         this.newsList = [...result.list.filter((value)=> value.type === 'NEWS')];
                         this.blogList = [...result.list.filter((value)=> value.type === 'BLOG')];
+                        this.businessList = [...result.list.filter((value)=> value.type === 'BUSINESS')];
                         this.showList = [...this.newsList]
                     }
                 })
@@ -52,6 +55,7 @@ export default {
             this.tabName = value;
             this.tabName === 'NEWS' && (this.showList = [...this.newsList]);
             this.tabName === 'BLOG' && (this.showList = [...this.blogList]);
+            this.tabName === 'BUSINESS' && (this.showList = [...this.businessList]);
             document.querySelector('.user-board').removeAttribute('style');
             document.querySelector('.user-board').classList.add('changeTab');
             setTimeout(()=>{

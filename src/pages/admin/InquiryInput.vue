@@ -126,6 +126,7 @@ export default {
                             (this.inputsRequired[element.name] = this.inquiryItem[element.name]) :
                             (this.inputs[element.name] = this.inquiryItem[element.name])
                     })
+                    console.log(this.inquiryItem.content);
                 })
            
         },

@@ -260,7 +260,7 @@ header.white + .mainPage .fullPager{--color: white;}
 .inquiryDetailPage > div ul.infoArea li b.required{display: flex; align-items: center;}
 .inquiryDetailPage > div ul.infoArea li b.required::after{transform: translateY(2px); content: '*'; color: var(--color-point01);}
 .inquiryDetailPage > div ul.infoArea li div{padding-inline: 40px; padding-block: 20px; min-height: 84px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;}
-.inquiryDetailPage > div ul.infoArea li div p{font-weight: 300; word-break: break-all;}
+.inquiryDetailPage > div ul.infoArea li div p{font-weight: 300; white-space: pre-wrap;}
 .inquiryDetailPage > div ul.infoArea li div dl{display: flex; align-items: center;}
 .inquiryDetailPage > div ul.infoArea li div dl:not(:last-of-type){margin-bottom: 4px;}
 .inquiryDetailPage > div ul.infoArea li div dl dt{min-width: 108px; margin-right: 10px; font-weight: 300; color: #999;}

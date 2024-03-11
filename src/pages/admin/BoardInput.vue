@@ -18,13 +18,14 @@
                         <div class="limited">
                             <div class="select-box" :class="{active: isSelect}">
                                 <button @click.prevent="isSelect = true" @click.stop>
-                                    {{
-                                        boardItem.type === 'NEWS' ? '보도자료' : '블로그'
-                                    }}
+                                    {{ boardItem.type === 'NEWS' ? '보도자료' : ''}}
+                                    {{ boardItem.type === 'BLOG' ? '블로그' : ''}}
+                                    {{ boardItem.type === 'BUSINESS' ? '사업고지' : ''}}
                                 </button>
                                 <div v-if="isSelect">
                                     <button @click.prevent="boardItem.type = 'NEWS'">보도자료</button>
                                     <button @click.prevent="boardItem.type = 'BLOG'">블로그</button>
+                                    <button @click.prevent="boardItem.type = 'BUSINESS'">사업고지</button>
                                 </div>
                             </div>
                         </div>

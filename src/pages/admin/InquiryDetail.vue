@@ -58,9 +58,7 @@
                 <li>
                     <b>상세 내용</b>
                     <div>
-                        <p>
-                           {{ inquiryItem.content }}
-                        </p>
+                        <p v-html="inquiryItem.content"></p>
                     </div>
                 </li>
                 <li>
@@ -169,7 +167,6 @@ export default {
                         arr.regymdt[1] = arr.regymdt[1].replace('.000Z','')
                     })
                     this.inquirystateUpdate['inquirystate'] = result.inquiryItem['inquirystate']
-                    
                 })
         },
         onSelect(){
