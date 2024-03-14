@@ -6,6 +6,7 @@
             <router-link to="/admins/board/1" :class="{active: listType === ''}">전체({{this.listTotal.all}})</router-link>
             <router-link to="/admins/board/1?type=NEWS" :class="{active: listType === 'NEWS'}">보도자료({{this.listTotal.news}})</router-link>
             <router-link to="/admins/board/1?type=BLOG" :class="{active: listType === 'BLOG'}">블로그({{this.listTotal.blog}})</router-link>
+            <router-link to="/admins/board/1?type=BUSINESS" :class="{active: listType === 'BUSINESS'}">사업고지({{this.listTotal.business}})</router-link>
         </div>
         <div class="admin-board-title">
             <b>No.</b>
@@ -19,7 +20,11 @@
             <li v-for="(data, idx) in boardList" :key="data.id">
                 <router-link :to="`/admins/board/input/${data.id}`" @click="()=>test((total - idx) - (page - 1) * 20)">
                     <span>{{ (total - idx) - (page - 1) * 20 }}</span>
-                    <span>{{ data.type !== 'BLOG' ? '보도자료' : '블로그' }}</span>
+                    <span>
+                        {{ data.type === 'NEWS' ? '보도자료' : ''}}
+                        {{ data.type === 'BLOG' ? '블로그' : ''}}
+                        {{ data.type === 'BUSINESS' ? '사업고지' : ''}}
+                    </span>
                     <p>{{ data.title }}</p>
                     <p>{{ data.description.replace(/<[^>]*>/g, '').replace(/\b(?:src\s*=\s*"[^"]*")?\s*/g, '') }}</p>
                     <time>
@@ -64,6 +69,7 @@ export default {
                 all: undefined,
                 news: undefined,
                 blog: undefined,
+                business: undefined
             },
             pageName: 'board',
             page: Number(this.$route.params.page) || 1,
@@ -113,6 +119,12 @@ export default {
             .then((result)=>{
                 if(result.statusCode === '200'){
                     this.listTotal['blog'] = result.meta.total
+                }
+            })
+        api.admin('list',{type: 'boards', page: 1, listType: 'BUSINESS'})
+            .then((result)=>{
+                if(result.statusCode === '200'){
+                    this.listTotal['business'] = result.meta.total
                 }
             })
         this.list();

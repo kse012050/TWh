@@ -12,9 +12,9 @@
                     <router-link :to="`/boardDetail/${data.id}`">
                         <img v-if="data.medias.length" :src="data.medias[0].imageurl" :alt="`${data.title} 이미지`" onerror="this.onerror=null; this.src='../images/thumbnail.png'">
                         <small>
-                            {{
-                                data.type === "NEWS" ? '보도자료' : '인터뷰'
-                            }}
+                            {{ data.type === 'NEWS' ? '보도자료' : ''}}
+                            {{ data.type === 'BLOG' ? '인터뷰' : ''}}
+                            {{ data.type === 'BUSINESS' ? '사업고지' : ''}}
                         </small>
                         <p>{{ data.title }}</p>
                     </router-link>
