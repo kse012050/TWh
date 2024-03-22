@@ -6,7 +6,7 @@
             <router-link to="/admins/board/1" :class="{active: listType === ''}">전체({{this.listTotal.all}})</router-link>
             <router-link to="/admins/board/1?type=NEWS" :class="{active: listType === 'NEWS'}">보도자료({{this.listTotal.news}})</router-link>
             <router-link to="/admins/board/1?type=BLOG" :class="{active: listType === 'BLOG'}">블로그({{this.listTotal.blog}})</router-link>
-            <router-link to="/admins/board/1?type=BUSINESS" :class="{active: listType === 'BUSINESS'}">사업고지({{this.listTotal.business}})</router-link>
+            <router-link to="/admins/board/1?type=BUSINESS" :class="{active: listType === 'BUSINESS'}">경영공시({{this.listTotal.business}})</router-link>
         </div>
         <div class="admin-board-title">
             <b>No.</b>
@@ -23,7 +23,7 @@
                     <span>
                         {{ data.type === 'NEWS' ? '보도자료' : ''}}
                         {{ data.type === 'BLOG' ? '블로그' : ''}}
-                        {{ data.type === 'BUSINESS' ? '사업고지' : ''}}
+                        {{ data.type === 'BUSINESS' ? '경영공시' : ''}}
                     </span>
                     <p>{{ data.title }}</p>
                     <p>{{ data.description.replace(/<[^>]*>/g, '').replace(/\b(?:src\s*=\s*"[^"]*")?\s*/g, '') }}</p>

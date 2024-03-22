@@ -4,7 +4,7 @@
         <div data-animate="bottomToTop" data-aniDelay="4">
             <button :class="{active: tabName === 'NEWS'}" @click.prevent="tabClick('NEWS')">뉴스</button>
             <button :class="{active: tabName === 'BLOG'}" @click.prevent="tabClick('BLOG')">블로그</button>
-            <button :class="{active: tabName === 'BUSINESS'}" @click.prevent="tabClick('BUSINESS')">사업고지</button>
+            <button :class="{active: tabName === 'BUSINESS'}" @click.prevent="tabClick('BUSINESS')">경영공시</button>
         </div>
         <ul class="user-board" data-animate="bottomToTop" data-aniDelay="8">
             <template v-for="(data, idx) in showList" :key="data.id">
@@ -14,7 +14,7 @@
                         <small>
                             {{ data.type === 'NEWS' ? '보도자료' : ''}}
                             {{ data.type === 'BLOG' ? '인터뷰' : ''}}
-                            {{ data.type === 'BUSINESS' ? '사업고지' : ''}}
+                            {{ data.type === 'BUSINESS' ? '경영공시' : ''}}
                         </small>
                         <p>{{ data.title }}</p>
                     </router-link>
